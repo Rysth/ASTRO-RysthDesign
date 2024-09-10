@@ -1,12 +1,11 @@
 ---
-import BrandImage from "../../assets/images/brand/brand_dark.svg";
 import { Image } from "astro:assets";
-import { FaWhatsapp, FaHome, FaPencilAlt, FaPhoneAlt } from "react-icons/fa";
-import { HiBars3BottomLeft } from "react-icons/hi2";
+import { FaHome, FaPhoneAlt } from "react-icons/fa";
+import BrandImage from "../../assets/images/brand/brand.svg";
 ---
 
 <nav
-  class="fixed top-0 z-50 w-full px-4 py-6 transition duration-300 bg-white shadow shadow-black/5"
+  class="sticky top-0 z-50 w-full p-4 py-2 transition duration-300 bg-background-primary shadow-black/5"
   id="navbar"
 >
   <div class="relative max-w-screen-xl p-0 mx-auto navbar">
@@ -15,10 +14,10 @@ import { HiBars3BottomLeft } from "react-icons/hi2";
         <button
           type="button"
           class="btn btn-ghost lg:hidden ps-2 pe-2"
-          aria-label="Toggle button menu"
+          aria-label="Toggle button menu "
           id="toggleButton"
         >
-          <HiBars3BottomLeft className="text-3xl" />
+          <i class="text-2xl text-white bx bx-menu-alt-left"></i>
         </button>
         <ul
           class="hidden absolute left-0 right-0 top-4/4 lg:hidden my-4 z-[1] p-4 shadow-xl bg-base-100 rounded-xl space-y-4 min-w-full transition"
@@ -31,18 +30,6 @@ import { HiBars3BottomLeft } from "react-icons/hi2";
             >
           </li>
           <li>
-            <a class="flex items-center gap-2 text-sm" href="/servicios">
-              <FaPencilAlt className="text-lg text-brand-blue" />
-              Servicios</a
-            >
-          </li>
-          <!--  <li>
-            <a class="flex items-center gap-2 text-sm" href="/planes">
-              <FaPencilAlt className="text-lg text-brand-blue" />
-              Planes</a
-            >
-          </li> -->
-          <li>
             <a class="flex items-center gap-2 text-sm" href=" contactos">
               <FaPhoneAlt className="text-lg text-brand-blue" />
 
@@ -52,28 +39,48 @@ import { HiBars3BottomLeft } from "react-icons/hi2";
         </ul>
       </div>
       <a class="text-xl" href="/">
-        <Image src={BrandImage} alt="RysthDesign Logo" class="w-20 lg:w-32" />
+        <Image src={BrandImage} alt="RysthDesign Logo" class="w-16 md:w-20" />
       </a>
     </div>
     <div class="hidden navbar-center lg:flex">
-      <ul class="gap-2 px-1 menu menu-horizontal">
-        <li><a href="/">Inicio</a></li>
+      <ul class="flex gap-3 text-white">
         <li>
-          <a href="/servicios">Servicios</a>
+          <a
+            href="/"
+            class="btn btn-sm btn-ghost hover:bg-neutral-600 hover:bg-opacity-20 hover:shadow-xl"
+            >Inicio</a
+          >
         </li>
-        <!--  <li>
-          <a href="/planes">Planes</a>
-        </li> -->
-        <li><a href="/contactos">Contactos</a></li>
+        <li>
+          <a
+            href="/"
+            class="btn btn-sm btn-ghost hover:bg-neutral-600 hover:bg-opacity-20 hover:shadow-xl"
+            >Proyectos</a
+          >
+        </li>
+        <li>
+          <a
+            href="/"
+            class="btn btn-sm btn-ghost hover:bg-neutral-600 hover:bg-opacity-20 hover:shadow-xl"
+            >Experiencia</a
+          >
+        </li>
+        <li>
+          <a
+            href="/"
+            class="btn btn-sm btn-ghost hover:bg-neutral-600 hover:bg-opacity-20 hover:shadow-xl"
+            >Estudios</a
+          >
+        </li>
       </ul>
     </div>
     <div class="navbar-end">
       <a
         href="http://tinyurl.com/contact-ws"
         target="_blank"
-        class="text-xs text-white bg-green-500 border-transparent rounded-full shadow-xl btn lg:text-sm btn-neutral hover:bg-green-500 hover:border-transparent shadow-green-500/25 hover:-translate-y-2"
+        class="text-xs text-white bg-transparent bg-green-500 border hover:shadow-xl border-neutral-800 md:hover:bg-green-500 btn lg:text-sm btn-neutral hover:border-transparent hover:shadow-green-500/25"
       >
-        <FaWhatsapp className="block text-2xl" />
+        <i class="text-xl bx bxl-whatsapp md:text-2xl"></i>
         Contactar
       </a>
     </div>

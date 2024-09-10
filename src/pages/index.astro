@@ -1,7 +1,7 @@
 ---
 import WaveSVG from "@/assets/background/wave.webp";
 import WebsiteIllustration from "@/assets/images/illustrations/pair_programming.svg";
-import ResponsiveIllustration from "@/assets/images/illustrations/responsive.svg";
+import ResponsiveIllustration from "@/assets/images/brand/logo-dark.png";
 import ProjectOne from "@/assets/images/projects/project_1.webp";
 import ProjectTwo from "@/assets/images/projects/project_2.webp";
 import ProjectThree from "@/assets/images/projects/project_3.webp";
@@ -33,50 +33,44 @@ import {
 >
   <section class="h-full p-4 lg:h-max">
     <article
-      class="max-w-screen-xl py-12 mx-auto space-y-36 pt-28 h-max lg:py-32 md:pt-48 lg:pt-56 md:py-24"
+      class="max-w-screen-xl py-12 pt-6 mx-auto space-y-8 md:space-y-10 h-max lg:py-28 md:py-24"
     >
-      <main class="flex flex-col items-center justify-center gap-6 text-center">
-        <p class="text-sm font-semibold uppercase text-brand-blue md:text-base">
-          RysthDesign
-        </p>
-        <h2
-          class="text-2xl font-bold md:text-3xl lg:text-5xl lg:max-w-2xl lg:!leading-[3.5rem]"
-        >
-          Desarrollo de Sitios y Aplicaciones Web Profesionales
-        </h2>
-        <p
-          class="max-w-lg mx-auto text-sm leading-6 text-gray-500 md:text-base"
-        >
-          Diseño y desarrollo web para pequeños negocios con soluciones
-          tecnológicas modernas, escalables y seguras.
-        </p>
-        <div class="flex items-center gap-4 mt-4">
-          <a
-            href="http://tinyurl.com/contact-ws"
-            target="_blank"
-            class="text-xs text-white border-transparent rounded-full shadow-xl btn lg:text-sm btn-neutral bg-brand-blue group shadow-indigo-900/25 btn-lg"
-          >
-            Contactar
-            <FaArrowRight
-              className="block text-xl group-hover:translate-x-1 transition"
-            />
-          </a>
-          <a
-            href="/servicios"
-            class="text-xs border-transparent rounded-full shadow-xl btn lg:text-sm btn-ghost group shadow-neutral-400/25 btn-lg"
-          >
-            Servicios
-            <FaArrowRight
-              className="block text-xl group-hover:translate-x-1 transition"
-            />
-          </a>
-        </div>
-      </main>
       <Image
         src={ResponsiveIllustration}
         alt="Responsive web application"
-        class="w-full drop-shadow-2xl lg:h-full md:w-3/4 md:mx-auto"
+        class="mx-auto rounded-full w-44 md:w-60 drop-shadow-2xl lg:h-full"
       />
+      <main class="flex flex-col items-center justify-center gap-6 text-center">
+        <h2
+          class="text-2xl font-bold md:text-3xl lg:text-5xl lg:max-w-3xl lg:!leading-[3.5rem] text-white"
+        >
+          Desarrollo de Aplicaciones Web Profesionales
+        </h2>
+        <p
+          class="max-w-lg mx-auto text-sm font-light leading-6 text-neutral-300 md:text-base"
+        >
+          Ingeniero en software y desarrollador web full-stack con 2+ años de
+          experiencia, me dedico a diseñar y desarrollar aplicaciones web para
+          pequeños negocios.
+        </p>
+        <div class="flex justify-between w-full mt-4 md:w-max md:gap-4">
+          <a
+            href="http://tinyurl.com/contact-ws"
+            target="_blank"
+            class="w-40 text-xs text-white border-transparent shadow-xl btn lg:text-sm btn-neutral bg-brand-blue group hover:bg-white hover:text-neutral-900 shadow-indigo-900/25 btn-lg md:w-44"
+          >
+            Contactar
+            <i class="bx bx-send"></i>
+          </a>
+          <a
+            href="/servicios"
+            class="w-40 text-xs text-white border border-white shadow-xl md:w-44 btn lg:text-sm btn-ghost group hover:bg-white hover:text-neutral-900 shadow-neutral-400/25 btn-lg"
+          >
+            Descargar CV
+            <i class="bx bx-download"></i>
+          </a>
+        </div>
+      </main>
     </article>
   </section>
   <section class="p-4">
