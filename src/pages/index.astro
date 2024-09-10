@@ -1,11 +1,7 @@
 ---
-import WaveSVG from "@/assets/background/wave.webp";
-import WebsiteIllustration from "@/assets/images/illustrations/pair_programming.svg";
 import ResponsiveIllustration from "@/assets/images/brand/logo-dark.png";
-import ProjectOne from "@/assets/images/projects/project_1.webp";
-import ProjectTwo from "@/assets/images/projects/project_2.webp";
-import ProjectThree from "@/assets/images/projects/project_3.webp";
-import ProjectFour from "@/assets/images/projects/project_4.webp";
+import ProjectOne from "@/assets/images/projects/project_1.png";
+import ProjectTwo from "@/assets/images/projects/project_2.png";
 import CSSImage from "@/assets/images/technologies/css.svg";
 import HTMLImage from "@/assets/images/technologies/html.svg";
 import JavaScriptImage from "@/assets/images/technologies/javascript.svg";
@@ -13,20 +9,10 @@ import RailsImage from "@/assets/images/technologies/rails.svg";
 import ReactImage from "@/assets/images/technologies/react.svg";
 import RubyImage from "@/assets/images/technologies/ruby.svg";
 import Subtitle from "@/components/heading/Subtitle.astro";
-import FeatureCard from "@/components/ui/FeatureCard.astro";
 import ProjectCard from "@/components/ui/ProjectCard.astro";
 import TechnologyCard from "@/components/ui/TechnologyCard.astro";
 import Layout from "@/layouts/Layout.astro";
-import ServiceSection from "@/sections/general/ServiceSection.astro";
-import StatSection from "@/sections/general/StatSection.astro";
 import { Image } from "astro:assets";
-import { FaArrowRight } from "react-icons/fa";
-import {
-  HiMiniBarsArrowUp,
-  HiMiniCubeTransparent,
-  HiOutlineCloud,
-  HiOutlineCodeBracketSquare,
-} from "react-icons/hi2";
 ---
 
 <Layout
@@ -110,26 +96,16 @@ import {
       >
         <ProjectCard
           imageUrl={ProjectOne}
-          projectUrl="https://jprefrigeracion.rysthdesign.com/"
-          altText="JPRefrigeracion Proyecto"
+          projectUrl="https://rails-storegem.onrender.com/"
+          altText="StoreGem Proyecto"
         />
         <ProjectCard
           imageUrl={ProjectTwo}
           projectUrl="https://react-tramitesec-uxbm.onrender.com/"
           altText="TrámitesEC Proyecto"
         />
-        <ProjectCard
-          imageUrl={ProjectThree}
-          projectUrl="https://rails-storegem.onrender.com/"
-          altText="StoreGem Proyecto"
-        />
-        <ProjectCard
-          imageUrl={ProjectFour}
-          projectUrl="https://kraftstore-ec.com/"
-          altText="KraftStore Proyecto WordPress E-Commerce"
-        />
       </main>
     </article>
   </section>
-  <hr class="hidden border-none md:block md:mt-56 bg-none" />
+  <hr class="hidden border-none md:block bg-none" />
 </Layout>
