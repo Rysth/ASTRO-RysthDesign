@@ -11,6 +11,7 @@ import HTMLImage from "@/assets/images/technologies/html.svg";
 import JavaScriptImage from "@/assets/images/technologies/javascript.svg";
 import RailsImage from "@/assets/images/technologies/rails.svg";
 import ReactImage from "@/assets/images/technologies/react.svg";
+import RubyImage from "@/assets/images/technologies/ruby.svg";
 import Subtitle from "@/components/heading/Subtitle.astro";
 import FeatureCard from "@/components/ui/FeatureCard.astro";
 import ProjectCard from "@/components/ui/ProjectCard.astro";
@@ -74,6 +75,28 @@ import {
     </article>
   </section>
   <section class="p-4">
+    <article class="max-w-screen-xl pb-12 mx-auto">
+      <header class="mb-6 text-center md:mb-12">
+        <h2 class={`text-2xl font-bold uppercase tracking-widest`}>
+          Experiencia Con
+        </h2>
+      </header>
+      <main class="flex flex-wrap justify-center gap-4 md:gap-8">
+        <TechnologyCard src={HTMLImage} alt="HTML Logo" />
+        <TechnologyCard src={CSSImage} alt="CSS Logo" />
+        <TechnologyCard src={JavaScriptImage} alt="JavaScript Logo" />
+        <TechnologyCard src={ReactImage} alt="React Logo" />
+        <TechnologyCard src={RubyImage} alt="Ruby Logo" />
+        <TechnologyCard
+          src={RailsImage}
+          alt="Rails Logo"
+          customClass="md:w-full"
+        />
+      </main>
+    </article>
+  </section>
+  <!--  <StatSection /> -->
+  <!-- <section class="p-4">
     <article class="max-w-screen-xl py-12 mx-auto md:py-24 lg:py-36">
       <Subtitle
         title="Nuestras Características"
@@ -141,9 +164,11 @@ import {
         </a>
       </main>
     </article>
-  </section>
-  <ServiceSection />
-  <section class="p-4 bg-gradient-to-br bg-brand-gradient">
+  </section> -->
+  <!--   <ServiceSection /> -->
+  <section
+    class="p-4 bg-gradient-to-br animated-background bg-brand-gradient md:mt-20"
+  >
     <article class="relative max-w-screen-xl py-12 mx-auto md:py-24 md:pb-52">
       <Subtitle
         title="Galería de Proyectos"
@@ -177,19 +202,5 @@ import {
       </main>
     </article>
   </section>
-
   <hr class="hidden border-none md:block md:mt-56 bg-none" />
-  <section class="p-2">
-    <article class="max-w-screen-xl py-12 mx-auto md:pb-24">
-      <main class="flex flex-wrap justify-center gap-4 md:gap-8">
-        <TechnologyCard src={HTMLImage} alt="HTML Logo" />
-        <TechnologyCard src={CSSImage} alt="CSS Logo" />
-        <TechnologyCard src={JavaScriptImage} alt="JavaScript Logo" />
-        <TechnologyCard src={ReactImage} alt="React Logo" />
-        <TechnologyCard src={RailsImage} alt="Rails Logo" />
-      </main>
-    </article>
-  </section>
-
-  <StatSection />
 </Layout>
