@@ -16,13 +16,13 @@ import { Image } from "astro:assets";
   href={projectUrl}
   target="_blank"
   rel="noreferrer"
-  class="block transition duration-300 rounded-2xl group bg-background-primary"
+  class="block transition duration-300 rounded-2xl group bg-background-primary hover:shadow-indigo-900/50 hover:shadow-2xl"
 >
-  <figure class="rounded-xl">
+  <figure class="overflow-hidden rounded-t-2xl">
     <Image
       src={imageUrl}
       alt={altText}
-      class="w-full h-full mx-auto transition max-h-80 md:object-cover rounded-t-2xl group-hover:grayscale"
+      class="object-cover w-full h-full mx-auto transition max-h-80 rounded-t-2xl group-hover:grayscale group-hover:scale-105"
     />
   </figure>
   <main class="p-2 px-4 pb-6 mt-2">

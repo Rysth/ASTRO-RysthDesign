@@ -1,7 +1,9 @@
 ---
 import ResponsiveIllustration from "@/assets/images/brand/logo-dark.png";
-import ProjectOne from "@/assets/images/projects/project_1.png";
-import ProjectTwo from "@/assets/images/projects/project_2.png";
+import Project_1 from "@/assets/images/projects/project_1.png";
+import Project_2 from "@/assets/images/projects/project_2.png";
+import Project_3 from "@/assets/images/projects/project_3.png";
+import Project_4 from "@/assets/images/projects/project_4.png";
 import CSSImage from "@/assets/images/technologies/css.svg";
 import HTMLImage from "@/assets/images/technologies/html.svg";
 import JavaScriptImage from "@/assets/images/technologies/javascript.svg";
@@ -95,7 +97,7 @@ import { Image } from "astro:assets";
         class="left-0 right-0 grid w-full gap-4 my-12 lg:my-20 md:gap-8 md:grid-cols-2"
       >
         <ProjectCard
-          imageUrl={ProjectOne}
+          imageUrl={Project_1}
           projectUrl="https://rails-storegem.onrender.com/"
           altText="StoreGem Proyecto"
           title="StoreGem"
@@ -109,7 +111,7 @@ import { Image } from "astro:assets";
           ]}
         />
         <ProjectCard
-          imageUrl={ProjectTwo}
+          imageUrl={Project_2}
           projectUrl="https://react-tramitesec-uxbm.onrender.com/"
           altText="TrámitesEC Proyecto"
           title="TramitesEC"
@@ -119,6 +121,32 @@ import { Image } from "astro:assets";
             { name: "React", color: "bg-blue-500" },
             { name: "Ruby on Rails", color: "bg-red-500" },
             { name: "PostgreSQL", color: "bg-green-500" },
+          ]}
+        />
+        <ProjectCard
+          imageUrl={Project_3}
+          projectUrl="https://rysth.github.io/Valorant-Conference-Page/"
+          altText="Valorant Conference Proyecto"
+          title="Valorant Conference"
+          topic="Sitio Web de Conferencias de Valorant"
+          description={`Es una página web de conferencias de Valorant desarrollada con HTML, CSS y JavaScript. Uno de mis primeros proyectos hecho desde cero.`}
+          technologies={[
+            { name: "HTML", color: "bg-orange-500" },
+            { name: "CSS", color: "bg-blue-500" },
+            { name: "JavaScript", color: "bg-yellow-500" },
+          ]}
+        />
+        <ProjectCard
+          imageUrl={Project_4}
+          projectUrl="https://react-rysthcraft.onrender.com/"
+          altText="RysthCraft Proyecto"
+          title="RysthCraft"
+          topic="Sitio Web de Portfolio de RysthCraft"
+          description={`Es una página web que servía como un portfolio de mis proyectos de desarrollo. Cuenta con traducción de textos inglés a espaniol.`}
+          technologies={[
+            { name: "React", color: "bg-blue-500" },
+            { name: "TailwindCSS", color: "bg-cyan-500" },
+            { name: "Figma", color: "bg-purple-500" },
           ]}
         />
       </main>
