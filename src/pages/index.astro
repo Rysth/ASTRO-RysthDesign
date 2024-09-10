@@ -4,6 +4,7 @@ import Project_1 from "@/assets/images/projects/project_1.png";
 import Project_2 from "@/assets/images/projects/project_2.png";
 import Project_3 from "@/assets/images/projects/project_3.png";
 import Project_4 from "@/assets/images/projects/project_4.png";
+import Experience_1 from "@/assets/images/experience/experience_1.png";
 import CSSImage from "@/assets/images/technologies/css.svg";
 import HTMLImage from "@/assets/images/technologies/html.svg";
 import JavaScriptImage from "@/assets/images/technologies/javascript.svg";
@@ -15,6 +16,7 @@ import ProjectCard from "@/components/ui/ProjectCard.astro";
 import TechnologyCard from "@/components/ui/TechnologyCard.astro";
 import Layout from "@/layouts/Layout.astro";
 import { Image } from "astro:assets";
+import ExperienceCard from "@/components/ui/ExperienceCard.astro";
 ---
 
 <Layout
@@ -36,7 +38,7 @@ import { Image } from "astro:assets";
           Desarrollo de Aplicaciones Web Profesionales
         </h2>
         <p
-          class="max-w-lg mx-auto text-sm font-light leading-6 text-neutral-300 md:text-base"
+          class="max-w-lg mx-auto text-sm font-light leading-6 text-gray-300 md:text-base"
         >
           Ingeniero en software y desarrollador web full-stack con 2+ años de
           experiencia, me dedico a diseñar y desarrollar aplicaciones web para
@@ -65,8 +67,10 @@ import { Image } from "astro:assets";
   <section class="p-4">
     <article class="max-w-screen-xl pb-12 mx-auto">
       <header class="mb-6 text-center md:mb-12">
-        <h2 class={`text-2xl font-bold uppercase tracking-widest`}>
-          Experiencia Con
+        <h2
+          class={`text-xl md:text-2xl font-bold uppercase  tracking-wide md:tracking-widest`}
+        >
+          Stack Tecnológico
         </h2>
       </header>
       <main class="flex flex-wrap justify-center gap-4 md:gap-8">
@@ -84,7 +88,8 @@ import { Image } from "astro:assets";
     </article>
   </section>
   <section
-    class="p-4 bg-gradient-to-br animated-background bg-[#191919] md:mt-20"
+    class="p-4 bg-gradient-to-br animated-background bg-[#191919] my-10 md:my-20"
+    id="proyectos"
   >
     <article class="relative max-w-screen-lg py-12 mx-auto md:py-24">
       <Subtitle
@@ -150,6 +155,31 @@ import { Image } from "astro:assets";
           ]}
         />
       </main>
+    </article>
+  </section>
+  <section class="p-4" id="experiencia">
+    <article class="max-w-screen-md pb-12 mx-auto">
+      <header class="mb-6 text-center md:mb-12">
+        <h2
+          class={`text-xl md:text-2xl font-bold uppercase tracking-wide md:tracking-widest`}
+        >
+          Experiencia Profesional
+        </h2>
+      </header>
+      <ul class="flex flex-col gap-8 md:gap-12 lg:gap-16">
+        <li>
+          <ExperienceCard
+            imageUrl={Experience_1}
+            altText="Cierpronti S.A."
+            title="Analista de Sistemas at Cierpronti S.A."
+            date="2024 Abril - Presente"
+            description={` Desarrollo de actividades In-House por parte de Asvesot C.A. relacionadas
+            al ámbito de sistemas como soporte IT para la solución de problemas
+            informáticos del personal. Contribuyendo al flujo correcto de los procesos
+            de la organización.`}
+          />
+        </li>
+      </ul>
     </article>
   </section>
   <hr class="hidden border-none md:block bg-none" />

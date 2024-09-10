@@ -20,20 +20,31 @@ import BrandImage from "../../assets/images/brand/brand.svg";
           <i class="text-2xl text-white bx bx-menu-alt-left"></i>
         </button>
         <ul
-          class="hidden absolute left-0 right-0 top-4/4 lg:hidden my-4 z-[1] p-4 shadow-xl bg-base-100 rounded-xl space-y-4 min-w-full transition"
+          class="hidden duration-700 absolute left-0 right-0 top-20 lg:hidden z-[1] p-4 shadow-xl bg-white rounded-xl space-y-2 min-w-full transition text-neutral-900"
           id="mobileMenu"
         >
           <li>
             <a class="flex items-center gap-2 text-sm" href="/">
-              <FaHome className="text-lg text-brand-blue" />
+              <i class="text-lg bx bx-home"></i>
               Inicio</a
             >
           </li>
           <li>
-            <a class="flex items-center gap-2 text-sm" href=" contactos">
-              <FaPhoneAlt className="text-lg text-brand-blue" />
-
-              Contactos</a
+            <a class="flex items-center gap-2 text-sm" href="#proyectos">
+              <i class="text-lg bx bx-code-alt"></i>
+              Proyectos</a
+            >
+          </li>
+          <li>
+            <a class="flex items-center gap-2 text-sm" href="#experiencia">
+              <i class="text-lg bx bx-briefcase"></i>
+              Experiencia</a
+            >
+          </li>
+          <li>
+            <a class="flex items-center gap-2 text-sm" href="#estudios">
+              <i class="text-lg bx bx-book"></i>
+              Estudios</a
             >
           </li>
         </ul>
@@ -53,21 +64,21 @@ import BrandImage from "../../assets/images/brand/brand.svg";
         </li>
         <li>
           <a
-            href="/"
+            href="#proyectos"
             class="btn btn-sm btn-ghost hover:bg-neutral-600 hover:bg-opacity-20 hover:shadow-xl"
             >Proyectos</a
           >
         </li>
         <li>
           <a
-            href="/"
+            href="#experiencia"
             class="btn btn-sm btn-ghost hover:bg-neutral-600 hover:bg-opacity-20 hover:shadow-xl"
             >Experiencia</a
           >
         </li>
         <li>
           <a
-            href="/"
+            href="#estudios"
             class="btn btn-sm btn-ghost hover:bg-neutral-600 hover:bg-opacity-20 hover:shadow-xl"
             >Estudios</a
           >
