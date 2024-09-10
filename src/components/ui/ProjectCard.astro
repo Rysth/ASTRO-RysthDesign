@@ -1,6 +1,14 @@
 ---
 // Props para el componente ProjectCard
-const { imageUrl, projectUrl, altText } = Astro.props;
+const {
+  imageUrl,
+  projectUrl,
+  altText,
+  title,
+  topic,
+  description,
+  technologies,
+} = Astro.props;
 import { Image } from "astro:assets";
 ---
 
@@ -18,16 +26,17 @@ import { Image } from "astro:assets";
     />
   </figure>
   <main class="p-2 px-4 pb-6 mt-2">
-    <h3 class="text-xl font-semibold text-white">StoreGem</h3>
-    <p class="text-sm text-gray-500">Aplicación Web de Catálogo Online</p>
+    <h3 class="text-xl font-semibold text-white">{title}</h3>
+    <p class="mt-1 text-xs text-gray-500">{topic}</p>
     <p class="my-2 text-xs md:text-sm">
-      Es una aplicación web para la gestión de un catálogo de productos en línea
-      de forma simple, enfocada principalmente para pequeños negocios.
+      {description}
     </p>
     <ul class="flex gap-1 mt-4 text-sm">
-      <li class="text-white bg-red-500 badge badge-sm">Ruby on Rails</li>
-      <li class="text-white bg-blue-500 badge badge-sm">TailwindCSS</li>
-      <li class="text-white bg-green-500 badge badge-sm">PostgreSQL</li>
+      {
+        technologies.map((tech) => (
+          <li class={`text-white badge badge-sm ${tech.color}`}>{tech.name}</li>
+        ))
+      }
     </ul>
   </main>
 </a>
