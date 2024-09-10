@@ -8,9 +8,26 @@ import { Image } from "astro:assets";
   href={projectUrl}
   target="_blank"
   rel="noreferrer"
-  class="block transition duration-300 rounded-xl hover:grayscale hover:shadow-xl"
+  class="block transition duration-300 rounded-2xl group bg-background-primary"
 >
   <figure class="rounded-xl">
-    <Image src={imageUrl} alt={altText} class="w-full h-full rounded-xl" />
+    <Image
+      src={imageUrl}
+      alt={altText}
+      class="w-full h-full mx-auto transition max-h-80 md:object-cover rounded-t-2xl group-hover:grayscale"
+    />
   </figure>
+  <main class="p-2 px-4 pb-6 mt-2">
+    <h3 class="text-xl font-semibold text-white">StoreGem</h3>
+    <p class="text-sm text-gray-500">Aplicación Web de Catálogo Online</p>
+    <p class="my-2 text-xs md:text-sm">
+      Es una aplicación web para la gestión de un catálogo de productos en línea
+      de forma simple, enfocada principalmente para pequeños negocios.
+    </p>
+    <ul class="flex gap-1 mt-4 text-sm">
+      <li class="text-white bg-red-500 badge badge-sm">Ruby on Rails</li>
+      <li class="text-white bg-blue-500 badge badge-sm">TailwindCSS</li>
+      <li class="text-white bg-green-500 badge badge-sm">PostgreSQL</li>
+    </ul>
+  </main>
 </a>
