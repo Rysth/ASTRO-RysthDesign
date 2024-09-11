@@ -1,10 +1,12 @@
 ---
 import ResponsiveIllustration from "@/assets/images/brand/logo-dark.png";
+import Resume from "@/assets/documents/(SPANISH) Resume - John Palacios Tutiven - FullSack Web Developer.pdf";
 import Project_1 from "@/assets/images/projects/project_1.png";
 import Project_2 from "@/assets/images/projects/project_2.png";
 import Project_3 from "@/assets/images/projects/project_3.png";
 import Project_4 from "@/assets/images/projects/project_4.png";
 import Experience_1 from "@/assets/images/experience/experience_1.png";
+import Experience_2 from "@/assets/images/experience/experience_2.svg";
 import CSSImage from "@/assets/images/technologies/css.svg";
 import HTMLImage from "@/assets/images/technologies/html.svg";
 import JavaScriptImage from "@/assets/images/technologies/javascript.svg";
@@ -35,7 +37,9 @@ import ExperienceCard from "@/components/ui/ExperienceCard.astro";
         <h2
           class="text-2xl font-bold md:text-3xl lg:text-5xl lg:max-w-3xl lg:!leading-[3.5rem] text-white"
         >
-          Desarrollo de Aplicaciones Web Profesionales
+          Desarrollo de Aplicaciones <span class="text-indigo-400"
+            >Web Profesionales</span
+          >
         </h2>
         <p
           class="max-w-lg mx-auto text-sm font-light leading-6 text-gray-300 md:text-base"
@@ -48,13 +52,14 @@ import ExperienceCard from "@/components/ui/ExperienceCard.astro";
           <a
             href="http://tinyurl.com/contact-ws"
             target="_blank"
-            class="w-40 text-xs text-white border-transparent shadow-xl btn lg:text-sm btn-neutral bg-brand-gradient animated-background group hover:bg-white hover:text-neutral-900 shadow-indigo-900/25 btn-lg md:w-44"
+            class="w-40 text-xs text-white border-transparent shadow-xl btn lg:text-sm btn-neutral bg-brand-gradient animated-background group hover:bg-white hover:opacity-80 shadow-indigo-900/25 btn-lg md:w-44"
           >
             Contactar
             <i class="bx bx-send"></i>
           </a>
           <a
-            href="/servicios"
+            href={Resume}
+            target="_blank"
             class="w-40 text-xs text-white border shadow-xl border-neutral-400 md:w-44 btn lg:text-sm btn-ghost group hover:bg-white hover:text-neutral-900 shadow-neutral-400/25 btn-lg"
           >
             Descargar CV
@@ -68,7 +73,7 @@ import ExperienceCard from "@/components/ui/ExperienceCard.astro";
     <article class="max-w-screen-xl pb-12 mx-auto">
       <header class="mb-6 text-center md:mb-12">
         <h2
-          class={`text-xl md:text-2xl font-bold uppercase  tracking-wide md:tracking-widest`}
+          class={`text-xl md:text-2xl font-bold uppercase text-indigo-400  tracking-wide md:tracking-widest`}
         >
           Stack Tecnológico
         </h2>
@@ -161,7 +166,7 @@ import ExperienceCard from "@/components/ui/ExperienceCard.astro";
     <article class="max-w-screen-md pb-12 mx-auto">
       <header class="mb-6 text-center md:mb-12">
         <h2
-          class={`text-xl md:text-2xl font-bold uppercase tracking-wide md:tracking-widest`}
+          class={`text-xl md:text-2xl font-bold uppercase text-indigo-400 tracking-wide md:tracking-widest`}
         >
           Experiencia Profesional
         </h2>
@@ -171,12 +176,21 @@ import ExperienceCard from "@/components/ui/ExperienceCard.astro";
           <ExperienceCard
             imageUrl={Experience_1}
             altText="Cierpronti S.A."
-            title="Analista de Sistemas at Cierpronti S.A."
+            title="Analista de Sistemas en Cierpronti S.A."
             date="2024 Abril - Presente"
             description={` Desarrollo de actividades In-House por parte de Asvesot C.A. relacionadas
             al ámbito de sistemas como soporte IT para la solución de problemas
             informáticos del personal. Contribuyendo al flujo correcto de los procesos
             de la organización.`}
+          />
+        </li>
+        <li>
+          <ExperienceCard
+            imageUrl={Experience_2}
+            altText="RysthDesign - FullStack Developer"
+            title="Desarrollador Web FullStack en RysthDesign"
+            date="2023 Noviembre - Presente"
+            description={`Marca personal en donde me desempeño como desarrollador web fullstack para la creación, diseño y desarrollo de aplicaciones web modernas usando React, TailwindCSS y Ruby on Rails para pequeños negocios.`}
           />
         </li>
       </ul>
