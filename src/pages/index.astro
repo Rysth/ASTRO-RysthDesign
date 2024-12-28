@@ -1,6 +1,6 @@
 ---
 import ResponsiveIllustration from "@/assets/images/brand/logo-dark.png";
-import Resume from "@/assets/documents/(SPANISH) Resume - John Palacios Tutiven - FullSack Web Developer.pdf";
+import Resume from "@/assets/documents/John Palacios - Resume (Spanish).pdf";
 import Project_1 from "@/assets/images/projects/project_1.png";
 import Project_2 from "@/assets/images/projects/project_2.png";
 import Project_3 from "@/assets/images/projects/project_3.png";
@@ -37,7 +37,7 @@ import ExperienceCard from "@/components/ui/ExperienceCard.astro";
         <h2
           class="text-2xl font-bold md:text-3xl lg:text-5xl lg:max-w-3xl lg:!leading-[3.5rem] text-white"
         >
-          Desarrollo de Aplicaciones <span class="text-indigo-400"
+          Desarrollo de Aplicaciones <span class="text-[var(--CL-primary)]"
             >Web Profesionales</span
           >
         </h2>
@@ -73,7 +73,7 @@ import ExperienceCard from "@/components/ui/ExperienceCard.astro";
     <article class="max-w-screen-xl pb-12 mx-auto">
       <header class="mb-6 text-center md:mb-12">
         <h2
-          class={`text-xl md:text-2xl font-bold uppercase text-indigo-400  tracking-wide md:tracking-widest`}
+          class={`text-xl md:text-2xl font-bold uppercase text-[var(--CL-tertiary)]  tracking-wide md:tracking-widest`}
         >
           Stack Tecnológico
         </h2>
@@ -166,24 +166,12 @@ import ExperienceCard from "@/components/ui/ExperienceCard.astro";
     <article class="max-w-screen-md pb-12 mx-auto">
       <header class="mb-6 text-center md:mb-12">
         <h2
-          class={`text-xl md:text-2xl font-bold uppercase text-indigo-400 tracking-wide md:tracking-widest`}
+          class={`text-xl md:text-2xl font-bold uppercase text-[var(--CL-tertiary)] tracking-wide md:tracking-widest`}
         >
           Experiencia Profesional
         </h2>
       </header>
       <ul class="flex flex-col gap-8 md:gap-12 lg:gap-16">
-        <li>
-          <ExperienceCard
-            imageUrl={Experience_1}
-            altText="Cierpronti S.A."
-            title="Analista de Sistemas en Cierpronti S.A."
-            date="2024 Abril - Presente"
-            description={` Desarrollo de actividades In-House por parte de Asvesot C.A. relacionadas
-            al ámbito de sistemas como soporte IT para la solución de problemas
-            informáticos del personal. Contribuyendo al flujo correcto de los procesos
-            de la organización.`}
-          />
-        </li>
         <li>
           <ExperienceCard
             imageUrl={Experience_2}
@@ -193,6 +181,19 @@ import ExperienceCard from "@/components/ui/ExperienceCard.astro";
             description={`Marca personal en donde me desempeño como desarrollador web fullstack para la creación, diseño y desarrollo de aplicaciones web modernas usando React, TailwindCSS y Ruby on Rails para pequeños negocios.`}
           />
         </li>
+        <li>
+          <ExperienceCard
+            imageUrl={Experience_1}
+            altText="Cierpronti S.A."
+            title="Analista de Sistemas en Cierpronti S.A."
+            date="2024 Abril - 2024 Diciembre"
+            description={` Desarrollo de actividades In-House por parte de Asvesot C.A. relacionadas
+            al ámbito de sistemas como soporte IT para la solución de problemas
+            informáticos del personal. Contribuyendo al flujo correcto de los procesos
+            de la organización.`}
+          />
+        </li>
+      
       </ul>
     </article>
   </section>
