@@ -5,6 +5,7 @@ import Project_1 from "@/assets/images/projects/project_1.png";
 import Project_2 from "@/assets/images/projects/project_2.png";
 import Project_3 from "@/assets/images/projects/project_3.png";
 import Project_4 from "@/assets/images/projects/project_4.png";
+import Project_5 from "@/assets/images/projects/project_5.png";
 import Experience_1 from "@/assets/images/experience/experience_1.png";
 import Experience_2 from "@/assets/images/experience/experience_2.svg";
 import CSSImage from "@/assets/images/technologies/css.svg";
@@ -60,7 +61,7 @@ import ExperienceCard from "@/components/ui/ExperienceCard.astro";
           <a
             href={Resume}
             target="_blank"
-            class="w-40 text-xs text-white border shadow-xl border-neutral-400 md:w-44 btn lg:text-sm btn-ghost group hover:bg-white hover:text-neutral-900 shadow-neutral-400/25 btn-lg"
+            class="hidden w-40 text-xs text-white border shadow-xl border-neutral-400 md:w-44 btn lg:text-sm btn-ghost group hover:bg-white hover:text-neutral-900 shadow-neutral-400/25 btn-lg"
           >
             Descargar CV
             <i class="bx bx-download"></i>
@@ -107,6 +108,20 @@ import ExperienceCard from "@/components/ui/ExperienceCard.astro";
         class="left-0 right-0 grid w-full gap-4 my-12 lg:my-20 md:gap-8 md:grid-cols-2"
       >
         <ProjectCard
+          imageUrl={Project_5}
+          projectUrl="https://kinza.rysthdesign.com/"
+          altText="KinZa Proyecto"
+          title="KinZa"
+          topic="Aplicación Web de Sistema de Préstamos Personales"
+          description={`Es una aplicación web SaaS para la gestión de préstamos personales, desarrollada para pequeñas empresas. Ofrece control de clientes, gestión de préstamos y reportes detallados.`}
+          technologies={[
+            { name: "Ruby on Rails", color: "bg-red-500" },
+            { name: "TailwindCSS", color: "bg-cyan-600" },
+            { name: "PostgreSQL", color: "bg-green-500" },
+          ]}
+          fullSize
+        />
+        <ProjectCard
           imageUrl={Project_1}
           projectUrl="https://inventory.rysthdesign.com/"
           altText="QuickInventory Proyecto"
@@ -115,7 +130,7 @@ import ExperienceCard from "@/components/ui/ExperienceCard.astro";
           description={`Es una aplicación web para la gestión de inventarios y punto de venta, desarrollado para tiendas pequeñas y medianas con control de stock y ventas.`}
           technologies={[
             { name: "Ruby on Rails", color: "bg-red-500" },
-            { name: "TailwindCSS", color: "bg-cyan-500" },
+            { name: "TailwindCSS", color: "bg-cyan-600" },
             { name: "PostgreSQL", color: "bg-green-500" },
           ]}
         />
@@ -154,7 +169,7 @@ import ExperienceCard from "@/components/ui/ExperienceCard.astro";
           description={`Es una página web que servía como un portfolio de mis proyectos de desarrollo. Cuenta con traducción de textos inglés a espaniol.`}
           technologies={[
             { name: "React", color: "bg-blue-500" },
-            { name: "TailwindCSS", color: "bg-cyan-500" },
+            { name: "TailwindCSS", color: "bg-cyan-600" },
             { name: "Figma", color: "bg-purple-500" },
           ]}
         />
@@ -192,7 +207,6 @@ import ExperienceCard from "@/components/ui/ExperienceCard.astro";
             de la organización.`}
           />
         </li>
-      
       </ul>
     </article>
   </section>
