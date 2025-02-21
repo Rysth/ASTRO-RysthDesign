@@ -19,21 +19,23 @@ import PageHeader from "@/components/header/PageHeader.astro";
     <div class="max-w-screen-xl py-12 mx-auto space-y-12 md:py-14">
       <Subtitle
         title="Planes de Diseño y Desarrollo Web"
+        textColor="text-white"
         description="Ofrecemos soluciones a medida para tu presencia digital, con opciones desde tiendas en línea hasta aplicaciones web avanzadas."
+        descriptionColor="text-gray-300"
       />
       <div
         class="relative flex flex-col items-center justify-center space-x-4 space-y-12 md:flex-row lg:space-y-0"
       >
         {/* Plan Informativo */}
         <PricingCard
-          title="Plan MiniStore"
+          title="Plan Informativo"
           price="$300"
           features={[
-            "Gestor de Contenido",
-            "Mini Tienda en Línea",
-            "Pedidos por WhatsApp",
-            "Hasta 50 Productos",
             "Diseño Web Profesional",
+            "Gestor de Contenido",
+            "Página Informativa",
+            "Hasta 5 Secciones",
+            "Formulario de Contacto",
             "Certificación SSL",
             "Dominio Gratuito",
             "Hosting Gratuito",
@@ -59,7 +61,7 @@ import PageHeader from "@/components/header/PageHeader.astro";
             "Optimizado para Móviles",
           ]}
           buttonText="Comenzar Ahora"
-          maintanceText="Mantenimiento y Optimización $20/mes"
+          maintanceText="Mantenimiento y Optimización $15/mes"
           highlight={true}
         />
         {/* Plan Aplicación Web */}
@@ -74,11 +76,11 @@ import PageHeader from "@/components/header/PageHeader.astro";
             "Diseño Web Profesional",
             "Certificación SSL",
             "Dominio Gratuito",
-            "Hosting Gratuito",
+            "Panel Administrativo",
             "Optimizado para Móviles",
           ]}
           buttonText="Comenzar Ahora"
-          maintanceText="Mantenimiento y Optimización $70/mes"
+          maintanceText="Mantenimiento y Optimización $60/mes"
           highlight={false}
         />
       </div>

@@ -13,8 +13,8 @@ import PageHeader from "@/components/header/PageHeader.astro";
     <article class="max-w-screen-xl py-12 mx-auto md:py-24">
       <main class="grid md:grid-cols-[30%_1fr] gap-8 md:gap-16">
         <aside class="text-center md:text-left">
-          <h3 class="text-2xl font-bold">¿Listo para Empezar?</h3>
-          <p class="mt-4 text-sm">
+          <h3 class="text-2xl font-bold text-white">¿Listo para Empezar?</h3>
+          <p class="mt-4 text-sm text-gray-300">
             Utiliza nuestros medios de comunicación, para consultar acerca de
             nuestros servicios en mayor detalle.
           </p>
@@ -22,19 +22,25 @@ import PageHeader from "@/components/header/PageHeader.astro";
             <li class="flex items-center gap-4">
               <FaEnvelope className="text-4xl" />
               <div class="text-sm">
-                <h4 class="text-base font-semibold">Correo Electrónico</h4>
+                <h4 class="text-base font-semibold text-white">
+                  Correo Electrónico
+                </h4>
                 <a
                   href="mailto:johnpalacios.t@gmail.com"
-                  class="link link-neutral">johnpalacios.t@gmail.com</a
+                  class="text-gray-300 link link-ghost"
+                  >johnpalacios.t@gmail.com</a
                 >
               </div>
             </li>
             <li class="flex items-center gap-4">
               <FaPhone className="text-4xl" />
               <div class="text-sm">
-                <h4 class="text-base font-semibold">Número de Télefono</h4>
-                <a href="tel:+593988949117" class="link link-neutral"
-                  >+593 98 894 9117</a
+                <h4 class="text-base font-semibold text-white">
+                  Número de Télefono
+                </h4>
+                <a
+                  href="tel:+593988949117"
+                  class="text-gray-300 link link-ghost">+593 98 894 9117</a
                 >
               </div>
             </li>
@@ -46,23 +52,23 @@ import PageHeader from "@/components/header/PageHeader.astro";
                 <a
                   href="https://www.facebook.com/rysthdesign"
                   class="link link-neutral"
-                  ><FaFacebook className="text-2xl" /></a
+                  ><FaFacebook className="text-2xl text-gray-300" /></a
                 >
                 <a
                   href="https://www.instagram.com/rysthdesign/"
                   class="link link-neutral"
-                  ><FaInstagram className="text-2xl" /></a
+                  ><FaInstagram className="text-2xl text-gray-300" /></a
                 >
                 <a
                   href="http://tinyurl.com/contact-ws"
                   class="link link-neutral"
-                  ><FaWhatsapp className="text-2xl" /></a
+                  ><FaWhatsapp className="text-2xl text-gray-300" /></a
                 >
               </div>
             </li>
           </ul>
         </aside>
-        <form name="Contactos" class="grid gap-2" netlify>
+        <form name="Contactos" class="grid gap-2 text-white" netlify>
           <fieldset class="grid gap-4 md:grid-cols-2 md:gap-8">
             <label class="w-full form-control">
               <div class="label">
@@ -114,7 +120,7 @@ import PageHeader from "@/components/header/PageHeader.astro";
           <fieldset>
             <button
               type="submit"
-              class="w-32 mt-4 text-white border-transparent btn btn-neutral bg-brand-blue"
+              class="w-32 mt-4 text-white border-transparent btn btn-neutral bg-brand-blue hover:opacity-90"
               >Envíar</button
             >
           </fieldset>
