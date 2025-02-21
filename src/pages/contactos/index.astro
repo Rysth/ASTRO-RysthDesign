@@ -2,23 +2,13 @@
 import { FaEnvelope, FaPhone } from "react-icons/fa6";
 import Layout from "@/layouts/Layout.astro";
 import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import PageHeader from "@/components/header/PageHeader.astro";
 ---
 
 <Layout
   title="RysthDesign | Contáctanos | Diseño y Desarrollo Web Profesionales"
 >
-  <!-- BreadCrumbSection -->
-  <header
-    class="py-12 text-center text-white pt-44 bg-gradient-to-t bg-brand-gradient md:pb-24 md:pt-56"
-  >
-    <h2 class="text-3xl font-bold">Contactos</h2>
-    <div class="flex justify-center text-sm breadcrumbs">
-      <ul class="text-white/80">
-        <li><a href="/">Inicio</a></li>
-        <li>Contactos</li>
-      </ul>
-    </div>
-  </header>
+  <PageHeader title="Contactos" currentPage="Contactos" />
   <section class="p-4">
     <article class="max-w-screen-xl py-12 mx-auto md:py-24">
       <main class="grid md:grid-cols-[30%_1fr] gap-8 md:gap-16">

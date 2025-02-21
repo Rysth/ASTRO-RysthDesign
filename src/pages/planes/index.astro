@@ -4,22 +4,12 @@ import WavePNG from "@/assets/background/lower_wave.webp";
 import Subtitle from "@/components/heading/Subtitle.astro";
 import PricingCard from "@/components/ui/PricingCard.astro";
 import Layout from "@/layouts/Layout.astro";
+import PageHeader from "@/components/header/PageHeader.astro";
 ---
 
 <!-- PricingSection -->
 <Layout title="RysthDesign | Precios en Diseño y Desarrollo Web Profesionales">
-  <!-- BreadCrumbSection -->
-  <header
-    class="py-12 text-center text-white pt-44 bg-gradient-to-t bg-brand-gradient md:pb-24 md:pt-56"
-  >
-    <h2 class="text-3xl font-bold">Nuestros Planes</h2>
-    <div class="flex justify-center text-sm breadcrumbs">
-      <ul class="text-white/80">
-        <li><a href="/">Inicio</a></li>
-        <li>Precios</li>
-      </ul>
-    </div>
-  </header>
+  <PageHeader title="Nuestros Planes" currentPage="Precios" />
   <section class="relative p-4">
     <Image
       src={WavePNG}

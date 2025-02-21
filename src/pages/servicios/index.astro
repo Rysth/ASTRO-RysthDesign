@@ -1,4 +1,5 @@
 ---
+import PageHeader from "@/components/header/PageHeader.astro";
 import WebsiteIllustration from "@/assets/images/illustrations/website.svg";
 import ServiceCard from "@/components/ui/ServiceCard.astro";
 import Layout from "@/layouts/Layout.astro";
@@ -18,18 +19,7 @@ import { IoLogoWebComponent } from "react-icons/io5";
 <Layout
   title="RysthDesign | Servicios en Diseño y Desarrollo Web Profesionales"
 >
-  <!-- BreadCrumbSection -->
-  <header
-    class="py-12 text-center text-white pt-44 bg-gradient-to-t bg-brand-gradient md:pb-24 md:pt-56"
-  >
-    <h2 class="text-3xl font-bold">Nuestros Servicios</h2>
-    <div class="flex justify-center text-sm breadcrumbs">
-      <ul class="text-white/80">
-        <li><a href="/">Inicio</a></li>
-        <li>Servicios</li>
-      </ul>
-    </div>
-  </header>
+  <PageHeader title="Nuestros Servicios" currentPage="Servicios" />
   <!-- HeroSection -->
   <section class="p-4">
     <article
