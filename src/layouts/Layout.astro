@@ -9,13 +9,31 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="es">
+  <!-- Change to Spanish -->
   <head>
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="Desarrollador Web Full-Stack especializado en la creación de aplicaciones web, sitios web profesionales y tiendas en línea. Expertise en React, Astro, Ruby on Rails y Wordpress. Soluciones innovadoras y personalizadas para tu negocio en línea."
+      content="Agencia de Diseño y Desarrollo Web en Guayaquil 🚀 Creamos sitios web profesionales, tiendas online y aplicaciones web. Expertos en desarrollo web en Ecuador con precios competitivos. ¡Cotiza ya!"
     />
+    <!-- Add more meta tags -->
+    <meta
+      name="keywords"
+      content="diseño web guayaquil, paginas web guayaquil, desarrollo web ecuador, diseño de paginas web, desarrollo de aplicaciones web, tiendas online ecuador, sitios web profesionales, agencia web guayaquil"
+    />
+    <meta name="author" content="RysthDesign" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta
+      property="og:title"
+      content="RysthDesign | Agencia de Diseño y Desarrollo Web en Guayaquil"
+    />
+    <meta
+      property="og:description"
+      content="Agencia de Diseño y Desarrollo Web en Guayaquil 🚀 Creamos sitios web profesionales, tiendas online y aplicaciones web. Expertos en desarrollo web en Ecuador."
+    />
+    <meta property="og:type" content="website" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -25,6 +43,29 @@ const { title } = Astro.props;
       rel="stylesheet"
     />
     <title>{title}</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebDesigner",
+        "name": "RysthDesign",
+        "image": "https://rysthdesign.com/_astro/logo-dark.SKW2pfiu_Zhda4v.webp",
+        "description": "Agencia de Diseño y Desarrollo Web en Guayaquil",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Guayaquil",
+          "addressRegion": "Guayas",
+          "addressCountry": "EC"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "-2.1894128",
+          "longitude": "-79.8890662"
+        },
+        "url": "https://rysthdesign.com",
+        "telephone": "+593988949117",
+        "priceRange": "$$"
+      }
+    </script>
   </head>
   <body>
     <NavigationBar />
