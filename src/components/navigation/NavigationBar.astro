@@ -1,11 +1,11 @@
 ---
 import { Image } from "astro:assets";
 import { FaHome, FaPhoneAlt } from "react-icons/fa";
-import BrandImage from "../../assets/images/brand/brand.svg";
+import BrandImage from "../../assets/images/brand/brand_dark.png";
 ---
 
 <nav
-  class="sticky top-0 z-50 w-full p-4 py-2 transition duration-300 bg-background-primary shadow-black/5"
+  class="sticky top-0 z-50 w-full p-4 py-2 transition duration-300 bg-white backdrop-blur shadow-black/5"
   id="navbar"
 >
   <div class="relative max-w-screen-xl p-0 mx-auto navbar">
@@ -17,7 +17,7 @@ import BrandImage from "../../assets/images/brand/brand.svg";
           aria-label="Toggle button menu "
           id="toggleButton"
         >
-          <i class="text-2xl text-white bx bx-menu-alt-left"></i>
+          <i class="text-2xl bx bx-menu-alt-left"></i>
         </button>
         <ul
           class="hidden duration-700 absolute left-0 right-0 top-20 lg:hidden z-[1] p-4 shadow-xl bg-white rounded-xl space-y-2 min-w-full transition text-neutral-900"
@@ -61,7 +61,7 @@ import BrandImage from "../../assets/images/brand/brand.svg";
       </a>
     </div>
     <div class="hidden navbar-center lg:flex">
-      <ul class="flex gap-3 text-white">
+      <ul class="flex gap-3 text-neutral-900">
         <li>
           <a
             href="/"
