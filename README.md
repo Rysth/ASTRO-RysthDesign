@@ -26,9 +26,8 @@ Agencia de diseño y desarrollo web profesional ubicada en Guayaquil, Ecuador. E
 
 - Astro
 - React
-- TailwindCSS
-- DaisyUI
-- TypeScript
+- NodeJS
+- Ruby on Rails
 
 ## Características Principales
 
@@ -125,7 +124,7 @@ Agencia de diseño y desarrollo web profesional ubicada en Guayaquil, Ecuador. E
 
 ### Live Demo
 
-[Live Demo](https://react-bookstore-2060.onrender.com/)
+[Live Demo](http://rysthdesign.com/)
 
 ## Desarrollo Local
 
@@ -163,7 +162,7 @@ Agencia de diseño y desarrollo web profesional ubicada en Guayaquil, Ecuador. E
 
 - John Palacios
 
-  - [LinkedIn](https://www.linkedin.com/in/john-rysthcraft/)
+  - [LinkedIn](https://www.linkedin.com/in/john-palacios-tutiven-a34ab9310/)
   - [GitHub](https://github.com/Rysth)
 
 ### License
