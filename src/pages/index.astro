@@ -1,9 +1,9 @@
 ---
-import WavePNG from "@/assets/background/lower_wave.webp";
 import Resume from "@/assets/documents/John Palacios - Resume (Spanish).pdf";
 import ResponsiveIllustration from "@/assets/images/brand/logo-dark.png";
 import Experience_1 from "@/assets/images/experience/experience_1.png";
 import Experience_2 from "@/assets/images/experience/experience_2.png";
+import Experience_3 from "@/assets/images/experience/experience_3.png";
 import Project_1 from "@/assets/images/projects/project_1.png";
 import Project_2 from "@/assets/images/projects/project_2.png";
 import Project_3 from "@/assets/images/projects/project_3.png";
@@ -256,6 +256,15 @@ import { Image } from "astro:assets";
         </h2>
       </header>
       <ul class="flex flex-col gap-8 md:gap-12 lg:gap-16">
+        <li>
+          <ExperienceCard
+            imageUrl={Experience_3}
+            altText="Novicompu - Desarrollador Backend"
+            title="Desarrollador Backend en Novicompu"
+            date="2025 Marzo - Presente"
+            description={`Implementación, documentación y control de sistemas de gestión de bases de datos, desarrollo de APIs RESTful y servicios web para aplicaciones. Colaboración en proyectos de desarrollo de software.`}
+          />
+        </li>
         <li>
           <ExperienceCard
             imageUrl={Experience_2}
