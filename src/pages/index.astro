@@ -8,11 +8,10 @@ import Project_1 from "@/assets/images/projects/project_1.png";
 import Project_2 from "@/assets/images/projects/project_2.png";
 import Project_3 from "@/assets/images/projects/project_3.png";
 import Project_4 from "@/assets/images/projects/project_4.png";
-import Project_5 from "@/assets/images/projects/project_5.png";
-import FlutterImage from "@/assets/images/technologies/flutter.svg";
-import NextJSImage from "@/assets/images/technologies/nextjs.svg";
-import RailsImage from "@/assets/images/technologies/rails.svg";
 import ReactImage from "@/assets/images/technologies/react.svg";
+import AstroImage from "@/assets/images/technologies/astro.svg";
+import RailsImage from "@/assets/images/technologies/rails.svg";
+import NodeJSImage from "@/assets/images/technologies/node.svg";
 import Subtitle from "@/components/heading/Subtitle.astro";
 import ExperienceCard from "@/components/ui/ExperienceCard.astro";
 import PricingCard from "@/components/ui/PricingCard.astro";
@@ -75,15 +74,15 @@ import { Image } from "astro:assets";
     <article class="max-w-screen-xl pb-12 mx-auto">
       <header class="mb-6 text-center md:mb-12">
         <h2
-          class={`text-xl md:text-2xl font-bold uppercase text-[var(--CL-tertiary)]  tracking-wide md:tracking-widest`}
+          class={`text-xl md:text-2xl font-bold uppercase text-[var(--CL-primary)]  tracking-wide md:tracking-widest`}
         >
           Stack Tecnológico
         </h2>
       </header>
       <main class="flex flex-wrap justify-center gap-4 md:gap-8">
+        <TechnologyCard src={AstroImage} alt="Astro Logo" />
         <TechnologyCard src={ReactImage} alt="React Logo" />
-        <TechnologyCard src={NextJSImage} alt="NextJS Logo" />
-        <TechnologyCard src={FlutterImage} alt="Flutter Logo" />
+        <TechnologyCard src={NodeJSImage} alt="NodeJS Logo" />
         <TechnologyCard
           src={RailsImage}
           alt="Rails Logo"
@@ -106,20 +105,6 @@ import { Image } from "astro:assets";
       <main
         class="left-0 right-0 grid w-full gap-4 my-12 lg:my-20 md:gap-8 md:grid-cols-2"
       >
-        <ProjectCard
-          imageUrl={Project_5}
-          projectUrl="https://kinza.rysthdesign.com/"
-          altText="KinZa Proyecto"
-          title="KinZa"
-          topic="Aplicación Web de Sistema de Préstamos Personales"
-          description={`Es una aplicación web SaaS para la gestión de préstamos personales, desarrollada para pequeñas empresas. Ofrece control de clientes, gestión de préstamos y reportes detallados.`}
-          technologies={[
-            { name: "Ruby on Rails", color: "bg-red-500" },
-            { name: "TailwindCSS", color: "bg-cyan-600" },
-            { name: "PostgreSQL", color: "bg-green-500" },
-          ]}
-          fullSize
-        />
         <ProjectCard
           imageUrl={Project_1}
           projectUrl="https://inventory.rysthdesign.com/"
@@ -189,7 +174,7 @@ import { Image } from "astro:assets";
         {/* Plan Sitio Web Profesional */}
         <PricingCard
           title="Sitio Web Profesional"
-          price="$297+"
+          price="$397+"
           features={[
             "Diseño Web Responsivo",
             "Disponibilidad 24/7",
