@@ -27,7 +27,9 @@ const { title, price, features, buttonText, maintanceText, highlight } =
 
 <div
   class={`relative flex flex-col p-8 rounded-2xl max-w-80 shadow-lg shadow-neutral-300  ${
-    highlight ? "bg-brand-blue text-white" : "bg-white text-neutral-700"
+    highlight
+      ? "bg-[var(--CL-secondary)] text-white"
+      : "bg-white text-neutral-700"
   }`}
 >
   <div class="flex-1">
@@ -59,7 +61,7 @@ const { title, price, features, buttonText, maintanceText, highlight } =
     class={`btn btn-neutral !border-transparent grid place-items-center text-sm bg-white ${
       highlight
         ? "text-neutral-900 bg-white hover:text-white"
-        : "text-white bg-brand-blue"
+        : "text-white bg-[var(--CL-secondary)] hover:bg-[var(--CL-primary)]"
     }`}
   >
     {buttonText}

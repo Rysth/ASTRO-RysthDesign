@@ -91,16 +91,13 @@ import { Image } from "astro:assets";
       </main>
     </article>
   </section>
-  <section
-    class="p-4 bg-gradient-to-br animated-background bg-[#191919] my-10 md:my-20"
-    id="proyectos"
-  >
+  <section class="p-4" id="proyectos">
     <article class="relative max-w-screen-lg py-12 mx-auto md:py-24">
       <Subtitle
         title="Galería de Proyectos"
         description="Proyectos destacados utilizando mis habilidades y experiencia en desarrollo web full-stack."
-        textColor="text-white"
-        descriptionColor="!text-white/75"
+        textColor="text-neutral-900"
+        descriptionColor="text-gray-600"
       />
       <main
         class="left-0 right-0 grid w-full gap-4 my-12 lg:my-20 md:gap-8 md:grid-cols-2"
@@ -161,7 +158,7 @@ import { Image } from "astro:assets";
     </article>
   </section>
   <section class="relative p-4" id="planes">
-    <div class="max-w-screen-xl py-12 mx-auto space-y-12 md:py-14">
+    <div class="max-w-screen-xl pb-12 mx-auto space-y-12">
       <Subtitle
         title="Nuestros Servicios y Planes"
         textColor="text-neutral-900"
@@ -231,11 +228,114 @@ import { Image } from "astro:assets";
       </div>
     </div>
   </section>
+  <section class="p-4 bg-[#191919]" id="faqs">
+    <article class="max-w-screen-lg py-12 mx-auto md:py-24">
+      <Subtitle
+        title="Preguntas Frecuentes"
+        description="Respuestas a las consultas más comunes sobre nuestros servicios"
+        textColor="text-white"
+        descriptionColor="text-gray-200"
+      />
+
+      <div class="grid gap-4 mt-12">
+        <div class="border collapse collapse-arrow bg-white/5 border-white/10">
+          <input type="radio" name="faq-accordion" checked="checked" />
+          <div class="font-semibold text-white collapse-title">
+            ¿Cuánto cuesta desarrollar un sitio web o tienda online?
+          </div>
+          <div class="text-sm text-gray-300 collapse-content">
+            <p class="mb-2">Los costos varían según el tipo de proyecto:</p>
+            <ul class="pl-5 space-y-1 list-disc">
+              <li>Sitios web informativos desde $300+</li>
+              <li>Tiendas online desde $600+</li>
+              <li>Aplicaciones web desde $1000+</li>
+            </ul>
+            <p class="mt-2">
+              El precio final dependerá de los requerimientos específicos de su
+              proyecto.
+            </p>
+          </div>
+        </div>
+
+        <div class="border collapse collapse-arrow bg-white/5 border-white/10">
+          <input type="radio" name="faq-accordion" />
+          <div class="font-semibold text-white collapse-title">
+            ¿Qué tecnologías utilizan para el desarrollo?
+          </div>
+          <div class="text-sm text-gray-300 collapse-content">
+            <p class="mb-2">Utilizamos tecnologías modernas y robustas:</p>
+            <ul class="pl-5 space-y-1 list-disc">
+              <li>Wordpress & WooCommerce para tiendas online</li>
+              <li>React & Ruby on Rails para aplicaciones web</li>
+              <li>
+                Bases de datos seguras y escalables con PostgreSQL y Docker.
+              </li>
+              <li>Diseño responsivo con TailwindCSS</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border collapse collapse-arrow bg-white/5 border-white/10">
+          <input type="radio" name="faq-accordion" />
+          <div class="font-semibold text-white collapse-title">
+            ¿Cuánto tiempo toma desarrollar mi proyecto?
+          </div>
+          <div class="text-sm text-gray-300 collapse-content">
+            <p class="mb-2">Los tiempos estimados son:</p>
+            <ul class="pl-5 space-y-1 list-disc">
+              <li>Sitios web informativos: 1-2 semanas</li>
+              <li>Tiendas online: 3-6 semanas</li>
+              <li>Aplicaciones web: 8-12 semanas</li>
+            </ul>
+            <p class="mt-2">
+              Los plazos pueden variar según la complejidad y requisitos
+              específicos.
+            </p>
+          </div>
+        </div>
+
+        <div class="border collapse collapse-arrow bg-white/5 border-white/10">
+          <input type="radio" name="faq-accordion" />
+          <div class="font-semibold text-white collapse-title">
+            ¿Ofrecen mantenimiento y soporte después del lanzamiento?
+          </div>
+          <div class="text-sm text-gray-300 collapse-content">
+            <p class="mb-2">
+              Sí, ofrecemos planes de mantenimiento que incluyen:
+            </p>
+            <ul class="pl-5 space-y-1 list-disc">
+              <li>Actualizaciones de seguridad</li>
+              <li>Respaldos periódicos</li>
+              <li>Soporte técnico</li>
+              <li>Optimización de rendimiento</li>
+              <li>Monitoreo de servicios</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border collapse collapse-arrow bg-white/5 border-white/10">
+          <input type="radio" name="faq-accordion" />
+          <div class="font-semibold text-white collapse-title">
+            ¿El hosting y dominio están incluidos?
+          </div>
+          <div class="text-sm text-gray-300 collapse-content">
+            <p>Sí, todos nuestros planes incluyen:</p>
+            <ul class="pl-5 mt-2 space-y-1 list-disc">
+              <li>Dominio gratuito por 1 año</li>
+              <li>Hosting optimizado</li>
+              <li>Certificado SSL</li>
+              <li>Panel de control</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
   <section class="p-4" id="experiencia">
     <article class="max-w-screen-md py-12 mx-auto">
       <header class="mb-6 text-center md:mb-12">
         <h2
-          class={`text-xl md:text-2xl font-bold uppercase text-[var(--CL-primary)] tracking-wide md:tracking-widest`}
+          class={`text-xl md:text-2xl font-black uppercase text-[var(--CL-primary)] `}
         >
           Experiencia Profesional
         </h2>
