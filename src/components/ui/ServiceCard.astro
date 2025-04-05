@@ -3,17 +3,19 @@ const { title, description, IconComponent, bgColorClass } = Astro.props;
 ---
 
 <div
-  class="flex flex-col items-center justify-center p-4 text-center transition shadow hover:shadow-lg h-96 group rounded-xl"
+  class="flex flex-col items-center justify-center p-4 text-center transition border shadow-md hover:shadow-lg h-96 group rounded-xl"
 >
   <header class="relative mb-6">
-    <IconComponent className="h-28 w-28 relative z-20" />
+    <IconComponent
+      className="  h-28 w-28 relative z-20 text-[var(--CL-secondary)]"
+    />
     <span
       class={`absolute z-10 w-14 h-14 transition duration-700 rounded-full ${bgColorClass} bottom-0 left-0 
      group-hover:-translate-y-14 group-hover:translate-x-14`}></span>
   </header>
   <div class="space-y-2 md:space-y-4">
-    <h3 class="font-semibold text-gray-100 md:text-xl">{title}</h3>
-    <p class="max-w-xs text-sm leading-5 text-gray-300 md:leading-6">
+    <h3 class="font-semibold text-gray-900 md:text-xl">{title}</h3>
+    <p class="max-w-xs text-sm leading-5 text-gray-700 md:leading-6">
       {description}
     </p>
   </div>
