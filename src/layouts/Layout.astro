@@ -9,7 +9,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" data-theme="lofi">
   <!-- Change to Spanish -->
   <head>
     <meta charset="UTF-8" />
@@ -82,9 +82,17 @@ const { title } = Astro.props;
     --CL-background-primary: #222222;
     --CL-background-secondary: #161513;
 
+    /* Manteniendo tus colores base como solicitaste */
     --CL-primary: #050505;
     --CL-secondary: #100f1e;
     --CL-tertiary: #4c4ff2;
+
+    /* Nuevos colores complementarios para mejor contraste */
+    --CL-accent: #4361ee; /* Azul para acentos */
+    --CL-accent-light: #d8e1ff; /* Fondo claro para secciones */
+    --CL-accent-dark: #0a2472; /* Para hover y énfasis */
+    --CL-success: #2ecc71; /* Color para elementos de éxito/check */
+    --CL-warm: #f59e0b; /* Color cálido para llamadas a la acción secundarias */
   }
 
   /* width */
@@ -124,7 +132,7 @@ const { title } = Astro.props;
   h5,
   h6 {
     font-family: "Inter", sans-serif;
-    font-weight: 800;
+    font-weight: 900;
   }
 
   .bg-brand-blue {

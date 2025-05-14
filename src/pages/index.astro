@@ -27,93 +27,92 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
 <Layout
   title="Software a Medida para Pequeñas Empresas | Sistemas Web | RysthDesign"
 >
-  <!-- Hero Section - Más enfocado en soluciones para negocios -->
+  <!-- Hero Section - Más personal y enfocado en emprendedores -->
   <section class="grid min-h-[calc(100vh-6rem)] p-4 pt-8 lg:pt-16 place-items-center">
-    <article class="items-center max-w-screen-xl mx-auto md:grid md:grid-cols-2 md:gap-12">
-      <div class="space-y-6 md:space-y-8">
-        <h1 class="text-3xl font-black md:text-4xl lg:text-6xl lg:!leading-[4rem] text-neutral-900">
-          Tu <span class="text-[var(--CL-primary)]">Ingeniero en Software</span> para Emprendedores
-        </h1>
-        <p class="max-w-lg text-base text-neutral-700">
-          Lleva tu emprendimiento al siguiente nivel con soluciones digitales hechas a tu medida. 
-          Automatiza tareas, mejora la atención a tus clientes y haz crecer tu negocio con el apoyo de un especialista en tecnología para emprendedores.
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <a
-            href="http://tinyurl.com/contact-ws"
-            target="_blank"
-            class="px-6 py-3 text-white border-transparent shadow-xl btn lg:text-sm btn-neutral bg-brand-gradient animated-background group hover:bg-white hover:opacity-80 shadow-indigo-900/25"
-          >
-            Consultar Ahora
-            <i class="ml-2 bx bx-send"></i>
-          </a>
-          <a
-            href="#soluciones"
-            class="px-6 py-3 border btn lg:text-sm btn-ghost border-gray-300 hover:border-[var(--CL-primary)] hover:text-[var(--CL-primary)]"
-          >
-            Ver Soluciones
-            <FaArrowRight className="ml-2" />
-          </a>
-        </div>
+  <article class="items-center max-w-screen-xl mx-auto md:grid md:grid-cols-2 md:gap-12">
+    <div class="space-y-6 md:space-y-8">
+      <h1 class="text-3xl font-black md:text-4xl lg:text-6xl lg:!leading-[4rem] text-neutral-900">
+        Hola emprendedor, soy <span class="text-[var(--CL-accent)]">RysthDesign</span>, tu ingeniero de software
+      </h1>
+      <p class="max-w-xl text-base text-neutral-700">
+        ¿Necesitas automatizar tareas, mejorar la experiencia de tus clientes o simplemente hacer crecer tu negocio con tecnología? Estoy aquí para ayudarte con soluciones digitales hechas a tu medida.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a
+          href="http://tinyurl.com/contact-ws"
+          target="_blank"
+          class="px-6 py-3 text-white border-transparent shadow-xl btn lg:text-sm btn-neutral bg-brand-gradient animated-background group hover:bg-white hover:opacity-80 shadow-indigo-900/25"
+        >
+          Hablemos de tu Proyecto
+          <i class="ml-2 bx bx-send"></i>
+        </a>
+        <a
+          href="#soluciones"
+          class="px-6 py-3 border btn lg:text-sm btn-ghost border-gray-300 hover:border-[var(--CL-accent)] hover:text-[var(--CL-accent)]"
+        >
+          Ver Soluciones
+          <FaArrowRight className="ml-2" />
+        </a>
       </div>
-      <div class="hidden md:block">
-        <Image
-          src={ResponsiveIllustration}
-          alt="Soluciones Digitales para Emprendedores"
-          class="w-full max-w-md mx-auto rounded-lg shadow-lg"
-        />
-      </div>
-    </article>
-  </section>
-
-  <!-- Ventajas Competitivas Section - NUEVO -->
-  <section class="p-4 py-16 bg-gray-50">
-    <article class="max-w-screen-xl mx-auto">
-      <Subtitle
-        title="¿Por Qué Elegirnos?"
-        description="Nos especializamos en soluciones tecnológicas para pequeños negocios que necesitan optimizar sus operaciones."
-        textColor="text-neutral-900"
+    </div>
+    <div class="hidden md:block">
+      <Image
+        src={ResponsiveIllustration}
+        alt="Soluciones Digitales para Emprendedores"
+        class="w-full max-w-md mx-auto shadow-lg rounded-xl"
       />
-      
-      <div class="grid gap-8 mt-12 md:grid-cols-3">
-        <!-- Ventaja 1: Experiencia Comprobada -->
-        <div class="p-6 transition-shadow bg-white rounded-lg shadow-md hover:shadow-xl">
-          <div class="flex items-center justify-center w-12 h-12 mb-4 bg-blue-100 rounded-full">
-            <FaCheckCircle className="text-[var(--CL-primary)] text-xl" />
-          </div>
-          <h3 class="mb-3 text-xl font-bold">Experiencia Comprobada</h3>
-          <p class="text-gray-600">
-            +3 años implementando soluciones para negocios reales. Nuestros sistemas llevan años
-            en producción funcionando para nuestros clientes sin interrupciones.
-          </p>
+    </div>
+  </article>
+</section>
+
+  <!-- Ventajas Competitivas Section - REDISEÑADA -->
+<section class="p-4 py-16">
+  <article class="max-w-screen-xl mx-auto">
+    <Subtitle
+      title="¿Por Qué Trabajar Conmigo?"
+      description="Me especializo en hacer que la tecnología trabaje PARA tu negocio, no al revés."
+      textColor="text-neutral-900"
+    />
+    
+    <div class="grid max-w-screen-lg gap-4 mx-auto mt-12 md:grid-cols-3">
+      <!-- Ventaja 1: Experiencia Comprobada -->
+      <div class="p-6 transition-shadow bg-white border-t-4 rounded-lg shadow-md border-t-[var(--CL-accent)] hover:shadow-xl ">
+        <div class="flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[var(--CL-accent-light)]">
+          <FaCheckCircle className="text-[var(--CL-accent)] text-2xl" />
         </div>
-        
-        <!-- Ventaja 2: Soluciones Personalizadas -->
-        <div class="p-6 transition-shadow bg-white rounded-lg shadow-md hover:shadow-xl">
-          <div class="flex items-center justify-center w-12 h-12 mb-4 bg-blue-100 rounded-full">
-            <FaCheckCircle className="text-[var(--CL-primary)] text-xl" />
-          </div>
-          <h3 class="mb-3 text-xl font-bold">Adaptado a tu Negocio</h3>
-          <p class="text-gray-600">
-            No adaptamos tu empresa al software, sino el software a tu empresa. 
-            Creamos soluciones que se ajustan perfectamente a tus procesos de negocio existentes.
-          </p>
-        </div>
-        
-        <!-- Ventaja 3: Soporte Continuo -->
-        <div class="p-6 transition-shadow bg-white rounded-lg shadow-md hover:shadow-xl">
-          <div class="flex items-center justify-center w-12 h-12 mb-4 bg-blue-100 rounded-full">
-            <FaCheckCircle className="text-[var(--CL-primary)] text-xl" />
-          </div>
-          <h3 class="mb-3 text-xl font-bold">Soporte y Mantenimiento</h3>
-          <p class="text-gray-600">
-            Ofrecemos soporte técnico continuo, actualizaciones de seguridad y backups 
-            automatizados. Tu sistema siempre funcionará de forma óptima.
-          </p>
-        </div>
+        <h3 class="mb-3 text-xl font-bold">Lo Hago Simple Para Ti</h3>
+        <p class="text-gray-600">
+          Traduzco tecnología compleja a soluciones prácticas. Mis sistemas llevan años
+          funcionando sin interrupciones porque están diseñados pensando en tu negocio.
+        </p>
       </div>
-    </article>
-  </section>
+      
+      <!-- Ventaja 2: Soluciones Personalizadas -->
+      <div class="p-6 transition-shadow bg-white border-t-4 rounded-lg shadow-md border-t-[var(--CL-accent)] hover:shadow-xl">
+        <div class="flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[var(--CL-accent-light)]">
+          <FaCheckCircle className="text-[var(--CL-accent)] text-2xl" />
+        </div>
+        <h3 class="mb-3 text-xl font-bold">Tu Negocio, Tus Reglas</h3>
+        <p class="text-gray-600">
+          No necesitas adaptarte al software, yo adapto el software a tu forma de trabajar. 
+          Creo soluciones que encajan perfectamente en tus procesos actuales.
+        </p>
+      </div>
+      
+      <!-- Ventaja 3: Soporte Continuo -->
+      <div class="p-6 transition-shadow bg-white border-t-4 rounded-lg shadow-md border-t-[var(--CL-accent)] hover:shadow-xl">
+        <div class="flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[var(--CL-accent-light)]">
+          <FaCheckCircle className="text-[var(--CL-accent)] text-2xl" />
+        </div>
+        <h3 class="mb-3 text-xl font-bold">Estaré Ahí Siempre</h3>
+        <p class="text-gray-600">
+          No desaparezco después de entregar el proyecto. Ofrezco soporte continuo, actualizaciones
+          y estoy disponible cuando me necesites. Tu éxito es mi éxito.
+        </p>
+      </div>
+    </div>
+  </article>
+</section>
 
   <!-- Stack Tecnológico Section - Rediseñado -->
   <section class="p-4 py-16" id="tecnologias">
