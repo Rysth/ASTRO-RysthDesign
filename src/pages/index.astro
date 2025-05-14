@@ -161,13 +161,11 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
   </section>
 
   <!-- Proyectos Destacados - Con modales para más detalles -->
-  <section class="p-4 py-16 bg-[var(--CL-secondary)]" id="proyectos">
+  <section class="p-4 py-16" id="proyectos">
     <article class="max-w-screen-xl mx-auto">
       <Subtitle
         title="Proyectos Reales en Acción"
         description="Sistemas que están ayudando a emprendedores como tú a crecer"
-        textColor="text-white"
-        descriptionColor="text-white"
       />
 
       <div class="grid gap-8 mt-12 md:grid-cols-2">
@@ -259,6 +257,135 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
             </div>
           </div>
         </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- Soluciones/Servicios Section - Actualizado para pequeños negocios -->
+  <section class="p-4 py-16 bg-[var(--CL-accent-light)]" id="soluciones">
+    <article class="max-w-screen-xl mx-auto">
+      <Subtitle
+        title="Soluciones para tu Negocio"
+        description="Software diseñado específicamente para pequeñas empresas y emprendedores (1-10 empleados)"
+        textColor="text-neutral-900"
+      />
+
+      <div class="grid gap-8 mt-12 md:grid-cols-3">
+        <!-- Solución 1: Sistemas a Medida -->
+        <div
+          class="p-6 transition-shadow border-t-4 border-t-[var(--CL-accent)] bg-white rounded-lg shadow-md hover:shadow-xl"
+        >
+          <h3 class="mb-4 text-xl font-bold text-[var(--CL-accent)]">
+            Software a Medida
+          </h3>
+          <p class="mb-6 text-gray-600">
+            Desarrollo personalizado según las necesidades específicas de tu
+            negocio, con acompañamiento desde el análisis hasta la
+            implementación.
+          </p>
+          <ul class="mb-8 space-y-2">
+            <li class="flex items-center gap-2">
+              <FaCheckCircle className="text-[var(--CL-success)]" />
+              <span>Análisis de procesos de negocio</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <FaCheckCircle className="text-[var(--CL-success)]" />
+              <span>Soluciones adaptadas a tu flujo de trabajo</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <FaCheckCircle className="text-[var(--CL-success)]" />
+              <span>Escalable según crezca tu negocio</span>
+            </li>
+          </ul>
+          <a
+            href="http://tinyurl.com/contact-ws"
+            target="_blank"
+            class="btn btn-outline w-full border-[var(--CL-accent)] text-[var(--CL-accent)] hover:bg-[var(--CL-accent)] hover:text-white"
+          >
+            Consultar
+          </a>
+        </div>
+
+        <!-- Solución 2: Sistemas Micro -->
+        <div
+          class="p-6 transition-shadow border-t-4 border-t-[var(--CL-accent)] bg-white rounded-lg shadow-md hover:shadow-xl"
+        >
+          <h3 class="mb-4 text-xl font-bold text-[var(--CL-accent)]">
+            Serie Micro
+          </h3>
+          <p class="mb-6 text-gray-600">
+            Sistemas prefabricados listos para usar, pensados para pequeños
+            negocios que buscan digitalizar sus operaciones rápidamente.
+          </p>
+          <div class="mb-8 space-y-4">
+            <div class="px-3 py-2 rounded-md bg-gray-50">
+              <h4 class="font-semibold">MicroStock</h4>
+              <p class="text-sm">Sistema de inventario y punto de venta</p>
+            </div>
+            <div class="px-3 py-2 rounded-md bg-gray-50">
+              <h4 class="font-semibold">MicroTickets</h4>
+              <p class="text-sm">Gestión de eventos y venta de boletos</p>
+            </div>
+            <div class="px-3 py-2 rounded-md bg-gray-50">
+              <h4 class="font-semibold">MicroCRM</h4>
+              <p class="text-sm">Control de clientes y seguimiento</p>
+            </div>
+          </div>
+          <a
+            href="http://tinyurl.com/contact-ws"
+            target="_blank"
+            class="btn btn-outline w-full border-[var(--CL-accent)] text-[var(--CL-accent)] hover:bg-[var(--CL-accent)] hover:text-white"
+          >
+            Ver Opciones
+          </a>
+        </div>
+
+        <!-- Solución 3: Consultoría -->
+        <div
+          class="p-6 transition-shadow border-t-4 border-t-[var(--CL-accent)] bg-white rounded-lg shadow-md hover:shadow-xl"
+        >
+          <h3 class="mb-4 text-xl font-bold text-[var(--CL-accent)]">
+            Consultoría Digital
+          </h3>
+          <p class="mb-6 text-gray-600">
+            Asesoramiento tecnológico para emprendedores que buscan optimizar
+            procesos y tomar mejores decisiones sobre herramientas digitales.
+          </p>
+          <ul class="mb-8 space-y-2">
+            <li class="flex items-center gap-2">
+              <FaCheckCircle className="text-[var(--CL-success)]" />
+              <span>Diagnóstico de necesidades tecnológicas</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <FaCheckCircle className="text-[var(--CL-success)]" />
+              <span>Plan de implementación digital</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <FaCheckCircle className="text-[var(--CL-success)]" />
+              <span>Capacitación para tu equipo</span>
+            </li>
+          </ul>
+          <a
+            href="http://tinyurl.com/contact-ws"
+            target="_blank"
+            class="btn btn-outline w-full border-[var(--CL-accent)] text-[var(--CL-accent)] hover:bg-[var(--CL-accent)] hover:text-white"
+          >
+            Solicitar Asesoría
+          </a>
+        </div>
+      </div>
+
+      <!-- Mensaje adicional para enfatizar el enfoque en pequeños negocios -->
+      <div class="p-6 mt-12 text-center bg-white rounded-lg shadow-md">
+        <h3 class="mb-3 text-xl font-bold">
+          ¿Eres un pequeño negocio o emprendedor?
+        </h3>
+        <p class="max-w-3xl mx-auto text-gray-600">
+          Todos mis servicios están diseñados para ayudar a negocios de 1 a 10
+          empleados a digitalizar sus operaciones con soluciones profesionales,
+          seguras y escalables. Entiendo los desafíos de iniciar y crecer, por
+          eso ofrezco tecnología accesible que crece contigo.
+        </p>
       </div>
     </article>
   </section>
