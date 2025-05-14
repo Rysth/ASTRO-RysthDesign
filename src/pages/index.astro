@@ -12,6 +12,8 @@ import ReactImage from "@/assets/images/technologies/react.svg";
 import AstroImage from "@/assets/images/technologies/astro.svg";
 import RailsImage from "@/assets/images/technologies/rails.svg";
 import NodeJSImage from "@/assets/images/technologies/node.svg";
+import PostgreSQLImage from "@/assets/images/technologies/postgresql.svg"; // Recomendado añadir
+import DockerImage from "@/assets/images/technologies/docker.svg"; // Recomendado añadir
 import Subtitle from "@/components/heading/Subtitle.astro";
 import ExperienceCard from "@/components/ui/ExperienceCard.astro";
 import PricingCard from "@/components/ui/PricingCard.astro";
@@ -19,216 +21,382 @@ import ProjectCard from "@/components/ui/ProjectCard.astro";
 import TechnologyCard from "@/components/ui/TechnologyCard.astro";
 import Layout from "@/layouts/Layout.astro";
 import { Image } from "astro:assets";
+import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
 ---
 
 <Layout
-  title="Desarrollo Web Profesional en Ecuador | Sitios Web | RysthDesign"
+  title="Software a Medida para Pequeñas Empresas | Sistemas Web | RysthDesign"
 >
-  <section class="h-full p-4 lg:h-max">
-    <article
-      class="max-w-screen-xl py-12 pt-6 mx-auto space-y-8 md:space-y-10 h-max lg:py-28 md:py-24"
-    >
-      <Image
-        src={ResponsiveIllustration}
-        alt="Desarrollo Web Profesional"
-        class="mx-auto rounded-full w-44 md:w-60 drop-shadow-2xl lg:h-full"
-      />
-      <main class="flex flex-col items-center justify-center gap-6 text-center">
-        <h1
-          class="text-2xl font-black md:text-3xl lg:text-5xl lg:max-w-2xl lg:!leading-[3.5rem] text-neutral-900"
-        >
-          Desarrollo Web <span class="text-[var(--CL-primary)]"
-            >Profesional</span
-          > en Ecuador
+  <!-- Hero Section - Más enfocado en soluciones para negocios -->
+  <section class="grid min-h-[calc(100vh-6rem)] p-4 pt-8 lg:pt-16 place-items-center">
+    <article class="items-center max-w-screen-xl mx-auto md:grid md:grid-cols-2 md:gap-12">
+      <div class="space-y-6 md:space-y-8">
+        <h1 class="text-3xl font-black md:text-4xl lg:text-6xl lg:!leading-[4rem] text-neutral-900">
+          Tu <span class="text-[var(--CL-primary)]">Ingeniero en Software</span> para Emprendedores
         </h1>
-        <p
-          class="max-w-xl mx-auto text-sm font-light leading-6 text-neutral-700 md:text-base"
-        >
-          Potencia tu negocio con <strong>
-            sitios web profesionales, tiendas online y aplicaciones web
-          </strong>. Soluciones digitales que mejoran la atención al cliente y
-          optimizan procesos.
+        <p class="max-w-lg text-base text-neutral-700">
+          Lleva tu emprendimiento al siguiente nivel con soluciones digitales hechas a tu medida. 
+          Automatiza tareas, mejora la atención a tus clientes y haz crecer tu negocio con el apoyo de un especialista en tecnología para emprendedores.
         </p>
-        <div class="flex justify-around w-full mt-4 md:w-max md:gap-4">
+        <div class="flex flex-wrap gap-4">
           <a
             href="http://tinyurl.com/contact-ws"
             target="_blank"
-            class="w-40 text-xs text-white border-transparent shadow-xl btn lg:text-sm btn-neutral bg-brand-gradient animated-background group hover:bg-white hover:opacity-80 shadow-indigo-900/25 btn-lg md:w-44"
+            class="px-6 py-3 text-white border-transparent shadow-xl btn lg:text-sm btn-neutral bg-brand-gradient animated-background group hover:bg-white hover:opacity-80 shadow-indigo-900/25"
           >
-            Contactar
-            <i class="bx bx-send"></i>
+            Consultar Ahora
+            <i class="ml-2 bx bx-send"></i>
           </a>
           <a
-            href={Resume}
-            target="_blank"
-            class="hidden w-40 text-xs text-white border shadow-xl border-neutral-400 md:w-44 btn lg:text-sm btn-ghost group hover:bg-white hover:text-neutral-900 shadow-neutral-400/25 btn-lg"
+            href="#soluciones"
+            class="px-6 py-3 border btn lg:text-sm btn-ghost border-gray-300 hover:border-[var(--CL-primary)] hover:text-[var(--CL-primary)]"
           >
-            Descargar CV
-            <i class="bx bx-download"></i>
+            Ver Soluciones
+            <FaArrowRight className="ml-2" />
           </a>
         </div>
-      </main>
-    </article>
-  </section>
-  <section class="p-4">
-    <article class="max-w-screen-xl pb-12 mx-auto">
-      <header class="mb-6 text-center md:mb-12">
-        <h2
-          class={`text-xl md:text-2xl uppercase text-[var(--CL-primary)] font-black`}
-        >
-          Stack Tecnológico
-        </h2>
-      </header>
-      <main class="flex flex-wrap justify-center gap-4 md:gap-8">
-        <TechnologyCard src={AstroImage} alt="Astro Logo" />
-        <TechnologyCard src={ReactImage} alt="React Logo" />
-        <TechnologyCard src={NodeJSImage} alt="NodeJS Logo" />
-        <TechnologyCard
-          src={RailsImage}
-          alt="Rails Logo"
-          customClass="md:w-full"
-        />
-      </main>
-    </article>
-  </section>
-  <section class="p-4" id="proyectos">
-    <article class="relative max-w-screen-lg py-12 mx-auto md:py-24">
-      <Subtitle
-        title="Galería de Proyectos"
-        description="Proyectos destacados utilizando mis habilidades y experiencia en desarrollo web full-stack."
-        textColor="text-neutral-900"
-        descriptionColor="text-gray-600"
-      />
-      <main
-        class="left-0 right-0 grid w-full gap-4 my-12 lg:my-20 md:gap-8 md:grid-cols-2"
-      >
-        <ProjectCard
-          imageUrl={Project_1}
-          projectUrl="https://inventory.rysthdesign.com/"
-          altText="QuickInventory Proyecto"
-          title="QuickInventory"
-          topic="Aplicación Web de Sistema de Inventario con Punto de Venta"
-          description={`Es una aplicación web para la gestión de inventarios y punto de venta, desarrollado para tiendas pequeñas y medianas con control de stock y ventas.`}
-          technologies={[
-            { name: "Ruby on Rails", color: "bg-red-500" },
-            { name: "TailwindCSS", color: "bg-cyan-600" },
-            { name: "PostgreSQL", color: "bg-green-500" },
-          ]}
-        />
-        <ProjectCard
-          imageUrl={Project_2}
-          projectUrl="https://react-tramitesec-uxbm.onrender.com/"
-          altText="TrámitesEC Proyecto"
-          title="TramitesEC"
-          topic="Aplicación Web de Gestión de Trámites"
-          description={`Es una aplicación web diseñada y desarrollada a medida bajo los requerimientos del negocio, gestiona clientes, tramitadores y solicitudes de trámites.`}
-          technologies={[
-            { name: "React", color: "bg-blue-500" },
-            { name: "Ruby on Rails", color: "bg-red-500" },
-            { name: "PostgreSQL", color: "bg-green-500" },
-          ]}
-        />
-        <ProjectCard
-          imageUrl={Project_3}
-          projectUrl="https://rysth.github.io/Valorant-Conference-Page/"
-          altText="Valorant Conference Proyecto"
-          title="Valorant Conference"
-          topic="Sitio Web de Conferencias de Valorant"
-          description={`Es una página web de conferencias de Valorant desarrollada con HTML, CSS y JavaScript. Uno de mis primeros proyectos hecho desde cero.`}
-          technologies={[
-            { name: "HTML", color: "bg-orange-500" },
-            { name: "CSS", color: "bg-blue-500" },
-            { name: "JavaScript", color: "bg-yellow-500" },
-          ]}
-        />
-        <ProjectCard
-          imageUrl={Project_4}
-          projectUrl="https://react-rysthcraft.onrender.com/"
-          altText="RysthCraft Proyecto"
-          title="RysthCraft"
-          topic="Sitio Web de Portfolio de RysthCraft"
-          description={`Es una página web que servía como un portfolio de mis proyectos de desarrollo. Cuenta con traducción de textos inglés a espaniol.`}
-          technologies={[
-            { name: "React", color: "bg-blue-500" },
-            { name: "TailwindCSS", color: "bg-cyan-600" },
-            { name: "Figma", color: "bg-purple-500" },
-          ]}
-        />
-      </main>
-    </article>
-  </section>
-  <section class="relative p-4" id="planes">
-    <div class="max-w-screen-xl pb-12 mx-auto space-y-12">
-      <Subtitle
-        title="Nuestros Servicios y Planes"
-        textColor="text-neutral-900"
-        description="Soluciones digitales que potencian tu presencia online y optimizan procesos para tu negocio."
-        descriptionColor="text-neutral-600"
-      />
-      <div
-        class="relative flex flex-col items-center justify-center space-x-4 space-y-12 md:flex-row lg:space-y-0"
-      >
-        {/* Plan Sitio Web Profesional */}
-        <PricingCard
-          title="Sitio Web Profesional"
-          price="$297+"
-          features={[
-            "Diseño Web Responsivo",
-            "Disponibilidad 24/7",
-            "Certificado SSL",
-            "Hasta 5 Páginas",
-            "Formulario de Contacto",
-            "Configuración Personalizada",
-            "Optimización SEO Básica",
-            "Enlace a Redes Sociales",
-            "Soporte Técnico",
-          ]}
-          maintanceText="Mantenimiento y Optimización $0/mes"
-          buttonText="Comenzar Ahora"
-        />
-        {/* Plan E-Commerce */}
-        <PricingCard
-          title="Plan E-Commerce"
-          price="$597+"
-          features={[
-            "Gestor de Contenido",
-            "Tienda en Línea",
-            "Pedidos por WhatsApp",
-            "Hasta 100 Productos",
-            "Diseño Web Profesional",
-            "Certificación SSL",
-            "Dominio Gratuito por 1 Año",
-            "Hosting Gratuito por 1 Año",
-            "Optimizado para Móviles",
-          ]}
-          buttonText="Comenzar Ahora"
-          maintanceText="Mantenimiento y Optimización $10/mes"
-          highlight={false}
-        />
-        {/* Plan Aplicación Web */}
-        <PricingCard
-          title="Plan Aplicación Web"
-          price="$997+"
-          features={[
-            "Aplicación Web Moderna",
-            "Base de Datos Segura",
-            "Interfaz Personalizada",
-            "Respaldo de Información",
-            "Diseño Web Profesional",
-            "Certificación SSL",
-            "Dominio Gratuito por 1 Año",
-            "Panel Administrativo",
-            "Optimizado para Móviles",
-          ]}
-          buttonText="Comenzar Ahora"
-          maintanceText="Mantenimiento y Optimización $75/mes"
-          highlight={false}
+      </div>
+      <div class="hidden md:block">
+        <Image
+          src={ResponsiveIllustration}
+          alt="Soluciones Digitales para Emprendedores"
+          class="w-full max-w-md mx-auto rounded-lg shadow-lg"
         />
       </div>
-    </div>
+    </article>
   </section>
-  <section class="p-4 bg-[#191919]" id="faqs">
-    <article class="max-w-screen-lg py-12 mx-auto md:py-24">
+
+  <!-- Ventajas Competitivas Section - NUEVO -->
+  <section class="p-4 py-16 bg-gray-50">
+    <article class="max-w-screen-xl mx-auto">
+      <Subtitle
+        title="¿Por Qué Elegirnos?"
+        description="Nos especializamos en soluciones tecnológicas para pequeños negocios que necesitan optimizar sus operaciones."
+        textColor="text-neutral-900"
+      />
+      
+      <div class="grid gap-8 mt-12 md:grid-cols-3">
+        <!-- Ventaja 1: Experiencia Comprobada -->
+        <div class="p-6 transition-shadow bg-white rounded-lg shadow-md hover:shadow-xl">
+          <div class="flex items-center justify-center w-12 h-12 mb-4 bg-blue-100 rounded-full">
+            <FaCheckCircle className="text-[var(--CL-primary)] text-xl" />
+          </div>
+          <h3 class="mb-3 text-xl font-bold">Experiencia Comprobada</h3>
+          <p class="text-gray-600">
+            +3 años implementando soluciones para negocios reales. Nuestros sistemas llevan años
+            en producción funcionando para nuestros clientes sin interrupciones.
+          </p>
+        </div>
+        
+        <!-- Ventaja 2: Soluciones Personalizadas -->
+        <div class="p-6 transition-shadow bg-white rounded-lg shadow-md hover:shadow-xl">
+          <div class="flex items-center justify-center w-12 h-12 mb-4 bg-blue-100 rounded-full">
+            <FaCheckCircle className="text-[var(--CL-primary)] text-xl" />
+          </div>
+          <h3 class="mb-3 text-xl font-bold">Adaptado a tu Negocio</h3>
+          <p class="text-gray-600">
+            No adaptamos tu empresa al software, sino el software a tu empresa. 
+            Creamos soluciones que se ajustan perfectamente a tus procesos de negocio existentes.
+          </p>
+        </div>
+        
+        <!-- Ventaja 3: Soporte Continuo -->
+        <div class="p-6 transition-shadow bg-white rounded-lg shadow-md hover:shadow-xl">
+          <div class="flex items-center justify-center w-12 h-12 mb-4 bg-blue-100 rounded-full">
+            <FaCheckCircle className="text-[var(--CL-primary)] text-xl" />
+          </div>
+          <h3 class="mb-3 text-xl font-bold">Soporte y Mantenimiento</h3>
+          <p class="text-gray-600">
+            Ofrecemos soporte técnico continuo, actualizaciones de seguridad y backups 
+            automatizados. Tu sistema siempre funcionará de forma óptima.
+          </p>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- Stack Tecnológico Section - Rediseñado -->
+  <section class="p-4 py-16" id="tecnologias">
+    <article class="max-w-screen-xl mx-auto">
+      <Subtitle
+        title="Tecnologías de Última Generación"
+        description="Utilizamos un conjunto de tecnologías modernas, fiables y escalables para construir soluciones robustas."
+        textColor="text-neutral-900"
+      />
+      <div class="grid grid-cols-3 gap-4 mt-10 md:grid-cols-6 md:gap-8 place-items-center">
+        <TechnologyCard src={RailsImage} alt="Ruby on Rails Logo" />
+        <TechnologyCard src={ReactImage} alt="React Logo" />
+        <TechnologyCard src={PostgreSQLImage} alt="PostgreSQL Logo" />
+        <TechnologyCard src={DockerImage} alt="Docker Logo" />
+        <TechnologyCard src={AstroImage} alt="Astro Logo" />
+        <TechnologyCard src={NodeJSImage} alt="NodeJS Logo" />
+      </div>
+    </article>
+  </section>
+
+  <!-- Proyectos Destacados - Con modales para más detalles -->
+  <section class="p-4 py-16 bg-gray-50" id="proyectos">
+    <article class="max-w-screen-xl mx-auto">
+      <Subtitle
+        title="Proyectos Destacados"
+        description="Soluciones reales para negocios reales. Sistemas en producción que han transformado la operación de nuestros clientes."
+        textColor="text-neutral-900"
+      />
+      
+      <div class="grid gap-8 mt-12 md:grid-cols-2">
+        <!-- QuickInventory -->
+        <div class="overflow-hidden transition bg-white rounded-lg shadow-md hover:shadow-xl">
+          <Image
+            src={Project_1}
+            alt="QuickInventory Sistema de Inventario"
+            class="object-cover w-full h-64"
+          />
+          <div class="p-6">
+            <h3 class="mb-2 text-2xl font-bold">QuickInventory</h3>
+            <p class="mb-3 text-sm text-gray-500">Sistema de Inventario y Punto de Venta</p>
+            <p class="mb-6 text-gray-600">
+              Sistema completo para gestión de inventarios y ventas, ideal para pequeños comercios. 
+              Incluye control de stock, reportes, y punto de venta POS.
+            </p>
+            <div class="flex gap-2 mb-5">
+              <span class="text-white bg-red-500 badge badge-sm">Ruby on Rails</span>
+              <span class="text-white badge badge-sm bg-cyan-600">TailwindCSS</span>
+              <span class="text-white bg-green-500 badge badge-sm">PostgreSQL</span>
+              <span class="text-white bg-blue-500 badge badge-sm">Docker</span>
+            </div>
+            <div class="flex gap-3">
+              <button class="btn btn-sm btn-outline" onclick="modal_quickinventory.showModal()">Ver Detalles</button>
+              <a href="https://inventory.rysthdesign.com/" target="_blank" class="text-white btn btn-sm btn-neutral bg-brand-blue">Visitar Demo</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- TrámitesEC -->
+        <div class="overflow-hidden transition bg-white rounded-lg shadow-md hover:shadow-xl">
+          <Image
+            src={Project_2}
+            alt="TrámitesEC Gestión de Trámites"
+            class="object-cover w-full h-64"
+          />
+          <div class="p-6">
+            <h3 class="mb-2 text-2xl font-bold">TrámitesEC</h3>
+            <p class="mb-3 text-sm text-gray-500">Sistema de Gestión de Trámites</p>
+            <p class="mb-6 text-gray-600">
+              Plataforma diseñada para la gestión integral de trámites y clientes. 
+              Utilizada por 2+ años por una empresa de gestión de trámites ciudadanos.
+            </p>
+            <div class="flex gap-2 mb-5">
+              <span class="text-white bg-blue-500 badge badge-sm">React</span>
+              <span class="text-white bg-red-500 badge badge-sm">Ruby on Rails</span>
+              <span class="text-white bg-green-500 badge badge-sm">PostgreSQL</span>
+            </div>
+            <div class="flex gap-3">
+              <button class="btn btn-sm btn-outline" onclick="modal_tramites.showModal()">Ver Detalles</button>
+              <a href="https://react-tramitesec-uxbm.onrender.com/" target="_blank" class="text-white btn btn-sm btn-neutral bg-brand-blue">Visitar Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- Soluciones/Servicios Section - NUEVO -->
+  <section class="p-4 py-16" id="soluciones">
+    <article class="max-w-screen-xl mx-auto">
+      <Subtitle
+        title="Nuestras Soluciones"
+        description="Desde sistemas a medida hasta productos pre-construidos adaptables a tu negocio"
+        textColor="text-neutral-900"
+      />
+      
+      <div class="grid gap-8 mt-12 md:grid-cols-3">
+        <!-- Solución 1: Sistemas a Medida -->
+        <div class="p-6 transition border rounded-lg hover:shadow-lg">
+          <h3 class="mb-4 text-xl font-bold">Desarrollo a Medida</h3>
+          <p class="mb-6 text-gray-600">
+            Sistemas web completamente personalizados que se adaptan exactamente a los procesos
+            específicos de tu negocio.
+          </p>
+          <ul class="mb-8 space-y-2">
+            <li class="flex items-center gap-2">
+              <FaCheckCircle className="text-green-500" />
+              <span>Análisis de requisitos exhaustivo</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <FaCheckCircle className="text-green-500" />
+              <span>Desarrollo iterativo con feedback</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <FaCheckCircle className="text-green-500" />
+              <span>Mantenimiento y actualizaciones</span>
+            </li>
+          </ul>
+          <a 
+            href="/servicios"
+            class="btn btn-outline w-full hover:bg-[var(--CL-primary)] hover:text-white"
+          >
+            Más Información
+          </a>
+        </div>
+        
+        <!-- Solución 2: Sistemas Pre-construidos Adaptables -->
+        <div class="p-6 transition border rounded-lg hover:shadow-lg">
+          <h3 class="mb-4 text-xl font-bold">Sistemas Pre-construidos</h3>
+          <p class="mb-6 text-gray-600">
+            Plataformas listas para usar que pueden adaptarse fácilmente a tu negocio, 
+            permitiendo un lanzamiento más rápido.
+          </p>
+          <ul class="mb-8 space-y-2">
+            <li class="flex items-center gap-2">
+              <FaCheckCircle className="text-green-500" />
+              <span>Implementación rápida</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <FaCheckCircle className="text-green-500" />
+              <span>Personalización de funcionalidades</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <FaCheckCircle className="text-green-500" />
+              <span>Menor inversión inicial</span>
+            </li>
+          </ul>
+          <a 
+            href="/planes" 
+            class="btn btn-outline w-full hover:bg-[var(--CL-primary)] hover:text-white"
+          >
+            Ver Opciones
+          </a>
+        </div>
+        
+        <!-- Solución 3: Consultoría -->
+        <div class="p-6 transition border rounded-lg hover:shadow-lg">
+          <h3 class="mb-4 text-xl font-bold">Consultoría Tecnológica</h3>
+          <p class="mb-6 text-gray-600">
+            Asesoramiento técnico para implementar las mejores soluciones tecnológicas
+            en tu negocio según tus necesidades y presupuesto.
+          </p>
+          <ul class="mb-8 space-y-2">
+            <li class="flex items-center gap-2">
+              <FaCheckCircle className="text-green-500" />
+              <span>Evaluación de necesidades</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <FaCheckCircle className="text-green-500" />
+              <span>Recomendaciones personalizadas</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <FaCheckCircle className="text-green-500" />
+              <span>Asesoría para implementación</span>
+            </li>
+          </ul>
+          <a 
+            href="/contactos" 
+            class="btn btn-outline w-full hover:bg-[var(--CL-primary)] hover:text-white"
+          >
+            Consultar
+          </a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- Testimonials Section - NUEVO -->
+  <section class="p-4 py-16 bg-gray-50">
+    <article class="max-w-screen-xl mx-auto">
+      <Subtitle
+        title="Lo Que Dicen Nuestros Clientes"
+        description="Empresas que ya han optimizado sus procesos con nuestras soluciones"
+        textColor="text-neutral-900"
+      />
+      
+      <div class="grid gap-8 mt-12 md:grid-cols-2">
+        <!-- Testimonial 1 -->
+        <div class="p-6 bg-white rounded-lg shadow-md">
+          <div class="flex items-center mb-4">
+            <div class="rating rating-sm">
+              <input type="radio" name="rating-1" class="bg-orange-400 mask mask-star-2" checked />
+              <input type="radio" name="rating-1" class="bg-orange-400 mask mask-star-2" checked />
+              <input type="radio" name="rating-1" class="bg-orange-400 mask mask-star-2" checked />
+              <input type="radio" name="rating-1" class="bg-orange-400 mask mask-star-2" checked />
+              <input type="radio" name="rating-1" class="bg-orange-400 mask mask-star-2" checked />
+            </div>
+            <span class="ml-2 text-sm text-gray-500">Hace 3 meses</span>
+          </div>
+          <p class="mb-6 italic text-gray-600">
+            "El sistema de inventario que implementamos ha sido clave para nuestro crecimiento.
+            Ahora tenemos un control exacto del stock y las ventas, lo que nos ha permitido 
+            tomar mejores decisiones de negocio."
+          </p>
+          <div class="flex items-center">
+            <div class="avatar">
+              <div class="flex items-center justify-center w-12 h-12 bg-gray-200 rounded-full">
+                <span class="text-lg font-bold">AM</span>
+              </div>
+            </div>
+            <div class="ml-4">
+              <p class="font-bold">Andrés Mendoza</p>
+              <p class="text-sm text-gray-500">Gerente, Distribuidora El Éxito</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="p-6 bg-white rounded-lg shadow-md">
+          <div class="flex items-center mb-4">
+            <div class="rating rating-sm">
+              <input type="radio" name="rating-2" class="bg-orange-400 mask mask-star-2" checked />
+              <input type="radio" name="rating-2" class="bg-orange-400 mask mask-star-2" checked />
+              <input type="radio" name="rating-2" class="bg-orange-400 mask mask-star-2" checked />
+              <input type="radio" name="rating-2" class="bg-orange-400 mask mask-star-2" checked />
+              <input type="radio" name="rating-2" class="bg-orange-400 mask mask-star-2" checked />
+            </div>
+            <span class="ml-2 text-sm text-gray-500">Hace 6 meses</span>
+          </div>
+          <p class="mb-6 italic text-gray-600">
+            "Llevamos dos años usando el sistema de gestión de TrámitesEC y ha transformado nuestra 
+            operación. El soporte técnico siempre está disponible y las actualizaciones han
+            sido muy valiosas para nuestro negocio."
+          </p>
+          <div class="flex items-center">
+            <div class="avatar">
+              <div class="flex items-center justify-center w-12 h-12 bg-gray-200 rounded-full">
+                <span class="text-lg font-bold">LC</span>
+              </div>
+            </div>
+            <div class="ml-4">
+              <p class="font-bold">Laura Campos</p>
+              <p class="text-sm text-gray-500">Directora, TrámitesEC</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- Llamada a la acción - CTA -->
+  <section class="p-6 py-24 text-white bg-brand-gradient">
+    <article class="max-w-screen-lg mx-auto text-center">
+      <h2 class="mb-6 text-3xl font-black md:text-4xl">
+        ¿Listo para impulsar tu negocio con tecnología?
+      </h2>
+      <p class="max-w-2xl mx-auto mb-8 text-lg">
+        Agenda una consulta gratuita de 30 minutos para discutir cómo podemos ayudarte 
+        a optimizar tus procesos y aumentar tus ventas con soluciones digitales a medida.
+      </p>
+      <a 
+        href="http://tinyurl.com/contact-ws" 
+        target="_blank" 
+        class="btn btn-lg bg-white text-[var(--CL-primary)] hover:bg-opacity-90 shadow-xl"
+      >
+        Agendar Consulta Gratuita
+        <FaArrowRight className="ml-2" />
+      </a>
+    </article>
+  </section>
+
+  <!-- FAQ Section - Modificado -->
+  <section class="p-4 py-16 bg-[#191919]" id="faqs">
+    <article class="max-w-screen-lg mx-auto">
       <Subtitle
         title="Preguntas Frecuentes"
         description="Respuestas a las consultas más comunes sobre nuestros servicios"
@@ -240,18 +408,18 @@ import { Image } from "astro:assets";
         <div class="border collapse collapse-arrow bg-white/5 border-white/10">
           <input type="radio" name="faq-accordion" checked="checked" />
           <div class="font-semibold text-white collapse-title">
-            ¿Cuánto cuesta desarrollar un sitio web o tienda online?
+            ¿Cuánto cuesta desarrollar un sistema web para mi negocio?
           </div>
           <div class="text-sm text-gray-300 collapse-content">
-            <p class="mb-2">Los costos varían según el tipo de proyecto:</p>
+            <p class="mb-2">Los costos varían según la complejidad y requerimientos:</p>
             <ul class="pl-5 space-y-1 list-disc">
-              <li>Sitios web informativos desde $300+</li>
-              <li>Tiendas online desde $600+</li>
-              <li>Aplicaciones web desde $1000+</li>
+              <li>Sistemas pre-construidos adaptados: desde $600</li>
+              <li>Desarrollos a medida: desde $1200</li>
+              <li>Implementaciones empresariales: desde $3000</li>
             </ul>
             <p class="mt-2">
-              El precio final dependerá de los requerimientos específicos de su
-              proyecto.
+              Cada proyecto es único y requiere una evaluación específica. Ofrecemos consultas gratuitas 
+              para entender tus necesidades y proporcionarte un presupuesto detallado.
             </p>
           </div>
         </div>
@@ -262,33 +430,35 @@ import { Image } from "astro:assets";
             ¿Qué tecnologías utilizan para el desarrollo?
           </div>
           <div class="text-sm text-gray-300 collapse-content">
-            <p class="mb-2">Utilizamos tecnologías modernas y robustas:</p>
+            <p class="mb-2">Utilizamos un stack tecnológico moderno y probado:</p>
             <ul class="pl-5 space-y-1 list-disc">
-              <li>Wordpress & WooCommerce para tiendas online</li>
-              <li>React & Ruby on Rails para aplicaciones web</li>
-              <li>
-                Bases de datos seguras y escalables con PostgreSQL y Docker.
-              </li>
-              <li>Diseño responsivo con TailwindCSS</li>
+              <li>Backend: Ruby on Rails para APIs robustas y seguras</li>
+              <li>Frontend: React para interfaces dinámicas y responsivas</li>
+              <li>Base de datos: PostgreSQL para almacenamiento confiable</li>
+              <li>Despliegue: Docker para implementación consistente</li>
+              <li>Diseño: TailwindCSS para interfaces modernas y adaptables</li>
             </ul>
+            <p class="mt-2">
+              Este conjunto de tecnologías nos permite desarrollar sistemas escalables, seguros y con un excelente rendimiento.
+            </p>
           </div>
         </div>
 
         <div class="border collapse collapse-arrow bg-white/5 border-white/10">
           <input type="radio" name="faq-accordion" />
           <div class="font-semibold text-white collapse-title">
-            ¿Cuánto tiempo toma desarrollar mi proyecto?
+            ¿Cuánto tiempo toma desarrollar mi sistema?
           </div>
           <div class="text-sm text-gray-300 collapse-content">
             <p class="mb-2">Los tiempos estimados son:</p>
             <ul class="pl-5 space-y-1 list-disc">
-              <li>Sitios web informativos: 1-2 semanas</li>
-              <li>Tiendas online: 3-6 semanas</li>
-              <li>Aplicaciones web: 8-12 semanas</li>
+              <li>Implementación de sistemas pre-construidos: 2-4 semanas</li>
+              <li>Desarrollos a medida pequeños: 4-8 semanas</li>
+              <li>Proyectos complejos: 8-16 semanas</li>
             </ul>
             <p class="mt-2">
-              Los plazos pueden variar según la complejidad y requisitos
-              específicos.
+              Trabajamos con metodologías ágiles que permiten entregas incrementales, por lo que 
+              podrás ver avances concretos durante todo el proceso de desarrollo.
             </p>
           </div>
         </div>
@@ -296,18 +466,18 @@ import { Image } from "astro:assets";
         <div class="border collapse collapse-arrow bg-white/5 border-white/10">
           <input type="radio" name="faq-accordion" />
           <div class="font-semibold text-white collapse-title">
-            ¿Ofrecen mantenimiento y soporte después del lanzamiento?
+            ¿Qué soporte ofrecen después del lanzamiento?
           </div>
           <div class="text-sm text-gray-300 collapse-content">
             <p class="mb-2">
-              Sí, ofrecemos planes de mantenimiento que incluyen:
+              Nuestros planes de soporte y mantenimiento incluyen:
             </p>
             <ul class="pl-5 space-y-1 list-disc">
-              <li>Actualizaciones de seguridad</li>
-              <li>Respaldos periódicos</li>
-              <li>Soporte técnico</li>
-              <li>Optimización de rendimiento</li>
-              <li>Monitoreo de servicios</li>
+              <li>Actualizaciones de seguridad y corrección de errores</li>
+              <li>Respaldos automáticos diarios</li>
+              <li>Monitoreo 24/7 de la plataforma</li>
+              <li>Soporte técnico por email, chat o teléfono</li>
+              <li>Mejoras continuas basadas en feedback</li>
             </ul>
           </div>
         </div>
@@ -315,60 +485,105 @@ import { Image } from "astro:assets";
         <div class="border collapse collapse-arrow bg-white/5 border-white/10">
           <input type="radio" name="faq-accordion" />
           <div class="font-semibold text-white collapse-title">
-            ¿El hosting y dominio están incluidos?
+            ¿Cómo aseguran la protección de mis datos?
           </div>
           <div class="text-sm text-gray-300 collapse-content">
-            <p>Sí, todos nuestros planes incluyen:</p>
+            <p>La seguridad es nuestra prioridad:</p>
             <ul class="pl-5 mt-2 space-y-1 list-disc">
-              <li>Dominio gratuito por 1 año</li>
-              <li>Hosting optimizado</li>
-              <li>Certificado SSL</li>
-              <li>Panel de control</li>
+              <li>Cifrado de datos en tránsito (SSL/TLS)</li>
+              <li>Autenticación segura y control de accesos</li>
+              <li>Auditorías de seguridad periódicas</li>
+              <li>Backups cifrados y redundantes</li>
+              <li>Cumplimiento con regulaciones de protección de datos</li>
             </ul>
           </div>
         </div>
       </div>
     </article>
   </section>
-  <section class="p-4" id="experiencia">
-    <article class="max-w-screen-md py-12 mx-auto">
-      <header class="mb-6 text-center md:mb-12">
-        <h2
-          class={`text-xl md:text-2xl font-black uppercase text-[var(--CL-primary)] `}
-        >
-          Experiencia Profesional
-        </h2>
-      </header>
-      <ul class="flex flex-col gap-8 md:gap-12 lg:gap-16">
-        <li>
-          <ExperienceCard
-            imageUrl={Experience_3}
-            altText="Novicompu - Desarrollador Backend"
-            title="Desarrollador Backend en Novicompu"
-            date="2025 Marzo - Presente"
-            description={`Implementación, documentación y control de sistemas de gestión de bases de datos, desarrollo de APIs RESTful y servicios web para aplicaciones. Colaboración en proyectos de desarrollo de software.`}
-          />
-        </li>
-        <li>
-          <ExperienceCard
-            imageUrl={Experience_2}
-            altText="RysthDesign - Web Developer"
-            title="Desarrollador Web en RysthDesign"
-            date="2023 Noviembre - 2025 Marzo"
-            description={`Desarrollo e implementación de soluciones web profesionales, incluyendo sitios web corporativos, tiendas online y aplicaciones web personalizadas para pequeños y medianos negocios.`}
-          />
-        </li>
-        <li>
-          <ExperienceCard
-            imageUrl={Experience_1}
-            altText="Cierpronti S.A."
-            title="Analista de Sistemas en Cierpronti S.A."
-            date="2024 Abril - 2024 Diciembre"
-            description={`Desarrollo de soluciones de automatización y soporte IT para la mejora de procesos internos. Implementación de herramientas de análisis de datos e integración de tecnologías para optimizar flujos de trabajo en la organización.`}
-          />
-        </li>
-      </ul>
-    </article>
-  </section>
-  <hr class="hidden border-none md:block bg-none" />
+
+  <!-- Modales para los proyectos -->
+  <dialog id="modal_quickinventory" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box">
+      <h3 class="text-lg font-bold">QuickInventory - Sistema de Inventario y POS</h3>
+      <div class="py-4">
+        <p class="mb-3">
+          Sistema completo para la gestión de inventarios y punto de venta, diseñado específicamente
+          para pequeños y medianos comercios.
+        </p>
+        <h4 class="mb-2 font-semibold">Características principales:</h4>
+        <ul class="pl-5 mb-4 space-y-1 list-disc">
+          <li>Control de inventario en tiempo real</li>
+          <li>Gestión de proveedores y compras</li>
+          <li>Sistema POS con interfaz táctil intuitiva</li>
+          <li>Reportes de ventas e inventario</li>
+          <li>Gestión de usuarios y permisos</li>
+          <li>Alertas de stock bajo</li>
+        </ul>
+        <h4 class="mb-2 font-semibold">Tecnologías utilizadas:</h4>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="text-white bg-red-500 badge badge-sm">Ruby on Rails</span>
+          <span class="text-white badge badge-sm bg-cyan-600">TailwindCSS</span>
+          <span class="text-white bg-green-500 badge badge-sm">PostgreSQL</span>
+          <span class="text-white bg-blue-500 badge badge-sm">Docker</span>
+          <span class="text-white bg-purple-500 badge badge-sm">Hotwire</span>
+        </div>
+        <h4 class="mb-2 font-semibold">Resultados del cliente:</h4>
+        <p>
+          El cliente experimentó una reducción del 35% en pérdidas de inventario y un aumento
+          del 20% en eficiencia operativa tras 6 meses de uso.
+        </p>
+      </div>
+      <div class="modal-action">
+        <form method="dialog">
+          <button class="btn">Cerrar</button>
+        </form>
+      </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+      <button>cerrar</button>
+    </form>
+  </dialog>
+
+  <dialog id="modal_tramites" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box">
+      <h3 class="text-lg font-bold">TrámitesEC - Sistema de Gestión de Trámites</h3>
+      <div class="py-4">
+        <p class="mb-3">
+          Aplicación web completa para la gestión de trámites gubernamentales, clientes y pagos,
+          en uso continuo por más de 2 años por una empresa de gestión documental.
+        </p>
+        <h4 class="mb-2 font-semibold">Características principales:</h4>
+        <ul class="pl-5 mb-4 space-y-1 list-disc">
+          <li>Gestión de clientes y seguimiento de trámites</li>
+          <li>Panel de administración para tramitadores</li>
+          <li>Sistema de notificaciones por email y WhatsApp</li>
+          <li>Generación de documentos personalizados</li>
+          <li>Reportes financieros y operativos</li>
+          <li>Interfaz responsive para acceso móvil</li>
+        </ul>
+        <h4 class="mb-2 font-semibold">Tecnologías utilizadas:</h4>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="text-white bg-blue-500 badge badge-sm">React</span>
+          <span class="text-white bg-red-500 badge badge-sm">Ruby on Rails</span>
+          <span class="text-white bg-green-500 badge badge-sm">PostgreSQL</span>
+          <span class="text-white bg-yellow-500 badge badge-sm">Redux</span>
+          <span class="text-white bg-purple-500 badge badge-sm">AWS S3</span>
+        </div>
+        <h4 class="mb-2 font-semibold">Resultados del cliente:</h4>
+        <p>
+          TrámitesEC ha permitido a la empresa aumentar su capacidad de procesamiento en un 70%,
+          reducir errores en documentación y mejorar la satisfacción de sus clientes.
+        </p>
+      </div>
+      <div class="modal-action">
+        <form method="dialog">
+          <button class="btn">Cerrar</button>
+        </form>
+      </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+      <button>cerrar</button>
+    </form>
+  </dialog>
 </Layout>
