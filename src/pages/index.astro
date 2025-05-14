@@ -28,101 +28,128 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
   title="Software a Medida para Pequeñas Empresas | Sistemas Web | RysthDesign"
 >
   <!-- Hero Section - Más personal y enfocado en emprendedores -->
-  <section class="grid min-h-[calc(100vh-6rem)] p-4 pt-8 lg:pt-16 place-items-center">
-  <article class="items-center max-w-screen-xl mx-auto md:grid md:grid-cols-2 md:gap-12">
-    <div class="space-y-6 md:space-y-8">
-      <h1 class="text-3xl font-black md:text-4xl lg:text-6xl lg:!leading-[4rem] text-neutral-900">
-        Hola emprendedor, soy <span class="text-[var(--CL-accent)]">RysthDesign</span>, tu ingeniero de software
-      </h1>
-      <p class="max-w-xl text-base text-neutral-700">
-        ¿Necesitas automatizar tareas, mejorar la experiencia de tus clientes o simplemente hacer crecer tu negocio con tecnología? Estoy aquí para ayudarte con soluciones digitales hechas a tu medida.
-      </p>
-      <div class="flex flex-wrap gap-4">
-        <a
-          href="http://tinyurl.com/contact-ws"
-          target="_blank"
-          class="px-6 py-3 text-white border-transparent shadow-xl btn lg:text-sm btn-neutral bg-brand-gradient animated-background group hover:bg-white hover:opacity-80 shadow-indigo-900/25"
+  <section
+    class="grid min-h-[calc(100vh-6rem)] p-4 pt-8 lg:pt-16 place-items-center"
+  >
+    <article
+      class="items-center max-w-screen-xl mx-auto md:grid md:grid-cols-2 md:gap-12"
+    >
+      <div class="space-y-6 md:space-y-8">
+        <h1
+          class="text-3xl font-black md:text-4xl lg:text-6xl lg:!leading-[4rem] text-neutral-900"
         >
-          Hablemos de tu Proyecto
-          <i class="ml-2 bx bx-send"></i>
-        </a>
-        <a
-          href="#soluciones"
-          class="px-6 py-3 border btn lg:text-sm btn-ghost border-gray-300 hover:border-[var(--CL-accent)] hover:text-[var(--CL-accent)]"
-        >
-          Ver Soluciones
-          <FaArrowRight className="ml-2" />
-        </a>
+          Hola emprendedor, soy <span class="text-[var(--CL-accent)]"
+            >RysthDesign</span
+          >, tu ingeniero de software
+        </h1>
+        <p class="max-w-xl text-base text-neutral-700">
+          ¿Necesitas automatizar tareas, mejorar la experiencia de tus clientes
+          o simplemente hacer crecer tu negocio con tecnología? Estoy aquí para
+          ayudarte con soluciones digitales hechas a tu medida.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="http://tinyurl.com/contact-ws"
+            target="_blank"
+            class="px-6 py-3 text-white border-transparent shadow-xl btn lg:text-sm btn-neutral bg-brand-gradient animated-background group hover:bg-white hover:opacity-80 shadow-indigo-900/25"
+          >
+            Hablemos de tu Proyecto
+            <i class="ml-2 bx bx-send"></i>
+          </a>
+          <a
+            href="#soluciones"
+            class="px-6 py-3 border btn lg:text-sm btn-ghost border-gray-300 hover:border-[var(--CL-accent)] hover:text-[var(--CL-accent)]"
+          >
+            Ver Soluciones
+            <FaArrowRight className="ml-2" />
+          </a>
+        </div>
       </div>
-    </div>
-    <div class="hidden md:block">
-      <Image
-        src={ResponsiveIllustration}
-        alt="Soluciones Digitales para Emprendedores"
-        class="w-full max-w-md mx-auto shadow-lg rounded-xl"
-      />
-    </div>
-  </article>
-</section>
+      <div class="hidden md:block">
+        <Image
+          src={ResponsiveIllustration}
+          alt="Soluciones Digitales para Emprendedores"
+          class="w-full max-w-md mx-auto shadow-lg rounded-xl"
+        />
+      </div>
+    </article>
+  </section>
 
   <!-- Ventajas Competitivas Section - REDISEÑADA -->
-<section class="p-4 py-16">
-  <article class="max-w-screen-xl mx-auto">
-    <Subtitle
-      title="¿Por Qué Trabajar Conmigo?"
-      description="Me especializo en hacer que la tecnología trabaje PARA tu negocio, no al revés."
-      textColor="text-neutral-900"
-    />
-    
-    <div class="grid max-w-screen-lg gap-4 mx-auto mt-12 md:grid-cols-3">
-      <!-- Ventaja 1: Experiencia Comprobada -->
-      <div class="p-6 transition-shadow bg-white border-t-4 rounded-lg shadow-md border-t-[var(--CL-accent)] hover:shadow-xl ">
-        <div class="flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[var(--CL-accent-light)]">
-          <FaCheckCircle className="text-[var(--CL-accent)] text-2xl" />
-        </div>
-        <h3 class="mb-3 text-xl font-bold">Lo Hago Simple Para Ti</h3>
-        <p class="text-gray-600">
-          Traduzco tecnología compleja a soluciones prácticas. Mis sistemas llevan años
-          funcionando sin interrupciones porque están diseñados pensando en tu negocio.
-        </p>
-      </div>
-      
-      <!-- Ventaja 2: Soluciones Personalizadas -->
-      <div class="p-6 transition-shadow bg-white border-t-4 rounded-lg shadow-md border-t-[var(--CL-accent)] hover:shadow-xl">
-        <div class="flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[var(--CL-accent-light)]">
-          <FaCheckCircle className="text-[var(--CL-accent)] text-2xl" />
-        </div>
-        <h3 class="mb-3 text-xl font-bold">Tu Negocio, Tus Reglas</h3>
-        <p class="text-gray-600">
-          No necesitas adaptarte al software, yo adapto el software a tu forma de trabajar. 
-          Creo soluciones que encajan perfectamente en tus procesos actuales.
-        </p>
-      </div>
-      
-      <!-- Ventaja 3: Soporte Continuo -->
-      <div class="p-6 transition-shadow bg-white border-t-4 rounded-lg shadow-md border-t-[var(--CL-accent)] hover:shadow-xl">
-        <div class="flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[var(--CL-accent-light)]">
-          <FaCheckCircle className="text-[var(--CL-accent)] text-2xl" />
-        </div>
-        <h3 class="mb-3 text-xl font-bold">Estaré Ahí Siempre</h3>
-        <p class="text-gray-600">
-          No desaparezco después de entregar el proyecto. Ofrezco soporte continuo, actualizaciones
-          y estoy disponible cuando me necesites. Tu éxito es mi éxito.
-        </p>
-      </div>
-    </div>
-  </article>
-</section>
-
-  <!-- Stack Tecnológico Section - Rediseñado -->
-  <section class="p-4 py-16" id="tecnologias">
+  <section class="p-4 py-16">
     <article class="max-w-screen-xl mx-auto">
       <Subtitle
-        title="Tecnologías de Última Generación"
-        description="Utilizamos un conjunto de tecnologías modernas, fiables y escalables para construir soluciones robustas."
+        title="¿Por Qué Trabajar Conmigo?"
+        description="Me especializo en hacer que la tecnología trabaje PARA tu negocio, no al revés."
         textColor="text-neutral-900"
       />
-      <div class="grid grid-cols-3 gap-4 mt-10 md:grid-cols-6 md:gap-8 place-items-center">
+
+      <div class="grid max-w-screen-lg gap-4 mx-auto mt-12 md:grid-cols-3">
+        <!-- Ventaja 1: Experiencia Comprobada -->
+        <div
+          class="p-6 transition-shadow bg-white border-t-4 rounded-lg shadow-md border-t-[var(--CL-accent)] hover:shadow-xl"
+        >
+          <div
+            class="flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[var(--CL-accent-light)]"
+          >
+            <FaCheckCircle className="text-[var(--CL-accent)] text-2xl" />
+          </div>
+          <h3 class="mb-3 text-xl font-bold">Lo Hago Simple Para Ti</h3>
+          <p class="text-gray-600">
+            Traduzco tecnología compleja a soluciones prácticas. Mis sistemas
+            llevan años funcionando sin interrupciones porque están diseñados
+            pensando en tu negocio.
+          </p>
+        </div>
+
+        <!-- Ventaja 2: Soluciones Personalizadas -->
+        <div
+          class="p-6 transition-shadow bg-white border-t-4 rounded-lg shadow-md border-t-[var(--CL-accent)] hover:shadow-xl"
+        >
+          <div
+            class="flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[var(--CL-accent-light)]"
+          >
+            <FaCheckCircle className="text-[var(--CL-accent)] text-2xl" />
+          </div>
+          <h3 class="mb-3 text-xl font-bold">Tu Negocio, Tus Reglas</h3>
+          <p class="text-gray-600">
+            No necesitas adaptarte al software, yo adapto el software a tu forma
+            de trabajar. Creo soluciones que encajan perfectamente en tus
+            procesos actuales.
+          </p>
+        </div>
+
+        <!-- Ventaja 3: Soporte Continuo -->
+        <div
+          class="p-6 transition-shadow bg-white border-t-4 rounded-lg shadow-md border-t-[var(--CL-accent)] hover:shadow-xl"
+        >
+          <div
+            class="flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[var(--CL-accent-light)]"
+          >
+            <FaCheckCircle className="text-[var(--CL-accent)] text-2xl" />
+          </div>
+          <h3 class="mb-3 text-xl font-bold">Estaré Ahí Siempre</h3>
+          <p class="text-gray-600">
+            No desaparezco después de entregar el proyecto. Ofrezco soporte
+            continuo, actualizaciones y estoy disponible cuando me necesites. Tu
+            éxito es mi éxito.
+          </p>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- Stack Tecnológico Section - Rediseñado -->
+  <section class="p-4 py-16 bg-white" id="tecnologias">
+    <article class="max-w-screen-xl mx-auto">
+      <Subtitle
+        title="Herramientas que Uso"
+        description="Tecnologías probadas y confiables para crear soluciones duraderas"
+        textColor="text-neutral-900"
+      />
+      <div
+        class="grid grid-cols-3 gap-4 mt-10 lg:mx-auto lg:max-w-screen-md md:grid-cols-6 md:gap-8 place-items-center"
+      >
         <TechnologyCard src={RailsImage} alt="Ruby on Rails Logo" />
         <TechnologyCard src={ReactImage} alt="React Logo" />
         <TechnologyCard src={PostgreSQLImage} alt="PostgreSQL Logo" />
@@ -134,237 +161,101 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
   </section>
 
   <!-- Proyectos Destacados - Con modales para más detalles -->
-  <section class="p-4 py-16 bg-gray-50" id="proyectos">
+  <section class="p-4 py-16 bg-[var(--CL-secondary)]" id="proyectos">
     <article class="max-w-screen-xl mx-auto">
       <Subtitle
-        title="Proyectos Destacados"
-        description="Soluciones reales para negocios reales. Sistemas en producción que han transformado la operación de nuestros clientes."
-        textColor="text-neutral-900"
+        title="Proyectos Reales en Acción"
+        description="Sistemas que están ayudando a emprendedores como tú a crecer"
+        textColor="text-white"
+        descriptionColor="text-white"
       />
-      
+
       <div class="grid gap-8 mt-12 md:grid-cols-2">
         <!-- QuickInventory -->
-        <div class="overflow-hidden transition bg-white rounded-lg shadow-md hover:shadow-xl">
+        <div
+          class="overflow-hidden transition bg-white rounded-lg shadow-md hover:shadow-xl"
+        >
           <Image
             src={Project_1}
             alt="QuickInventory Sistema de Inventario"
-            class="object-cover w-full h-64"
+            class="object-cover w-full h-96"
           />
           <div class="p-6">
             <h3 class="mb-2 text-2xl font-bold">QuickInventory</h3>
-            <p class="mb-3 text-sm text-gray-500">Sistema de Inventario y Punto de Venta</p>
+            <p class="mb-3 text-sm text-gray-500">
+              Sistema de Inventario y Punto de Venta
+            </p>
             <p class="mb-6 text-gray-600">
-              Sistema completo para gestión de inventarios y ventas, ideal para pequeños comercios. 
-              Incluye control de stock, reportes, y punto de venta POS.
+              Sistema completo para gestión de inventarios y ventas, ideal para
+              pequeños comercios. Incluye control de stock, reportes, y punto de
+              venta POS.
             </p>
             <div class="flex gap-2 mb-5">
-              <span class="text-white bg-red-500 badge badge-sm">Ruby on Rails</span>
-              <span class="text-white badge badge-sm bg-cyan-600">TailwindCSS</span>
-              <span class="text-white bg-green-500 badge badge-sm">PostgreSQL</span>
-              <span class="text-white bg-blue-500 badge badge-sm">Docker</span>
+              <span class="text-white badge badge-sm bg-[var(--CL-accent)]"
+                >Ruby on Rails</span
+              >
+              <span class="text-white badge badge-sm bg-cyan-600"
+                >TailwindCSS</span
+              >
+              <span class="text-white bg-green-700 badge badge-sm"
+                >PostgreSQL</span
+              >
+              <span class="text-white bg-blue-700 badge badge-sm">Docker</span>
             </div>
             <div class="flex gap-3">
-              <button class="btn btn-sm btn-outline" onclick="modal_quickinventory.showModal()">Ver Detalles</button>
-              <a href="https://inventory.rysthdesign.com/" target="_blank" class="text-white btn btn-sm btn-neutral bg-brand-blue">Visitar Demo</a>
+              <button
+                class="text-[var(--CL-accent)] border-[var(--CL-accent)] hover:bg-[var(--CL-accent)] hover:text-white btn btn-sm btn-outline"
+                onclick="modal_quickinventory.showModal()">Ver Detalles</button
+              >
+              <a
+                href="https://inventory.rysthdesign.com/"
+                target="_blank"
+                class="text-white btn btn-sm btn-neutral bg-[var(--CL-accent)]"
+                >Visitar Demo</a
+              >
             </div>
           </div>
         </div>
-        
+
         <!-- TrámitesEC -->
-        <div class="overflow-hidden transition bg-white rounded-lg shadow-md hover:shadow-xl">
+        <div
+          class="overflow-hidden transition bg-white rounded-lg shadow-md hover:shadow-xl"
+        >
           <Image
             src={Project_2}
             alt="TrámitesEC Gestión de Trámites"
-            class="object-cover w-full h-64"
+            class="object-cover w-full h-96"
           />
           <div class="p-6">
             <h3 class="mb-2 text-2xl font-bold">TrámitesEC</h3>
-            <p class="mb-3 text-sm text-gray-500">Sistema de Gestión de Trámites</p>
+            <p class="mb-3 text-sm text-gray-500">
+              Sistema de Gestión de Trámites
+            </p>
             <p class="mb-6 text-gray-600">
-              Plataforma diseñada para la gestión integral de trámites y clientes. 
-              Utilizada por 2+ años por una empresa de gestión de trámites ciudadanos.
+              Plataforma diseñada para la gestión integral de trámites y
+              clientes. Utilizada por 2+ años por una empresa de gestión de
+              trámites ciudadanos.
             </p>
             <div class="flex gap-2 mb-5">
-              <span class="text-white bg-blue-500 badge badge-sm">React</span>
-              <span class="text-white bg-red-500 badge badge-sm">Ruby on Rails</span>
-              <span class="text-white bg-green-500 badge badge-sm">PostgreSQL</span>
+              <span class="text-white bg-blue-700 badge badge-sm">React</span>
+              <span class="text-white badge badge-sm bg-[var(--CL-accent)]"
+                >Ruby on Rails</span
+              >
+              <span class="text-white bg-green-700 badge badge-sm"
+                >PostgreSQL</span
+              >
             </div>
             <div class="flex gap-3">
-              <button class="btn btn-sm btn-outline" onclick="modal_tramites.showModal()">Ver Detalles</button>
-              <a href="https://react-tramitesec-uxbm.onrender.com/" target="_blank" class="text-white btn btn-sm btn-neutral bg-brand-blue">Visitar Demo</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </article>
-  </section>
-
-  <!-- Soluciones/Servicios Section - NUEVO -->
-  <section class="p-4 py-16" id="soluciones">
-    <article class="max-w-screen-xl mx-auto">
-      <Subtitle
-        title="Nuestras Soluciones"
-        description="Desde sistemas a medida hasta productos pre-construidos adaptables a tu negocio"
-        textColor="text-neutral-900"
-      />
-      
-      <div class="grid gap-8 mt-12 md:grid-cols-3">
-        <!-- Solución 1: Sistemas a Medida -->
-        <div class="p-6 transition border rounded-lg hover:shadow-lg">
-          <h3 class="mb-4 text-xl font-bold">Desarrollo a Medida</h3>
-          <p class="mb-6 text-gray-600">
-            Sistemas web completamente personalizados que se adaptan exactamente a los procesos
-            específicos de tu negocio.
-          </p>
-          <ul class="mb-8 space-y-2">
-            <li class="flex items-center gap-2">
-              <FaCheckCircle className="text-green-500" />
-              <span>Análisis de requisitos exhaustivo</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <FaCheckCircle className="text-green-500" />
-              <span>Desarrollo iterativo con feedback</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <FaCheckCircle className="text-green-500" />
-              <span>Mantenimiento y actualizaciones</span>
-            </li>
-          </ul>
-          <a 
-            href="/servicios"
-            class="btn btn-outline w-full hover:bg-[var(--CL-primary)] hover:text-white"
-          >
-            Más Información
-          </a>
-        </div>
-        
-        <!-- Solución 2: Sistemas Pre-construidos Adaptables -->
-        <div class="p-6 transition border rounded-lg hover:shadow-lg">
-          <h3 class="mb-4 text-xl font-bold">Sistemas Pre-construidos</h3>
-          <p class="mb-6 text-gray-600">
-            Plataformas listas para usar que pueden adaptarse fácilmente a tu negocio, 
-            permitiendo un lanzamiento más rápido.
-          </p>
-          <ul class="mb-8 space-y-2">
-            <li class="flex items-center gap-2">
-              <FaCheckCircle className="text-green-500" />
-              <span>Implementación rápida</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <FaCheckCircle className="text-green-500" />
-              <span>Personalización de funcionalidades</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <FaCheckCircle className="text-green-500" />
-              <span>Menor inversión inicial</span>
-            </li>
-          </ul>
-          <a 
-            href="/planes" 
-            class="btn btn-outline w-full hover:bg-[var(--CL-primary)] hover:text-white"
-          >
-            Ver Opciones
-          </a>
-        </div>
-        
-        <!-- Solución 3: Consultoría -->
-        <div class="p-6 transition border rounded-lg hover:shadow-lg">
-          <h3 class="mb-4 text-xl font-bold">Consultoría Tecnológica</h3>
-          <p class="mb-6 text-gray-600">
-            Asesoramiento técnico para implementar las mejores soluciones tecnológicas
-            en tu negocio según tus necesidades y presupuesto.
-          </p>
-          <ul class="mb-8 space-y-2">
-            <li class="flex items-center gap-2">
-              <FaCheckCircle className="text-green-500" />
-              <span>Evaluación de necesidades</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <FaCheckCircle className="text-green-500" />
-              <span>Recomendaciones personalizadas</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <FaCheckCircle className="text-green-500" />
-              <span>Asesoría para implementación</span>
-            </li>
-          </ul>
-          <a 
-            href="/contactos" 
-            class="btn btn-outline w-full hover:bg-[var(--CL-primary)] hover:text-white"
-          >
-            Consultar
-          </a>
-        </div>
-      </div>
-    </article>
-  </section>
-
-  <!-- Testimonials Section - NUEVO -->
-  <section class="p-4 py-16 bg-gray-50">
-    <article class="max-w-screen-xl mx-auto">
-      <Subtitle
-        title="Lo Que Dicen Nuestros Clientes"
-        description="Empresas que ya han optimizado sus procesos con nuestras soluciones"
-        textColor="text-neutral-900"
-      />
-      
-      <div class="grid gap-8 mt-12 md:grid-cols-2">
-        <!-- Testimonial 1 -->
-        <div class="p-6 bg-white rounded-lg shadow-md">
-          <div class="flex items-center mb-4">
-            <div class="rating rating-sm">
-              <input type="radio" name="rating-1" class="bg-orange-400 mask mask-star-2" checked />
-              <input type="radio" name="rating-1" class="bg-orange-400 mask mask-star-2" checked />
-              <input type="radio" name="rating-1" class="bg-orange-400 mask mask-star-2" checked />
-              <input type="radio" name="rating-1" class="bg-orange-400 mask mask-star-2" checked />
-              <input type="radio" name="rating-1" class="bg-orange-400 mask mask-star-2" checked />
-            </div>
-            <span class="ml-2 text-sm text-gray-500">Hace 3 meses</span>
-          </div>
-          <p class="mb-6 italic text-gray-600">
-            "El sistema de inventario que implementamos ha sido clave para nuestro crecimiento.
-            Ahora tenemos un control exacto del stock y las ventas, lo que nos ha permitido 
-            tomar mejores decisiones de negocio."
-          </p>
-          <div class="flex items-center">
-            <div class="avatar">
-              <div class="flex items-center justify-center w-12 h-12 bg-gray-200 rounded-full">
-                <span class="text-lg font-bold">AM</span>
-              </div>
-            </div>
-            <div class="ml-4">
-              <p class="font-bold">Andrés Mendoza</p>
-              <p class="text-sm text-gray-500">Gerente, Distribuidora El Éxito</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Testimonial 2 -->
-        <div class="p-6 bg-white rounded-lg shadow-md">
-          <div class="flex items-center mb-4">
-            <div class="rating rating-sm">
-              <input type="radio" name="rating-2" class="bg-orange-400 mask mask-star-2" checked />
-              <input type="radio" name="rating-2" class="bg-orange-400 mask mask-star-2" checked />
-              <input type="radio" name="rating-2" class="bg-orange-400 mask mask-star-2" checked />
-              <input type="radio" name="rating-2" class="bg-orange-400 mask mask-star-2" checked />
-              <input type="radio" name="rating-2" class="bg-orange-400 mask mask-star-2" checked />
-            </div>
-            <span class="ml-2 text-sm text-gray-500">Hace 6 meses</span>
-          </div>
-          <p class="mb-6 italic text-gray-600">
-            "Llevamos dos años usando el sistema de gestión de TrámitesEC y ha transformado nuestra 
-            operación. El soporte técnico siempre está disponible y las actualizaciones han
-            sido muy valiosas para nuestro negocio."
-          </p>
-          <div class="flex items-center">
-            <div class="avatar">
-              <div class="flex items-center justify-center w-12 h-12 bg-gray-200 rounded-full">
-                <span class="text-lg font-bold">LC</span>
-              </div>
-            </div>
-            <div class="ml-4">
-              <p class="font-bold">Laura Campos</p>
-              <p class="text-sm text-gray-500">Directora, TrámitesEC</p>
+              <button
+                class="text-[var(--CL-accent)] border-[var(--CL-accent)] hover:bg-[var(--CL-accent)] hover:text-white btn btn-sm btn-outline"
+                onclick="modal_tramites.showModal()">Ver Detalles</button
+              >
+              <a
+                href="https://react-tramitesec-uxbm.onrender.com/"
+                target="_blank"
+                class="text-white btn btn-sm btn-neutral bg-[var(--CL-accent)]"
+                >Visitar Demo</a
+              >
             </div>
           </div>
         </div>
@@ -379,12 +270,13 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
         ¿Listo para impulsar tu negocio con tecnología?
       </h2>
       <p class="max-w-2xl mx-auto mb-8 text-lg">
-        Agenda una consulta gratuita de 30 minutos para discutir cómo podemos ayudarte 
-        a optimizar tus procesos y aumentar tus ventas con soluciones digitales a medida.
+        Agenda una consulta gratuita de 30 minutos para discutir cómo podemos
+        ayudarte a optimizar tus procesos y aumentar tus ventas con soluciones
+        digitales a medida.
       </p>
-      <a 
-        href="http://tinyurl.com/contact-ws" 
-        target="_blank" 
+      <a
+        href="http://tinyurl.com/contact-ws"
+        target="_blank"
         class="btn btn-lg bg-white text-[var(--CL-primary)] hover:bg-opacity-90 shadow-xl"
       >
         Agendar Consulta Gratuita
@@ -393,122 +285,16 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
     </article>
   </section>
 
-  <!-- FAQ Section - Modificado -->
-  <section class="p-4 py-16 bg-[#191919]" id="faqs">
-    <article class="max-w-screen-lg mx-auto">
-      <Subtitle
-        title="Preguntas Frecuentes"
-        description="Respuestas a las consultas más comunes sobre nuestros servicios"
-        textColor="text-white"
-        descriptionColor="text-gray-200"
-      />
-
-      <div class="grid gap-4 mt-12">
-        <div class="border collapse collapse-arrow bg-white/5 border-white/10">
-          <input type="radio" name="faq-accordion" checked="checked" />
-          <div class="font-semibold text-white collapse-title">
-            ¿Cuánto cuesta desarrollar un sistema web para mi negocio?
-          </div>
-          <div class="text-sm text-gray-300 collapse-content">
-            <p class="mb-2">Los costos varían según la complejidad y requerimientos:</p>
-            <ul class="pl-5 space-y-1 list-disc">
-              <li>Sistemas pre-construidos adaptados: desde $600</li>
-              <li>Desarrollos a medida: desde $1200</li>
-              <li>Implementaciones empresariales: desde $3000</li>
-            </ul>
-            <p class="mt-2">
-              Cada proyecto es único y requiere una evaluación específica. Ofrecemos consultas gratuitas 
-              para entender tus necesidades y proporcionarte un presupuesto detallado.
-            </p>
-          </div>
-        </div>
-
-        <div class="border collapse collapse-arrow bg-white/5 border-white/10">
-          <input type="radio" name="faq-accordion" />
-          <div class="font-semibold text-white collapse-title">
-            ¿Qué tecnologías utilizan para el desarrollo?
-          </div>
-          <div class="text-sm text-gray-300 collapse-content">
-            <p class="mb-2">Utilizamos un stack tecnológico moderno y probado:</p>
-            <ul class="pl-5 space-y-1 list-disc">
-              <li>Backend: Ruby on Rails para APIs robustas y seguras</li>
-              <li>Frontend: React para interfaces dinámicas y responsivas</li>
-              <li>Base de datos: PostgreSQL para almacenamiento confiable</li>
-              <li>Despliegue: Docker para implementación consistente</li>
-              <li>Diseño: TailwindCSS para interfaces modernas y adaptables</li>
-            </ul>
-            <p class="mt-2">
-              Este conjunto de tecnologías nos permite desarrollar sistemas escalables, seguros y con un excelente rendimiento.
-            </p>
-          </div>
-        </div>
-
-        <div class="border collapse collapse-arrow bg-white/5 border-white/10">
-          <input type="radio" name="faq-accordion" />
-          <div class="font-semibold text-white collapse-title">
-            ¿Cuánto tiempo toma desarrollar mi sistema?
-          </div>
-          <div class="text-sm text-gray-300 collapse-content">
-            <p class="mb-2">Los tiempos estimados son:</p>
-            <ul class="pl-5 space-y-1 list-disc">
-              <li>Implementación de sistemas pre-construidos: 2-4 semanas</li>
-              <li>Desarrollos a medida pequeños: 4-8 semanas</li>
-              <li>Proyectos complejos: 8-16 semanas</li>
-            </ul>
-            <p class="mt-2">
-              Trabajamos con metodologías ágiles que permiten entregas incrementales, por lo que 
-              podrás ver avances concretos durante todo el proceso de desarrollo.
-            </p>
-          </div>
-        </div>
-
-        <div class="border collapse collapse-arrow bg-white/5 border-white/10">
-          <input type="radio" name="faq-accordion" />
-          <div class="font-semibold text-white collapse-title">
-            ¿Qué soporte ofrecen después del lanzamiento?
-          </div>
-          <div class="text-sm text-gray-300 collapse-content">
-            <p class="mb-2">
-              Nuestros planes de soporte y mantenimiento incluyen:
-            </p>
-            <ul class="pl-5 space-y-1 list-disc">
-              <li>Actualizaciones de seguridad y corrección de errores</li>
-              <li>Respaldos automáticos diarios</li>
-              <li>Monitoreo 24/7 de la plataforma</li>
-              <li>Soporte técnico por email, chat o teléfono</li>
-              <li>Mejoras continuas basadas en feedback</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="border collapse collapse-arrow bg-white/5 border-white/10">
-          <input type="radio" name="faq-accordion" />
-          <div class="font-semibold text-white collapse-title">
-            ¿Cómo aseguran la protección de mis datos?
-          </div>
-          <div class="text-sm text-gray-300 collapse-content">
-            <p>La seguridad es nuestra prioridad:</p>
-            <ul class="pl-5 mt-2 space-y-1 list-disc">
-              <li>Cifrado de datos en tránsito (SSL/TLS)</li>
-              <li>Autenticación segura y control de accesos</li>
-              <li>Auditorías de seguridad periódicas</li>
-              <li>Backups cifrados y redundantes</li>
-              <li>Cumplimiento con regulaciones de protección de datos</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </article>
-  </section>
-
   <!-- Modales para los proyectos -->
   <dialog id="modal_quickinventory" class="modal modal-bottom sm:modal-middle">
     <div class="modal-box">
-      <h3 class="text-lg font-bold">QuickInventory - Sistema de Inventario y POS</h3>
+      <h3 class="text-lg font-bold">
+        QuickInventory - Sistema de Inventario y POS
+      </h3>
       <div class="py-4">
         <p class="mb-3">
-          Sistema completo para la gestión de inventarios y punto de venta, diseñado específicamente
-          para pequeños y medianos comercios.
+          Sistema completo para la gestión de inventarios y punto de venta,
+          diseñado específicamente para pequeños y medianos comercios.
         </p>
         <h4 class="mb-2 font-semibold">Características principales:</h4>
         <ul class="pl-5 mb-4 space-y-1 list-disc">
@@ -521,7 +307,8 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
         </ul>
         <h4 class="mb-2 font-semibold">Tecnologías utilizadas:</h4>
         <div class="flex flex-wrap gap-2 mb-4">
-          <span class="text-white bg-red-500 badge badge-sm">Ruby on Rails</span>
+          <span class="text-white bg-red-500 badge badge-sm">Ruby on Rails</span
+          >
           <span class="text-white badge badge-sm bg-cyan-600">TailwindCSS</span>
           <span class="text-white bg-green-500 badge badge-sm">PostgreSQL</span>
           <span class="text-white bg-blue-500 badge badge-sm">Docker</span>
@@ -529,8 +316,8 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
         </div>
         <h4 class="mb-2 font-semibold">Resultados del cliente:</h4>
         <p>
-          El cliente experimentó una reducción del 35% en pérdidas de inventario y un aumento
-          del 20% en eficiencia operativa tras 6 meses de uso.
+          El cliente experimentó una reducción del 35% en pérdidas de inventario
+          y un aumento del 20% en eficiencia operativa tras 6 meses de uso.
         </p>
       </div>
       <div class="modal-action">
@@ -546,11 +333,14 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
 
   <dialog id="modal_tramites" class="modal modal-bottom sm:modal-middle">
     <div class="modal-box">
-      <h3 class="text-lg font-bold">TrámitesEC - Sistema de Gestión de Trámites</h3>
+      <h3 class="text-lg font-bold">
+        TrámitesEC - Sistema de Gestión de Trámites
+      </h3>
       <div class="py-4">
         <p class="mb-3">
-          Aplicación web completa para la gestión de trámites gubernamentales, clientes y pagos,
-          en uso continuo por más de 2 años por una empresa de gestión documental.
+          Aplicación web completa para la gestión de trámites gubernamentales,
+          clientes y pagos, en uso continuo por más de 2 años por una empresa de
+          gestión documental.
         </p>
         <h4 class="mb-2 font-semibold">Características principales:</h4>
         <ul class="pl-5 mb-4 space-y-1 list-disc">
@@ -564,15 +354,17 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
         <h4 class="mb-2 font-semibold">Tecnologías utilizadas:</h4>
         <div class="flex flex-wrap gap-2 mb-4">
           <span class="text-white bg-blue-500 badge badge-sm">React</span>
-          <span class="text-white bg-red-500 badge badge-sm">Ruby on Rails</span>
+          <span class="text-white bg-red-500 badge badge-sm">Ruby on Rails</span
+          >
           <span class="text-white bg-green-500 badge badge-sm">PostgreSQL</span>
           <span class="text-white bg-yellow-500 badge badge-sm">Redux</span>
           <span class="text-white bg-purple-500 badge badge-sm">AWS S3</span>
         </div>
         <h4 class="mb-2 font-semibold">Resultados del cliente:</h4>
         <p>
-          TrámitesEC ha permitido a la empresa aumentar su capacidad de procesamiento en un 70%,
-          reducir errores en documentación y mejorar la satisfacción de sus clientes.
+          TrámitesEC ha permitido a la empresa aumentar su capacidad de
+          procesamiento en un 70%, reducir errores en documentación y mejorar la
+          satisfacción de sus clientes.
         </p>
       </div>
       <div class="modal-action">
