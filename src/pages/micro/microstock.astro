@@ -1,0 +1,352 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Image } from "astro:assets";
+import {
+  FaArrowRight,
+  FaCheckCircle,
+  FaMobile,
+  FaShieldAlt,
+  FaClock,
+  FaWhatsapp,
+  FaEnvelope,
+} from "react-icons/fa";
+import {
+  HiOutlineCube,
+  HiOutlineChartBar,
+  HiOutlineDevicePhoneMobile,
+} from "react-icons/hi2";
+import ResponsiveIllustration from "@/assets/images/brand/hero.png";
+---
+
+<Layout
+  title="MicroStock | Sistema de Inventario para Microempresas | RysthDesign"
+>
+  <!-- Hero Section -->
+  <section
+    class="min-h-screen grid place-items-center p-4 bg-gradient-to-br from-[var(--CL-primary)] to-[var(--CL-secondary)] text-white"
+  >
+    <article
+      class="grid items-center max-w-screen-xl gap-12 mx-auto md:grid-cols-2"
+    >
+      <div class="space-y-6">
+        <div class="space-y-4">
+          <h1 class="text-4xl font-black leading-tight md:text-6xl">
+            🚀 ¡Digitaliza tu Negocio con
+            <span class="text-[var(--CL-warm)]">MicroStock</span>!
+          </h1>
+          <p class="text-xl font-light md:text-2xl">
+            La herramienta interna definitiva para emprendedores que quieren
+            <strong>dejar los cuadernos atrás</strong>.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="#reservar"
+            class="px-8 py-4 text-lg font-semibold bg-[var(--CL-warm)] text-white rounded-lg hover:bg-opacity-90 transition flex items-center gap-2"
+          >
+            Reservar Acceso
+            <FaArrowRight />
+          </a>
+          <a
+            href="#caracteristicas"
+            class="px-8 py-4 text-lg font-semibold border-2 border-white text-white rounded-lg hover:bg-white hover:text-[var(--CL-primary)] transition"
+          >
+            Ver Características
+          </a>
+        </div>
+
+        <div class="flex items-center gap-4 text-[var(--CL-warm)]">
+          <span class="text-2xl">📅</span>
+          <div>
+            <p class="font-semibold">Fecha de lanzamiento:</p>
+            <p class="text-xl font-bold">31 de Mayo de 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hidden md:block">
+        <Image
+          src={ResponsiveIllustration}
+          alt="MicroStock Sistema de Inventario"
+          class="w-full max-w-md mx-auto"
+        />
+      </div>
+    </article>
+  </section>
+
+  <!-- Problema/Solución -->
+  <section class="p-4 py-16">
+    <article class="max-w-screen-xl mx-auto">
+      <div class="mb-12 text-center">
+        <h2 class="mb-4 text-3xl font-black md:text-4xl text-neutral-900">
+          ¿Tu negocio aún usa cuadernos o hojas de cálculo?
+        </h2>
+        <p class="text-xl text-gray-600">
+          📔➡️💻 MicroStock es la solución fácil y económica para digitalizar tu
+          inventario
+        </p>
+      </div>
+
+      <div class="grid items-center gap-12 md:grid-cols-2">
+        <div class="space-y-6">
+          <h3 class="text-2xl font-bold text-red-600">
+            ❌ Problemas del método tradicional:
+          </h3>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3">
+              <span class="text-red-500">❌</span>
+              <span>Errores manuales constantes</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-red-500">❌</span>
+              <span>Pérdida de tiempo en búsquedas</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-red-500">❌</span>
+              <span>Sin acceso remoto a información</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-red-500">❌</span>
+              <span>Reportes complicados o inexistentes</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="space-y-6">
+          <h3 class="text-2xl font-bold text-green-600">✅ Con MicroStock:</h3>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3">
+              <FaCheckCircle className="text-green-500" />
+              <span>Control de stock en segundos, desde tu celular</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <FaCheckCircle className="text-green-500" />
+              <span>Escalable al 100%: Añade funciones según crezcas</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <FaCheckCircle className="text-green-500" />
+              <span>Datos protegidos y accesibles 24/7</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <FaCheckCircle className="text-green-500" />
+              <span>Configuración en minutos</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- Características Principales -->
+  <section class="p-4 py-16 bg-[var(--CL-accent-light)]" id="caracteristicas">
+    <article class="max-w-screen-xl mx-auto">
+      <div class="mb-12 text-center">
+        <h2 class="mb-4 text-3xl font-black md:text-4xl text-neutral-900">
+          ✅ Beneficios Clave de MicroStock
+        </h2>
+        <p class="text-lg text-gray-600">
+          Diseñado específicamente para microempresas y emprendimientos
+        </p>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Beneficio 1 -->
+        <div
+          class="p-6 transition bg-white rounded-lg shadow-md hover:shadow-lg"
+        >
+          <FaMobile className="text-4xl text-[var(--CL-accent)] mb-4" />
+          <h3 class="mb-3 text-xl font-bold">📦 Control Instantáneo</h3>
+          <p class="text-gray-600">
+            Controla tu stock en segundos, desde tu celular o computadora.
+            Actualiza inventario en tiempo real.
+          </p>
+        </div>
+
+        <!-- Beneficio 2 -->
+        <div
+          class="p-6 transition bg-white rounded-lg shadow-md hover:shadow-lg"
+        >
+          <HiOutlineChartBar
+            className="text-4xl text-[var(--CL-accent)] mb-4"
+          />
+          <h3 class="mb-3 text-xl font-bold">🚀 100% Escalable</h3>
+          <p class="text-gray-600">
+            Añade funciones según crezcas. Consulta costos de integración para
+            nuevas características.
+          </p>
+        </div>
+
+        <!-- Beneficio 3 -->
+        <div
+          class="p-6 transition bg-white rounded-lg shadow-md hover:shadow-lg"
+        >
+          <FaShieldAlt className="text-4xl text-[var(--CL-accent)] mb-4" />
+          <h3 class="mb-3 text-xl font-bold">🔒 Seguridad Garantizada</h3>
+          <p class="text-gray-600">
+            Tus datos protegidos con tecnología profesional y accesibles las 24
+            horas del día.
+          </p>
+        </div>
+
+        <!-- Beneficio 4 -->
+        <div
+          class="p-6 transition bg-white rounded-lg shadow-md hover:shadow-lg"
+        >
+          <FaClock className="text-4xl text-[var(--CL-accent)] mb-4" />
+          <h3 class="mb-3 text-xl font-bold">💡 Configuración Rápida</h3>
+          <p class="text-gray-600">
+            Ideal para negocios sin experiencia técnica. Tu sistema estará listo
+            en minutos.
+          </p>
+        </div>
+
+        <!-- Beneficio 5 -->
+        <div
+          class="p-6 transition bg-white rounded-lg shadow-md hover:shadow-lg"
+        >
+          <HiOutlineDevicePhoneMobile
+            className="text-4xl text-[var(--CL-accent)] mb-4"
+          />
+          <h3 class="mb-3 text-xl font-bold">🌍 Para Cualquier País</h3>
+          <p class="text-gray-600">
+            Sin ataduras a normativas locales. No incluye facturación
+            electrónica para máxima flexibilidad.
+          </p>
+        </div>
+
+        <!-- Beneficio 6 -->
+        <div
+          class="p-6 transition bg-white rounded-lg shadow-md hover:shadow-lg"
+        >
+          <HiOutlineCube className="text-4xl text-[var(--CL-accent)] mb-4" />
+          <h3 class="mb-3 text-xl font-bold">🌐 100% Online</h3>
+          <p class="text-gray-600">
+            Tecnología profesional (React + Ruby on Rails). Accede desde
+            cualquier lugar del mundo.
+          </p>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="p-4 py-16">
+    <article class="max-w-screen-lg mx-auto text-center">
+      <div class="p-8 bg-white rounded-lg shadow-lg">
+        <blockquote
+          class="mb-6 text-2xl italic font-light text-gray-700 md:text-3xl"
+        >
+          "Antes anotaba todo en libretas... ¡Ahora controlo mi negocio desde mi
+          teléfono!"
+        </blockquote>
+        <p class="text-gray-500">- Testimonio real de usuario beta</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- Lo que lograrás -->
+  <section class="p-4 py-16 bg-gray-50">
+    <article class="max-w-screen-xl mx-auto">
+      <div class="mb-12 text-center">
+        <h2 class="mb-4 text-3xl font-black md:text-4xl text-neutral-900">
+          👉 ¡Es hora de modernizarse!
+        </h2>
+        <p class="text-lg text-gray-600">
+          MicroStock te ayuda a transformar tu negocio
+        </p>
+      </div>
+
+      <div class="grid gap-8 text-center md:grid-cols-3">
+        <div class="p-6">
+          <div class="mb-4 text-4xl">📉</div>
+          <h3 class="mb-2 text-xl font-bold">Eliminar errores manuales</h3>
+          <p class="text-gray-600">
+            Acabar con los errores de conteo y pérdidas por desorganización
+          </p>
+        </div>
+
+        <div class="p-6">
+          <div class="mb-4 text-4xl">⏳</div>
+          <h3 class="mb-2 text-xl font-bold">Ahorrar tiempo en gestión</h3>
+          <p class="text-gray-600">
+            Menos tiempo en papeles, más tiempo para hacer crecer tu negocio
+          </p>
+        </div>
+
+        <div class="p-6">
+          <div class="mb-4 text-4xl">💼</div>
+          <h3 class="mb-2 text-xl font-bold">Enfocarte en vender y crecer</h3>
+          <p class="text-gray-600">
+            Dedica tu energía a lo que realmente importa: tus clientes
+          </p>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- Reserva tu acceso -->
+  <section
+    class="p-4 py-16 bg-gradient-to-r from-[var(--CL-accent)] to-[var(--CL-accent-dark)] text-white"
+    id="reservar"
+  >
+    <article class="max-w-screen-lg mx-auto text-center">
+      <h2 class="mb-6 text-3xl font-black md:text-4xl">
+        📩 ¿Listo para empezar?
+      </h2>
+      <p class="mb-8 text-xl">
+        👉 ¡Contáctame YA y reserva tu acceso para el lanzamiento!
+      </p>
+
+      <div
+        class="bg-white text-[var(--CL-primary)] p-8 rounded-lg mb-8 inline-block"
+      >
+        <div class="space-y-2">
+          <p class="text-lg font-semibold">📅 Fecha de lanzamiento:</p>
+          <p class="text-3xl font-black text-[var(--CL-accent)]">
+            31 de Mayo de 2025
+          </p>
+        </div>
+      </div>
+
+      <div class="grid max-w-2xl gap-6 mx-auto md:grid-cols-2">
+        <a
+          href="https://wa.me/+593988949117?text=¡Hola! Quiero reservar mi acceso a MicroStock para el lanzamiento del 31 de Mayo. ¿Podrías darme más información?"
+          target="_blank"
+          class="flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#128C7E] text-white px-6 py-4 rounded-lg font-semibold text-lg transition"
+        >
+          <FaWhatsapp className="text-2xl" />
+          WhatsApp: +593 98 894 9117
+        </a>
+
+        <a
+          href="mailto:support@rysthdesign.com?subject=Reserva MicroStock&body=Hola, quiero reservar mi acceso a MicroStock para el lanzamiento del 31 de Mayo."
+          class="flex items-center justify-center gap-3 bg-[var(--CL-primary)] hover:bg-[var(--CL-secondary)] text-white px-6 py-4 rounded-lg font-semibold text-lg transition"
+        >
+          <FaEnvelope className="text-2xl" />
+          support@rysthdesign.com
+        </a>
+      </div>
+
+      <div class="mt-8 space-y-2">
+        <p class="text-lg">💳 <strong>Métodos de pago:</strong></p>
+        <p>PayPal | 🏦 Transferencia Bancaria</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- Disclaimer -->
+  <section class="p-4 py-8 bg-gray-100">
+    <article class="max-w-screen-lg mx-auto">
+      <div class="p-6 border-l-4 border-yellow-400 rounded-lg bg-yellow-50">
+        <h3 class="mb-2 font-bold text-yellow-800">⚠️ Disclaimer:</h3>
+        <p class="text-sm text-yellow-700">
+          MicroStock es una herramienta interna de gestión, no incluye
+          facturación electrónica para cumplir con regulaciones internacionales.
+          Ideal para negocios que necesitan organizar su inventario sin depender
+          de terceros.
+        </p>
+      </div>
+    </article>
+  </section>
+</Layout>
