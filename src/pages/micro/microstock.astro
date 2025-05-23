@@ -9,6 +9,7 @@ import {
   FaClock,
   FaWhatsapp,
   FaEnvelope,
+  FaDollarSign,
 } from "react-icons/fa";
 import {
   HiOutlineCube,
@@ -42,11 +43,11 @@ import ResponsiveIllustration from "@/assets/images/brand/hero.png";
 
         <div class="flex flex-wrap gap-4">
           <a
-            href="#reservar"
+            href="#adquirir"
             class="px-8 py-4 text-lg font-semibold bg-[var(--CL-warm)] text-white rounded-lg hover:bg-opacity-90 transition flex items-center gap-2"
           >
-            Reservar Acceso
-            <FaArrowRight />
+            Conocer Precios
+            <FaDollarSign />
           </a>
           <a
             href="#caracteristicas"
@@ -56,11 +57,15 @@ import ResponsiveIllustration from "@/assets/images/brand/hero.png";
           </a>
         </div>
 
-        <div class="flex items-center gap-4 text-[var(--CL-warm)]">
-          <span class="text-2xl">📅</span>
-          <div>
-            <p class="font-semibold">Fecha de lanzamiento:</p>
-            <p class="text-xl font-bold">31 de Mayo de 2025</p>
+        <div
+          class="p-6 border rounded-lg bg-white/10 backdrop-blur border-white/20"
+        >
+          <div class="flex items-center gap-4 text-[var(--CL-warm)]">
+            <span class="text-3xl">📅</span>
+            <div>
+              <p class="text-lg font-semibold">Disponible para adquisición:</p>
+              <p class="text-2xl font-black">31 de Mayo de 2025</p>
+            </div>
           </div>
         </div>
       </div>
@@ -230,8 +235,120 @@ import ResponsiveIllustration from "@/assets/images/brand/hero.png";
     </article>
   </section>
 
+  <!-- Precios y Planes -->
+  <section class="p-4 py-16" id="adquirir">
+    <article class="max-w-screen-xl mx-auto">
+      <div class="mb-12 text-center">
+        <h2 class="mb-4 text-3xl font-black md:text-4xl text-neutral-900">
+          💰 Precios Transparentes y Accesibles
+        </h2>
+        <p class="text-lg text-gray-600">
+          Inversión única + mantenimiento mensual. Sin sorpresas.
+        </p>
+      </div>
+
+      <div class="grid max-w-4xl gap-8 mx-auto lg:grid-cols-2">
+        <!-- Costo Inicial -->
+        <div
+          class="p-8 bg-white rounded-lg shadow-lg border-2 border-[var(--CL-accent)]"
+        >
+          <div class="mb-6 text-center">
+            <h3 class="text-2xl font-bold text-[var(--CL-accent)] mb-2">
+              💎 Inversión Inicial
+            </h3>
+            <div class="text-5xl font-black text-[var(--CL-primary)] mb-2">
+              $450
+            </div>
+            <p class="font-semibold text-gray-600">Pago único</p>
+          </div>
+
+          <div class="mb-8 space-y-4">
+            <h4 class="mb-4 text-lg font-bold text-center">
+              ✅ Todo incluido:
+            </h4>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3">
+                <FaCheckCircle className="text-green-500 flex-shrink-0" />
+                <span>Dominio personalizado (.com)</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <FaCheckCircle className="text-green-500 flex-shrink-0" />
+                <span>Implementación completa (2 semanas)</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <FaCheckCircle className="text-green-500 flex-shrink-0" />
+                <span>Entrega de credenciales de acceso</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <FaCheckCircle className="text-green-500 flex-shrink-0" />
+                <span>Reunión explicativa detallada</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <FaCheckCircle className="text-green-500 flex-shrink-0" />
+                <span>Capacitación para uso del sistema</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mantenimiento Mensual -->
+        <div class="p-8 bg-white border-2 border-blue-300 rounded-lg shadow-lg">
+          <div class="mb-6 text-center">
+            <h3 class="mb-2 text-2xl font-bold text-blue-600">
+              🔧 Mantenimiento Mensual
+            </h3>
+            <div class="mb-2 text-5xl font-black text-blue-700">$45</div>
+            <p class="font-semibold text-gray-600">Por mes</p>
+          </div>
+
+          <div class="mb-8 space-y-4">
+            <h4 class="mb-4 text-lg font-bold text-center">
+              🛠️ Servicios incluidos:
+            </h4>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3">
+                <FaCheckCircle className="text-blue-500 flex-shrink-0" />
+                <span>Mantenimiento del servidor</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <FaCheckCircle className="text-blue-500 flex-shrink-0" />
+                <span>Respaldo automático de base de datos</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <FaCheckCircle className="text-blue-500 flex-shrink-0" />
+                <span>Corrección de bugs y errores</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <FaCheckCircle className="text-blue-500 flex-shrink-0" />
+                <span>Actualizaciones de seguridad</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <FaCheckCircle className="text-blue-500 flex-shrink-0" />
+                <span>Soporte técnico básico</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nota sobre funcionalidades adicionales -->
+      <div
+        class="max-w-4xl p-6 mx-auto mt-12 border-l-4 border-yellow-400 rounded-lg bg-yellow-50"
+      >
+        <h4 class="mb-2 font-bold text-yellow-800">
+          ⚡ Funcionalidades Adicionales
+        </h4>
+        <p class="text-yellow-700">
+          <strong>¿Necesitas algo nuevo?</strong> Las implementaciones adicionales
+          tienen un costo basado en la criticidad y complejidad requerida. Te proporcionaremos
+          una cotización detallada para cualquier funcionalidad extra que necesites.
+        </p>
+      </div>
+    </article>
+  </section>
+
   <!-- Testimonial -->
-  <section class="p-4 py-16">
+  <section class="p-4 py-16 bg-gray-50">
     <article class="max-w-screen-lg mx-auto text-center">
       <div class="p-8 bg-white rounded-lg shadow-lg">
         <blockquote
@@ -246,7 +363,7 @@ import ResponsiveIllustration from "@/assets/images/brand/hero.png";
   </section>
 
   <!-- Lo que lograrás -->
-  <section class="p-4 py-16 bg-gray-50">
+  <section class="p-4 py-16">
     <article class="max-w-screen-xl mx-auto">
       <div class="mb-12 text-center">
         <h2 class="mb-4 text-3xl font-black md:text-4xl text-neutral-900">
@@ -285,24 +402,23 @@ import ResponsiveIllustration from "@/assets/images/brand/hero.png";
     </article>
   </section>
 
-  <!-- Reserva tu acceso -->
+  <!-- CTA para adquirir -->
   <section
     class="p-4 py-16 bg-gradient-to-r from-[var(--CL-accent)] to-[var(--CL-accent-dark)] text-white"
-    id="reservar"
   >
     <article class="max-w-screen-lg mx-auto text-center">
       <h2 class="mb-6 text-3xl font-black md:text-4xl">
-        📩 ¿Listo para empezar?
+        🚀 ¿Listo para adquirir MicroStock?
       </h2>
       <p class="mb-8 text-xl">
-        👉 ¡Contáctame YA y reserva tu acceso para el lanzamiento!
+        Contáctame para apartar tu lugar y obtener más información
       </p>
 
       <div
         class="bg-white text-[var(--CL-primary)] p-8 rounded-lg mb-8 inline-block"
       >
         <div class="space-y-2">
-          <p class="text-lg font-semibold">📅 Fecha de lanzamiento:</p>
+          <p class="text-lg font-semibold">📅 Disponible desde:</p>
           <p class="text-3xl font-black text-[var(--CL-accent)]">
             31 de Mayo de 2025
           </p>
@@ -311,7 +427,7 @@ import ResponsiveIllustration from "@/assets/images/brand/hero.png";
 
       <div class="grid max-w-2xl gap-6 mx-auto md:grid-cols-2">
         <a
-          href="https://wa.me/+593988949117?text=¡Hola! Quiero reservar mi acceso a MicroStock para el lanzamiento del 31 de Mayo. ¿Podrías darme más información?"
+          href="https://wa.me/+593988949117?text=¡Hola! Quiero información sobre MicroStock. ¿Podrías contarme más sobre el proceso de adquisición y los $450 de inversión inicial?"
           target="_blank"
           class="flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#128C7E] text-white px-6 py-4 rounded-lg font-semibold text-lg transition"
         >
@@ -320,7 +436,7 @@ import ResponsiveIllustration from "@/assets/images/brand/hero.png";
         </a>
 
         <a
-          href="mailto:support@rysthdesign.com?subject=Reserva MicroStock&body=Hola, quiero reservar mi acceso a MicroStock para el lanzamiento del 31 de Mayo."
+          href="mailto:support@rysthdesign.com?subject=Consulta MicroStock&body=Hola, quiero información sobre MicroStock y el proceso de adquisición."
           class="flex items-center justify-center gap-3 bg-[var(--CL-primary)] hover:bg-[var(--CL-secondary)] text-white px-6 py-4 rounded-lg font-semibold text-lg transition"
         >
           <FaEnvelope className="text-2xl" />
