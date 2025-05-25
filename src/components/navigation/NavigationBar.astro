@@ -1,98 +1,137 @@
 ---
 import { Image } from "astro:assets";
-import { FaHome, FaPhoneAlt } from "react-icons/fa";
-import BrandImage from "../../assets/images/brand/brand_dark.png";
-import Subtitle from "../heading/Subtitle.astro";
+import { FaArrowRight } from "react-icons/fa";
+import BrandImage from "../../assets/images/brand/brand.svg";
 ---
 
 <nav
-  class="sticky top-0 z-50 w-full p-4 py-0 transition duration-300 bg-white md:py-2 backdrop-blur shadow-black/5"
+  class="sticky top-0 z-50 w-full py-4 transition-all duration-300 backdrop-blur-md"
   id="navbar"
 >
-  <div class="relative max-w-screen-xl p-0 mx-auto navbar">
-    <div class="navbar-start">
-      <div class="">
-        <button
-          type="button"
-          class="btn btn-ghost lg:hidden ps-2 pe-2 !shadow-none"
-          aria-label="Toggle button menu "
-          id="toggleButton"
-        >
-          <i class="text-2xl bx bx-menu-alt-left text-neutral-900"></i>
-        </button>
-        <ul
-          class="hidden duration-700 absolute left-0 right-0 top-20 lg:hidden z-[1] p-4 shadow-xl bg-white rounded-xl space-y-2 min-w-full transition text-neutral-900"
-          id="mobileMenu"
-        >
+  <div class="max-w-screen-xl px-4 mx-auto">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center">
+        <Image src={BrandImage} alt="RysthDesign Logo" class="w-auto h-10" />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div
+        class="items-center hidden p-2 space-x-1 border rounded-full lg:flex"
+      >
+        <ul class="flex items-center gap-2">
           <li>
-            <a class="flex items-center gap-2 text-sm" href="/">
-              <i class="text-lg bx bx-home"></i>
-              Inicio</a
-            >
-          </li>
-          <!-- Añadido: Serie Micro en móvil -->
-          <li>
-            <a class="flex items-center gap-2 text-sm" href="/micro">
-              <i class="text-lg bx bx-cube"></i>
-              Serie Micro</a
+            <a
+              href="/servicios"
+              class="text-sm transition-all rounded-full text-slate-100 btn-sm btn btn-ghost hover:bg-slate-800"
+              >Servicios</a
             >
           </li>
           <li>
-            <a class="flex items-center gap-2 text-sm" href="#proyectos">
-              <i class="text-lg bx bx-code-alt"></i>
-              Proyectos</a
+            <a
+              href="/proyectos"
+              class="text-sm transition-all rounded-full text-slate-100 btn-sm btn btn-ghost hover:bg-slate-800"
+              >Proyectos</a
+            >
+          </li>
+          <li>
+            <a
+              href="/planes"
+              class="text-sm transition-all rounded-full text-slate-100 btn-sm btn btn-ghost hover:bg-slate-800"
+              >Planes y Precios</a
+            >
+          </li>
+          <li>
+            <a
+              href="/micro"
+              class="text-sm transition-all rounded-full text-slate-100 btn-sm btn btn-ghost hover:bg-slate-800"
+              >Serie Micro</a
+            >
+          </li>
+          <li>
+            <a
+              href="/contacto"
+              class="text-sm transition-all rounded-full text-slate-100 btn-sm btn btn-ghost hover:bg-slate-800"
+              >Contacto</a
             >
           </li>
         </ul>
       </div>
-      <a class="text-xl" href="/">
-        <Image src={BrandImage} alt="RysthDesign Logo" class="w-16 md:w-20" />
+
+      <!-- CTA Button -->
+      <a
+        href="http://tinyurl.com/contact-ws"
+        target="_blank"
+        class="hidden lg:flex items-center gap-2 bg-white text-[#050c28] px-6 py-2.5 rounded-full font-medium hover:bg-opacity-90 transition-all"
+      >
+        Contáctanos
+        <FaArrowRight className="text-sm" />
       </a>
+
+      <!-- Mobile menu button -->
+      <button
+        type="button"
+        class="lg:hidden inline-flex items-center rounded-full justify-center btn btn-circle text-white hover:bg-[#1a2346]"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        id="toggleButton"
+      >
+        <span class="sr-only">Abrir menu</span>
+        <i class="text-2xl bx bx-menu"></i>
+      </button>
     </div>
-    <div class="hidden navbar-center lg:flex">
-      <ul class="flex gap-3 text-neutral-900">
+  </div>
+
+  <!-- Mobile menu, show/hide based on menu state -->
+  <div class="hidden lg:hidden" id="mobileMenu">
+    <div class="px-4 pt-2 pb-4 bg-[#050c28] border-t border-[#1a2346]">
+      <ul class="space-y-2">
         <li>
           <a
-            href="/"
-            class="btn btn-sm btn-ghost hover:bg-neutral-600 hover:bg-opacity-20 !shadow-none hover:shadow-xl"
-            >Inicio</a
+            href="/servicios"
+            class="block px-3 py-2 text-base font-medium text-white hover:bg-[#1a2346] rounded-md"
+            >Servicios</a
           >
         </li>
-        <!-- Añadido: Serie Micro en desktop -->
+        <li>
+          <a
+            href="/proyectos"
+            class="block px-3 py-2 text-base font-medium text-white hover:bg-[#1a2346] rounded-md"
+            >Proyectos</a
+          >
+        </li>
+        <li>
+          <a
+            href="/planes"
+            class="block px-3 py-2 text-base font-medium text-white hover:bg-[#1a2346] rounded-md"
+            >Planes y Precios</a
+          >
+        </li>
         <li>
           <a
             href="/micro"
-            class="btn btn-sm btn-ghost hover:bg-neutral-600 hover:bg-opacity-20 !shadow-none hover:shadow-xl"
+            class="block px-3 py-2 text-base font-medium text-white hover:bg-[#1a2346] rounded-md"
             >Serie Micro</a
           >
         </li>
         <li>
           <a
-            href="#proyectos"
-            class="!shadow-none btn btn-sm btn-ghost hover:bg-neutral-600 hover:bg-opacity-20 hover:shadow-xl"
-            >Proyectos</a
+            href="/contacto"
+            class="block px-3 py-2 text-base font-medium text-white hover:bg-[#1a2346] rounded-md"
+            >Contacto</a
           >
+        </li>
+        <li class="pt-2">
+          <a
+            href="http://tinyurl.com/contact-ws"
+            target="_blank"
+            class="flex items-center justify-center gap-2 w-full bg-white text-[#050c28] px-4 py-2.5 rounded-md font-medium"
+          >
+            Contáctanos
+            <FaArrowRight className="text-sm" />
+          </a>
         </li>
       </ul>
     </div>
-    <div class="navbar-end">
-      <a
-        href="http://tinyurl.com/contact-ws"
-        target="_blank"
-        class="text-xs text-white bg-[#11a748] border border-[#128C7E] hover:bg-[#128C7E] hover:shadow-xl btn lg:text-sm btn-neutral hover:border-transparent hover:shadow-green-900/25 min-h-[40px] max-h-[40px] md:max-h-[40px] md:min-h-[40px]"
-      >
-        <i class="text-xl bx bxl-whatsapp md:text-2xl"></i>
-        Contactar
-      </a>
-    </div>
   </div>
 </nav>
-
-<script>
-  const toggleButton = document.querySelector("#toggleButton");
-  const mobileMenu = document.querySelector("#mobileMenu");
-
-  toggleButton.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-  });
-</script>
