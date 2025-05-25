@@ -6,18 +6,13 @@ import Experience_2 from "@/assets/images/experience/experience_2.png";
 import Experience_3 from "@/assets/images/experience/experience_3.png";
 import Project_1 from "@/assets/images/projects/project_1.png";
 import Project_2 from "@/assets/images/projects/project_2.png";
-import Project_3 from "@/assets/images/projects/project_3.png";
-import Project_4 from "@/assets/images/projects/project_4.png";
 import ReactImage from "@/assets/images/technologies/react.svg";
 import AstroImage from "@/assets/images/technologies/astro.svg";
 import RailsImage from "@/assets/images/technologies/rails.svg";
 import NodeJSImage from "@/assets/images/technologies/node.svg";
-import PostgreSQLImage from "@/assets/images/technologies/postgresql.svg"; // Recomendado añadir
-import DockerImage from "@/assets/images/technologies/docker.svg"; // Recomendado añadir
+import PostgreSQLImage from "@/assets/images/technologies/postgresql.svg";
+import DockerImage from "@/assets/images/technologies/docker.svg";
 import Subtitle from "@/components/heading/Subtitle.astro";
-import ExperienceCard from "@/components/ui/ExperienceCard.astro";
-import PricingCard from "@/components/ui/PricingCard.astro";
-import ProjectCard from "@/components/ui/ProjectCard.astro";
 import TechnologyCard from "@/components/ui/TechnologyCard.astro";
 import Layout from "@/layouts/Layout.astro";
 import { Image } from "astro:assets";
@@ -27,7 +22,7 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
 <Layout
   title="Software a Medida para Pequeñas Empresas | Sistemas Web | RysthDesign"
 >
-  <!-- Hero Section - Más personal y enfocado en emprendedores -->
+  <!-- Hero Section - Adaptado para fondo oscuro -->
   <section
     class="grid min-h-[calc(100vh-6rem)] p-4 pt-8 lg:pt-16 place-items-center"
   >
@@ -36,13 +31,12 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
     >
       <div class="space-y-6 md:space-y-8">
         <h1
-          class="text-3xl font-black md:text-4xl lg:text-6xl lg:!leading-[4rem] text-neutral-900"
+          class="text-3xl font-black md:text-4xl lg:text-6xl lg:!leading-[4rem] text-white"
         >
-          Hola emprendedor, soy <span class="text-[var(--CL-accent)]"
-            >RysthDesign</span
-          >, tu ingeniero de software
+          Hola emprendedor, soy <span class="text-[#4361ee]">RysthDesign</span>,
+          tu ingeniero de software
         </h1>
-        <p class="max-w-xl text-base text-neutral-700">
+        <p class="max-w-xl text-base text-gray-300">
           ¿Necesitas automatizar tareas, mejorar la experiencia de tus clientes
           o simplemente hacer crecer tu negocio con tecnología? Estoy aquí para
           ayudarte con soluciones digitales hechas a tu medida.
@@ -51,14 +45,14 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
           <a
             href="http://tinyurl.com/contact-ws"
             target="_blank"
-            class="px-6 py-3 text-white border-transparent shadow-xl btn lg:text-sm btn-neutral bg-brand-gradient animated-background group hover:bg-white hover:opacity-80 shadow-indigo-900/25"
+            class="px-6 py-3 text-[#050505] border-transparent shadow-xl btn lg:text-sm btn-neutral bg-white hover:bg-opacity-90 shadow-indigo-900/25"
           >
             Hablemos de tu Proyecto
             <i class="ml-2 bx bx-send"></i>
           </a>
           <a
             href="/micro"
-            class="px-6 py-3 border btn lg:text-sm btn-ghost border-gray-300 hover:border-[var(--CL-accent)] hover:text-[var(--CL-accent)]"
+            class="px-6 py-3 border btn lg:text-sm btn-ghost border-white text-white hover:border-[#4361ee] hover:text-[#4361ee] hover:bg-white"
           >
             Ver Serie Micro
             <FaArrowRight className="ml-2" />
@@ -75,27 +69,30 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
     </article>
   </section>
 
-  <!-- Ventajas Competitivas Section - REDISEÑADA -->
-  <section class="p-4 py-16">
+  <!-- Ventajas Competitivas Section - Adaptado para fondo oscuro -->
+  <section class="p-4 py-16 bg-[#111]">
     <article class="max-w-screen-xl mx-auto">
       <Subtitle
         title="¿Por Qué Trabajar Conmigo?"
         description="Me especializo en hacer que la tecnología trabaje PARA tu negocio, no al revés."
-        textColor="text-neutral-900"
+        textColor="text-white"
+        descriptionColor="text-gray-300"
       />
 
       <div class="grid max-w-screen-lg gap-4 mx-auto mt-12 md:grid-cols-3">
         <!-- Ventaja 1: Experiencia Comprobada -->
         <div
-          class="p-6 transition-shadow bg-white border-t-4 rounded-lg shadow-md border-t-[var(--CL-accent)] hover:shadow-xl"
+          class="p-6 transition-shadow bg-[#1a1a1a] border-t-4 rounded-lg shadow-md border-t-[#4361ee] hover:shadow-xl"
         >
           <div
-            class="flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[var(--CL-accent-light)]"
+            class="flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#4361ee]/20"
           >
-            <FaCheckCircle className="text-[var(--CL-accent)] text-2xl" />
+            <FaCheckCircle className="text-[#4361ee] text-2xl" />
           </div>
-          <h3 class="mb-3 text-xl font-bold">Lo Hago Simple Para Ti</h3>
-          <p class="text-gray-600">
+          <h3 class="mb-3 text-xl font-bold text-white">
+            Lo Hago Simple Para Ti
+          </h3>
+          <p class="text-gray-300">
             Traduzco tecnología compleja a soluciones prácticas. Mis sistemas
             llevan años funcionando sin interrupciones porque están diseñados
             pensando en tu negocio.
@@ -104,15 +101,17 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
 
         <!-- Ventaja 2: Soluciones Personalizadas -->
         <div
-          class="p-6 transition-shadow bg-white border-t-4 rounded-lg shadow-md border-t-[var(--CL-accent)] hover:shadow-xl"
+          class="p-6 transition-shadow bg-[#1a1a1a] border-t-4 rounded-lg shadow-md border-t-[#4361ee] hover:shadow-xl"
         >
           <div
-            class="flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[var(--CL-accent-light)]"
+            class="flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#4361ee]/20"
           >
-            <FaCheckCircle className="text-[var(--CL-accent)] text-2xl" />
+            <FaCheckCircle className="text-[#4361ee] text-2xl" />
           </div>
-          <h3 class="mb-3 text-xl font-bold">Tu Negocio, Tus Reglas</h3>
-          <p class="text-gray-600">
+          <h3 class="mb-3 text-xl font-bold text-white">
+            Tu Negocio, Tus Reglas
+          </h3>
+          <p class="text-gray-300">
             No necesitas adaptarte al software, yo adapto el software a tu forma
             de trabajar. Creo soluciones que encajan perfectamente en tus
             procesos actuales.
@@ -121,15 +120,15 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
 
         <!-- Ventaja 3: Soporte Continuo -->
         <div
-          class="p-6 transition-shadow bg-white border-t-4 rounded-lg shadow-md border-t-[var(--CL-accent)] hover:shadow-xl"
+          class="p-6 transition-shadow bg-[#1a1a1a] border-t-4 rounded-lg shadow-md border-t-[#4361ee] hover:shadow-xl"
         >
           <div
-            class="flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[var(--CL-accent-light)]"
+            class="flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#4361ee]/20"
           >
-            <FaCheckCircle className="text-[var(--CL-accent)] text-2xl" />
+            <FaCheckCircle className="text-[#4361ee] text-2xl" />
           </div>
-          <h3 class="mb-3 text-xl font-bold">Estaré Ahí Siempre</h3>
-          <p class="text-gray-600">
+          <h3 class="mb-3 text-xl font-bold text-white">Estaré Ahí Siempre</h3>
+          <p class="text-gray-300">
             No desaparezco después de entregar el proyecto. Ofrezco soporte
             continuo, actualizaciones y estoy disponible cuando me necesites. Tu
             éxito es mi éxito.
@@ -139,13 +138,14 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
     </article>
   </section>
 
-  <!-- Stack Tecnológico Section - Rediseñado -->
-  <section class="p-4 py-16 bg-white" id="tecnologias">
+  <!-- Stack Tecnológico Section - Adaptado para fondo oscuro -->
+  <section class="p-4 py-16 bg-[#0a0a0a]" id="tecnologias">
     <article class="max-w-screen-xl mx-auto">
       <Subtitle
         title="Herramientas que Uso"
         description="Tecnologías probadas y confiables para crear soluciones duraderas"
-        textColor="text-neutral-900"
+        textColor="text-white"
+        descriptionColor="text-gray-300"
       />
       <div
         class="grid grid-cols-3 gap-4 mt-10 lg:mx-auto lg:max-w-screen-md md:grid-cols-6 md:gap-8 place-items-center"
@@ -160,18 +160,20 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
     </article>
   </section>
 
-  <!-- Proyectos Destacados - Con modales para más detalles -->
-  <section class="p-4 py-16" id="proyectos">
+  <!-- Proyectos Destacados - Adaptado para fondo oscuro -->
+  <section class="p-4 py-16 bg-[#111]" id="proyectos">
     <article class="max-w-screen-xl mx-auto">
       <Subtitle
         title="Proyectos Reales en Acción"
         description="Sistemas que están ayudando a emprendedores como tú a crecer"
+        textColor="text-white"
+        descriptionColor="text-gray-300"
       />
 
       <div class="grid gap-8 mt-12 md:grid-cols-2">
         <!-- QuickInventory -->
         <div
-          class="overflow-hidden transition bg-white rounded-lg shadow-md hover:shadow-xl"
+          class="overflow-hidden transition bg-[#1a1a1a] rounded-lg shadow-md hover:shadow-xl"
         >
           <Image
             src={Project_1}
@@ -179,17 +181,17 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
             class="object-cover w-full h-96"
           />
           <div class="p-6">
-            <h3 class="mb-2 text-2xl font-bold">QuickInventory</h3>
-            <p class="mb-3 text-sm text-gray-500">
+            <h3 class="mb-2 text-2xl font-bold text-white">QuickInventory</h3>
+            <p class="mb-3 text-sm text-gray-400">
               Sistema de Inventario y Punto de Venta
             </p>
-            <p class="mb-6 text-gray-600">
+            <p class="mb-6 text-gray-300">
               Sistema completo para gestión de inventarios y ventas, ideal para
               pequeños comercios. Incluye control de stock, reportes, y punto de
               venta POS.
             </p>
             <div class="flex gap-2 mb-5">
-              <span class="text-white badge badge-sm bg-[var(--CL-accent)]"
+              <span class="text-white badge badge-sm bg-[#4361ee]"
                 >Ruby on Rails</span
               >
               <span class="text-white badge badge-sm bg-cyan-600"
@@ -202,13 +204,13 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
             </div>
             <div class="flex gap-3">
               <button
-                class="text-[var(--CL-accent)] border-[var(--CL-accent)] hover:bg-[var(--CL-accent)] hover:text-white btn btn-sm btn-outline"
+                class="text-[#4361ee] border-[#4361ee] hover:bg-[#4361ee] hover:text-white btn btn-sm btn-outline"
                 onclick="modal_quickinventory.showModal()">Ver Detalles</button
               >
               <a
                 href="https://inventory.rysthdesign.com/"
                 target="_blank"
-                class="text-white btn btn-sm btn-neutral bg-[var(--CL-accent)] hidden"
+                class="text-white btn btn-sm btn-neutral bg-[#4361ee] hidden"
                 >Visitar Demo</a
               >
             </div>
@@ -217,7 +219,7 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
 
         <!-- TrámitesEC -->
         <div
-          class="overflow-hidden transition bg-white rounded-lg shadow-md hover:shadow-xl"
+          class="overflow-hidden transition bg-[#1a1a1a] rounded-lg shadow-md hover:shadow-xl"
         >
           <Image
             src={Project_2}
@@ -225,18 +227,18 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
             class="object-cover w-full h-96"
           />
           <div class="p-6">
-            <h3 class="mb-2 text-2xl font-bold">TrámitesEC</h3>
-            <p class="mb-3 text-sm text-gray-500">
+            <h3 class="mb-2 text-2xl font-bold text-white">TrámitesEC</h3>
+            <p class="mb-3 text-sm text-gray-400">
               Sistema de Gestión de Trámites
             </p>
-            <p class="mb-6 text-gray-600">
+            <p class="mb-6 text-gray-300">
               Plataforma diseñada para la gestión integral de trámites y
               clientes. Utilizada por 2+ años por una empresa de gestión de
               trámites ciudadanos.
             </p>
             <div class="flex gap-2 mb-5">
               <span class="text-white bg-blue-700 badge badge-sm">React</span>
-              <span class="text-white badge badge-sm bg-[var(--CL-accent)]"
+              <span class="text-white badge badge-sm bg-[#4361ee]"
                 >Ruby on Rails</span
               >
               <span class="text-white bg-green-700 badge badge-sm"
@@ -245,13 +247,13 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
             </div>
             <div class="flex gap-3">
               <button
-                class="text-[var(--CL-accent)] border-[var(--CL-accent)] hover:bg-[var(--CL-accent)] hover:text-white btn btn-sm btn-outline"
+                class="text-[#4361ee] border-[#4361ee] hover:bg-[#4361ee] hover:text-white btn btn-sm btn-outline"
                 onclick="modal_tramites.showModal()">Ver Detalles</button
               >
               <a
                 href="https://react-tramitesec-uxbm.onrender.com/"
                 target="_blank"
-                class="text-white btn btn-sm btn-neutral bg-[var(--CL-accent)] hidden"
+                class="text-white btn btn-sm btn-neutral bg-[#4361ee] hidden"
                 >Visitar Demo</a
               >
             </div>
@@ -261,46 +263,47 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
     </article>
   </section>
 
-  <!-- Soluciones/Servicios Section - Actualizado para pequeños negocios -->
-  <section class="p-4 py-16 bg-[var(--CL-accent-light)]" id="soluciones">
+  <!-- Soluciones/Servicios Section - Adaptado para fondo oscuro -->
+  <section class="p-4 py-16 bg-[#0a0a0a]" id="soluciones">
     <article class="max-w-screen-xl mx-auto">
       <Subtitle
         title="Soluciones para tu Negocio"
         description="Software diseñado específicamente para pequeñas empresas y emprendedores (1-10 empleados)"
-        textColor="text-neutral-900"
+        textColor="text-white"
+        descriptionColor="text-gray-300"
       />
 
       <div class="grid gap-8 mt-12 md:grid-cols-3">
         <!-- Solución 1: Sistemas a Medida -->
         <div
-          class="p-6 transition-shadow border-t-4 border-t-[var(--CL-accent)] bg-white rounded-lg shadow-md hover:shadow-xl"
+          class="p-6 transition-shadow border-t-4 border-t-[#4361ee] bg-[#1a1a1a] rounded-lg shadow-md hover:shadow-xl"
         >
-          <h3 class="mb-4 text-xl font-bold text-[var(--CL-accent)]">
+          <h3 class="mb-4 text-xl font-bold text-[#4361ee]">
             Software a Medida
           </h3>
-          <p class="mb-6 text-gray-600">
+          <p class="mb-6 text-gray-300">
             Desarrollo personalizado según las necesidades específicas de tu
             negocio, con acompañamiento desde el análisis hasta la
             implementación.
           </p>
-          <ul class="mb-8 space-y-2">
+          <ul class="mb-8 space-y-2 text-gray-300">
             <li class="flex items-center gap-2">
-              <FaCheckCircle className="text-[var(--CL-success)]" />
+              <FaCheckCircle className="text-[#2ecc71]" />
               <span>Análisis de procesos de negocio</span>
             </li>
             <li class="flex items-center gap-2">
-              <FaCheckCircle className="text-[var(--CL-success)]" />
+              <FaCheckCircle className="text-[#2ecc71]" />
               <span>Soluciones adaptadas a tu flujo de trabajo</span>
             </li>
             <li class="flex items-center gap-2">
-              <FaCheckCircle className="text-[var(--CL-success)]" />
+              <FaCheckCircle className="text-[#2ecc71]" />
               <span>Escalable según crezca tu negocio</span>
             </li>
           </ul>
           <a
             href="http://tinyurl.com/contact-ws"
             target="_blank"
-            class="btn btn-outline w-full border-[var(--CL-accent)] text-[var(--CL-accent)] hover:bg-[var(--CL-accent)] hover:text-white"
+            class="btn btn-outline w-full border-[#4361ee] text-[#4361ee] hover:bg-[#4361ee] hover:text-white"
           >
             Consultar
           </a>
@@ -308,37 +311,41 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
 
         <!-- Solución 2: Sistemas Micro - ACTUALIZADA -->
         <div
-          class="p-6 transition-shadow border-t-4 border-t-[var(--CL-accent)] bg-white rounded-lg shadow-md hover:shadow-xl"
+          class="p-6 transition-shadow border-t-4 border-t-[#4361ee] bg-[#1a1a1a] rounded-lg shadow-md hover:shadow-xl"
         >
-          <h3 class="mb-4 text-xl font-bold text-[var(--CL-accent)]">
-            Serie Micro
-          </h3>
-          <p class="mb-6 text-gray-600">
+          <h3 class="mb-4 text-xl font-bold text-[#4361ee]">Serie Micro</h3>
+          <p class="mb-6 text-gray-300">
             Sistemas prefabricados listos para usar, pensados para pequeños
             negocios que buscan digitalizar sus operaciones rápidamente.
           </p>
           <div class="mb-8 space-y-4">
-            <div class="px-3 py-2 rounded-md bg-gray-50">
-              <h4 class="font-semibold">MicroStock</h4>
-              <p class="text-sm">Sistema de inventario y punto de venta</p>
-              <span class="text-xs font-semibold text-green-600"
+            <div class="px-3 py-2 bg-gray-800 rounded-md">
+              <h4 class="font-semibold text-white">MicroStock</h4>
+              <p class="text-sm text-gray-300">
+                Sistema de inventario y punto de venta
+              </p>
+              <span class="text-xs font-semibold text-green-400"
                 >✅ Lanzamiento: 31 Mayo 2025</span
               >
             </div>
-            <div class="px-3 py-2 rounded-md bg-gray-50">
-              <h4 class="font-semibold">MicroTickets</h4>
-              <p class="text-sm">Gestión de eventos y venta de boletos</p>
-              <span class="text-xs text-gray-500">🗓️ En desarrollo</span>
+            <div class="px-3 py-2 bg-gray-800 rounded-md">
+              <h4 class="font-semibold text-white">MicroTickets</h4>
+              <p class="text-sm text-gray-300">
+                Gestión de eventos y venta de boletos
+              </p>
+              <span class="text-xs text-gray-400">🗓️ En desarrollo</span>
             </div>
-            <div class="px-3 py-2 rounded-md bg-gray-50">
-              <h4 class="font-semibold">MicroCRM</h4>
-              <p class="text-sm">Control de clientes y seguimiento</p>
-              <span class="text-xs text-gray-500">🗓️ En planificación</span>
+            <div class="px-3 py-2 bg-gray-800 rounded-md">
+              <h4 class="font-semibold text-white">MicroCRM</h4>
+              <p class="text-sm text-gray-300">
+                Control de clientes y seguimiento
+              </p>
+              <span class="text-xs text-gray-400">🗓️ En planificación</span>
             </div>
           </div>
           <a
             href="/micro"
-            class="btn btn-outline w-full border-[var(--CL-accent)] text-[var(--CL-accent)] hover:bg-[var(--CL-accent)] hover:text-white"
+            class="btn btn-outline w-full border-[#4361ee] text-[#4361ee] hover:bg-[#4361ee] hover:text-white"
           >
             Ver Serie Micro
           </a>
@@ -346,33 +353,33 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
 
         <!-- Solución 3: Consultoría -->
         <div
-          class="p-6 transition-shadow border-t-4 border-t-[var(--CL-accent)] bg-white rounded-lg shadow-md hover:shadow-xl"
+          class="p-6 transition-shadow border-t-4 border-t-[#4361ee] bg-[#1a1a1a] rounded-lg shadow-md hover:shadow-xl"
         >
-          <h3 class="mb-4 text-xl font-bold text-[var(--CL-accent)]">
+          <h3 class="mb-4 text-xl font-bold text-[#4361ee]">
             Consultoría Digital
           </h3>
-          <p class="mb-6 text-gray-600">
+          <p class="mb-6 text-gray-300">
             Asesoramiento tecnológico para emprendedores que buscan optimizar
             procesos y tomar mejores decisiones sobre herramientas digitales.
           </p>
-          <ul class="mb-8 space-y-2">
+          <ul class="mb-8 space-y-2 text-gray-300">
             <li class="flex items-center gap-2">
-              <FaCheckCircle className="text-[var(--CL-success)]" />
+              <FaCheckCircle className="text-[#2ecc71]" />
               <span>Diagnóstico de necesidades tecnológicas</span>
             </li>
             <li class="flex items-center gap-2">
-              <FaCheckCircle className="text-[var(--CL-success)]" />
+              <FaCheckCircle className="text-[#2ecc71]" />
               <span>Plan de implementación digital</span>
             </li>
             <li class="flex items-center gap-2">
-              <FaCheckCircle className="text-[var(--CL-success)]" />
+              <FaCheckCircle className="text-[#2ecc71]" />
               <span>Capacitación para tu equipo</span>
             </li>
           </ul>
           <a
             href="http://tinyurl.com/contact-ws"
             target="_blank"
-            class="btn btn-outline w-full border-[var(--CL-accent)] text-[var(--CL-accent)] hover:bg-[var(--CL-accent)] hover:text-white"
+            class="btn btn-outline w-full border-[#4361ee] text-[#4361ee] hover:bg-[#4361ee] hover:text-white"
           >
             Solicitar Asesoría
           </a>
@@ -380,11 +387,11 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
       </div>
 
       <!-- Mensaje adicional para enfatizar el enfoque en pequeños negocios -->
-      <div class="p-6 mt-12 text-center bg-white rounded-lg shadow-md">
-        <h3 class="mb-3 text-xl font-bold">
+      <div class="p-6 mt-12 text-center bg-[#1a1a1a] rounded-lg shadow-md">
+        <h3 class="mb-3 text-xl font-bold text-white">
           ¿Eres un pequeño negocio o emprendedor?
         </h3>
-        <p class="max-w-3xl mx-auto text-gray-600">
+        <p class="max-w-3xl mx-auto text-gray-300">
           Todos mis servicios están diseñados para ayudar a negocios de 1 a 10
           empleados a digitalizar sus operaciones con soluciones profesionales,
           seguras y escalables. Entiendo los desafíos de iniciar y crecer, por
@@ -395,12 +402,12 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
   </section>
 
   <!-- Llamada a la acción - CTA -->
-  <section class="p-6 py-24 text-white bg-brand-gradient">
+  <section class="p-6 py-24 text-white bg-[#060606]">
     <article class="max-w-screen-lg mx-auto text-center">
       <h2 class="mb-6 text-3xl font-black md:text-4xl">
         ¿Listo para impulsar tu negocio con tecnología?
       </h2>
-      <p class="max-w-2xl mx-auto mb-8 text-lg">
+      <p class="max-w-2xl mx-auto mb-8 text-lg text-gray-300">
         Agenda una consulta gratuita de 30 minutos para discutir cómo podemos
         ayudarte a optimizar tus procesos y aumentar tus ventas con soluciones
         digitales a medida.
@@ -408,7 +415,7 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
       <a
         href="http://tinyurl.com/contact-ws"
         target="_blank"
-        class="btn btn-lg bg-white text-[var(--CL-primary)] hover:bg-opacity-90 shadow-xl"
+        class="btn btn-lg bg-white text-[#050505] hover:bg-opacity-90 shadow-xl"
       >
         Agendar Consulta Gratuita
         <FaArrowRight className="ml-2" />
@@ -416,9 +423,9 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
     </article>
   </section>
 
-  <!-- Modales para los proyectos -->
+  <!-- Modales para los proyectos - Adaptados para fondo oscuro -->
   <dialog id="modal_quickinventory" class="modal modal-bottom sm:modal-middle">
-    <div class="modal-box">
+    <div class="modal-box bg-[#1a1a1a] text-white">
       <h3 class="text-lg font-bold">
         QuickInventory - Sistema de Inventario y POS
       </h3>
@@ -428,7 +435,7 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
           diseñado específicamente para pequeños y medianos comercios.
         </p>
         <h4 class="mb-2 font-semibold">Características principales:</h4>
-        <ul class="pl-5 mb-4 space-y-1 list-disc">
+        <ul class="pl-5 mb-4 space-y-1 text-gray-300 list-disc">
           <li>Control de inventario en tiempo real</li>
           <li>Gestión de proveedores y compras</li>
           <li>Sistema POS con interfaz táctil intuitiva</li>
@@ -446,14 +453,16 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
           <span class="text-white bg-purple-500 badge badge-sm">Hotwire</span>
         </div>
         <h4 class="mb-2 font-semibold">Resultados del cliente:</h4>
-        <p>
+        <p class="text-gray-300">
           El cliente experimentó una reducción del 35% en pérdidas de inventario
           y un aumento del 20% en eficiencia operativa tras 6 meses de uso.
         </p>
       </div>
       <div class="modal-action">
         <form method="dialog">
-          <button class="btn">Cerrar</button>
+          <button class="bg-[#4361ee] text-white hover:bg-opacity-90 btn"
+            >Cerrar</button
+          >
         </form>
       </div>
     </div>
@@ -463,7 +472,7 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
   </dialog>
 
   <dialog id="modal_tramites" class="modal modal-bottom sm:modal-middle">
-    <div class="modal-box">
+    <div class="modal-box bg-[#1a1a1a] text-white">
       <h3 class="text-lg font-bold">
         TrámitesEC - Sistema de Gestión de Trámites
       </h3>
@@ -474,7 +483,7 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
           gestión documental.
         </p>
         <h4 class="mb-2 font-semibold">Características principales:</h4>
-        <ul class="pl-5 mb-4 space-y-1 list-disc">
+        <ul class="pl-5 mb-4 space-y-1 text-gray-300 list-disc">
           <li>Gestión de clientes y seguimiento de trámites</li>
           <li>Panel de administración para tramitadores</li>
           <li>Sistema de notificaciones por email y WhatsApp</li>
@@ -492,7 +501,7 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
           <span class="text-white bg-purple-500 badge badge-sm">AWS S3</span>
         </div>
         <h4 class="mb-2 font-semibold">Resultados del cliente:</h4>
-        <p>
+        <p class="text-gray-300">
           TrámitesEC ha permitido a la empresa aumentar su capacidad de
           procesamiento en un 70%, reducir errores en documentación y mejorar la
           satisfacción de sus clientes.
@@ -500,7 +509,9 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
       </div>
       <div class="modal-action">
         <form method="dialog">
-          <button class="btn">Cerrar</button>
+          <button class="bg-[#4361ee] text-white hover:bg-opacity-90 btn"
+            >Cerrar</button
+          >
         </form>
       </div>
     </div>
