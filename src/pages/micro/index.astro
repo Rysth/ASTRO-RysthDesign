@@ -11,21 +11,21 @@ import {
   FaMobile,
 } from "react-icons/fa";
 import { HiOutlineCube, HiOutlineGift } from "react-icons/hi2";
-import MicroStockLogo from "@/assets/images/brand/hero.png"; // Usar la imagen existente por ahora
+import MicroStockLogo from "@/assets/images/brand/hero.png";
 ---
 
 <Layout title="Serie Micro | Sistemas Listos para Usar | RysthDesign">
   <PageHeader title="Serie Micro" currentPage="Sistemas Micro" />
 
   <!-- Hero Section -->
-  <section class="p-4 py-16">
+  <section class="p-4 py-16 bg-[#111]">
     <article class="max-w-screen-xl mx-auto text-center">
       <div class="max-w-3xl mx-auto space-y-6">
         <h1 class="text-3xl font-black text-white md:text-5xl">
           Sistemas <span class="text-[var(--CL-accent)]">Micro</span>
           <br />para Microempresas
         </h1>
-        <p class="text-lg text-neutral-300">
+        <p class="text-lg text-gray-300">
           Soluciones prefabricadas, listas para usar, diseñadas específicamente
           para pequeños negocios que quieren digitalizar sus operaciones
           <strong>sin complicaciones</strong>.
@@ -51,57 +51,66 @@ import MicroStockLogo from "@/assets/images/brand/hero.png"; // Usar la imagen e
   </section>
 
   <!-- Sistemas Disponibles -->
-  <section class="p-4 py-16" id="sistemas-disponibles">
+  <section class="p-4 py-16 bg-[#0a0a0a]" id="sistemas-disponibles">
     <article class="max-w-screen-xl mx-auto">
       <Subtitle
         title="Sistemas Disponibles"
         description="Cada sistema está diseñado para resolver problemas específicos de microempresas"
         textColor="text-white"
+        descriptionColor="text-gray-300"
       />
 
       <div class="grid gap-8 mt-12 lg:grid-cols-2">
         <!-- MicroStock - DISPONIBLE -->
         <div
-          class="p-8 transition-shadow bg-white border-2 border-green-200 rounded-lg shadow-lg hover:shadow-xl"
+          class="p-8 transition-shadow bg-[#1a1a1a] border-2 border-green-400 rounded-lg shadow-lg hover:shadow-xl"
         >
           <div class="flex items-start justify-between mb-6">
             <div class="flex items-center gap-4">
               <HiOutlineCube className="text-4xl text-[var(--CL-accent)]" />
               <div>
-                <h3 class="text-2xl font-bold text-neutral-900">MicroStock</h3>
-                <p class="text-sm font-semibold text-green-600">
-                  ✅ Próximamente - 31 Mayo 2025
+                <h3 class="text-2xl font-bold text-white">MicroStock</h3>
+                <p class="text-sm font-semibold text-green-400">
+                  ✅ Próximamente - 7 Junio 2025
                 </p>
               </div>
             </div>
             <span
-              class="px-3 py-1 text-xs font-semibold text-green-800 bg-green-100 rounded-full"
+              class="px-3 py-1 text-xs font-semibold text-green-800 bg-green-400 rounded-full"
             >
               PRÓXIMO LANZAMIENTO
             </span>
           </div>
 
-          <p class="mb-6 text-gray-700">
+          <p class="mb-6 text-gray-300">
             Sistema de inventario y punto de venta diseñado para microempresas.
             Deja atrás los cuadernos y digitaliza tu negocio en minutos.
           </p>
 
           <ul class="mb-6 space-y-2">
             <li class="flex items-center gap-2">
-              <FaCheckCircle className="text-green-500" />
-              <span class="text-sm">Control de inventario en tiempo real</span>
+              <FaCheckCircle className="text-green-400" />
+              <span class="text-sm text-gray-300"
+                >Control de inventario en tiempo real</span
+              >
             </li>
             <li class="flex items-center gap-2">
-              <FaCheckCircle className="text-green-500" />
-              <span class="text-sm">Punto de venta simplificado</span>
+              <FaCheckCircle className="text-green-400" />
+              <span class="text-sm text-gray-300"
+                >Punto de venta simplificado</span
+              >
             </li>
             <li class="flex items-center gap-2">
-              <FaCheckCircle className="text-green-500" />
-              <span class="text-sm">Reportes básicos de ventas</span>
+              <FaCheckCircle className="text-green-400" />
+              <span class="text-sm text-gray-300"
+                >Reportes básicos de ventas</span
+              >
             </li>
             <li class="flex items-center gap-2">
-              <FaCheckCircle className="text-green-500" />
-              <span class="text-sm">Acceso desde cualquier dispositivo</span>
+              <FaCheckCircle className="text-green-400" />
+              <span class="text-sm text-gray-300"
+                >Acceso desde cualquier dispositivo</span
+              >
             </li>
           </ul>
 
@@ -117,44 +126,44 @@ import MicroStockLogo from "@/assets/images/brand/hero.png"; // Usar la imagen e
               target="_blank"
               class="px-4 btn btn-outline border-[var(--CL-accent)] text-[var(--CL-accent)] hover:bg-[var(--CL-accent)] hover:text-white"
             >
-              Reservar
+              Consultar
             </a>
           </div>
         </div>
 
         <!-- Próximos Sistemas -->
-        <div class="p-8 border-2 border-gray-200 rounded-lg bg-gray-50">
+        <div class="p-8 border-2 border-gray-600 rounded-lg bg-[#1a1a1a]">
           <div class="text-center">
             <HiOutlineCube className="mx-auto mb-4 text-4xl text-gray-400" />
-            <h3 class="mb-2 text-xl font-bold text-gray-600">
+            <h3 class="mb-2 text-xl font-bold text-gray-300">
               Próximos Sistemas
             </h3>
-            <p class="mb-6 text-gray-500">
+            <p class="mb-6 text-gray-400">
               Estamos desarrollando más soluciones para tu negocio
             </p>
 
             <div class="space-y-4 text-left">
-              <div class="p-4 bg-white rounded-lg">
-                <h4 class="font-semibold text-gray-700">MicroTickets</h4>
-                <p class="text-sm text-gray-600">
+              <div class="p-4 bg-[#2a2a2a] rounded-lg">
+                <h4 class="font-semibold text-white">MicroTickets</h4>
+                <p class="text-sm text-gray-300">
                   Gestión de eventos y venta de boletos
                 </p>
-                <p class="mt-1 text-xs text-gray-500">🗓️ En desarrollo</p>
+                <p class="mt-1 text-xs text-gray-400">🗓️ En desarrollo</p>
               </div>
 
-              <div class="p-4 bg-white rounded-lg">
-                <h4 class="font-semibold text-gray-700">MicroCRM</h4>
-                <p class="text-sm text-gray-600">
+              <div class="p-4 bg-[#2a2a2a] rounded-lg">
+                <h4 class="font-semibold text-white">MicroCRM</h4>
+                <p class="text-sm text-gray-300">
                   Control de clientes y seguimiento
                 </p>
-                <p class="mt-1 text-xs text-gray-500">🗓️ En planificación</p>
+                <p class="mt-1 text-xs text-gray-400">🗓️ En planificación</p>
               </div>
             </div>
 
             <a
               href="http://tinyurl.com/contact-ws"
               target="_blank"
-              class="w-full mt-6 text-gray-600 border-gray-400 btn btn-outline hover:bg-gray-600 hover:text-white"
+              class="w-full mt-6 text-gray-300 border-gray-400 btn btn-outline hover:bg-gray-600 hover:text-white"
             >
               Solicitar Sistema Personalizado
             </a>
@@ -165,7 +174,9 @@ import MicroStockLogo from "@/assets/images/brand/hero.png"; // Usar la imagen e
   </section>
 
   <!-- CTA Final -->
-  <section class="p-4 py-16 text-white bg-brand-gradient">
+  <section
+    class="p-4 py-16 text-white bg-gradient-to-r from-[var(--CL-accent)] to-[var(--CL-accent-dark)]"
+  >
     <article class="max-w-screen-lg mx-auto text-center">
       <h2 class="mb-6 text-3xl font-black md:text-4xl">
         ¿Listo para Digitalizar tu Negocio?
@@ -186,7 +197,7 @@ import MicroStockLogo from "@/assets/images/brand/hero.png"; // Usar la imagen e
           target="_blank"
           class="btn btn-lg btn-outline border-white text-white hover:bg-white hover:text-[var(--CL-primary)]"
         >
-          Hablar con un Asesor
+          Contáctame
         </a>
       </div>
     </article>
