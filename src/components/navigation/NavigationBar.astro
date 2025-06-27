@@ -1,95 +1,178 @@
 ---
 import { Image } from "astro:assets";
-import { FaArrowRight } from "react-icons/fa";
 import BrandImage from "../../assets/images/brand/brand.svg";
 ---
 
 <nav
-  class="sticky top-0 z-50 w-full py-4 transition-all duration-300 backdrop-blur-md"
-  id="navbar"
+  class="fixed top-0 left-0 right-0 z-50 border-b shadow-lg bg-[#100f1e]/95 backdrop-blur-md border-gray-700/30"
 >
-  <div class="px-4 mx-auto max-w-screen-2xl">
-    <div class="flex items-center justify-between">
+  <div class="px-4 py-2 mx-auto max-w-screen-2xl sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
       <!-- Logo -->
-      <a href="/" class="flex items-center">
-        <Image src={BrandImage} alt="RysthDesign Logo" class="w-auto h-10" />
-      </a>
-
-      <!-- Desktop Navigation -->
-      <div
-        class="items-center hidden p-2 space-x-1 border rounded-full lg:flex"
-      >
-        <ul class="flex items-center gap-2">
-          <li>
-            <a
-              href="/servicios"
-              class="text-sm transition-all rounded-full text-slate-100 btn-sm btn btn-ghost hover:bg-slate-800"
-              >Servicios</a
-            >
-          </li>
-          <li>
-            <a
-              href="/micro"
-              class="text-sm transition-all rounded-full text-slate-100 btn-sm btn btn-ghost hover:bg-slate-800"
-              >Serie Micro</a
-            >
-          </li>
-        </ul>
+      <div class="flex-shrink-0">
+        <a href="/" class="flex items-center space-x-2 group">
+          <Image
+            src={BrandImage}
+            alt="RysthDesign Logo"
+            class="w-auto h-12 transition-transform group-hover:scale-110 drop-shadow-sm"
+          />
+        </a>
       </div>
 
-      <!-- CTA Button -->
-      <a
-        href="http://tinyurl.com/contact-ws"
-        target="_blank"
-        class="hidden lg:flex items-center gap-2 bg-white text-[#050c28] px-6 py-2.5 rounded-full font-medium hover:bg-opacity-90 transition-all"
-      >
-        Contáctanos
-        <FaArrowRight className="text-sm" />
-      </a>
+      <!-- Desktop Navigation -->
+      <div class="hidden md:block">
+        <div class="flex items-baseline ml-10 space-x-10">
+          <a
+            href="#aplicaciones"
+            class="font-jetbrains px-4 py-2 text-sm font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 border-b-2 border-transparent hover:text-[#4361ee] hover:border-[#4361ee] hover:bg-[#4361ee]/10 rounded-t-md"
+          >
+            Aplicaciones Web
+          </a>
+          <a
+            href="#clientes"
+            class="font-jetbrains px-4 py-2 text-sm font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 border-b-2 border-transparent hover:text-[#4361ee] hover:border-[#4361ee] hover:bg-[#4361ee]/10 rounded-t-md"
+          >
+            Clientes
+          </a>
+          <a
+            href="#contacto"
+            class="font-jetbrains px-4 py-2 text-sm font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 border-b-2 border-transparent hover:text-[#4361ee] hover:border-[#4361ee] hover:bg-[#4361ee]/10 rounded-t-md"
+          >
+            Contacto
+          </a>
+        </div>
+      </div>
+
+      <!-- CTA Button Desktop -->
+      <div class="hidden md:block">
+        <a
+          href="http://tinyurl.com/contact-ws"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-jetbrains bg-gradient-to-r from-[#4361ee] to-[#3651cc] hover:from-[#3651cc] hover:to-[#2d42a8] text-white px-7 py-3 rounded-full text-sm font-bold uppercase tracking-wide transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#4361ee]/25 transform hover:-translate-y-1 hover:scale-105 border border-[#4361ee]/20"
+        >
+          Solicitar Cotización
+        </a>
+      </div>
 
       <!-- Mobile menu button -->
-      <button
-        type="button"
-        class="lg:hidden inline-flex items-center rounded-full justify-center btn btn-circle text-white hover:bg-[#1a2346]"
-        aria-controls="mobile-menu"
-        aria-expanded="false"
-        id="toggleButton"
-      >
-        <span class="sr-only">Abrir menu</span>
-        <i class="text-2xl bx bx-menu"></i>
-      </button>
+      <div class="md:hidden">
+        <button
+          type="button"
+          class="inline-flex items-center justify-center p-2 text-gray-300 transition-all duration-300 rounded-lg bg-[#050505]/50 hover:bg-[#4361ee]/20 hover:text-[#4361ee] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#4361ee] backdrop-blur-sm"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          id="mobile-menu-button"
+        >
+          <span class="sr-only">Abrir menú principal</span>
+          <!-- Hamburger Icon -->
+          <svg
+            class="block w-6 h-6 transition-transform duration-300"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 
-  <!-- Mobile menu, show/hide based on menu state -->
-  <div class="hidden lg:hidden" id="mobileMenu">
-    <div class="px-4 pt-2 pb-4 bg-[#050c28] border-t border-[#1a2346]">
-      <ul class="space-y-2">
-        <li>
-          <a
-            href="/servicios"
-            class="block px-3 py-2 text-base font-medium text-white hover:bg-[#1a2346] rounded-md"
-            >Servicios</a
-          >
-        </li>
-        <li>
-          <a
-            href="/micro"
-            class="block px-3 py-2 text-base font-medium text-white hover:bg-[#1a2346] rounded-md"
-            >Serie Micro</a
-          >
-        </li>
-        <li class="pt-2">
-          <a
-            href="http://tinyurl.com/contact-ws"
-            target="_blank"
-            class="flex items-center justify-center gap-2 w-full bg-white text-[#050c28] px-4 py-2.5 rounded-md font-medium"
-          >
-            Contáctanos
-            <FaArrowRight className="text-sm" />
-          </a>
-        </li>
-      </ul>
+  <!-- Mobile menu -->
+  <div class="hidden md:hidden" id="mobile-menu">
+    <div
+      class="px-2 pt-3 pb-4 space-y-2 border-t shadow-xl bg-[#100f1e]/98 border-gray-700/50 backdrop-blur-md"
+    >
+      <a
+        href="#aplicaciones"
+        class="font-jetbrains block px-4 py-3 text-base font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 rounded-lg hover:text-[#4361ee] hover:bg-gradient-to-r hover:from-[#4361ee]/10 hover:to-[#4361ee]/5 border-l-4 border-transparent hover:border-l-[#4361ee]"
+      >
+        Aplicaciones Web
+      </a>
+      <a
+        href="#clientes"
+        class="font-jetbrains block px-4 py-3 text-base font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 rounded-lg hover:text-[#4361ee] hover:bg-gradient-to-r hover:from-[#4361ee]/10 hover:to-[#4361ee]/5 border-l-4 border-transparent hover:border-l-[#4361ee]"
+      >
+        Clientes
+      </a>
+      <a
+        href="#contacto"
+        class="font-jetbrains block px-4 py-3 text-base font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 rounded-lg hover:text-[#4361ee] hover:bg-gradient-to-r hover:from-[#4361ee]/10 hover:to-[#4361ee]/5 border-l-4 border-transparent hover:border-l-[#4361ee]"
+      >
+        Contacto
+      </a>
+      <!-- Mobile CTA -->
+      <div class="px-2 pt-4 pb-2">
+        <a
+          href="http://tinyurl.com/contact-ws"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-jetbrains block px-6 py-3 text-base font-bold text-center text-white uppercase tracking-wide transition-all duration-300 bg-gradient-to-r from-[#4361ee] to-[#3651cc] rounded-full hover:from-[#3651cc] hover:to-[#2d42a8] transform hover:scale-105 shadow-lg"
+        >
+          Solicitar Cotización
+        </a>
+      </div>
     </div>
   </div>
 </nav>
+
+<script>
+  // Mobile menu toggle functionality
+  document.addEventListener("DOMContentLoaded", function () {
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener("click", function () {
+        mobileMenu.classList.toggle("hidden");
+
+        // Animate hamburger icon
+        const icon = mobileMenuButton.querySelector("svg");
+        if (icon) {
+          icon.classList.toggle("rotate-180");
+        }
+
+        // Update aria-expanded attribute
+        const expanded =
+          mobileMenuButton.getAttribute("aria-expanded") === "true";
+        mobileMenuButton.setAttribute("aria-expanded", (!expanded).toString());
+      });
+    }
+
+    // Close mobile menu when clicking on links
+    const mobileLinks = mobileMenu?.querySelectorAll('a[href^="#"]');
+    mobileLinks?.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        const icon = mobileMenuButton?.querySelector("svg");
+        if (icon) {
+          icon.classList.remove("rotate-180");
+        }
+        mobileMenuButton?.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener("click", function (event) {
+      if (
+        mobileMenu &&
+        !mobileMenu.contains(event.target) &&
+        !mobileMenuButton?.contains(event.target)
+      ) {
+        mobileMenu.classList.add("hidden");
+        const icon = mobileMenuButton?.querySelector("svg");
+        if (icon) {
+          icon.classList.remove("rotate-180");
+        }
+        mobileMenuButton?.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+</script>

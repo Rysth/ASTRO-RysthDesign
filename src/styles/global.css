@@ -20,6 +20,29 @@
   --CL-warm: #f59e0b; /* Color cálido para llamadas a la acción secundarias */
 }
 
+/* Custom font classes */
+.font-jetbrains {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+/* Navbar specific utilities */
+.navbar-dark {
+  background-color: var(--CL-secondary);
+  border-color: rgba(75, 85, 99, 0.3);
+}
+
+.navbar-link {
+  color: rgb(209, 213, 219);
+  transition: all 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: var(--CL-accent);
+  background-color: rgba(67, 97, 238, 0.1);
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
