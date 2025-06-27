@@ -9,8 +9,5 @@ module.exports = {
     "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
-  daisyui: {
-    themes: ["light", "dark", "lofi"],
-  },
-  plugins: [require("tailwindcss-animate"), require("daisyui")],
+  plugins: [require("tailwindcss-animate")],
 };
