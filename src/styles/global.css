@@ -47,7 +47,7 @@ html {
 
 body {
   font-family: "Inter", sans-serif;
-  background-color: var(w);
+  background-color: var(--CL-secondary);
 }
 
 h1,
