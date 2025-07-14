@@ -82,3 +82,17 @@ h6 {
   font-family: "Inter", sans-serif;
   font-weight: 900;
 }
+
+/* Animaciones personalizadas */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}

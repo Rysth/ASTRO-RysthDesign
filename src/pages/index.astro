@@ -24,144 +24,265 @@ import {
   FaRocket,
   FaStore,
   FaWhatsapp,
+  FaCode,
+  FaLaptopCode,
+  FaShoppingCart,
 } from "react-icons/fa";
 ---
 
 <Layout
-  title="Sistemas Web Listos Para Usar | Software Para Pequeños Negocios | RysthDesign"
+  title="Desarrollo Web Profesional | Sitios Web y E-commerce | RysthDesign"
 >
-  <!-- Hero Section - Focused on Pre-fabricated Systems -->
+  <!-- Hero Section - Nuevo enfoque en servicios de desarrollo -->
   <section
-    class="grid min-h-screen p-4 pt-8 lg:pt-16 place-items-center bg-gradient-to-br from-[#0a0a0a] via-[#100f1e] to-[#1a1a2e]"
+    class="relative min-h-screen p-4 pt-8 lg:pt-16 bg-gradient-to-br from-[#0a0a0a] via-[#100f1e] to-[#1a1a2e] overflow-hidden"
   >
+    <!-- Elementos decorativos de fondo -->
+    <div class="absolute inset-0 opacity-30">
+      <div
+        class="absolute rounded-full top-20 left-10 w-72 h-72 bg-purple-500/20 blur-3xl"
+      >
+      </div>
+      <div
+        class="absolute rounded-full bottom-20 right-10 w-96 h-96 bg-blue-500/20 blur-3xl"
+      >
+      </div>
+      <div
+        class="absolute transform -translate-x-1/2 -translate-y-1/2 rounded-full top-1/2 left-1/2 w-80 h-80 bg-indigo-500/10 blur-3xl"
+      >
+      </div>
+    </div>
+
     <article
-      class="items-center max-w-screen-xl mx-auto md:grid md:grid-cols-2 md:gap-12"
+      class="relative z-10 items-center max-w-screen-xl min-h-screen mx-auto md:grid md:grid-cols-2 md:gap-12"
     >
-      <div class="space-y-6 md:space-y-8">
+      <div class="flex flex-col justify-center space-y-6 md:space-y-8">
+        <!-- Badge superior -->
+        <div
+          class="flex items-center gap-2 text-[#a78bfa] font-jetbrains text-sm uppercase tracking-wider"
+        >
+          <div class="w-2 h-2 bg-[#a78bfa] rounded-full animate-pulse"></div>
+          <span>Tu Socio Digital</span>
+        </div>
+
+        <!-- Título principal -->
         <div class="space-y-4">
-          <div
-            class="flex items-center gap-2 text-[#4361ee] font-jetbrains text-sm uppercase tracking-wider"
-          >
-            <FaRocket className="text-lg" />
-            <span>Sistemas Listos Para Usar</span>
-          </div>
           <h1
             class="text-4xl font-black md:text-5xl lg:text-6xl lg:!leading-[4rem] text-white"
           >
-            Transforma Tu Negocio Con Software
-            <span
-              class="text-[#4361ee] bg-gradient-to-r from-[#4361ee] to-[#6c5ce7] bg-clip-text text-transparent"
-              >Que Realmente Funciona</span
-            >
+            Tu
+            <span class="relative">
+              <span
+                class="bg-gradient-to-r from-[#a78bfa] to-[#4361ee] bg-clip-text text-transparent"
+              >
+                Asistente Digital
+              </span>
+              <div
+                class="absolute -inset-1 bg-gradient-to-r from-[#a78bfa] to-[#4361ee] rounded-lg blur opacity-30 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"
+              >
+              </div>
+            </span>
+            Potenciado por IA
           </h1>
+
           <p class="max-w-xl text-lg leading-relaxed text-gray-300">
-            Únete a más de 500 emprendedores que ya digitalizaron sus negocios
-            con nuestros sistemas web profesionales.
-            <span class="text-[#4361ee] font-semibold"
-              >Sin programación, sin complicaciones.</span
-            >
+            Libera tu potencial creativo. Genera, personaliza y perfecciona sin
+            esfuerzo tus diseños con tecnología de IA de vanguardia.
           </p>
         </div>
 
-        <!-- Value Propositions -->
-        <div class="grid grid-cols-1 gap-3 sm:grid-cols-3">
-          <div class="flex items-center gap-2 text-sm text-gray-300">
-            <div
-              class="flex items-center justify-center w-8 h-8 rounded-full bg-[#4361ee]/30"
-            >
-              <FaClock className="text-[#4361ee] text-xs" />
-            </div>
-            <span>Listo en 48 horas</span>
-          </div>
-          <div class="flex items-center gap-2 text-sm text-gray-300">
-            <div
-              class="flex items-center justify-center w-8 h-8 rounded-full bg-[#4361ee]/30"
-            >
-              <FaDollarSign className="text-[#4361ee] text-xs" />
-            </div>
-            <span>Desde $25/mes</span>
-          </div>
-          <div class="flex items-center gap-2 text-sm text-gray-300">
-            <div
-              class="flex items-center justify-center w-8 h-8 rounded-full bg-[#4361ee]/30"
-            >
-              <FaCheckCircle className="text-[#4361ee] text-xs" />
-            </div>
-            <span>Soporte incluido</span>
-          </div>
-        </div>
-
-        <!-- CTA Buttons -->
+        <!-- Botones CTA -->
         <div class="flex flex-wrap gap-4">
           <a
-            href="#aplicaciones"
-            class="px-8 py-4 text-white border-transparent shadow-xl btn lg:text-base btn-neutral bg-[#4361ee] hover:bg-[#3651cc] shadow-[#4361ee]/25 hover:shadow-[#4361ee]/40 transition-all duration-300 hover:scale-105"
+            href="#servicios"
+            class="flex items-center gap-3 px-8 py-4 text-white bg-gradient-to-r from-[#a78bfa] to-[#4361ee] rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 font-semibold"
           >
-            Ver Sistemas Disponibles
-            <FaArrowRight className="ml-2" />
+            Comenzar Ahora
+            <FaArrowRight className="text-sm" />
           </a>
+
           <a
-            href="https://micropets-demo.rysthdesign.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="px-8 py-4 border-2 btn lg:text-base btn-ghost border-[#8b5cf6] text-[#8b5cf6] hover:border-[#7c3aed] hover:bg-[#8b5cf6] hover:text-white transition-all duration-300"
+            href="#portfolio"
+            class="px-8 py-4 text-[#a78bfa] border-2 border-[#a78bfa]/50 rounded-full hover:bg-[#a78bfa]/10 transition-all duration-300 font-semibold backdrop-blur-sm"
           >
-            Ver Demo MicroPets
+            Ver Portfolio
           </a>
         </div>
 
-        <!-- Social Proof -->
-        <div class="pt-4 space-y-2">
-          <div class="flex items-center gap-3">
-            <div class="flex -space-x-2">
-              <!-- Placeholder avatars -->
-              <div
-                class="w-8 h-8 bg-gradient-to-r from-[#4361ee] to-[#6c5ce7] rounded-full border-2 border-[#100f1e]"
-              >
-              </div>
-              <div
-                class="w-8 h-8 bg-gradient-to-r from-[#6c5ce7] to-[#a78bfa] rounded-full border-2 border-[#100f1e]"
-              >
-              </div>
-              <div
-                class="w-8 h-8 bg-gradient-to-r from-[#a78bfa] to-[#c4b5fd] rounded-full border-2 border-[#100f1e]"
-              >
-              </div>
-            </div>
-            <span class="text-sm text-gray-400"
-              >+500 emprendedores confían en nuestros sistemas</span
+        <!-- Características destacadas -->
+        <div class="pt-6 space-y-4">
+          <div class="flex items-center gap-3 text-gray-300">
+            <div
+              class="flex items-center justify-center w-8 h-8 rounded-full bg-[#a78bfa]/20"
             >
+              <FaCheckCircle className="text-[#a78bfa] text-sm" />
+            </div>
+            <span class="text-sm">Diseños web modernos y responsivos</span>
+          </div>
+
+          <div class="flex items-center gap-3 text-gray-300">
+            <div
+              class="flex items-center justify-center w-8 h-8 rounded-full bg-[#a78bfa]/20"
+            >
+              <FaCheckCircle className="text-[#a78bfa] text-sm" />
+            </div>
+            <span class="text-sm"
+              >E-commerce que convierte visitantes en ventas</span
+            >
+          </div>
+
+          <div class="flex items-center gap-3 text-gray-300">
+            <div
+              class="flex items-center justify-center w-8 h-8 rounded-full bg-[#a78bfa]/20"
+            >
+              <FaCheckCircle className="text-[#a78bfa] text-sm" />
+            </div>
+            <span class="text-sm">Aplicaciones web escalables y seguras</span>
+          </div>
+        </div>
+
+        <!-- Social proof -->
+        <div class="flex items-center gap-4 pt-4">
+          <div class="flex -space-x-3">
+            <div
+              class="w-8 h-8 bg-gradient-to-r from-[#a78bfa] to-[#4361ee] rounded-full border-2 border-[#100f1e]"
+            >
+            </div>
+            <div
+              class="w-8 h-8 bg-gradient-to-r from-[#4361ee] to-[#6366f1] rounded-full border-2 border-[#100f1e]"
+            >
+            </div>
+            <div
+              class="w-8 h-8 bg-gradient-to-r from-[#6366f1] to-[#8b5cf6] rounded-full border-2 border-[#100f1e]"
+            >
+            </div>
+            <div
+              class="w-8 h-8 bg-gradient-to-r from-[#8b5cf6] to-[#a78bfa] rounded-full border-2 border-[#100f1e]"
+            >
+            </div>
+          </div>
+          <div class="text-sm text-gray-400">
+            <span class="font-semibold text-white">+50 proyectos</span> exitosos
+            entregados
           </div>
         </div>
       </div>
 
-      <!-- Right Side - System Cards Preview -->
-      <div class="mt-8 md:mt-0">
-        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <!-- MicroPets Card - Available -->
+      <!-- Lado derecho - Elemento visual moderno -->
+      <div class="relative flex items-center justify-center mt-8 md:mt-0">
+        <!-- Círculo principal con gradiente -->
+        <div class="relative w-80 h-80 md:w-96 md:h-96">
+          <!-- Círculo exterior con animación -->
           <div
-            class="p-6 transition-all duration-300 bg-gradient-to-br from-[#1a1a2e] to-[#2d2d44] rounded-xl shadow-lg hover:shadow-xl hover:scale-105 border-2 border-[#8b5cf6]"
+            class="absolute inset-0 rounded-full bg-gradient-to-r from-[#a78bfa] via-[#4361ee] to-[#6366f1] opacity-20 animate-spin-slow"
           >
-            <div class="flex items-center justify-between mb-4">
-              <div
-                class="flex items-center justify-center w-12 h-12 rounded-lg bg-[#8b5cf6]/30"
-              >
-                <svg
-                  class="w-6 h-6 text-[#a78bfa]"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M4.5 3c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2M8 16c0 1.1.9 2 2 2s2-.9 2-2-.9-2-2-2-2 .9-2 2M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                  ></path>
-                </svg>
-              </div>
-              <span
-                class="px-2 py-1 text-xs font-semibold text-[#a78bfa] bg-[#8b5cf6]/20 rounded-full"
-                >Disponible Ya</span
-              >
+          </div>
+
+          <!-- Círculo medio -->
+          <div
+            class="absolute inset-4 rounded-full bg-gradient-to-r from-[#4361ee] to-[#a78bfa] opacity-30 animate-pulse"
+          >
+          </div>
+
+          <!-- Círculo interior -->
+          <div
+            class="absolute inset-8 rounded-full bg-gradient-to-br from-[#1a1a2e] to-[#2d2d44] backdrop-blur-xl border border-[#a78bfa]/30 flex items-center justify-center"
+          >
+            <!-- Icono central -->
+            <div class="text-6xl text-[#a78bfa] animate-pulse">
+              <FaLaptopCode />
             </div>
-            <h3 class="mb-2 text-lg font-bold text-white">MicroPets</h3>
+          </div>
+
+          <!-- Elementos flotantes -->
+          <div
+            class="absolute -top-4 -right-4 w-16 h-16 bg-[#a78bfa]/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-[#a78bfa]/30 animate-bounce"
+          >
+            <FaCode className="text-[#a78bfa] text-xl" />
+          </div>
+
+          <div
+            class="absolute -bottom-4 -left-4 w-16 h-16 bg-[#4361ee]/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-[#4361ee]/30 animate-bounce"
+            style="animation-delay: 1s;"
+          >
+            <FaShoppingCart className="text-[#4361ee] text-xl" />
+          </div>
+
+          <div
+            class="absolute top-1/2 -left-8 w-12 h-12 bg-[#6366f1]/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-[#6366f1]/30 animate-bounce"
+            style="animation-delay: 2s;"
+          >
+            <FaRocket className="text-[#6366f1] text-lg" />
+          </div>
+        </div>
+
+        <!-- Logos flotantes de tecnologías -->
+        <div class="absolute space-y-4 top-4 right-4">
+          <div
+            class="flex items-center justify-center w-12 h-12 border rounded-lg bg-white/10 backdrop-blur-sm border-white/20"
+          >
+            <span class="text-xs font-bold text-white">React</span>
+          </div>
+          <div
+            class="flex items-center justify-center w-12 h-12 border rounded-lg bg-white/10 backdrop-blur-sm border-white/20"
+          >
+            <span class="text-xs font-bold text-white">Node</span>
+          </div>
+        </div>
+
+        <div class="absolute space-y-4 bottom-4 left-4">
+          <div
+            class="flex items-center justify-center w-12 h-12 border rounded-lg bg-white/10 backdrop-blur-sm border-white/20"
+          >
+            <span class="text-xs font-bold text-white">Rails</span>
+          </div>
+          <div
+            class="flex items-center justify-center w-12 h-12 border rounded-lg bg-white/10 backdrop-blur-sm border-white/20"
+          >
+            <span class="text-xs font-bold text-white">SQL</span>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- Systems Available Section - FIXED card structure -->
+  <section class="p-4 py-16 bg-[#111]" id="aplicaciones">
+    <article class="max-w-screen-xl mx-auto">
+      <Subtitle
+        title="Sistemas Web Listos Para Tu Negocio"
+        description="Soluciones digitales que automatizan y optimizan las operaciones de tu empresa."
+        textColor="text-white"
+        descriptionColor="text-gray-300"
+      />
+
+      <div class="grid gap-8 mt-12 md:grid-cols-3">
+        <!-- MicroPets - Available Now (Violet) -->
+        <div
+          class="relative p-8 transition-all duration-300 bg-gradient-to-br from-[#1a1a2e] to-[#2d2d44] rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 border-2 border-[#8b5cf6]"
+        >
+          <div class="absolute top-4 right-4">
+            <span
+              class="px-3 py-1 text-xs font-bold text-white bg-[#8b5cf6] rounded-full"
+              >DISPONIBLE</span
+            >
+          </div>
+
+          <div class="mb-6">
+            <div
+              class="flex items-center justify-center w-16 h-16 mb-4 rounded-xl bg-[#8b5cf6]/30"
+            >
+              <svg
+                class="w-8 h-8 text-[#a78bfa]"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M4.5 3c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2M8 16c0 1.1.9 2 2 2s2-.9 2-2-.9-2-2-2-2 .9-2 2M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="mb-2 text-2xl font-bold text-white">MicroPets</h3>
             <p class="mb-3 text-sm text-gray-400">
               Sistema completo para veterinarias
             </p>
@@ -254,229 +375,6 @@ import {
                 >
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </article>
-  </section>
-
-  <!-- Systems Available Section - FIXED card structure -->
-  <section class="p-4 py-16 bg-[#111]" id="aplicaciones">
-    <article class="max-w-screen-xl mx-auto">
-      <Subtitle
-        title="Sistemas Web Listos Para Tu Negocio"
-        description="Soluciones digitales que automatizan y optimizan las operaciones de tu empresa."
-        textColor="text-white"
-        descriptionColor="text-gray-300"
-      />
-
-      <div class="grid gap-8 mt-12 md:grid-cols-3">
-        <!-- MicroPets - Available Now (Violet) -->
-        <div
-          class="relative p-8 transition-all duration-300 bg-gradient-to-br from-[#1a1a2e] to-[#2d2d44] rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 border-2 border-[#8b5cf6]"
-        >
-          <div class="absolute top-4 right-4">
-            <span
-              class="px-3 py-1 text-xs font-bold text-white bg-[#8b5cf6] rounded-full"
-              >DISPONIBLE</span
-            >
-          </div>
-
-          <div class="mb-6">
-            <div
-              class="flex items-center justify-center w-16 h-16 mb-4 rounded-xl bg-[#8b5cf6]/30"
-            >
-              <svg
-                class="w-8 h-8 text-[#a78bfa]"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M4.5 3c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2M8 16c0 1.1.9 2 2 2s2-.9 2-2-.9-2-2-2-2 .9-2 2M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="mb-2 text-2xl font-bold text-white">MicroPets</h3>
-            <p class="text-gray-400">
-              Sistema completo para clínicas veterinarias
-            </p>
-          </div>
-
-          <div class="mb-6">
-            <div class="flex flex-col mb-2">
-              <div class="text-[#a78bfa] text-4xl font-bold">
-                $25<span class="text-lg text-gray-400">/mes</span>
-              </div>
-              <div class="text-sm text-gray-400">
-                + $597 implementación (única vez)
-              </div>
-            </div>
-            <p class="text-sm text-gray-500">Facturación mensual</p>
-          </div>
-
-          <div class="mb-8 space-y-3">
-            <div class="flex items-center gap-3">
-              <FaCheckCircle className="text-[#51cf66]" />
-              <span class="text-gray-300">Historial médico completo</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <FaCheckCircle className="text-[#51cf66]" />
-              <span class="text-gray-300">Agenda de citas integrada</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <FaCheckCircle className="text-[#51cf66]" />
-              <span class="text-gray-300">Control de vacunas</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <FaCheckCircle className="text-[#51cf66]" />
-              <span class="text-gray-300">Gestión de propietarios</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <FaCheckCircle className="text-[#51cf66]" />
-              <span class="text-gray-300">Recordatorios automáticos</span>
-            </div>
-          </div>
-
-          <div class="flex flex-col gap-3">
-            <a
-              href="https://micropets-demo.rysthdesign.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="w-full py-3 text-lg text-white btn bg-white/10 hover:bg-white/20 border-white/20"
-            >
-              Ver Demo
-            </a>
-            <a
-              href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20interesa%20el%20sistema%20MicroPets%20para%20mi%20veterinaria.%20%C2%BFPodr%C3%ADan%20darme%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20instalaci%C3%B3n%20y%20configuraci%C3%B3n%3F"
-              target="_blank"
-              class="w-full btn bg-[#8b5cf6] hover:bg-[#7c3aed] text-white border-none text-lg py-3"
-            >
-              Obtener MicroPets
-            </a>
-          </div>
-        </div>
-
-        <!-- MicroShop - Available Now (Blue) -->
-        <div
-          class="relative p-8 transition-all duration-300 bg-gradient-to-br from-[#1a1a2e] to-[#2d2d44] rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 border-2 border-[#4361ee]/30"
-        >
-          <div class="absolute top-4 right-4">
-            <span
-              class="px-3 py-1 text-xs font-bold text-white bg-[#4361ee] rounded-full"
-              >DISPONIBLE</span
-            >
-          </div>
-
-          <div class="mb-6">
-            <div
-              class="flex items-center justify-center w-16 h-16 mb-4 rounded-xl bg-[#4361ee]/20"
-            >
-              <svg
-                class="w-8 h-8 text-[#4361ee]"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm0 10c-2.76 0-5-2.24-5-5h2c0 1.66 1.34 3 3 3s3-1.34 3-3h2c0 2.76-2.24 5-5 5z"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="mb-2 text-2xl font-bold text-white">MicroShop</h3>
-            <p class="mb-3 text-sm text-gray-400">
-              Catálogo digital para ventas por WhatsApp
-            </p>
-            <div class="mb-3 text-2xl font-bold text-green-400">
-              $25<span class="text-sm text-gray-400">/mes</span>
-            </div>
-            <div class="space-y-1 text-xs text-gray-400">
-              <div class="flex items-center gap-2">
-                <FaCheckCircle className="text-[#51cf66]" />
-                <span>Catálogo de productos digital</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <FaCheckCircle className="text-[#51cf66]" />
-                <span>Inventario básico</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <FaCheckCircle className="text-[#51cf66]" />
-                <span>Enlaces directos a WhatsApp</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <FaCheckCircle className="text-[#51cf66]" />
-                <span>Categorías de productos</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <FaCheckCircle className="text-[#51cf66]" />
-                <span>Personalizable con tu marca</span>
-              </div>
-            </div>
-
-            <a
-              href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20interesa%20el%20sistema%20MicroShop%20para%20vender%20por%20WhatsApp.%20%C2%BFPodr%C3%ADan%20darme%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20funcionamiento%20y%20la%20instalaci%C3%B3n%3F"
-              target="_blank"
-              class="flex items-center justify-center w-full gap-2 py-3 text-lg text-white border-none rounded-md bg-gradient-to-r from-[#4361ee] to-[#3651cc] hover:from-[#3651cc] hover:to-[#2a3f9d] btn"
-            >
-              <FaWhatsapp className="text-xl" /> Obtener MicroShop
-            </a>
-          </div>
-
-          <!-- Custom System - NOW PROPERLY SEPARATED -->
-          <div
-            class="p-8 transition-all duration-300 bg-gradient-to-br from-[#1a1a2e] to-[#2d2d44] rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 border border-gray-600/30"
-          >
-            <div class="mb-6">
-              <div
-                class="flex items-center justify-center w-16 h-16 mb-4 rounded-xl bg-[#4361ee]/20"
-              >
-                <svg
-                  class="w-8 h-8 text-[#4361ee]"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-                  ></path>
-                </svg>
-              </div>
-              <h3 class="mb-2 text-2xl font-bold text-white">
-                Sistema Personalizado
-              </h3>
-              <p class="text-gray-400">Desarrollamos tu sistema ideal</p>
-            </div>
-
-            <div class="mb-6">
-              <div class="text-4xl font-bold text-[#4361ee]">
-                Consulta<span class="text-lg text-gray-400"> gratis</span>
-              </div>
-              <p class="text-sm text-gray-500">Sin compromiso</p>
-            </div>
-
-            <div class="mb-8 space-y-3">
-              <div class="flex items-center gap-3">
-                <FaCheckCircle className="text-[#51cf66]" />
-                <span class="text-gray-300">Análisis de necesidades</span>
-              </div>
-              <div class="flex items-center gap-3">
-                <FaCheckCircle className="text-[#51cf66]" />
-                <span class="text-gray-300">Desarrollo a medida</span>
-              </div>
-              <div class="flex items-center gap-3">
-                <FaCheckCircle className="text-[#51cf66]" />
-                <span class="text-gray-300">Soporte completo</span>
-              </div>
-              <div class="flex items-center gap-3">
-                <FaCheckCircle className="text-[#51cf66]" />
-                <span class="text-gray-300">Escalable y seguro</span>
-              </div>
-            </div>
-
-            <a
-              href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20interesa%20desarrollar%20un%20sistema%20personalizado%20para%20mi%20negocio.%20%C2%BFPodr%C3%ADamos%20agendar%20una%20consulta%20gratuita%3F"
-              target="_blank"
-              class="w-full py-3 text-lg text-white border-none bg-[#4361ee] hover:bg-[#3651cc] btn"
-            >
-              Consulta Gratuita
-            </a>
           </div>
         </div>
       </div>
