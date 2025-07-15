@@ -3,9 +3,12 @@ import {
   FaStar,
   FaQuoteLeft,
   FaHandshake,
-  FaAdjust,
+  FaAccusoft,
   FaShieldAlt,
 } from "react-icons/fa";
+import Project_1 from "@/assets/images/projects/project_1.png";
+import Project_2 from "@/assets/images/projects/project_2.png";
+import { Image } from "astro:assets";
 ---
 
 <!-- Sección de Clientes - Layout Horizontal con diseño vertical -->
@@ -64,47 +67,58 @@ import {
         >
         </div>
         <div
-          class="relative p-8 h-full bg-card-gradient backdrop-blur-xl border border-primary rounded-2xl transition-all duration-300 group-hover:border-[#a78bfa]/40"
+          class="relative h-full bg-card-gradient backdrop-blur-xl border border-primary rounded-2xl transition-all duration-300 group-hover:border-[#a78bfa]/40 overflow-hidden"
         >
-          <!-- Quote Icon -->
-          <div
-            class="flex items-center justify-center w-12 h-12 mb-6 rounded-full bg-gradient-to-r from-[#a78bfa]/20 to-[#4361ee]/20 border border-primary"
-          >
-            <FaQuoteLeft className="text-[#a78bfa] text-lg" />
+          <!-- Project Image -->
+          <div class="overflow-hidden h-72">
+            <Image
+              src={Project_1}
+              alt="QuickInventory Sistema"
+              class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+            />
           </div>
 
-          <!-- Testimonio -->
-          <blockquote class="mb-6 text-sm leading-relaxed text-gray-300">
-            "QuickInventory revolucionó nuestro negocio. Antes perdíamos
-            productos por mal control de stock. Ahora tenemos todo organizado,
-            reportes automáticos y hemos reducido pérdidas en un 35%."
-          </blockquote>
+          <div class="p-6">
+            <!-- Quote Icon -->
+            <div
+              class="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-gradient-to-r from-[#a78bfa]/20 to-[#4361ee]/20 border border-primary"
+            >
+              <FaQuoteLeft className="text-[#a78bfa] text-lg" />
+            </div>
 
-          <!-- Rating -->
-          <div class="flex gap-1 mb-4">
-            {
-              [...Array(5)].map(() => (
-                <FaStar className="text-yellow-400 text-sm" />
-              ))
-            }
-          </div>
+            <!-- Testimonio -->
+            <blockquote class="mb-4 text-sm leading-relaxed text-gray-300">
+              "QuickInventory revolucionó nuestro negocio. Antes perdíamos
+              productos por mal control de stock. Ahora tenemos todo organizado,
+              reportes automáticos y hemos reducido pérdidas en un 35%."
+            </blockquote>
 
-          <!-- Cliente Info -->
-          <div class="pt-4 border-t border-gray-700">
-            <h4 class="text-sm font-semibold text-white">
-              QuickInventory Cliente
-            </h4>
-            <p class="text-xs text-gray-400">Comercio de Productos Varios</p>
-            <p class="text-[#a78bfa] text-xs font-medium mt-1">
-              Sistema POS + Inventario
-            </p>
-            <div class="flex gap-2 mt-2">
-              <span class="text-white badge badge-xs bg-[#4361ee]"
-                >Ruby on Rails</span
-              >
-              <span class="text-white bg-green-600 badge badge-xs"
-                >PostgreSQL</span
-              >
+            <!-- Rating -->
+            <div class="flex gap-1 mb-4">
+              {
+                [...Array(5)].map(() => (
+                  <FaStar className="text-yellow-400 text-sm" />
+                ))
+              }
+            </div>
+
+            <!-- Cliente Info -->
+            <div class="pt-4 border-t border-gray-700">
+              <h4 class="text-sm font-semibold text-white">
+                QuickInventory Cliente
+              </h4>
+              <p class="text-xs text-gray-400">Comercio de Productos Varios</p>
+              <p class="text-[#a78bfa] text-xs font-medium mt-1">
+                Sistema POS + Inventario
+              </p>
+              <div class="flex gap-2 mt-2">
+                <span class="text-white badge badge-xs bg-[#4361ee]"
+                  >Ruby on Rails</span
+                >
+                <span class="text-white bg-green-600 badge badge-xs"
+                  >PostgreSQL</span
+                >
+              </div>
             </div>
           </div>
         </div>
@@ -117,84 +131,110 @@ import {
         >
         </div>
         <div
-          class="relative p-8 h-full bg-card-gradient backdrop-blur-xl border border-secondary rounded-2xl transition-all duration-300 group-hover:border-[#4361ee]/40"
+          class="relative h-full bg-card-gradient backdrop-blur-xl border border-secondary rounded-2xl transition-all duration-300 group-hover:border-[#4361ee]/40 overflow-hidden"
         >
-          <div
-            class="flex items-center justify-center w-12 h-12 mb-6 rounded-full bg-gradient-to-r from-[#4361ee]/20 to-[#6366f1]/20 border border-secondary"
-          >
-            <FaQuoteLeft className="text-[#4361ee] text-lg" />
+          <!-- Project Image -->
+          <div class="overflow-hidden h-72">
+            <Image
+              src={Project_2}
+              alt="TrámitesEC Sistema"
+              class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+            />
           </div>
 
-          <blockquote class="mb-6 text-sm leading-relaxed text-gray-300">
-            "Con TrámitesEC hemos digitalizado completamente nuestros procesos.
-            Aumentamos nuestra capacidad de procesamiento en 70% y reducimos
-            errores drásticamente. Lleva 2+ años funcionando perfecto."
-          </blockquote>
+          <div class="p-6">
+            <div
+              class="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-gradient-to-r from-[#4361ee]/20 to-[#6366f1]/20 border border-secondary"
+            >
+              <FaQuoteLeft className="text-[#4361ee] text-lg" />
+            </div>
 
-          <div class="flex gap-1 mb-4">
-            {
-              [...Array(5)].map(() => (
-                <FaStar className="text-yellow-400 text-sm" />
-              ))
-            }
-          </div>
+            <blockquote class="mb-4 text-sm leading-relaxed text-gray-300">
+              "Con TrámitesEC hemos digitalizado completamente nuestros
+              procesos. Aumentamos nuestra capacidad de procesamiento en 70% y
+              reducimos errores drásticamente. Lleva 2+ años funcionando
+              perfecto."
+            </blockquote>
 
-          <div class="pt-4 border-t border-gray-700">
-            <h4 class="text-sm font-semibold text-white">TrámitesEC Cliente</h4>
-            <p class="text-xs text-gray-400">Empresa de Gestión Documental</p>
-            <p class="text-[#4361ee] text-xs font-medium mt-1">
-              Gestión de Trámites
-            </p>
-            <div class="flex gap-2 mt-2">
-              <span class="text-white bg-blue-600 badge badge-xs">React</span>
-              <span class="text-white badge badge-xs bg-[#4361ee]"
-                >Rails API</span
-              >
+            <div class="flex gap-1 mb-4">
+              {
+                [...Array(5)].map(() => (
+                  <FaStar className="text-yellow-400 text-sm" />
+                ))
+              }
+            </div>
+
+            <div class="pt-4 border-t border-gray-700">
+              <h4 class="text-sm font-semibold text-white">
+                TrámitesEC Cliente
+              </h4>
+              <p class="text-xs text-gray-400">Empresa de Gestión Documental</p>
+              <p class="text-[#4361ee] text-xs font-medium mt-1">
+                Gestión de Trámites
+              </p>
+              <div class="flex gap-2 mt-2">
+                <span class="text-white bg-blue-600 badge badge-xs">React</span>
+                <span class="text-white badge badge-xs bg-[#4361ee]"
+                  >Rails API</span
+                >
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- General Microempresa Case -->
+      <!-- JPRefrigeración Case -->
       <div class="relative group">
         <div
           class="absolute inset-0 transition-opacity duration-300 opacity-0 gradient-tertiary rounded-2xl group-hover:opacity-10"
         >
         </div>
         <div
-          class="relative p-8 h-full bg-card-gradient backdrop-blur-xl border border-tertiary rounded-2xl transition-all duration-300 group-hover:border-[#6366f1]/40"
+          class="relative h-full bg-card-gradient backdrop-blur-xl border border-tertiary rounded-2xl transition-all duration-300 group-hover:border-[#6366f1]/40"
         >
-          <div
-            class="flex items-center justify-center w-12 h-12 mb-6 rounded-full bg-gradient-to-r from-[#6366f1]/20 to-[#8b5cf6]/20 border border-tertiary"
-          >
-            <FaQuoteLeft className="text-[#6366f1] text-lg" />
-          </div>
+          <div class="p-8">
+            <div
+              class="flex items-center justify-center w-12 h-12 mb-6 rounded-full bg-gradient-to-r from-[#6366f1]/20 to-[#8b5cf6]/20 border border-tertiary"
+            >
+              <FaQuoteLeft className="text-[#6366f1] text-lg" />
+            </div>
 
-          <blockquote class="mb-6 text-sm leading-relaxed text-gray-300">
-            "John entiende perfectamente las necesidades de las microempresas.
-            No solo desarrolla, sino que aconseja y está siempre disponible. Su
-            soporte es excepcional."
-          </blockquote>
+            <blockquote class="mb-6 text-sm leading-relaxed text-gray-300">
+              "Nuestra página web profesional nos ha ayudado a generar más
+              confianza con nuestros clientes. El diseño es moderno y refleja la
+              calidad de nuestros servicios de refrigeración."
+            </blockquote>
 
-          <div class="flex gap-1 mb-4">
-            {
-              [...Array(5)].map(() => (
-                <FaStar className="text-yellow-400 text-sm" />
-              ))
-            }
-          </div>
+            <div class="flex gap-1 mb-4">
+              {
+                [...Array(5)].map(() => (
+                  <FaStar className="text-yellow-400 text-sm" />
+                ))
+              }
+            </div>
 
-          <div class="pt-4 border-t border-gray-700">
-            <h4 class="text-sm font-semibold text-white">Ana Rodríguez</h4>
-            <p class="text-xs text-gray-400">Servicios Profesionales</p>
-            <p class="text-[#6366f1] text-xs font-medium mt-1">
-              Web Profesional + SEO
-            </p>
-            <div class="flex gap-2 mt-2">
-              <span class="text-white bg-purple-600 badge badge-xs">Astro</span>
-              <span class="text-white badge badge-xs bg-cyan-600"
-                >TailwindCSS</span
+            <div class="pt-4 border-t border-gray-700">
+              <h4 class="text-sm font-semibold text-white">JPRefrigeración</h4>
+              <p class="text-xs text-gray-400">Servicios de Refrigeración</p>
+              <p class="text-[#6366f1] text-xs font-medium mt-1">
+                Web Profesional + SEO
+              </p>
+              <div class="flex gap-2 mt-2">
+                <span class="text-white bg-purple-600 badge badge-xs"
+                  >Astro</span
+                >
+                <span class="text-white badge badge-xs bg-cyan-600"
+                  >TailwindCSS</span
+                >
+              </div>
+              <a
+                href="https://jprefrigeracion.rysthdesign.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block mt-2 text-xs text-[#6366f1] hover:text-[#8b5cf6] transition-colors underline"
               >
+                Ver sitio web →
+              </a>
             </div>
           </div>
         </div>
@@ -223,7 +263,7 @@ import {
         <div
           class="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full gradient-secondary"
         >
-          <FaAdjust className="text-white text-2xl" />
+          <FaAccusoft className="text-white text-2xl" />
         </div>
         <h3 class="mb-2 text-2xl font-bold text-white">2+</h3>
         <p class="text-sm text-gray-400">Años de Funcionamiento Continuo</p>
@@ -265,25 +305,27 @@ import {
           ¿Quieres Ver Estos Sistemas en Acción?
         </h3>
         <p class="max-w-md mb-6 text-gray-300">
-          Programa una demo gratuita y descubre cómo estos sistemas pueden
+          Agenda una consulta gratuita y descubre cómo estos sistemas pueden
           transformar tu negocio.
         </p>
         <div class="flex flex-col justify-center gap-4 sm:flex-row">
           <a
-            href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20interesan%20los%20casos%20de%20%C3%A9xito%20QuickInventory%20y%20TrámitesEC.%20%C2%BFPodr%C3%ADamos%20agendar%20una%20demo%20para%20mi%20negocio%3F"
+            href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20interesan%20los%20casos%20de%20%C3%A9xito%20QuickInventory%2C%20TrámitesEC%20y%20JPRefrigeración.%20%C2%BFPodr%C3%ADamos%20agendar%20una%20consulta%20gratuita%20para%20mi%20negocio%3F"
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center gap-2 px-6 py-3 font-semibold text-white transition-all duration-300 rounded-full shadow-lg gradient-primary hover:shadow-xl hover:scale-105"
           >
-            <span>Solicitar Demo Gratuita</span>
-            <FaAdjust className="text-sm" />
+            <span>Solicitar Consulta Gratuita</span>
+            <FaAccusoft className="text-sm" />
           </a>
-          <button
-            onclick="modal_quickinventory.showModal()"
+          <a
+            href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20QuickInventory%20y%20sus%20otros%20proyectos.%20%C2%BFPodr%C3%ADan%20enviarme%20detalles%3F"
+            target="_blank"
+            rel="noopener noreferrer"
             class="inline-flex items-center gap-2 px-6 py-3 border border-[#a78bfa] rounded-full text-[#a78bfa] font-semibold hover:bg-[#a78bfa]/10 transition-all duration-300"
           >
-            Ver QuickInventory
-          </button>
+            Más Información
+          </a>
         </div>
       </div>
     </div>
