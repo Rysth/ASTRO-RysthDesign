@@ -1,5 +1,4 @@
 ---
-import Subtitle from "@/components/heading/Subtitle.astro";
 import TechnologyCard from "@/components/ui/TechnologyCard.astro";
 import ReactImage from "@/assets/images/technologies/react.svg";
 import AstroImage from "@/assets/images/technologies/astro.svg";
@@ -12,19 +11,100 @@ import NextJSImage from "@/assets/images/technologies/nextjs.svg";
 ---
 
 <!-- Stack Tecnológico Section -->
-<section class="p-4 py-16 bg-[#0a0a0a]" id="tecnologias">
-  <article class="max-w-screen-xl mx-auto">
+<section class="py-8 bg-[#0a0a0a]" id="tecnologias">
+  <div class="relative overflow-hidden">
+    <!-- Gradientes para el efecto fade -->
     <div
-      class="grid grid-cols-3 gap-4 mt-10 lg:mx-auto lg:max-w-screen-lg md:grid-cols-4 lg:grid-cols-8 md:gap-8 place-items-center"
+      class="absolute left-0 top-0 w-24 h-full bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none"
     >
-      <TechnologyCard src={ReactImage} alt="React Logo" />
-      <TechnologyCard src={RailsImage} alt="Ruby on Rails Logo" />
-      <TechnologyCard src={NodeJSImage} alt="NodeJS Logo" />
-      <TechnologyCard src={PostgreSQLImage} alt="PostgreSQL Logo" />
-      <TechnologyCard src={DockerImage} alt="Docker Logo" />
-      <TechnologyCard src={AstroImage} alt="Astro Logo" />
-      <TechnologyCard src={JavaScriptImage} alt="JavaScript Logo" />
-      <TechnologyCard src={NextJSImage} alt="Next.js Logo" />
     </div>
-  </article>
+    <div
+      class="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none"
+    >
+    </div>
+
+    <!-- Contenedor de scroll infinito -->
+    <div class="tech-scroll-container">
+      <div class="tech-scroll-track">
+        <!-- Set completo de tecnologías (repetido 3 veces para seamless loop) -->
+        <TechnologyCard src={ReactImage} alt="React Logo" />
+        <TechnologyCard src={RailsImage} alt="Ruby on Rails Logo" />
+        <TechnologyCard src={NodeJSImage} alt="NodeJS Logo" />
+        <TechnologyCard src={PostgreSQLImage} alt="PostgreSQL Logo" />
+        <TechnologyCard src={DockerImage} alt="Docker Logo" />
+        <TechnologyCard src={AstroImage} alt="Astro Logo" />
+        <TechnologyCard src={JavaScriptImage} alt="JavaScript Logo" />
+        <TechnologyCard src={NextJSImage} alt="Next.js Logo" />
+
+        <!-- Primer duplicado -->
+        <TechnologyCard src={ReactImage} alt="React Logo" />
+        <TechnologyCard src={RailsImage} alt="Ruby on Rails Logo" />
+        <TechnologyCard src={NodeJSImage} alt="NodeJS Logo" />
+        <TechnologyCard src={PostgreSQLImage} alt="PostgreSQL Logo" />
+        <TechnologyCard src={DockerImage} alt="Docker Logo" />
+        <TechnologyCard src={AstroImage} alt="Astro Logo" />
+        <TechnologyCard src={JavaScriptImage} alt="JavaScript Logo" />
+        <TechnologyCard src={NextJSImage} alt="Next.js Logo" />
+
+        <!-- Segundo duplicado -->
+        <TechnologyCard src={ReactImage} alt="React Logo" />
+        <TechnologyCard src={RailsImage} alt="Ruby on Rails Logo" />
+        <TechnologyCard src={NodeJSImage} alt="NodeJS Logo" />
+        <TechnologyCard src={PostgreSQLImage} alt="PostgreSQL Logo" />
+        <TechnologyCard src={DockerImage} alt="Docker Logo" />
+        <TechnologyCard src={AstroImage} alt="Astro Logo" />
+        <TechnologyCard src={JavaScriptImage} alt="JavaScript Logo" />
+        <TechnologyCard src={NextJSImage} alt="Next.js Logo" />
+      </div>
+    </div>
+  </div>
 </section>
+
+<style>
+  .tech-scroll-container {
+    display: flex;
+    overflow: hidden;
+    padding: 1rem 0;
+  }
+
+  .tech-scroll-track {
+    display: flex;
+    animation: scroll-horizontal 40s linear infinite;
+    gap: 2rem;
+    padding: 0 2rem;
+    /* Ensure the track is wide enough for seamless loop */
+    width: calc(200% + 4rem);
+  }
+
+  .tech-scroll-container:hover .tech-scroll-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll-horizontal {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      /* Move exactly by the width of one complete set */
+      transform: translateX(calc(-33.333% - 1.333rem));
+    }
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .tech-scroll-track {
+      gap: 1.5rem;
+      padding: 0 1rem;
+      animation-duration: 35s;
+    }
+
+    @keyframes scroll-horizontal {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-33.333% - 1rem));
+      }
+    }
+  }
+</style>
