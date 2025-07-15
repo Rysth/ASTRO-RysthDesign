@@ -212,7 +212,10 @@ import { Image } from "astro:assets";
           class="relative h-full bg-card-gradient backdrop-blur-xl border border-tertiary rounded-2xl transition-all duration-300 group-hover:border-[#6366f1]/40 overflow-hidden"
         >
           <!-- Project Image -->
-          <div class="overflow-hidden cursor-pointer h-72">
+          <div
+            class="overflow-hidden cursor-pointer h-72"
+            onclick="modal_micropets.showModal()"
+          >
             <Image
               src={Project_3}
               alt="MicroPets Sistema Veterinario"
@@ -259,14 +262,22 @@ import { Image } from "astro:assets";
                   >TypeScript</span
                 >
               </div>
-              <a
-                href="https://micropets-demo.rysthdesign.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-block mt-2 text-xs text-[#6366f1] hover:text-[#8b5cf6] transition-colors underline"
-              >
-                Ver demo en vivo →
-              </a>
+              <div class="flex gap-2 mt-2">
+                <button
+                  onclick="modal_micropets.showModal()"
+                  class="inline-block text-xs text-[#6366f1] hover:text-[#8b5cf6] transition-colors underline"
+                >
+                  Ver detalles completos →
+                </button>
+                <a
+                  href="https://micropets-demo.rysthdesign.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-block text-xs text-[#6366f1] hover:text-[#8b5cf6] transition-colors underline"
+                >
+                  Ver demo en vivo →
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -448,6 +459,78 @@ import { Image } from "astro:assets";
       </div>
     </div>
 
+    <form method="dialog" class="modal-backdrop">
+      <button>cerrar</button>
+    </form>
+  </dialog>
+
+  <!-- MicroPets Modal -->
+  <dialog id="modal_micropets" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box bg-[#1a1a1a] text-white">
+      <h3 class="text-lg font-bold">
+        MicroPets - Sistema de Gestión Veterinaria
+      </h3>
+      <div class="py-4">
+        <p class="mb-3">
+          Plataforma completa de gestión para clínicas veterinarias pequeñas y
+          medianas, con enfoque en la digitalización de historiales médicos y
+          optimización de procesos.
+        </p>
+        <h4 class="mb-2 font-semibold">Características principales:</h4>
+        <ul class="pl-5 mb-4 space-y-1 text-gray-300 list-disc">
+          <li>
+            🏥 Historiales médicos digitales con seguimiento de signos vitales
+          </li>
+          <li>📅 Sistema inteligente de citas (anti-doble-reserva)</li>
+          <li>🔐 Sistema de roles de 3 niveles (Admin/Manager/Operador)</li>
+          <li>
+            📱 Interfaz optimizada para móviles con localización en español
+          </li>
+          <li>👥 Gestión de relaciones mascota-propietario</li>
+          <li>📊 Reportes médicos y operativos automatizados</li>
+        </ul>
+        <h4 class="mb-2 font-semibold">Tecnologías utilizadas:</h4>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="text-white bg-blue-500 badge badge-sm">React 19</span>
+          <span class="text-white bg-cyan-600 badge badge-sm">TypeScript</span>
+          <span class="text-white bg-cyan-400 badge badge-sm">TailwindCSS</span>
+          <span class="text-white bg-red-500 badge badge-sm">Rails 8 API</span>
+          <span class="text-white bg-green-500 badge badge-sm">PostgreSQL</span>
+          <span class="text-white bg-blue-600 badge badge-sm">Docker</span>
+          <span class="text-white bg-purple-500 badge badge-sm">Dokku</span>
+        </div>
+        <h4 class="mb-2 font-semibold">Funcionalidades avanzadas:</h4>
+        <ul class="pl-5 mb-4 space-y-1 text-gray-300 list-disc">
+          <li>Autenticación con Devise</li>
+          <li>Búsqueda avanzada con Ransack</li>
+          <li>URLs amigables para SEO</li>
+          <li>Sistema de notificaciones en tiempo real</li>
+        </ul>
+        <h4 class="mb-2 font-semibold">Resultados del cliente:</h4>
+        <p class="text-gray-300">
+          La clínica veterinaria ha mejorado significativamente la organización
+          de historiales médicos, reducido errores en el agendamiento de citas y
+          optimizado la gestión de pacientes y propietarios.
+        </p>
+      </div>
+      <div class="modal-action">
+        <div class="flex gap-2">
+          <a
+            href="https://micropets-demo.rysthdesign.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-[#6366f1] text-white hover:bg-opacity-90 btn"
+          >
+            Ver Demo
+          </a>
+          <form method="dialog">
+            <button class="bg-[#4361ee] text-white hover:bg-opacity-90 btn">
+              Cerrar
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
     <form method="dialog" class="modal-backdrop">
       <button>cerrar</button>
     </form>
