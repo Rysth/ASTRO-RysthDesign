@@ -71,7 +71,10 @@ import { Image } from "astro:assets";
           class="relative h-full bg-card-gradient backdrop-blur-xl border border-primary rounded-2xl transition-all duration-300 group-hover:border-[#a78bfa]/40 overflow-hidden"
         >
           <!-- Project Image -->
-          <div class="overflow-hidden h-72">
+          <div
+            class="overflow-hidden cursor-pointer h-72"
+            onclick="modal_quickinventory.showModal()"
+          >
             <Image
               src={Project_1}
               alt="QuickInventory Sistema"
@@ -120,6 +123,12 @@ import { Image } from "astro:assets";
                   >PostgreSQL</span
                 >
               </div>
+              <button
+                onclick="modal_quickinventory.showModal()"
+                class="inline-block mt-2 text-xs text-[#a78bfa] hover:text-[#8b5cf6] transition-colors underline"
+              >
+                Ver detalles completos →
+              </button>
             </div>
           </div>
         </div>
@@ -135,7 +144,10 @@ import { Image } from "astro:assets";
           class="relative h-full bg-card-gradient backdrop-blur-xl border border-secondary rounded-2xl transition-all duration-300 group-hover:border-[#4361ee]/40 overflow-hidden"
         >
           <!-- Project Image -->
-          <div class="overflow-hidden h-72">
+          <div
+            class="overflow-hidden cursor-pointer h-72"
+            onclick="modal_tramites.showModal()"
+          >
             <Image
               src={Project_2}
               alt="TrámitesEC Sistema"
@@ -179,6 +191,12 @@ import { Image } from "astro:assets";
                   >Rails API</span
                 >
               </div>
+              <button
+                onclick="modal_tramites.showModal()"
+                class="inline-block mt-2 text-xs text-[#4361ee] hover:text-[#6366f1] transition-colors underline"
+              >
+                Ver detalles completos →
+              </button>
             </div>
           </div>
         </div>
@@ -194,7 +212,7 @@ import { Image } from "astro:assets";
           class="relative h-full bg-card-gradient backdrop-blur-xl border border-tertiary rounded-2xl transition-all duration-300 group-hover:border-[#6366f1]/40 overflow-hidden"
         >
           <!-- Project Image -->
-          <div class="overflow-hidden h-72">
+          <div class="overflow-hidden cursor-pointer h-72">
             <Image
               src={Project_3}
               alt="MicroPets Sistema Veterinario"
@@ -336,4 +354,102 @@ import { Image } from "astro:assets";
       </div>
     </div>
   </article>
+
+  <!-- Modales para los proyectos - Adaptados para fondo oscuro -->
+  <dialog id="modal_quickinventory" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box bg-[#1a1a1a] text-white">
+      <h3 class="text-lg font-bold">
+        QuickInventory - Sistema de Inventario y POS
+      </h3>
+      <div class="py-4">
+        <p class="mb-3">
+          Sistema completo para la gestión de inventarios y punto de venta,
+          diseñado específicamente para pequeños y medianos comercios.
+        </p>
+        <h4 class="mb-2 font-semibold">Características principales:</h4>
+        <ul class="pl-5 mb-4 space-y-1 text-gray-300 list-disc">
+          <li>Control de inventario en tiempo real</li>
+          <li>Gestión de proveedores y compras</li>
+          <li>Sistema POS con interfaz táctil intuitiva</li>
+          <li>Reportes de ventas e inventario</li>
+          <li>Gestión de usuarios y permisos</li>
+          <li>Alertas de stock bajo</li>
+        </ul>
+        <h4 class="mb-2 font-semibold">Tecnologías utilizadas:</h4>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="text-white bg-red-500 badge badge-sm">Ruby on Rails</span
+          >
+          <span class="text-white badge badge-sm bg-cyan-600">TailwindCSS</span>
+          <span class="text-white bg-green-500 badge badge-sm">PostgreSQL</span>
+          <span class="text-white bg-blue-500 badge badge-sm">Docker</span>
+          <span class="text-white bg-purple-500 badge badge-sm">Hotwire</span>
+        </div>
+        <h4 class="mb-2 font-semibold">Resultados del cliente:</h4>
+        <p class="text-gray-300">
+          El cliente experimentó una reducción del 35% en pérdidas de inventario
+          y un aumento del 20% en eficiencia operativa tras 6 meses de uso.
+        </p>
+      </div>
+      <div class="modal-action">
+        <form method="dialog">
+          <button class="bg-[#4361ee] text-white hover:bg-opacity-90 btn">
+            Cerrar
+          </button>
+        </form>
+      </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+      <button>cerrar</button>
+    </form>
+  </dialog>
+
+  <dialog id="modal_tramites" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box bg-[#1a1a1a] text-white">
+      <h3 class="text-lg font-bold">
+        TrámitesEC - Sistema de Gestión de Trámites
+      </h3>
+      <div class="py-4">
+        <p class="mb-3">
+          Aplicación web completa para la gestión de trámites gubernamentales,
+          clientes y pagos, en uso continuo por más de 2 años por una empresa de
+          gestión documental.
+        </p>
+        <h4 class="mb-2 font-semibold">Características principales:</h4>
+        <ul class="pl-5 mb-4 space-y-1 text-gray-300 list-disc">
+          <li>Gestión de clientes y seguimiento de trámites</li>
+          <li>Panel de administración para tramitadores</li>
+          <li>Sistema de notificaciones por email y WhatsApp</li>
+          <li>Generación de documentos personalizados</li>
+          <li>Reportes financieros y operativos</li>
+          <li>Interfaz responsive para acceso móvil</li>
+        </ul>
+        <h4 class="mb-2 font-semibold">Tecnologías utilizadas:</h4>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="text-white bg-blue-500 badge badge-sm">React</span>
+          <span class="text-white bg-red-500 badge badge-sm">Ruby on Rails</span
+          >
+          <span class="text-white bg-green-500 badge badge-sm">PostgreSQL</span>
+          <span class="text-white bg-yellow-500 badge badge-sm">Redux</span>
+          <span class="text-white bg-purple-500 badge badge-sm">AWS S3</span>
+        </div>
+        <h4 class="mb-2 font-semibold">Resultados del cliente:</h4>
+        <p class="text-gray-300">
+          TrámitesEC ha permitido a la empresa aumentar su capacidad de
+          procesamiento en un 70%, reducir errores en documentación y mejorar la
+          satisfacción de sus clientes.
+        </p>
+      </div>
+      <div class="modal-action">
+        <form method="dialog">
+          <button class="bg-[#4361ee] text-white hover:bg-opacity-90 btn">
+            Cerrar
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <form method="dialog" class="modal-backdrop">
+      <button>cerrar</button>
+    </form>
+  </dialog>
 </section>
