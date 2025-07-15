@@ -1,0 +1,30 @@
+---
+import Subtitle from "@/components/heading/Subtitle.astro";
+import TechnologyCard from "@/components/ui/TechnologyCard.astro";
+import ReactImage from "@/assets/images/technologies/react.svg";
+import AstroImage from "@/assets/images/technologies/astro.svg";
+import RailsImage from "@/assets/images/technologies/rails.svg";
+import NodeJSImage from "@/assets/images/technologies/node.svg";
+import PostgreSQLImage from "@/assets/images/technologies/postgresql.svg";
+import DockerImage from "@/assets/images/technologies/docker.svg";
+import JavaScriptImage from "@/assets/images/technologies/javascript.svg";
+import NextJSImage from "@/assets/images/technologies/nextjs.svg";
+---
+
+<!-- Stack Tecnológico Section -->
+<section class="p-4 py-16 bg-[#0a0a0a]" id="tecnologias">
+  <article class="max-w-screen-xl mx-auto">
+    <div
+      class="grid grid-cols-3 gap-4 mt-10 lg:mx-auto lg:max-w-screen-lg md:grid-cols-4 lg:grid-cols-8 md:gap-8 place-items-center"
+    >
+      <TechnologyCard src={ReactImage} alt="React Logo" />
+      <TechnologyCard src={RailsImage} alt="Ruby on Rails Logo" />
+      <TechnologyCard src={NodeJSImage} alt="NodeJS Logo" />
+      <TechnologyCard src={PostgreSQLImage} alt="PostgreSQL Logo" />
+      <TechnologyCard src={DockerImage} alt="Docker Logo" />
+      <TechnologyCard src={AstroImage} alt="Astro Logo" />
+      <TechnologyCard src={JavaScriptImage} alt="JavaScript Logo" />
+      <TechnologyCard src={NextJSImage} alt="Next.js Logo" />
+    </div>
+  </article>
+</section>

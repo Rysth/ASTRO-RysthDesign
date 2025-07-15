@@ -6,15 +6,9 @@ import Experience_2 from "@/assets/images/experience/experience_2.png";
 import Experience_3 from "@/assets/images/experience/experience_3.png";
 import Project_1 from "@/assets/images/projects/project_1.png";
 import Project_2 from "@/assets/images/projects/project_2.png";
-import ReactImage from "@/assets/images/technologies/react.svg";
-import AstroImage from "@/assets/images/technologies/astro.svg";
-import RailsImage from "@/assets/images/technologies/rails.svg";
-import NodeJSImage from "@/assets/images/technologies/node.svg";
-import PostgreSQLImage from "@/assets/images/technologies/postgresql.svg";
-import DockerImage from "@/assets/images/technologies/docker.svg";
 import Subtitle from "@/components/heading/Subtitle.astro";
-import TechnologyCard from "@/components/ui/TechnologyCard.astro";
 import HeroSection from "@/components/sections/HeroSection.astro";
+import TechnologySection from "@/sections/general/TechnologySection.astro";
 import Layout from "@/layouts/Layout.astro";
 import { Image } from "astro:assets";
 import {
@@ -30,6 +24,9 @@ import {
 >
   <!-- Hero Section -->
   <HeroSection />
+
+  <!-- Technology Stack Section -->
+  <TechnologySection />
 
   <!-- Ventajas Competitivas Section - Updated to blue -->
   <section class="p-4 py-16 bg-[#111]">
@@ -96,28 +93,6 @@ import {
             éxito es mi éxito.
           </p>
         </div>
-      </div>
-    </article>
-  </section>
-
-  <!-- Stack Tecnológico Section -->
-  <section class="p-4 py-16 bg-[#0a0a0a]" id="tecnologias">
-    <article class="max-w-screen-xl mx-auto">
-      <Subtitle
-        title="Herramientas que Uso"
-        description="Tecnologías probadas y confiables para crear soluciones duraderas"
-        textColor="text-white"
-        descriptionColor="text-gray-300"
-      />
-      <div
-        class="grid grid-cols-3 gap-4 mt-10 lg:mx-auto lg:max-w-screen-md md:grid-cols-6 md:gap-8 place-items-center"
-      >
-        <TechnologyCard src={RailsImage} alt="Ruby on Rails Logo" />
-        <TechnologyCard src={ReactImage} alt="React Logo" />
-        <TechnologyCard src={PostgreSQLImage} alt="PostgreSQL Logo" />
-        <TechnologyCard src={DockerImage} alt="Docker Logo" />
-        <TechnologyCard src={AstroImage} alt="Astro Logo" />
-        <TechnologyCard src={NodeJSImage} alt="NodeJS Logo" />
       </div>
     </article>
   </section>
