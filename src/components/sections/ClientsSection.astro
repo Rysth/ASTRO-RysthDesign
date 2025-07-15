@@ -3,11 +3,12 @@ import {
   FaStar,
   FaQuoteLeft,
   FaHandshake,
-  FaAccusoft,
+  FaChartLine,
   FaShieldAlt,
 } from "react-icons/fa";
 import Project_1 from "@/assets/images/projects/project_1.png";
 import Project_2 from "@/assets/images/projects/project_2.png";
+import Project_3 from "@/assets/images/projects/project_3.png";
 import { Image } from "astro:assets";
 ---
 
@@ -183,26 +184,36 @@ import { Image } from "astro:assets";
         </div>
       </div>
 
-      <!-- JPRefrigeración Case -->
+      <!-- MicroPets Case -->
       <div class="relative group">
         <div
           class="absolute inset-0 transition-opacity duration-300 opacity-0 gradient-tertiary rounded-2xl group-hover:opacity-10"
         >
         </div>
         <div
-          class="relative h-full bg-card-gradient backdrop-blur-xl border border-tertiary rounded-2xl transition-all duration-300 group-hover:border-[#6366f1]/40"
+          class="relative h-full bg-card-gradient backdrop-blur-xl border border-tertiary rounded-2xl transition-all duration-300 group-hover:border-[#6366f1]/40 overflow-hidden"
         >
-          <div class="p-8">
+          <!-- Project Image -->
+          <div class="overflow-hidden h-72">
+            <Image
+              src={Project_3}
+              alt="MicroPets Sistema Veterinario"
+              class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+
+          <div class="p-6">
             <div
-              class="flex items-center justify-center w-12 h-12 mb-6 rounded-full bg-gradient-to-r from-[#6366f1]/20 to-[#8b5cf6]/20 border border-tertiary"
+              class="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-gradient-to-r from-[#6366f1]/20 to-[#8b5cf6]/20 border border-tertiary"
             >
               <FaQuoteLeft className="text-[#6366f1] text-lg" />
             </div>
 
-            <blockquote class="mb-6 text-sm leading-relaxed text-gray-300">
-              "Nuestra página web profesional nos ha ayudado a generar más
-              confianza con nuestros clientes. El diseño es moderno y refleja la
-              calidad de nuestros servicios de refrigeración."
+            <blockquote class="mb-4 text-sm leading-relaxed text-gray-300">
+              "MicroPets transformó completamente la gestión de nuestra clínica
+              veterinaria. Los historiales digitales, sistema de citas y gestión
+              de pacientes nos ha permitido brindar un mejor servicio y aumentar
+              nuestra eficiencia operativa."
             </blockquote>
 
             <div class="flex gap-1 mb-4">
@@ -214,26 +225,29 @@ import { Image } from "astro:assets";
             </div>
 
             <div class="pt-4 border-t border-gray-700">
-              <h4 class="text-sm font-semibold text-white">JPRefrigeración</h4>
-              <p class="text-xs text-gray-400">Servicios de Refrigeración</p>
+              <h4 class="text-sm font-semibold text-white">MicroPets</h4>
+              <p class="text-xs text-gray-400">Clínica Veterinaria</p>
               <p class="text-[#6366f1] text-xs font-medium mt-1">
-                Web Profesional + SEO
+                Sistema de Gestión Veterinaria
               </p>
-              <div class="flex gap-2 mt-2">
-                <span class="text-white bg-purple-600 badge badge-xs"
-                  >Astro</span
+              <div class="flex flex-wrap gap-2 mt-2">
+                <span class="text-white bg-blue-600 badge badge-xs"
+                  >React 19</span
+                >
+                <span class="text-white badge badge-xs bg-[#4361ee]"
+                  >Rails 8</span
                 >
                 <span class="text-white badge badge-xs bg-cyan-600"
-                  >TailwindCSS</span
+                  >TypeScript</span
                 >
               </div>
               <a
-                href="https://jprefrigeracion.rysthdesign.com/"
+                href="https://micropets-demo.rysthdesign.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-block mt-2 text-xs text-[#6366f1] hover:text-[#8b5cf6] transition-colors underline"
               >
-                Ver sitio web →
+                Ver demo en vivo →
               </a>
             </div>
           </div>
@@ -263,7 +277,7 @@ import { Image } from "astro:assets";
         <div
           class="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full gradient-secondary"
         >
-          <FaAccusoft className="text-white text-2xl" />
+          <FaChartLine className="text-white text-2xl" />
         </div>
         <h3 class="mb-2 text-2xl font-bold text-white">2+</h3>
         <p class="text-sm text-gray-400">Años de Funcionamiento Continuo</p>
@@ -310,21 +324,21 @@ import { Image } from "astro:assets";
         </p>
         <div class="flex flex-col justify-center gap-4 sm:flex-row">
           <a
-            href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20interesan%20los%20casos%20de%20%C3%A9xito%20QuickInventory%2C%20TrámitesEC%20y%20JPRefrigeración.%20%C2%BFPodr%C3%ADamos%20agendar%20una%20consulta%20gratuita%20para%20mi%20negocio%3F"
+            href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20interesan%20los%20casos%20de%20%C3%A9xito%20QuickInventory%2C%20TrámitesEC%20y%20MicroPets.%20%C2%BFPodr%C3%ADamos%20agendar%20una%20consulta%20gratuita%20para%20mi%20negocio%3F"
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center gap-2 px-6 py-3 font-semibold text-white transition-all duration-300 rounded-full shadow-lg gradient-primary hover:shadow-xl hover:scale-105"
           >
-            <span>Solicitar Consulta Gratuita</span>
-            <FaAccusoft className="text-sm" />
+            <span>Consultar por WhatsApp</span>
+            <FaChartLine className="text-sm" />
           </a>
           <a
-            href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20QuickInventory%20y%20sus%20otros%20proyectos.%20%C2%BFPodr%C3%ADan%20enviarme%20detalles%3F"
+            href="https://micropets-demo.rysthdesign.com/"
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center gap-2 px-6 py-3 border border-[#a78bfa] rounded-full text-[#a78bfa] font-semibold hover:bg-[#a78bfa]/10 transition-all duration-300"
           >
-            Más Información
+            Ver Demo
           </a>
         </div>
       </div>
