@@ -18,6 +18,26 @@
   --CL-accent-dark: #0a2472; /* Para hover y énfasis */
   --CL-success: #2ecc71; /* Color para elementos de éxito/check */
   --CL-warm: #f59e0b; /* Color cálido para llamadas a la acción secundarias */
+
+  /* Gradientes globales para consistencia */
+  --gradient-primary: linear-gradient(135deg, #a78bfa 0%, #4361ee 100%);
+  --gradient-secondary: linear-gradient(135deg, #4361ee 0%, #6366f1 100%);
+  --gradient-tertiary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --gradient-quaternary: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+
+  /* Colores de fondo globales */
+  --bg-dark: linear-gradient(135deg, #0a0a0a 0%, #100f1e 50%, #1a1a2e 100%);
+  --bg-card: linear-gradient(
+    135deg,
+    rgba(26, 26, 46, 0.8) 0%,
+    rgba(45, 45, 68, 0.8) 100%
+  );
+
+  /* Colores de borde y efectos */
+  --border-primary: rgba(167, 139, 250, 0.2);
+  --border-secondary: rgba(67, 97, 238, 0.2);
+  --border-tertiary: rgba(99, 102, 241, 0.2);
+  --border-quaternary: rgba(139, 92, 246, 0.2);
 }
 
 /* Custom font classes */
@@ -41,6 +61,47 @@
 .navbar-link:hover {
   color: var(--CL-accent);
   background-color: rgba(67, 97, 238, 0.1);
+}
+
+/* Clases utilitarias globales para consistencia */
+.bg-dark-gradient {
+  background: var(--bg-dark);
+}
+
+.bg-card-gradient {
+  background: var(--bg-card);
+}
+
+.gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.gradient-secondary {
+  background: var(--gradient-secondary);
+}
+
+.gradient-tertiary {
+  background: var(--gradient-tertiary);
+}
+
+.gradient-quaternary {
+  background: var(--gradient-quaternary);
+}
+
+.border-primary {
+  border-color: var(--border-primary);
+}
+
+.border-secondary {
+  border-color: var(--border-secondary);
+}
+
+.border-tertiary {
+  border-color: var(--border-tertiary);
+}
+
+.border-quaternary {
+  border-color: var(--border-quaternary);
 }
 
 /* width */
@@ -105,10 +166,24 @@ h6 {
   }
 }
 
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 .animate-spin-slow {
   animation: spin-slow 20s linear infinite;
 }
 
 .animate-breathing {
   animation: breathing 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
