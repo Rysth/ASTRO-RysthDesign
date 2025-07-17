@@ -7,20 +7,18 @@ import NodeJSImage from "@/assets/images/technologies/node.svg";
 import PostgreSQLImage from "@/assets/images/technologies/postgresql.svg";
 import DockerImage from "@/assets/images/technologies/docker.svg";
 import JavaScriptImage from "@/assets/images/technologies/javascript.svg";
-import TailwindCSSImage from "@/assets/images/technologies/tailwindcss.svg";
-import TypeScriptImage from "@/assets/images/technologies/typescript.svg";
 ---
 
 <!-- Stack Tecnológico Section -->
-<section class="py-8 bg-[#0a0a0a]" id="tecnologias">
+<section class="py-12 bg-[#0a0a0a]" id="tecnologias">
   <div class="relative overflow-hidden">
     <!-- Gradientes para el efecto fade -->
     <div
-      class="absolute left-0 top-0 w-24 h-full bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none"
+      class="absolute left-0 top-0 w-16 md:w-24 h-full bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none"
     >
     </div>
     <div
-      class="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none"
+      class="absolute right-0 top-0 w-16 md:w-24 h-full bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none"
     >
     </div>
 
@@ -35,8 +33,6 @@ import TypeScriptImage from "@/assets/images/technologies/typescript.svg";
         <TechnologyCard src={DockerImage} alt="Docker Logo" />
         <TechnologyCard src={AstroImage} alt="Astro Logo" />
         <TechnologyCard src={JavaScriptImage} alt="JavaScript Logo" />
-        <TechnologyCard src={TailwindCSSImage} alt="TailwindCSS Logo" />
-        <TechnologyCard src={TypeScriptImage} alt="TypeScript Logo" />
 
         <!-- Primer duplicado -->
         <TechnologyCard src={ReactImage} alt="React Logo" />
@@ -46,8 +42,6 @@ import TypeScriptImage from "@/assets/images/technologies/typescript.svg";
         <TechnologyCard src={DockerImage} alt="Docker Logo" />
         <TechnologyCard src={AstroImage} alt="Astro Logo" />
         <TechnologyCard src={JavaScriptImage} alt="JavaScript Logo" />
-        <TechnologyCard src={TailwindCSSImage} alt="TailwindCSS Logo" />
-        <TechnologyCard src={TypeScriptImage} alt="TypeScript Logo" />
 
         <!-- Segundo duplicado -->
         <TechnologyCard src={ReactImage} alt="React Logo" />
@@ -57,8 +51,15 @@ import TypeScriptImage from "@/assets/images/technologies/typescript.svg";
         <TechnologyCard src={DockerImage} alt="Docker Logo" />
         <TechnologyCard src={AstroImage} alt="Astro Logo" />
         <TechnologyCard src={JavaScriptImage} alt="JavaScript Logo" />
-        <TechnologyCard src={TailwindCSSImage} alt="TailwindCSS Logo" />
-        <TechnologyCard src={TypeScriptImage} alt="TypeScript Logo" />
+
+        <!-- Tercer duplicado -->
+        <TechnologyCard src={ReactImage} alt="React Logo" />
+        <TechnologyCard src={RailsImage} alt="Ruby on Rails Logo" />
+        <TechnologyCard src={NodeJSImage} alt="NodeJS Logo" />
+        <TechnologyCard src={PostgreSQLImage} alt="PostgreSQL Logo" />
+        <TechnologyCard src={DockerImage} alt="Docker Logo" />
+        <TechnologyCard src={AstroImage} alt="Astro Logo" />
+        <TechnologyCard src={JavaScriptImage} alt="JavaScript Logo" />
       </div>
     </div>
   </div>
@@ -68,16 +69,16 @@ import TypeScriptImage from "@/assets/images/technologies/typescript.svg";
   .tech-scroll-container {
     display: flex;
     overflow: hidden;
-    padding: 1rem 0;
+    padding: 2rem 0;
   }
 
   .tech-scroll-track {
     display: flex;
-    animation: scroll-horizontal 40s linear infinite;
-    gap: 2rem;
-    padding: 0 2rem;
+    animation: scroll-horizontal 50s linear infinite;
+    gap: 3rem;
+    padding: 0 3rem;
     /* Ensure the track is wide enough for seamless loop */
-    width: calc(200% + 4rem);
+    width: calc(300% + 6rem);
   }
 
   .tech-scroll-container:hover .tech-scroll-track {
@@ -90,16 +91,20 @@ import TypeScriptImage from "@/assets/images/technologies/typescript.svg";
     }
     100% {
       /* Move exactly by the width of one complete set */
-      transform: translateX(calc(-33.333% - 1.333rem));
+      transform: translateX(calc(-25% - 1.5rem));
     }
   }
 
-  /* Responsive adjustments */
+  /* Mobile adjustments */
   @media (max-width: 768px) {
+    .tech-scroll-container {
+      padding: 1.5rem 0;
+    }
+
     .tech-scroll-track {
-      gap: 1.5rem;
-      padding: 0 1rem;
-      animation-duration: 35s;
+      gap: 2rem;
+      padding: 0 2rem;
+      animation-duration: 40s;
     }
 
     @keyframes scroll-horizontal {
@@ -107,8 +112,20 @@ import TypeScriptImage from "@/assets/images/technologies/typescript.svg";
         transform: translateX(0);
       }
       100% {
-        transform: translateX(calc(-33.333% - 1rem));
+        transform: translateX(calc(-25% - 1.333rem));
       }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .tech-scroll-container {
+      padding: 1rem 0;
+    }
+
+    .tech-scroll-track {
+      gap: 1.5rem;
+      padding: 0 1.5rem;
+      animation-duration: 35s;
     }
   }
 </style>

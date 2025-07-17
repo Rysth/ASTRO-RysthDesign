@@ -1,15 +1,19 @@
 ---
 // Props para el componente TechnologyCard
-const { src, alt, customClass = "" } = Astro.props;
-import { Image } from "astro:assets";
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+}
+
+const { src, alt } = Astro.props;
 ---
 
-<picture
-  class="grid w-20 h-20 transition duration-300 place-items-center group rounded-xl"
+<div
+  class="flex-shrink-0 flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-[#a78bfa]/20 rounded-2xl transition-all duration-300 hover:border-[#a78bfa]/40 hover:scale-105 group"
 >
-  <Image
-    src={src}
+  <img
+    src={src.src}
     alt={alt}
-    class={`w-14 transition duration-300 opacity-50 group-hover:grayscale-0 group-hover:opacity-100 ${customClass}`}
+    class="object-contain w-8 h-8 transition-all duration-300 md:w-10 md:h-10 group-hover:scale-110 filter brightness-90 group-hover:brightness-110"
   />
-</picture>
+</div>
