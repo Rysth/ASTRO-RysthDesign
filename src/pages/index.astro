@@ -8,17 +8,11 @@ import Project_1 from "@/assets/images/projects/project_1.png";
 import Project_2 from "@/assets/images/projects/project_2.png";
 import Subtitle from "@/components/heading/Subtitle.astro";
 import HeroSection from "@/components/sections/HeroSection.astro";
+import ServicesSection from "@/components/sections/ServicesSection.astro";
 import CompetitiveAdvantagesSection from "@/components/sections/CompetitiveAdvantagesSection.astro";
 import ClientsSection from "@/components/sections/ClientsSection.astro";
 import TechnologySection from "@/sections/general/TechnologySection.astro";
 import Layout from "@/layouts/Layout.astro";
-import { Image } from "astro:assets";
-import {
-  FaCheckCircle,
-  FaClock,
-  FaDollarSign,
-  FaWhatsapp,
-} from "react-icons/fa";
 ---
 
 <Layout
@@ -29,6 +23,9 @@ import {
 
   <!-- Technology Stack Section -->
   <TechnologySection />
+
+  <!-- Nueva Sección de Servicios -->
+  <ServicesSection />
 
   <!-- Nueva Sección de Ventajas Competitivas -->
   <CompetitiveAdvantagesSection />
