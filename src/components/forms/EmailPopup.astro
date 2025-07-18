@@ -1,5 +1,5 @@
 ---
-import { FaWhatsapp, FaTimes, FaEnvelope, FaGift } from "react-icons/fa";
+import { FaWhatsapp, FaTimes, FaEnvelope } from "react-icons/fa";
 ---
 
 <!-- Email Popup Modal -->
@@ -7,107 +7,58 @@ import { FaWhatsapp, FaTimes, FaEnvelope, FaGift } from "react-icons/fa";
   id="emailPopup"
   class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black/50 backdrop-blur-sm"
 >
-  <div class="relative w-full max-w-md mx-4">
+  <div class="relative w-full max-w-sm mx-4">
     <!-- Modal Content -->
     <div
-      class="relative p-8 rounded-2xl bg-gradient-to-br from-[#1a1a2e] to-[#0a0a0a] border border-[#25D366]/20 backdrop-blur-xl"
+      class="relative p-6 rounded-2xl bg-gradient-to-br from-[#1a1a2e] to-[#0a0a0a] border border-[#25D366]/20 backdrop-blur-xl"
     >
       <!-- Close Button -->
       <button
         id="closePopup"
-        class="absolute p-2 text-gray-400 transition-all duration-300 rounded-full top-4 right-4 hover:text-white hover:bg-white/10"
+        class="absolute p-2 text-gray-400 transition-all duration-300 rounded-full top-3 right-3 hover:text-white hover:bg-white/10"
       >
-        <FaTimes className="text-lg" />
+        <FaTimes className="text-sm" />
       </button>
 
       <!-- Header -->
-      <div class="mb-6 text-center">
-        <div class="flex items-center justify-center gap-2 mb-4">
-          <span class="text-2xl">🎁</span>
-          <h3 class="text-xl font-bold text-yellow-400">¡Oferta Especial!</h3>
+      <div class="mb-5 text-center">
+        <div class="flex items-center justify-center gap-2 mb-3">
+          <span class="text-xl">🎁</span>
+          <h3 class="text-lg font-bold text-yellow-400">¡Oferta Especial!</h3>
         </div>
-        <h2 class="mb-2 text-2xl font-bold text-white">
-          Recibe ChatWoot con el
-          <span class="text-yellow-400">Primer Mes GRATIS</span>
+        <h2 class="mb-2 text-xl font-bold text-white">
+          <span class="text-yellow-400">Primer Mes GRATIS</span> de ChatWoot
         </h2>
-        <p class="text-sm text-gray-300">
-          Déjanos tu email y te enviaremos todos los detalles de esta oferta
-          exclusiva
+        <p class="text-xs text-gray-300">
+          Déjanos tu email y te enviamos los detalles
         </p>
       </div>
 
       <!-- Form -->
       <form
         id="emailForm"
-        name="chatwoot-special-offer"
+        name="chatwoot-offer"
         method="POST"
         data-netlify="true"
         class="space-y-4"
       >
         <!-- Hidden field for Netlify -->
-        <input type="hidden" name="form-name" value="chatwoot-special-offer" />
-
-        <!-- Name Field -->
-        <div>
-          <label
-            for="name"
-            class="block mb-2 text-sm font-medium text-gray-300"
-          >
-            Tu Nombre
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            required
-            class="w-full px-4 py-3 rounded-lg bg-[#2d2d44]/50 border border-[#25D366]/20 text-white placeholder-gray-400 focus:border-[#25D366] focus:outline-none focus:ring-2 focus:ring-[#25D366]/20 transition-all duration-300"
-            placeholder="¿Cómo te llamas?"
-          />
-        </div>
+        <input type="hidden" name="form-name" value="chatwoot-offer" />
 
         <!-- Email Field -->
         <div>
-          <label
-            for="email"
-            class="block mb-2 text-sm font-medium text-gray-300"
-          >
-            Tu Email
-          </label>
           <input
             type="email"
             id="email"
             name="email"
             required
             class="w-full px-4 py-3 rounded-lg bg-[#2d2d44]/50 border border-[#25D366]/20 text-white placeholder-gray-400 focus:border-[#25D366] focus:outline-none focus:ring-2 focus:ring-[#25D366]/20 transition-all duration-300"
-            placeholder="tucorreo@ejemplo.com"
-          />
-        </div>
-
-        <!-- Business Field -->
-        <div>
-          <label
-            for="business"
-            class="block mb-2 text-sm font-medium text-gray-300"
-          >
-            Tu Negocio (Opcional)
-          </label>
-          <input
-            type="text"
-            id="business"
-            name="business"
-            class="w-full px-4 py-3 rounded-lg bg-[#2d2d44]/50 border border-[#25D366]/20 text-white placeholder-gray-400 focus:border-[#25D366] focus:outline-none focus:ring-2 focus:ring-[#25D366]/20 transition-all duration-300"
-            placeholder="Nombre de tu negocio"
+            placeholder="Tu email"
           />
         </div>
 
         <!-- Plan Selection -->
         <div>
-          <label
-            for="plan"
-            class="block mb-2 text-sm font-medium text-gray-300"
-          >
-            Plan de Interés
-          </label>
           <select
             id="plan"
             name="plan"
@@ -125,22 +76,19 @@ import { FaWhatsapp, FaTimes, FaEnvelope, FaGift } from "react-icons/fa";
           class="flex items-center justify-center w-full gap-2 px-6 py-3 font-semibold text-white transition-all duration-300 rounded-lg shadow-lg bg-gradient-to-r from-yellow-500 to-orange-500 hover:shadow-xl hover:scale-105"
         >
           <FaEnvelope className="text-sm" />
-          <span>Enviar y Recibir Oferta</span>
+          <span>Recibir Oferta</span>
         </button>
 
         <!-- Alternative CTA -->
         <div class="text-center">
-          <p class="mb-2 text-xs text-gray-400">
-            ¿Prefieres hablar directamente?
-          </p>
           <a
             href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20vi%20la%20oferta%20especial%20de%20ChatWoot%20con%20el%20primer%20mes%20GRATIS%20de%20mantenimiento.%20%C2%BFPodr%C3%ADamos%20hablar%20sobre%20los%20detalles%3F"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-4 py-2 text-[#25D366] border border-[#25D366]/30 rounded-full hover:bg-[#25D366]/10 transition-all duration-300 text-sm"
+            class="inline-flex items-center gap-2 px-3 py-2 text-[#25D366] border border-[#25D366]/30 rounded-full hover:bg-[#25D366]/10 transition-all duration-300 text-xs"
           >
-            <FaWhatsapp className="text-sm" />
-            <span>Contactar por WhatsApp</span>
+            <FaWhatsapp className="text-xs" />
+            <span>WhatsApp directo</span>
           </a>
         </div>
       </form>
@@ -153,18 +101,16 @@ import { FaWhatsapp, FaTimes, FaEnvelope, FaGift } from "react-icons/fa";
   id="successModal"
   class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black/50 backdrop-blur-sm"
 >
-  <div class="relative w-full max-w-md mx-4">
+  <div class="relative w-full max-w-sm mx-4">
     <div
-      class="relative p-8 rounded-2xl bg-gradient-to-br from-[#1a1a2e] to-[#0a0a0a] border border-[#25D366]/20 backdrop-blur-xl text-center"
+      class="relative p-6 rounded-2xl bg-gradient-to-br from-[#1a1a2e] to-[#0a0a0a] border border-[#25D366]/20 backdrop-blur-xl text-center"
     >
-      <div class="mb-6">
-        <div class="mb-4 text-6xl">🎉</div>
-        <h3 class="text-2xl font-bold text-[#25D366] mb-2">¡Perfecto!</h3>
-        <p class="text-gray-300">
-          Hemos recibido tu información. Te contactaremos pronto con todos los
-          detalles de tu
-          <span class="font-semibold text-yellow-400">primer mes GRATIS</span> de
-          ChatWoot.
+      <div class="mb-5">
+        <div class="mb-3 text-4xl">🎉</div>
+        <h3 class="text-xl font-bold text-[#25D366] mb-2">¡Perfecto!</h3>
+        <p class="text-sm text-gray-300">
+          Te contactaremos pronto con todos los detalles de tu
+          <span class="font-semibold text-yellow-400">primer mes GRATIS</span>.
         </p>
       </div>
 
@@ -173,17 +119,17 @@ import { FaWhatsapp, FaTimes, FaEnvelope, FaGift } from "react-icons/fa";
           id="closeSuccess"
           class="w-full px-6 py-3 bg-gradient-to-r from-[#25D366] to-[#128C7E] rounded-lg text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
         >
-          Continuar Navegando
+          Continuar
         </button>
 
         <a
           href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20acabo%20de%20enviar%20mi%20información%20para%20la%20oferta%20especial%20de%20ChatWoot.%20%C2%BFCu%C3%A1ndo%20podemos%20hablar%3F"
           target="_blank"
           rel="noopener noreferrer"
-          class="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-[#25D366] border border-[#25D366]/30 rounded-lg hover:bg-[#25D366]/10 transition-all duration-300"
+          class="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-[#25D366] border border-[#25D366]/30 rounded-lg hover:bg-[#25D366]/10 transition-all duration-300 text-sm"
         >
           <FaWhatsapp className="text-sm" />
-          <span>También contactar por WhatsApp</span>
+          <span>WhatsApp ahora</span>
         </a>
       </div>
     </div>
@@ -206,28 +152,27 @@ import { FaWhatsapp, FaTimes, FaEnvelope, FaGift } from "react-icons/fa";
       if (!popupShown) {
         emailPopup.classList.remove("hidden");
         popupShown = true;
-
-        // Store in localStorage to not show again for 24 hours
         localStorage.setItem("emailPopupShown", Date.now().toString());
       }
     }
 
     // Check if popup was shown in last 24 hours
     const lastShown = localStorage.getItem("emailPopupShown");
-    // 24 hours
-    // Show after 30 seconds
-    setTimeout(showPopup, 5000);
+    if (!lastShown || Date.now() - parseInt(lastShown) > 86400000) {
+      // Show after 30 seconds
+      setTimeout(showPopup, 10000);
 
-    // Or when user scrolls 70%
-    window.addEventListener("scroll", function () {
-      const scrollPercent =
-        (window.scrollY /
-          (document.documentElement.scrollHeight - window.innerHeight)) *
-        100;
-      if (scrollPercent > 70) {
-        showPopup();
-      }
-    });
+      // Or when user scrolls 70%
+      window.addEventListener("scroll", function () {
+        const scrollPercent =
+          (window.scrollY /
+            (document.documentElement.scrollHeight - window.innerHeight)) *
+          100;
+        if (scrollPercent > 70) {
+          showPopup();
+        }
+      });
+    }
 
     // Close popup
     closePopup.addEventListener("click", function () {
@@ -253,13 +198,14 @@ import { FaWhatsapp, FaTimes, FaEnvelope, FaGift } from "react-icons/fa";
     });
 
     // Handle form submission with AJAX
-    emailForm.addEventListener("submit", function (e) {
-      e.preventDefault();
+    const handleSubmit = (event) => {
+      event.preventDefault();
 
-      const formData = new FormData(emailForm);
+      const myForm = event.target;
+      const formData = new FormData(myForm);
 
       // Show loading state
-      const submitBtn = emailForm.querySelector('button[type="submit"]');
+      const submitBtn = myForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.innerHTML;
       submitBtn.innerHTML =
         '<span class="inline-block w-4 h-4 mr-2 border-2 border-white rounded-full animate-spin border-t-transparent"></span>Enviando...';
@@ -278,7 +224,7 @@ import { FaWhatsapp, FaTimes, FaEnvelope, FaGift } from "react-icons/fa";
           successModal.classList.remove("hidden");
 
           // Reset form
-          emailForm.reset();
+          myForm.reset();
 
           // Track successful submission
           console.log("Email successfully captured for ChatWoot offer");
@@ -302,7 +248,9 @@ import { FaWhatsapp, FaTimes, FaEnvelope, FaGift } from "react-icons/fa";
           submitBtn.innerHTML = originalText;
           submitBtn.disabled = false;
         });
-    });
+    };
+
+    emailForm.addEventListener("submit", handleSubmit);
   });
 </script>
 
