@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import PageHeader from "@/components/header/PageHeader.astro";
+import EmailPopup from "@/components/forms/EmailPopup.astro";
 import {
   FaWhatsapp,
   FaFacebook,
@@ -155,25 +156,25 @@ import { Image } from "astro:assets";
           </div>
           <ul class="space-y-4">
             <li class="flex items-start gap-3">
-              <span class="mt-1 text-lg text-red-400">•</span>
+              <span class="text-lg text-red-400">•</span>
               <span class="text-gray-300"
                 >Mensajes perdidos en WhatsApp/FB/Instagram</span
               >
             </li>
             <li class="flex items-start gap-3">
-              <span class="mt-1 text-lg text-red-400">•</span>
+              <span class="text-lg text-red-400">•</span>
               <span class="text-gray-300"
                 >Clientes que repiten su historial</span
               >
             </li>
             <li class="flex items-start gap-3">
-              <span class="mt-1 text-lg text-red-400">•</span>
+              <span class="text-lg text-red-400">•</span>
               <span class="text-gray-300"
                 >Respuestas lentas = ventas perdidas</span
               >
             </li>
             <li class="flex items-start gap-3">
-              <span class="mt-1 text-lg text-red-400">•</span>
+              <span class="text-lg text-red-400">•</span>
               <span class="text-gray-300"
                 >Equipo desorganizado y confundido</span
               >
@@ -320,12 +321,102 @@ import { Image } from "astro:assets";
           Inversión Transparente, Sin Sorpresas
         </h2>
         <p class="max-w-2xl mx-auto text-lg text-gray-300">
-          Precios claros y justos. Una sola implementación y un mantenimiento
-          mínimo para mantener todo funcionando perfectamente.
+          Precios claros y justos. Elige el plan que mejor se adapte a tu
+          negocio.
         </p>
       </div>
 
-      <div class="max-w-2xl mx-auto">
+      <div class="grid max-w-5xl gap-8 mx-auto md:grid-cols-2">
+        <!-- Plan WhatsApp Basic -->
+        <div
+          class="p-8 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-[#25D366]/20 relative"
+        >
+          <div class="mb-8 text-center">
+            <h3 class="mb-4 text-2xl font-bold text-white">
+              ChatWoot WhatsApp
+            </h3>
+            <p class="mb-4 text-sm text-gray-400">
+              Ideal para pequeñas marcas que quieren empezar con WhatsApp
+            </p>
+            <div class="space-y-2">
+              <div class="flex items-baseline justify-center gap-2">
+                <span class="text-4xl font-black text-[#25D366]">$420</span>
+                <span class="text-gray-400">implementación única</span>
+              </div>
+              <div class="flex items-baseline justify-center gap-2">
+                <span class="text-2xl font-bold text-white">$25/mes</span>
+                <span class="text-gray-400"
+                  >mantenimiento de infraestructura</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- What's Included -->
+          <div class="mb-8">
+            <h4 class="mb-4 text-lg font-bold text-center text-white">
+              ¿Qué Incluye?
+            </h4>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3">
+                <FaCheckCircle
+                  className="text-[#25D366] text-sm flex-shrink-0"
+                />
+                <span class="text-sm text-gray-300">
+                  Configuración básica del sistema
+                </span>
+              </div>
+              <div class="flex items-center gap-3">
+                <FaCheckCircle
+                  className="text-[#25D366] text-sm flex-shrink-0"
+                />
+                <span class="text-sm text-gray-300">
+                  Conexión de WhatsApp Business únicamente
+                </span>
+              </div>
+              <div class="flex items-center gap-3">
+                <FaCheckCircle
+                  className="text-[#25D366] text-sm flex-shrink-0"
+                />
+                <span class="text-sm text-gray-300">
+                  Soporte técnico inicial (15 días)
+                </span>
+              </div>
+              <div class="flex items-center gap-3">
+                <FaCheckCircle
+                  className="text-[#25D366] text-sm flex-shrink-0"
+                />
+                <span class="text-sm text-gray-300">
+                  Guía básica de uso del sistema
+                </span>
+              </div>
+              <div class="flex items-center gap-3">
+                <FaCheckCircle
+                  className="text-[#25D366] text-sm flex-shrink-0"
+                />
+                <span class="text-sm text-gray-300">Hasta 10 usuarios</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="text-center">
+            <a
+              href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20interesa%20el%20plan%20ChatWoot%20WhatsApp%20(%24420%20implementaci%C3%B3n%20%2B%20%2425%2Fmes).%20%C2%BFPodr%C3%ADamos%20agendar%20una%20reuni%C3%B3n%3F"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#25D366] to-[#128C7E] rounded-full text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            >
+              <FaWhatsapp className="text-lg" />
+              <span>Comenzar Ahora</span>
+            </a>
+            <p class="mt-3 text-xs text-gray-400">
+              Perfecto para empezar con WhatsApp
+            </p>
+          </div>
+        </div>
+
+        <!-- Plan Completo -->
         <div
           class="p-8 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-[#25D366]/20 relative"
         >
@@ -342,13 +433,16 @@ import { Image } from "astro:assets";
             <h3 class="mb-4 text-2xl font-bold text-white">
               ChatWoot Completo
             </h3>
+            <p class="mb-4 text-sm text-gray-400">
+              Solución completa para negocios que quieren todos los canales
+            </p>
             <div class="space-y-2">
               <div class="flex items-baseline justify-center gap-2">
-                <span class="text-4xl font-black text-[#25D366]">$700</span>
+                <span class="text-4xl font-black text-[#25D366]">$850</span>
                 <span class="text-gray-400">implementación única</span>
               </div>
               <div class="flex items-baseline justify-center gap-2">
-                <span class="text-2xl font-bold text-white">$20/mes</span>
+                <span class="text-2xl font-bold text-white">$45/mes</span>
                 <span class="text-gray-400"
                   >mantenimiento de infraestructura</span
                 >
@@ -361,54 +455,52 @@ import { Image } from "astro:assets";
             <h4 class="mb-4 text-lg font-bold text-center text-white">
               ¿Qué Incluye?
             </h4>
-            <div class="grid gap-3 md:grid-cols-2">
+            <div class="space-y-3">
               <div class="flex items-center gap-3">
                 <FaCheckCircle
                   className="text-[#25D366] text-sm flex-shrink-0"
                 />
-                <span class="text-sm text-gray-300"
-                  >Configuración completa del sistema</span
-                >
+                <span class="text-sm text-gray-300">
+                  Configuración del sistema
+                </span>
               </div>
               <div class="flex items-center gap-3">
                 <FaCheckCircle
                   className="text-[#25D366] text-sm flex-shrink-0"
                 />
-                <span class="text-sm text-gray-300"
-                  >Conexión de WhatsApp Business</span
-                >
+                <span class="text-sm text-gray-300">
+                  WhatsApp Business + Facebook + Instagram
+                </span>
               </div>
               <div class="flex items-center gap-3">
                 <FaCheckCircle
                   className="text-[#25D366] text-sm flex-shrink-0"
                 />
-                <span class="text-sm text-gray-300"
-                  >Integración Facebook e Instagram</span
-                >
+                <span class="text-sm text-gray-300">
+                  Configuración de canales web
+                </span>
               </div>
               <div class="flex items-center gap-3">
                 <FaCheckCircle
                   className="text-[#25D366] text-sm flex-shrink-0"
                 />
-                <span class="text-sm text-gray-300"
-                  >Capacitación completa de tu equipo</span
-                >
+                <span class="text-sm text-gray-300">
+                  Soporte técnico inicial (30 días)
+                </span>
               </div>
               <div class="flex items-center gap-3">
                 <FaCheckCircle
                   className="text-[#25D366] text-sm flex-shrink-0"
                 />
-                <span class="text-sm text-gray-300"
-                  >Soporte técnico inicial (30 días)</span
-                >
+                <span class="text-sm text-gray-300">
+                  Guía de uso del sistema
+                </span>
               </div>
               <div class="flex items-center gap-3">
                 <FaCheckCircle
                   className="text-[#25D366] text-sm flex-shrink-0"
                 />
-                <span class="text-sm text-gray-300"
-                  >Mantenimiento y actualizaciones</span
-                >
+                <span class="text-sm text-gray-300">Hasta 20+ usuarios</span>
               </div>
             </div>
           </div>
@@ -416,7 +508,7 @@ import { Image } from "astro:assets";
           <!-- CTA -->
           <div class="text-center">
             <a
-              href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20quiero%20implementar%20ChatWoot%20en%20mi%20negocio.%20%C2%BFCu%C3%A1ndo%20podemos%20agendar%20una%20reuni%C3%B3n%20para%20comenzar%3F"
+              href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20interesa%20el%20plan%20ChatWoot%20Completo%20(%24850%20implementaci%C3%B3n%20%2B%20%2445%2Fmes).%20%C2%BFCu%C3%A1ndo%20podemos%20agendar%20una%20reuni%C3%B3n%3F"
               target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#25D366] to-[#128C7E] rounded-full text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
@@ -425,9 +517,49 @@ import { Image } from "astro:assets";
               <span>Comenzar Ahora</span>
             </a>
             <p class="mt-3 text-xs text-gray-400">
-              Sin costos ocultos. Garantía de funcionamiento.
+              La solución más completa para tu negocio
             </p>
           </div>
+        </div>
+      </div>
+
+      <!-- Special Offer CTA - Hidden/Bonus -->
+      <div class="mt-16 text-center">
+        <div
+          class="max-w-2xl p-6 mx-auto border rounded-2xl bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border-yellow-500/20 backdrop-blur-xl"
+        >
+          <div class="flex items-center justify-center gap-2 mb-4">
+            <span class="text-2xl">🎁</span>
+            <h3 class="text-xl font-bold text-yellow-400">¡Oferta Especial!</h3>
+          </div>
+          <p class="mb-4 text-gray-300">
+            <span class="font-semibold text-yellow-400">Primer mes GRATIS</span>
+            de mantenimiento si contactas ahora. Solo pagas la implementación y tendrás
+            ChatWoot funcionando después del tiempo de verificación.
+          </p>
+          <div
+            class="p-3 mb-4 border rounded-lg bg-blue-500/10 border-blue-500/20"
+          >
+            <p class="text-sm text-blue-300">
+              <span class="font-semibold">⏱️ Tiempo de implementación:</span><br
+              />
+              • Plan WhatsApp: 5-7 días (verificación Meta)<br />
+              • Plan Completo: 1-2 semanas (verificación Meta + configuración completa)
+            </p>
+          </div>
+          <a
+            href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20vi%20la%20oferta%20especial%20de%20ChatWoot%20con%20el%20primer%20mes%20GRATIS%20de%20mantenimiento.%20%C2%BFPodr%C3%ADamos%20hablar%20sobre%20los%20detalles%3F"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-6 py-3 font-semibold text-white transition-all duration-300 rounded-full shadow-lg bg-gradient-to-r from-yellow-500 to-orange-500 hover:shadow-xl hover:scale-105"
+          >
+            <FaWhatsapp className="text-lg" />
+            <span>Reclamar Oferta Especial</span>
+          </a>
+          <p class="mt-2 text-xs text-gray-400">
+            *Oferta válida para nuevos clientes. El mantenimiento inicia en el
+            mes 2.
+          </p>
         </div>
       </div>
     </article>
@@ -462,11 +594,26 @@ import { Image } from "astro:assets";
           class="p-6 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-[#25D366]/20"
         >
           <summary class="text-lg font-semibold text-white cursor-pointer"
+            >¿Cuánto tiempo toma la implementación?</summary
+          >
+          <p class="mt-4 text-gray-300">
+            <strong>Plan WhatsApp:</strong> 5-7 días hábiles (incluye tiempo de verificación
+            de Meta para WhatsApp Business).<br /><br />
+            <strong>Plan Completo:</strong> 1-2 semanas (incluye verificación de
+            Meta para todos los canales y configuración completa del sistema).
+          </p>
+        </details>
+
+        <details
+          class="p-6 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-[#25D366]/20"
+        >
+          <summary class="text-lg font-semibold text-white cursor-pointer"
             >¿Necesito conocimientos técnicos?</summary
           >
           <p class="mt-4 text-gray-300">
-            No. Nosotros configuramos todo y capacitamos a tu equipo. La
-            interfaz es intuitiva y fácil de usar.
+            Nosotros configuramos el sistema base, pero necesitarás
+            familiarizarte con la interfaz. Incluimos una guía básica de uso
+            para empezar.
           </p>
         </details>
 
@@ -474,38 +621,12 @@ import { Image } from "astro:assets";
           class="p-6 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-[#25D366]/20"
         >
           <summary class="text-lg font-semibold text-white cursor-pointer"
-            >¿Cuántos usuarios pueden usar el sistema?</summary
+            >¿Incluye capacitación del equipo?</summary
           >
           <p class="mt-4 text-gray-300">
-            El plan base incluye hasta 20+ usuarios. Si necesitas más, podemos
-            ajustar la configuración según tus necesidades.
-          </p>
-        </details>
-
-        <details
-          class="p-6 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-[#25D366]/20"
-        >
-          <summary class="text-lg font-semibold text-white cursor-pointer"
-            >¿Qué incluye el mantenimiento mensual?</summary
-          >
-          <p class="mt-4 text-gray-300">
-            Hosting, actualizaciones de seguridad, respaldos automáticos, y
-            soporte técnico básico para mantener todo funcionando perfecto.
-          </p>
-        </details>
-
-        <details
-          class="p-6 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-[#25D366]/20"
-        >
-          <summary class="text-lg font-semibold text-white cursor-pointer"
-            >¿Incluye desarrollo de módulos personalizados?</summary
-          >
-          <p class="mt-4 text-gray-300">
-            No, este precio incluye únicamente la implementación y configuración
-            de ChatWoot Community Edition estándar. No realizamos
-            actualizaciones personalizadas al sistema, y dependemos
-            exclusivamente de las actualizaciones y características oficiales de
-            la versión Community Edition.
+            Incluimos una guía de uso básico del sistema. La capacitación del
+            equipo queda por cuenta del cliente usando los recursos que
+            proporcionamos.
           </p>
         </details>
       </div>
@@ -535,15 +656,11 @@ import { Image } from "astro:assets";
             <FaWhatsapp className="text-lg" />
             <span>Solicitar Demo Gratuita</span>
           </a>
-          <a
-            href="tel:+593988949117"
-            class="inline-flex items-center gap-2 px-8 py-4 text-[#25D366] border-2 border-[#25D366]/50 rounded-full hover:bg-[#25D366]/10 transition-all duration-300 font-semibold backdrop-blur-sm"
-          >
-            <span>Llamar Ahora</span>
-            <FaArrowRight className="text-sm" />
-          </a>
         </div>
       </div>
     </article>
   </section>
+
+  <!-- Email Popup Component -->
+  <EmailPopup />
 </Layout>
