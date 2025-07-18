@@ -1,76 +1,96 @@
 ---
 import "animate.css";
-import "../styles/global.css"; // Add this line
+import "../styles/global.css";
 import NavigationBar from "@/components/navigation/NavigationBar.astro";
 import FooterBar from "@/components/navigation/FooterBar.astro";
+import FloatingButtons from "@/components/ui/FloatingButtons.astro";
+
 interface Props {
   title: string;
+  description?: string;
 }
-const { title } = Astro.props;
+
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es" data-theme="light">
-  <!-- Change to Spanish -->
   <head>
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="Agencia de Diseño y Desarrollo Web en Guayaquil 🚀 Creamos sitios web profesionales, tiendas online y aplicaciones web. Expertos en desarrollo web en Ecuador con precios competitivos. ¡Cotiza ya!"
+      content={description ||
+        "Agencia de Diseño y Desarrollo Web en Guayaquil 🚀 Creamos sitios web profesionales, tiendas online y aplicaciones web. Expertos en desarrollo web en Ecuador con precios competitivos. ¡Cotiza ya!"}
     />
-    <!-- Add more meta tags -->
     <meta
       name="keywords"
       content="diseño web guayaquil, paginas web guayaquil, desarrollo web ecuador, diseño de paginas web, desarrollo de aplicaciones web, tiendas online ecuador, sitios web profesionales, agencia web guayaquil"
     />
-    <meta name="author" content="RysthDesign" />
-    <meta name="robots" content="index, follow" />
-    <meta name="googlebot" content="index, follow" />
-    <meta
-      property="og:title"
-      content="RysthDesign | Agencia de Diseño y Desarrollo Web en Guayaquil"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.rysthdesign.com/" />
+    <meta property="og:title" content={title} />
     <meta
       property="og:description"
-      content="Agencia de Diseño y Desarrollo Web en Guayaquil 🚀 Creamos sitios web profesionales, tiendas online y aplicaciones web. Expertos en desarrollo web en Ecuador."
+      content={description || "Agencia de Diseño y Desarrollo Web en Guayaquil"}
     />
-    <meta property="og:type" content="website" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <meta name="generator" content={Astro.generator} />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
+    <meta
+      property="og:image"
+      content="https://www.rysthdesign.com/og-image.jpg"
     />
-    <title>{title}</title>
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.rysthdesign.com/" />
+    <meta property="twitter:title" content={title} />
+    <meta
+      property="twitter:description"
+      content={description || "Agencia de Diseño y Desarrollo Web en Guayaquil"}
+    />
+    <meta
+      property="twitter:image"
+      content="https://www.rysthdesign.com/og-image.jpg"
+    />
+
+    <!-- Local Business Schema -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebDesigner",
+        "@type": "LocalBusiness",
         "name": "RysthDesign",
-        "image": "https://rysthdesign.com/_astro/logo-dark.SKW2pfiu_Zhda4v.webp",
-        "description": "Agencia de Diseño y Desarrollo Web en Guayaquil",
+        "description": "Agencia de diseño y desarrollo web en Guayaquil, Ecuador",
+        "url": "https://www.rysthdesign.com",
+        "telephone": "+593988949117",
         "address": {
           "@type": "PostalAddress",
+          "streetAddress": "Guayaquil",
           "addressLocality": "Guayaquil",
           "addressRegion": "Guayas",
           "addressCountry": "EC"
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": "-2.1894128",
-          "longitude": "-79.8890662"
+          "latitude": -2.1709979,
+          "longitude": -79.9223592
         },
-        "url": "https://rysthdesign.com",
-        "telephone": "+593988949117",
+        "openingHours": "Mo-Fr 09:00-18:00",
         "priceRange": "$$"
       }
     </script>
   </head>
   <body>
     <NavigationBar />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <FooterBar />
+
+    <!-- Floating Buttons -->
+    <FloatingButtons />
   </body>
 </html>
