@@ -9,7 +9,7 @@ import {
   FaArrowRight,
   FaCheckCircle,
 } from "react-icons/fa";
-import ChatwootDashboard from "@/assets/images/services/chatwoot-dashboard.png";
+import ServiceImage from "@/assets/images/services/service_1.webp";
 import { Image } from "astro:assets";
 ---
 
@@ -226,16 +226,11 @@ import { Image } from "astro:assets";
             class="absolute inset-0 bg-gradient-to-r from-[#25D366]/20 to-[#128C7E]/20 z-10"
           >
           </div>
-          <!-- You'll need to add the actual dashboard image -->
-          <div
-            class="w-full h-80 lg:h-96 bg-gradient-to-br from-[#1a1a2e] to-[#2d2d44] flex items-center justify-center text-white"
-          >
-            <div class="space-y-4 text-center">
-              <FaChartLine className="text-6xl text-[#25D366] mx-auto" />
-              <p class="text-lg">Dashboard ChatWoot</p>
-              <p class="text-sm text-gray-400">Vista previa del sistema</p>
-            </div>
-          </div>
+          <Image
+            src={ServiceImage}
+            alt="ChatWoot Dashboard Preview"
+            class="object-cover w-full h-80 lg:h-96"
+          />
         </div>
 
         <!-- Floating Stats -->

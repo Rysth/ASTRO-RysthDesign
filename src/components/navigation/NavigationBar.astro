@@ -1,6 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import BrandImage from "../../assets/images/brand/brand.svg";
+
+// Get current path to handle navigation properly
+const currentPath = Astro.url.pathname;
+const isHomePage = currentPath === "/";
 ---
 
 <nav
@@ -23,19 +27,25 @@ import BrandImage from "../../assets/images/brand/brand.svg";
       <div class="hidden md:block">
         <div class="flex items-baseline ml-10 space-x-8">
           <a
-            href="#inicio"
+            href={isHomePage ? "#inicio" : "/#inicio"}
             class="font-jetbrains px-3 py-2 text-sm font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 border-b-2 border-transparent hover:text-[#4361ee] hover:border-[#4361ee] hover:bg-[#4361ee]/10 rounded-t-md"
           >
             Inicio
           </a>
           <a
-            href="#tecnologias"
+            href={isHomePage ? "#tecnologias" : "/#tecnologias"}
             class="font-jetbrains px-3 py-2 text-sm font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 border-b-2 border-transparent hover:text-[#4361ee] hover:border-[#4361ee] hover:bg-[#4361ee]/10 rounded-t-md"
           >
             Tecnologías
           </a>
           <a
-            href="#clientes"
+            href={isHomePage ? "#servicios" : "/#servicios"}
+            class="font-jetbrains px-3 py-2 text-sm font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 border-b-2 border-transparent hover:text-[#4361ee] hover:border-[#4361ee] hover:bg-[#4361ee]/10 rounded-t-md"
+          >
+            Servicios
+          </a>
+          <a
+            href={isHomePage ? "#clientes" : "/#clientes"}
             class="font-jetbrains px-3 py-2 text-sm font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 border-b-2 border-transparent hover:text-[#4361ee] hover:border-[#4361ee] hover:bg-[#4361ee]/10 rounded-t-md"
           >
             Clientes
@@ -96,19 +106,25 @@ import BrandImage from "../../assets/images/brand/brand.svg";
       class="px-2 pt-3 pb-4 space-y-2 border-t shadow-xl bg-[#100f1e]/98 border-gray-700/50 backdrop-blur-md"
     >
       <a
-        href="#inicio"
+        href={isHomePage ? "#inicio" : "/#inicio"}
         class="font-jetbrains block px-4 py-3 text-base font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 rounded-lg hover:text-[#4361ee] hover:bg-gradient-to-r hover:from-[#4361ee]/10 hover:to-[#4361ee]/5 border-l-4 border-transparent hover:border-l-[#4361ee]"
       >
         Inicio
       </a>
       <a
-        href="#tecnologias"
+        href={isHomePage ? "#tecnologias" : "/#tecnologias"}
         class="font-jetbrains block px-4 py-3 text-base font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 rounded-lg hover:text-[#4361ee] hover:bg-gradient-to-r hover:from-[#4361ee]/10 hover:to-[#4361ee]/5 border-l-4 border-transparent hover:border-l-[#4361ee]"
       >
         Tecnologías
       </a>
       <a
-        href="#clientes"
+        href={isHomePage ? "#servicios" : "/#servicios"}
+        class="font-jetbrains block px-4 py-3 text-base font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 rounded-lg hover:text-[#4361ee] hover:bg-gradient-to-r hover:from-[#4361ee]/10 hover:to-[#4361ee]/5 border-l-4 border-transparent hover:border-l-[#4361ee]"
+      >
+        Servicios
+      </a>
+      <a
+        href={isHomePage ? "#clientes" : "/#clientes"}
         class="font-jetbrains block px-4 py-3 text-base font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 rounded-lg hover:text-[#4361ee] hover:bg-gradient-to-r hover:from-[#4361ee]/10 hover:to-[#4361ee]/5 border-l-4 border-transparent hover:border-l-[#4361ee]"
       >
         Clientes
@@ -157,7 +173,9 @@ import BrandImage from "../../assets/images/brand/brand.svg";
     }
 
     // Close mobile menu when clicking on links
-    const mobileLinks = mobileMenu?.querySelectorAll('a[href^="#"]');
+    const mobileLinks = mobileMenu?.querySelectorAll(
+      'a[href^="#"], a[href^="/#"]',
+    );
     mobileLinks?.forEach((link) => {
       link.addEventListener("click", () => {
         mobileMenu.classList.add("hidden");
