@@ -1,0 +1,392 @@
+---
+import { FaEnvelope, FaUser, FaPaperPlane, FaWhatsapp } from "react-icons/fa";
+---
+
+<!-- Contact Form Section -->
+<section
+  class="relative py-16 px-4 bg-gradient-to-br from-[#0a0a0a] via-[#100f1e] to-[#1a1a2e] overflow-hidden"
+  id="contacto"
+>
+  <!-- Elementos decorativos de fondo -->
+  <div class="absolute inset-0 opacity-20">
+    <div
+      class="absolute rounded-full top-10 left-20 w-96 h-96 bg-purple-500/10 blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute rounded-full bottom-10 right-20 w-80 h-80 bg-blue-500/10 blur-3xl"
+    >
+    </div>
+  </div>
+
+  <article class="relative z-10 max-w-screen-xl mx-auto">
+    <!-- Header Section -->
+    <div class="mb-16 space-y-6 text-center">
+      <div
+        class="flex items-center justify-center gap-2 text-[#a78bfa] font-jetbrains text-sm uppercase tracking-wider"
+      >
+        <div class="w-2 h-2 bg-[#a78bfa] rounded-full animate-pulse"></div>
+        <span>Contacto</span>
+      </div>
+
+      <h2 class="text-3xl font-black text-white md:text-4xl lg:text-5xl">
+        ¿Tienes Un Proyecto En Mente?
+      </h2>
+
+      <p
+        class="max-w-3xl mx-auto text-base leading-relaxed text-gray-300 md:text-lg"
+      >
+        Cuéntame sobre tu idea y juntos la convertiremos en realidad. Obtén una
+        cotización personalizada y sin compromiso.
+      </p>
+    </div>
+
+    <div class="grid gap-12 lg:grid-cols-2 lg:items-start">
+      <!-- Left Content - Contact Info -->
+      <div class="space-y-8">
+        <div class="space-y-6">
+          <h3 class="text-2xl font-bold text-white">
+            Hablemos de tu próximo proyecto
+          </h3>
+          <p class="leading-relaxed text-gray-300">
+            Estoy aquí para ayudarte a llevar tu negocio al siguiente nivel
+            digital. Ya sea que necesites un sitio web, una tienda online o una
+            aplicación web personalizada, trabajemos juntos para crear algo
+            increíble.
+          </p>
+        </div>
+
+        <!-- Contact Methods -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-4">
+            <div
+              class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-[#a78bfa]/20 to-[#4361ee]/20 border border-[#a78bfa]/30"
+            >
+              <FaEnvelope className="text-[#a78bfa] text-lg" />
+            </div>
+            <div>
+              <p class="text-sm text-gray-400">Email</p>
+              <p class="font-semibold text-white">support@rysthdesign.com</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div
+              class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-[#25D366]/20 to-[#128C7E]/20 border border-[#25D366]/30"
+            >
+              <FaWhatsapp className="text-[#25D366] text-lg" />
+            </div>
+            <div>
+              <p class="text-sm text-gray-400">WhatsApp</p>
+              <p class="font-semibold text-white">+593 98 894 9117</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Features -->
+        <div class="space-y-4">
+          <h4 class="text-lg font-semibold text-white">¿Qué puedes esperar?</h4>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3 text-gray-300">
+              <div class="w-2 h-2 bg-[#a78bfa] rounded-full"></div>
+              <span class="text-sm">Respuesta en menos de 24 horas</span>
+            </div>
+            <div class="flex items-center gap-3 text-gray-300">
+              <div class="w-2 h-2 bg-[#a78bfa] rounded-full"></div>
+              <span class="text-sm">Cotización personalizada gratuita</span>
+            </div>
+            <div class="flex items-center gap-3 text-gray-300">
+              <div class="w-2 h-2 bg-[#a78bfa] rounded-full"></div>
+              <span class="text-sm">Asesoría técnica sin compromiso</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Content - Contact Form -->
+      <div class="relative">
+        <div
+          class="p-8 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-[#a78bfa]/20"
+        >
+          <form
+            id="contactForm"
+            name="contact-general"
+            method="POST"
+            data-netlify="true"
+            class="space-y-6"
+          >
+            <!-- Hidden field for Netlify -->
+            <input type="hidden" name="form-name" value="contact-general" />
+
+            <!-- Name Field -->
+            <div>
+              <label
+                for="name"
+                class="block mb-2 text-sm font-medium text-gray-300"
+              >
+                Tu Nombre *
+              </label>
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+                >
+                  <FaUser className="text-gray-400 text-sm" />
+                </div>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="w-full pl-10 pr-4 py-3 rounded-lg bg-[#2d2d44]/50 border border-[#a78bfa]/20 text-white placeholder-gray-400 focus:border-[#a78bfa] focus:outline-none focus:ring-2 focus:ring-[#a78bfa]/20 transition-all duration-300"
+                  placeholder="¿Cómo te llamas?"
+                />
+              </div>
+            </div>
+
+            <!-- Email Field -->
+            <div>
+              <label
+                for="email"
+                class="block mb-2 text-sm font-medium text-gray-300"
+              >
+                Tu Email *
+              </label>
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+                >
+                  <FaEnvelope className="text-gray-400 text-sm" />
+                </div>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="w-full pl-10 pr-4 py-3 rounded-lg bg-[#2d2d44]/50 border border-[#a78bfa]/20 text-white placeholder-gray-400 focus:border-[#a78bfa] focus:outline-none focus:ring-2 focus:ring-[#a78bfa]/20 transition-all duration-300"
+                  placeholder="tucorreo@ejemplo.com"
+                />
+              </div>
+            </div>
+
+            <!-- Subject Field -->
+            <div>
+              <label
+                for="subject"
+                class="block mb-2 text-sm font-medium text-gray-300"
+              >
+                Asunto *
+              </label>
+              <select
+                id="subject"
+                name="subject"
+                required
+                class="w-full px-4 py-3 rounded-lg bg-[#2d2d44]/50 border border-[#a78bfa]/20 text-white focus:border-[#a78bfa] focus:outline-none focus:ring-2 focus:ring-[#a78bfa]/20 transition-all duration-300"
+              >
+                <option value="">Selecciona un tema</option>
+                <option value="sitio-web">Sitio Web Corporativo</option>
+                <option value="ecommerce">Tienda Online / E-commerce</option>
+                <option value="aplicacion-web">Aplicación Web</option>
+                <option value="chatbot-crm">ChatBot / CRM</option>
+                <option value="mantenimiento">Mantenimiento Web</option>
+                <option value="consultoria">Consultoría Técnica</option>
+                <option value="otro">Otro proyecto</option>
+              </select>
+            </div>
+
+            <!-- Message Field -->
+            <div>
+              <label
+                for="message"
+                class="block mb-2 text-sm font-medium text-gray-300"
+              >
+                Mensaje *
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows="4"
+                class="w-full px-4 py-3 rounded-lg bg-[#2d2d44]/50 border border-[#a78bfa]/20 text-white placeholder-gray-400 focus:border-[#a78bfa] focus:outline-none focus:ring-2 focus:ring-[#a78bfa]/20 transition-all duration-300 resize-none"
+                placeholder="Cuéntame sobre tu proyecto: ¿Qué necesitas? ¿Cuál es tu presupuesto aproximado? ¿Hay alguna fecha límite?"
+              ></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button
+              type="submit"
+              class="w-full flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-[#a78bfa] to-[#4361ee] rounded-lg text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            >
+              <FaPaperPlane className="text-sm" />
+              <span>Enviar Mensaje</span>
+            </button>
+
+            <!-- Alternative CTA -->
+            <div class="text-center">
+              <p class="mb-3 text-xs text-gray-400">
+                ¿Prefieres una respuesta más rápida?
+              </p>
+              <a
+                href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20servicios%20de%20desarrollo%20web.%20%C2%BFPodr%C3%ADamos%20hablar%20sobre%20mi%20proyecto%3F"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-4 py-2 text-[#25D366] border border-[#25D366]/30 rounded-full hover:bg-[#25D366]/10 transition-all duration-300 text-sm"
+              >
+                <FaWhatsapp className="text-sm" />
+                <span>Escribir por WhatsApp</span>
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<!-- Success Modal -->
+<div
+  id="contactSuccessModal"
+  class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black/50 backdrop-blur-sm"
+>
+  <div class="relative w-full max-w-md mx-4">
+    <div
+      class="relative p-8 rounded-2xl bg-gradient-to-br from-[#1a1a2e] to-[#0a0a0a] border border-[#a78bfa]/20 backdrop-blur-xl text-center"
+    >
+      <div class="mb-6">
+        <div class="mb-4 text-6xl">✨</div>
+        <h3 class="text-2xl font-bold text-[#a78bfa] mb-2">
+          ¡Mensaje Enviado!
+        </h3>
+        <p class="text-gray-300">
+          Gracias por contactarme. Te responderé dentro de las próximas 24 horas
+          con una propuesta personalizada para tu proyecto.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <button
+          id="closeContactSuccess"
+          class="w-full px-6 py-3 bg-gradient-to-r from-[#a78bfa] to-[#4361ee] rounded-lg text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+        >
+          Continuar Navegando
+        </button>
+
+        <a
+          href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20acabo%20de%20enviar%20un%20mensaje%20a%20trav%C3%A9s%20del%20formulario%20de%20contacto.%20%C2%BFPodr%C3%ADamos%20hablar%20sobre%20mi%20proyecto%3F"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-[#25D366] border border-[#25D366]/30 rounded-lg hover:bg-[#25D366]/10 transition-all duration-300 text-sm"
+        >
+          <FaWhatsapp className="text-sm" />
+          <span>También escribir por WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Contact form functionality
+  document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.getElementById("contactForm");
+    const contactSuccessModal = document.getElementById("contactSuccessModal");
+    const closeContactSuccess = document.getElementById("closeContactSuccess");
+
+    // Close success modal
+    closeContactSuccess?.addEventListener("click", function () {
+      contactSuccessModal?.classList.add("hidden");
+    });
+
+    // Click outside to close
+    contactSuccessModal?.addEventListener("click", function (e) {
+      if (e.target === contactSuccessModal) {
+        contactSuccessModal.classList.add("hidden");
+      }
+    });
+
+    // Handle form submission with AJAX
+    const handleContactSubmit = (event) => {
+      event.preventDefault();
+
+      const form = event.target;
+      const formData = new FormData(form);
+
+      // Show loading state
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML =
+        '<span class="inline-block w-4 h-4 mr-2 border-2 border-white rounded-full animate-spin border-t-transparent"></span>Enviando...';
+      submitBtn.disabled = true;
+
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      })
+        .then(() => {
+          // Show success modal
+          contactSuccessModal?.classList.remove("hidden");
+
+          // Reset form
+          form.reset();
+
+          // Track successful submission
+          console.log("Contact form successfully submitted");
+
+          // Optional: Send analytics event
+          if (typeof gtag !== "undefined") {
+            gtag("event", "form_submit", {
+              event_category: "contact",
+              event_label: "general_contact_form",
+            });
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert(
+            "Hubo un error al enviar el mensaje. Por favor, intenta nuevamente o contáctanos por WhatsApp.",
+          );
+        })
+        .finally(() => {
+          // Reset button
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        });
+    };
+
+    contactForm?.addEventListener("submit", handleContactSubmit);
+  });
+</script>
+
+<style>
+  /* Form focus styles */
+  input:focus,
+  select:focus,
+  textarea:focus {
+    transform: translateY(-1px);
+  }
+
+  /* Custom scrollbar for select */
+  select {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a78bfa' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 40px;
+  }
+
+  /* Smooth animations */
+  #contactSuccessModal {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>
