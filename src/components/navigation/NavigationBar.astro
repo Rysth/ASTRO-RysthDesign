@@ -38,12 +38,61 @@ const isHomePage = currentPath === "/";
           >
             Tecnologías
           </a>
-          <a
-            href={isHomePage ? "#servicios" : "/#servicios"}
-            class="font-jetbrains px-3 py-2 text-sm font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 border-b-2 border-transparent hover:text-[#4361ee] hover:border-[#4361ee] hover:bg-[#4361ee]/10 rounded-t-md"
-          >
-            Servicios
-          </a>
+
+          <!-- Services Dropdown -->
+          <div class="relative group">
+            <button
+              class="font-jetbrains flex items-center gap-1 px-3 py-2 text-sm font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 border-b-2 border-transparent hover:text-[#4361ee] hover:border-[#4361ee] hover:bg-[#4361ee]/10 rounded-t-md"
+              id="services-dropdown"
+            >
+              Servicios
+              <svg
+                class="w-4 h-4 transition-transform group-hover:rotate-180"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+
+            <!-- Dropdown Menu -->
+            <div
+              class="absolute left-0 z-50 invisible mt-2 transition-all duration-300 opacity-0 top-full group-hover:visible group-hover:opacity-100"
+            >
+              <div
+                class="bg-[#1a1a2e]/95 backdrop-blur-md border border-gray-700/50 rounded-xl shadow-xl min-w-[200px] py-2"
+              >
+                <a
+                  href={isHomePage ? "#servicios" : "/#servicios"}
+                  class="block px-4 py-3 text-sm text-gray-300 hover:text-[#4361ee] hover:bg-[#4361ee]/10 transition-all duration-300 border-l-4 border-transparent hover:border-l-[#4361ee]"
+                >
+                  Todos los Servicios
+                </a>
+                <a
+                  href="/servicios/chatwoot"
+                  class="flex items-center gap-3 px-4 py-3 text-sm text-gray-300 hover:text-[#25D366] hover:bg-[#25D366]/10 transition-all duration-300 border-l-4 border-transparent hover:border-l-[#25D366]"
+                >
+                  <svg
+                    class="w-5 h-5 text-[#25D366]"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.687"
+                    ></path>
+                  </svg>
+                  <div>
+                    <div class="font-semibold">ChatWoot CRM</div>
+                    <div class="text-xs text-gray-400">Atención al Cliente</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
           <a
             href={isHomePage ? "#clientes" : "/#clientes"}
             class="font-jetbrains px-3 py-2 text-sm font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 border-b-2 border-transparent hover:text-[#4361ee] hover:border-[#4361ee] hover:bg-[#4361ee]/10 rounded-t-md"
@@ -123,12 +172,56 @@ const isHomePage = currentPath === "/";
       >
         Tecnologías
       </a>
-      <a
-        href={isHomePage ? "#servicios" : "/#servicios"}
-        class="font-jetbrains block px-4 py-3 text-base font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 rounded-lg hover:text-[#4361ee] hover:bg-gradient-to-r hover:from-[#4361ee]/10 hover:to-[#4361ee]/5 border-l-4 border-transparent hover:border-l-[#4361ee]"
-      >
-        Servicios
-      </a>
+
+      <!-- Mobile Services Dropdown -->
+      <div class="relative">
+        <button
+          class="font-jetbrains flex items-center justify-between w-full px-4 py-3 text-base font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 rounded-lg hover:text-[#4361ee] hover:bg-gradient-to-r hover:from-[#4361ee]/10 hover:to-[#4361ee]/5 border-l-4 border-transparent hover:border-l-[#4361ee]"
+          id="mobile-services-dropdown"
+        >
+          <span>Servicios</span>
+          <svg
+            class="w-4 h-4 transition-transform"
+            id="mobile-services-icon"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Dropdown Content -->
+        <div class="hidden pl-6 mt-2 space-y-2" id="mobile-services-content">
+          <a
+            href={isHomePage ? "#servicios" : "/#servicios"}
+            class="block px-4 py-2 text-sm text-gray-400 hover:text-[#4361ee] transition-all duration-300"
+          >
+            Todos los Servicios
+          </a>
+          <a
+            href="/servicios/chatwoot"
+            class="flex items-center gap-3 px-4 py-2 text-sm text-gray-400 hover:text-[#25D366] transition-all duration-300"
+          >
+            <svg
+              class="w-4 h-4 text-[#25D366]"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.687"
+              ></path>
+            </svg>
+            <div>
+              <div class="font-semibold">ChatWoot CRM</div>
+              <div class="text-xs text-gray-500">Atención al Cliente</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
       <a
         href={isHomePage ? "#clientes" : "/#clientes"}
         class="font-jetbrains block px-4 py-3 text-base font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 rounded-lg hover:text-[#4361ee] hover:bg-gradient-to-r hover:from-[#4361ee]/10 hover:to-[#4361ee]/5 border-l-4 border-transparent hover:border-l-[#4361ee]"
@@ -167,6 +260,13 @@ const isHomePage = currentPath === "/";
   document.addEventListener("DOMContentLoaded", function () {
     const mobileMenuButton = document.getElementById("mobile-menu-button");
     const mobileMenu = document.getElementById("mobile-menu");
+    const mobileServicesDropdown = document.getElementById(
+      "mobile-services-dropdown",
+    );
+    const mobileServicesContent = document.getElementById(
+      "mobile-services-content",
+    );
+    const mobileServicesIcon = document.getElementById("mobile-services-icon");
 
     if (mobileMenuButton && mobileMenu) {
       mobileMenuButton.addEventListener("click", function () {
@@ -185,9 +285,18 @@ const isHomePage = currentPath === "/";
       });
     }
 
+    // Mobile Services Dropdown
+    if (mobileServicesDropdown && mobileServicesContent && mobileServicesIcon) {
+      mobileServicesDropdown.addEventListener("click", function (e) {
+        e.preventDefault();
+        mobileServicesContent.classList.toggle("hidden");
+        mobileServicesIcon.classList.toggle("rotate-180");
+      });
+    }
+
     // Close mobile menu when clicking on links
     const mobileLinks = mobileMenu?.querySelectorAll(
-      'a[href^="#"], a[href^="/#"]',
+      'a[href^="#"], a[href^="/#"], a[href^="/servicios"]',
     );
     mobileLinks?.forEach((link) => {
       link.addEventListener("click", () => {
@@ -197,6 +306,14 @@ const isHomePage = currentPath === "/";
           icon.classList.remove("rotate-180");
         }
         mobileMenuButton?.setAttribute("aria-expanded", "false");
+
+        // Close services dropdown too
+        if (mobileServicesContent) {
+          mobileServicesContent.classList.add("hidden");
+        }
+        if (mobileServicesIcon) {
+          mobileServicesIcon.classList.remove("rotate-180");
+        }
       });
     });
 
@@ -213,6 +330,14 @@ const isHomePage = currentPath === "/";
           icon.classList.remove("rotate-180");
         }
         mobileMenuButton?.setAttribute("aria-expanded", "false");
+
+        // Close services dropdown too
+        if (mobileServicesContent) {
+          mobileServicesContent.classList.add("hidden");
+        }
+        if (mobileServicesIcon) {
+          mobileServicesIcon.classList.remove("rotate-180");
+        }
       }
     });
   });
