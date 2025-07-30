@@ -1,8 +1,6 @@
 ---
 import {
   FaWhatsapp,
-  FaFacebook,
-  FaInstagram,
   FaChartLine,
   FaUsers,
   FaBolt,
@@ -11,7 +9,7 @@ import {
 } from "react-icons/fa";
 import ServiceImage from "@/assets/images/services/service_1.webp";
 import { Image } from "astro:assets";
-import EmailPopup from "@/components/forms/EmailPopup.astro";
+
 ---
 
 <!-- Services Section - Chatwoot Focus -->
@@ -53,9 +51,9 @@ import EmailPopup from "@/components/forms/EmailPopup.astro";
       <p
         class="max-w-3xl mx-auto text-base leading-relaxed text-gray-300 md:text-lg"
       >
-        Centraliza WhatsApp, Facebook, Instagram y más en una sola plataforma.
+        Centraliza WhatsApp Business en una sola plataforma.
         Nunca pierdas un mensaje importante y brinda atención personalizada
-        24/7.
+        24/7 con exactamente 3 usuarios incluidos.
       </p>
     </div>
 
@@ -84,7 +82,7 @@ import EmailPopup from "@/components/forms/EmailPopup.astro";
 
           <p class="text-lg leading-relaxed text-gray-300">
             Chatwoot es tu asistente inteligente para atención al cliente.
-            Centraliza WhatsApp, Facebook, Instagram y más en una sola
+            Centraliza WhatsApp Business en una sola
             plataforma, para que nunca pierdas un mensaje importante.
           </p>
         </div>
@@ -102,7 +100,7 @@ import EmailPopup from "@/components/forms/EmailPopup.astro";
             <ul class="space-y-2 text-sm text-gray-300">
               <li class="flex items-start gap-2">
                 <span class="mt-1 text-red-400">•</span>
-                <span>Mensajes perdidos en WhatsApp/FB/Instagram</span>
+                <span>Mensajes perdidos en WhatsApp Business</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="mt-1 text-red-400">•</span>
@@ -149,7 +147,7 @@ import EmailPopup from "@/components/forms/EmailPopup.astro";
             <div class="flex items-center gap-3">
               <FaCheckCircle className="text-[#25D366] text-sm flex-shrink-0" />
               <span class="text-sm text-gray-300"
-                >Atiende por WhatsApp, Facebook e Instagram</span
+                >Atiende por WhatsApp Business únicamente</span
               >
             </div>
             <div class="flex items-center gap-3">
@@ -161,7 +159,7 @@ import EmailPopup from "@/components/forms/EmailPopup.astro";
             <div class="flex items-center gap-3">
               <FaCheckCircle className="text-[#25D366] text-sm flex-shrink-0" />
               <span class="text-sm text-gray-300"
-                >Organiza a tu equipo fácilmente</span
+                >Organiza a tu equipo (hasta 3 usuarios)</span
               >
             </div>
             <div class="flex items-center gap-3">
@@ -197,8 +195,8 @@ import EmailPopup from "@/components/forms/EmailPopup.astro";
         <!-- Special Bonus Button - Subtle -->
         <div class="text-center">
           <p class="text-xs text-gray-400">
-            Implementación anual: WhatsApp $580 | Completo $1050 | Mantenimiento
-            mensual desde $25
+            Implementación anual: WhatsApp Business $680 | Mantenimiento
+            mensual $30 | 3 usuarios incluidos
           </p>
         </div>
       </div>
@@ -240,6 +238,5 @@ import EmailPopup from "@/components/forms/EmailPopup.astro";
     </div>
   </article>
 
-  <!-- Email Popup Component -->
-  <EmailPopup />
+
 </section>
