@@ -6,9 +6,11 @@ import {
   FaBolt,
   FaArrowRight,
   FaCheckCircle,
+  FaCode,
+  FaLaptop,
+  FaMobile,
+  FaRocket,
 } from "react-icons/fa";
-import ServiceImage from "@/assets/images/services/service_1.webp";
-import { Image } from "astro:assets";
 
 ---
 
@@ -40,200 +42,173 @@ import { Image } from "astro:assets";
       </div>
 
       <h2 class="text-3xl font-black text-white md:text-4xl lg:text-5xl">
-        Potencia Tu Negocio Con
+        Nuestros Servicios
         <span
-          class="bg-gradient-to-r from-[#25D366] to-[#128C7E] bg-clip-text text-transparent"
+          class="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent"
         >
-          ChatWoot
+          Profesionales
         </span>
       </h2>
 
       <p
         class="max-w-3xl mx-auto text-base leading-relaxed text-gray-300 md:text-lg"
       >
-        Centraliza WhatsApp Business en una sola plataforma.
-        Nunca pierdas un mensaje importante y brinda atención personalizada
-        24/7. Plan único: $680/año implementación + $30/mes mantenimiento con exactamente 3 usuarios incluidos.
+        Ofrecemos soluciones completas para digitalizar tu negocio. 
+        Desde sitios web profesionales hasta sistemas de atención al cliente.
       </p>
     </div>
 
-    <!-- Chatwoot Service Feature -->
-    <div class="grid gap-12 mb-16 lg:grid-cols-2 lg:items-center">
-      <!-- Left Content -->
-      <div class="space-y-8">
-        <!-- Service Badge -->
-        <div
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#25D366]/20 to-[#128C7E]/20 border border-[#25D366]/30"
-        >
-          <FaWhatsapp className="text-[#25D366] text-lg" />
-          <span class="text-[#25D366] font-semibold text-sm">ChatWoot CRM</span>
-        </div>
-
-        <!-- Title -->
-        <div class="space-y-4">
-          <h3 class="text-2xl font-black text-white md:text-3xl lg:text-4xl">
-            Todo Lo Que Hace Para Tu Negocio
-            <span
-              class="bg-gradient-to-r from-[#25D366] to-[#128C7E] bg-clip-text text-transparent"
-            >
-              ChatWoot
-            </span>
-          </h3>
-
-          <p class="text-lg leading-relaxed text-gray-300">
-            Chatwoot es tu asistente inteligente para atención al cliente.
-            Centraliza WhatsApp Business únicamente en una sola
-            plataforma, para que nunca pierdas un mensaje importante. Sin complicaciones con Facebook o Instagram.
-          </p>
-        </div>
-
-        <!-- Before/After Comparison -->
-        <div class="grid gap-6 md:grid-cols-2">
-          <!-- Before -->
-          <div
-            class="p-6 border rounded-2xl bg-gradient-to-br from-red-500/10 to-red-600/10 border-red-500/20"
-          >
-            <div class="flex items-center gap-2 mb-4">
-              <span class="text-2xl">😵</span>
-              <h4 class="font-bold text-red-400">¡Antes!</h4>
-            </div>
-            <ul class="space-y-2 text-sm text-gray-300">
-              <li class="flex items-start gap-2">
-                <span class="mt-1 text-red-400">•</span>
-                <span>Mensajes perdidos en WhatsApp Business</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="mt-1 text-red-400">•</span>
-                <span>Clientes que repiten su historial</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="mt-1 text-red-400">•</span>
-                <span>Respuestas lentas = ventas perdidas</span>
-              </li>
-            </ul>
+    <!-- Services Cards -->
+    <div class="grid gap-8 lg:grid-cols-2">
+      
+      <!-- ChatWoot Service Card -->
+      <div class="p-8 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-[#25D366]/20 hover:border-[#25D366]/40 transition-all duration-300 hover:transform hover:scale-105 shadow-xl">
+        <!-- Service Header -->
+        <div class="flex items-center gap-3 mb-6">
+          <div class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-[#25D366]/20 to-[#128C7E]/20 border border-[#25D366]/30">
+            <FaWhatsapp className="text-[#25D366] text-xl" />
           </div>
-
-          <!-- After -->
-          <div
-            class="p-6 rounded-2xl bg-gradient-to-br from-[#25D366]/10 to-[#128C7E]/10 border border-[#25D366]/20"
-          >
-            <div class="flex items-center gap-2 mb-4">
-              <span class="text-2xl">🤩</span>
-              <h4 class="font-bold text-[#25D366]">Después</h4>
-            </div>
-            <ul class="space-y-2 text-sm text-gray-300">
-              <li class="flex items-start gap-2">
-                <span class="text-[#25D366] mt-1">•</span>
-                <span>Centraliza WhatsApp Business en 1 pantalla</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-[#25D366] mt-1">•</span>
-                <span>Historial único por cliente (sin repetir datos)</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-[#25D366] mt-1">•</span>
-                <span>Plantillas rápidas para responder en segundos</span>
-              </li>
-            </ul>
+          <div>
+            <h3 class="text-xl font-bold text-white">ChatWoot CRM</h3>
+            <p class="text-sm text-[#25D366]">Sistema de Atención al Cliente</p>
           </div>
         </div>
+
+        <!-- Service Description -->
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          Centraliza WhatsApp Business en una sola plataforma. 
+          Nunca pierdas un mensaje importante y brinda atención personalizada 24/7.
+        </p>
 
         <!-- Key Features -->
-        <div class="space-y-4">
-          <h4 class="text-xl font-bold text-white">
-            Características Principales:
-          </h4>
-          <div class="grid gap-3 md:grid-cols-2">
-            <div class="flex items-center gap-3">
-              <FaCheckCircle className="text-[#25D366] text-sm flex-shrink-0" />
-              <span class="text-sm text-gray-300"
-                >Atiende por WhatsApp Business únicamente</span
-              >
-            </div>
-            <div class="flex items-center gap-3">
-              <FaCheckCircle className="text-[#25D366] text-sm flex-shrink-0" />
-              <span class="text-sm text-gray-300"
-                >Nunca pierdas el historial de un cliente</span
-              >
-            </div>
-            <div class="flex items-center gap-3">
-              <FaCheckCircle className="text-[#25D366] text-sm flex-shrink-0" />
-              <span class="text-sm text-gray-300"
-                >Organiza a tu equipo (hasta 3 usuarios)</span
-              >
-            </div>
-            <div class="flex items-center gap-3">
-              <FaCheckCircle className="text-[#25D366] text-sm flex-shrink-0" />
-              <span class="text-sm text-gray-300"
-                >Responde hasta 2 veces más rápido</span
-              >
-            </div>
+        <div class="space-y-3 mb-6">
+          <div class="flex items-center gap-3">
+            <FaCheckCircle className="text-[#25D366] text-sm flex-shrink-0" />
+            <span class="text-sm text-gray-300">WhatsApp Business únicamente</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <FaCheckCircle className="text-[#25D366] text-sm flex-shrink-0" />
+            <span class="text-sm text-gray-300">3 usuarios incluidos</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <FaCheckCircle className="text-[#25D366] text-sm flex-shrink-0" />
+            <span class="text-sm text-gray-300">Respuesta 2x más rápida</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <FaCheckCircle className="text-[#25D366] text-sm flex-shrink-0" />
+            <span class="text-sm text-gray-300">Historial completo de clientes</span>
           </div>
         </div>
 
-        <!-- CTA Button -->
-        <div class="flex flex-wrap gap-4">
+        <!-- Pricing -->
+        <div class="mb-6 p-4 rounded-lg bg-gradient-to-r from-[#25D366]/10 to-[#128C7E]/10 border border-[#25D366]/20">
+          <div class="flex items-baseline gap-2">
+            <span class="text-2xl font-bold text-[#25D366]">$680</span>
+            <span class="text-sm text-gray-400">implementación anual</span>
+          </div>
+          <div class="flex items-baseline gap-2 mt-1">
+            <span class="text-lg font-semibold text-white">$30/mes</span>
+            <span class="text-sm text-gray-400">mantenimiento</span>
+          </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap gap-3">
           <a
             href="/servicios/chatwoot"
-            class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#25D366] to-[#128C7E] rounded-full text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-[#25D366] to-[#128C7E] rounded-full text-white font-semibold text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
           >
-            <span>Ver Detalles Completos</span>
-            <FaArrowRight className="text-sm" />
+            <span>Ver Detalles</span>
+            <FaArrowRight className="text-xs" />
           </a>
-
           <a
-            href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20interesa%20ChatWoot%20para%20centralizar%20la%20atenci%C3%B3n%20al%20cliente%20de%20mi%20negocio.%20Me%20gustar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20los%20planes%20anuales%20de%20implementaci%C3%B3n.%20%C2%BFPodr%C3%ADamos%20agendar%20una%20demo%3F"
+            href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20interesa%20ChatWoot%20para%20centralizar%20WhatsApp%20Business.%20%C2%BFPodr%C3%ADamos%20hablar%3F"
+            target="_blank"
+            rel="noopener noreferrer" 
+            class="inline-flex items-center justify-center gap-2 px-4 py-3 text-[#25D366] border border-[#25D366]/50 rounded-full hover:bg-[#25D366]/10 transition-all duration-300 font-semibold text-sm"
+          >
+            <FaWhatsapp className="text-sm" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Web Design Service Card -->
+      <div class="p-8 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 hover:transform hover:scale-105 shadow-xl">
+        <!-- Service Header -->
+        <div class="flex items-center gap-3 mb-6">
+          <div class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-600/20 border border-blue-500/30">
+            <FaCode className="text-blue-400 text-xl" />
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-white">Diseño Web</h3>
+            <p class="text-sm text-blue-400">Sitios Web Profesionales</p>
+          </div>
+        </div>
+
+        <!-- Service Description -->
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          Creamos sitios web profesionales y landing pages que convierten visitantes en clientes. 
+          Diseño moderno, responsivo y optimizado para SEO.
+        </p>
+
+        <!-- Key Features -->
+        <div class="space-y-3 mb-6">
+          <div class="flex items-center gap-3">
+            <FaCheckCircle className="text-blue-400 text-sm flex-shrink-0" />
+            <span class="text-sm text-gray-300">100% Responsivo</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <FaCheckCircle className="text-blue-400 text-sm flex-shrink-0" />
+            <span class="text-sm text-gray-300">SEO Optimizado</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <FaCheckCircle className="text-blue-400 text-sm flex-shrink-0" />
+            <span class="text-sm text-gray-300">Hosting + Dominio gratis 1 año</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <FaCheckCircle className="text-blue-400 text-sm flex-shrink-0" />
+            <span class="text-sm text-gray-300">Entrega en 3-10 días</span>
+          </div>
+        </div>
+
+        <!-- Pricing Options -->
+        <div class="mb-6 space-y-3">
+          <div class="p-3 rounded-lg bg-gradient-to-r from-blue-500/10 to-purple-600/10 border border-blue-500/20">
+            <div class="flex items-baseline gap-2">
+              <span class="text-xl font-bold text-blue-400">$200</span>
+              <span class="text-sm text-gray-400">Landing Page</span>
+            </div>
+            <p class="text-xs text-gray-400">1 página + hosting/dominio gratis</p>
+          </div>
+          <div class="p-3 rounded-lg bg-gradient-to-r from-purple-500/10 to-pink-600/10 border border-purple-500/20">
+            <div class="flex items-baseline gap-2">
+              <span class="text-xl font-bold text-purple-400">$420</span>
+              <span class="text-sm text-gray-400">Sitio Completo</span>
+            </div>
+            <p class="text-xs text-gray-400">Múltiples páginas + hosting/dominio gratis</p>
+          </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap gap-3">
+          <a
+            href="/servicios/web-design"
+            class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full text-white font-semibold text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+          >
+            <span>Ver Detalles</span>
+            <FaArrowRight className="text-xs" />
+          </a>
+          <a
+            href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20interesa%20crear%20un%20sitio%20web%20profesional.%20%C2%BFPodr%C3%ADamos%20hablar%3F"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-6 py-3 text-[#25D366] border-2 border-[#25D366]/50 rounded-full hover:bg-[#25D366]/10 transition-all duration-300 font-semibold backdrop-blur-sm"
+            class="inline-flex items-center justify-center gap-2 px-4 py-3 text-blue-400 border border-blue-400/50 rounded-full hover:bg-blue-400/10 transition-all duration-300 font-semibold text-sm"
           >
-            <FaWhatsapp className="text-lg" />
-            <span>Ver Demo</span>
+            <FaRocket className="text-sm" />
           </a>
         </div>
-
-        <!-- Special Bonus Button - Subtle -->
-        <div class="text-center">
-          <p class="text-xs text-gray-400">
-            Plan único: $680/año implementación + $30/mes mantenimiento | 3 usuarios incluidos | Solo WhatsApp Business
-          </p>
-        </div>
       </div>
 
-      <!-- Right - Dashboard Preview -->
-      <div class="relative">
-        <!-- Main Dashboard Image -->
-        <div class="relative overflow-hidden shadow-2xl rounded-2xl">
-          <div
-            class="absolute inset-0 bg-gradient-to-r from-[#25D366]/20 to-[#128C7E]/20 z-10"
-          >
-          </div>
-          <Image
-            src={ServiceImage}
-            alt="ChatWoot Dashboard Preview"
-            class="object-cover w-full h-80 lg:h-96"
-          />
-        </div>
-
-        <!-- Floating Stats -->
-        <div
-          class="absolute -top-4 -right-4 p-4 rounded-xl bg-gradient-to-br from-[#25D366]/90 to-[#128C7E]/90 backdrop-blur-xl border border-[#25D366]/30 text-white"
-        >
-          <div class="text-center">
-            <div class="text-2xl font-bold">2x</div>
-            <div class="text-xs">Más Rápido</div>
-          </div>
-        </div>
-
-        <div
-          class="absolute p-4 text-white border -bottom-4 -left-4 rounded-xl bg-gradient-to-br from-blue-500/90 to-purple-600/90 backdrop-blur-xl border-blue-500/30"
-        >
-          <div class="text-center">
-            <div class="text-2xl font-bold">0</div>
-            <div class="text-xs">Mensajes Perdidos</div>
-          </div>
-        </div>
-      </div>
     </div>
   </article>
 
