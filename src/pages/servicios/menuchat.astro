@@ -361,15 +361,15 @@ import { Image } from "astro:assets";
           <div class="grid gap-4 text-sm text-gray-300 md:grid-cols-2">
             <div class="text-center">
               <div class="font-semibold text-orange-400">
-                Implementación: $475
+                Implementación: $520
               </div>
-              <p>60% al iniciar ($285) + 40% al terminar ($190)</p>
+              <p>60% al iniciar ($312) + 40% al terminar ($208)</p>
             </div>
             <div class="text-center">
               <div class="font-semibold text-green-400">
                 Mantenimiento Mensual
               </div>
-              <p>$25/mes (hasta 30 productos) | $35/mes (hasta 50 productos)</p>
+              <p>$25/mes (hasta 35 productos) | $35/mes (hasta 75 productos)</p>
             </div>
           </div>
         </div>
@@ -398,15 +398,15 @@ import { Image } from "astro:assets";
             </p>
             <div class="space-y-2">
               <div class="flex items-baseline justify-center gap-2">
-                <span class="text-4xl font-black text-orange-400">$475</span>
+                <span class="text-4xl font-black text-orange-400">$520</span>
                 <span class="text-gray-400">implementación</span>
               </div>
               <div class="text-sm text-blue-400">
-                60% inicio ($285) + 40% entrega ($190)
+                60% inicio ($312) + 40% entrega ($208)
               </div>
               <div class="flex items-baseline justify-center gap-2 mt-2">
                 <span class="text-2xl font-bold text-white">$25/mes</span>
-                <span class="text-gray-400">hasta 30 productos</span>
+                <span class="text-gray-400">hasta 35 productos</span>
               </div>
             </div>
           </div>
@@ -475,10 +475,10 @@ import { Image } from "astro:assets";
             >
               <div class="flex items-baseline gap-2">
                 <span class="text-lg font-bold text-green-400">$25/mes</span>
-                <span class="text-sm text-gray-400">hasta 30 productos</span>
+                <span class="text-sm text-gray-400">hasta 35 productos</span>
               </div>
               <p class="text-xs text-gray-400">
-                Incluye variantes y mantenimiento completo
+                Solo mantenimiento de infraestructura
               </p>
             </div>
             <div
@@ -486,7 +486,7 @@ import { Image } from "astro:assets";
             >
               <div class="flex items-baseline gap-2">
                 <span class="text-lg font-bold text-blue-400">$35/mes</span>
-                <span class="text-sm text-gray-400">hasta 50 productos</span>
+                <span class="text-sm text-gray-400">hasta 75 productos</span>
               </div>
               <p class="text-xs text-gray-400">Para catálogos más grandes</p>
             </div>
@@ -495,7 +495,7 @@ import { Image } from "astro:assets";
           <!-- CTA -->
           <div class="text-center">
             <a
-              href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20interesa%20MenuChat%20(%24475%20implementaci%C3%B3n%20%2B%20%2425%2Fmes%20mantenimiento).%20%C2%BFPodr%C3%ADamos%20agendar%20una%20reuni%C3%B3n%20para%20ver%20c%C3%B3mo%20puede%20ayudar%20a%20mi%20negocio%3F"
+              href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20interesa%20MenuChat%20(%24520%20implementaci%C3%B3n%20%2B%20%2425%2Fmes%20mantenimiento).%20%C2%BFPodr%C3%ADamos%20agendar%20una%20reuni%C3%B3n%20para%20ver%20c%C3%B3mo%20puede%20ayudar%20a%20mi%20negocio%3F"
               target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center gap-2 px-8 py-4 font-semibold text-white transition-all duration-300 rounded-full shadow-lg bg-gradient-to-r from-orange-500 to-red-500 hover:shadow-xl hover:scale-105"
@@ -534,6 +534,18 @@ import { Image } from "astro:assets";
               />
               • 7 días aproximadamente (según complejidad del catálogo)<br />
               • Incluye capacitación y configuración completa
+            </p>
+          </div>
+          <div
+            class="p-3 mb-4 border rounded-lg bg-yellow-500/10 border-yellow-500/20"
+          >
+            <p class="text-sm text-yellow-300">
+              <span class="font-semibold"
+                >📋 Importante sobre la mensualidad:</span
+              ><br />
+              • Solo incluye mantenimiento de infraestructura, respaldos, DNS, servidores
+              y seguridad<br />
+              • NO incluye soporte a usuario ni modificaciones del sistema
             </p>
           </div>
           <p class="mb-4 text-xs text-gray-400">
@@ -592,8 +604,9 @@ import { Image } from "astro:assets";
           >
           <p class="mt-4 text-gray-300">
             Sí, puedes gestionar tus productos desde el panel de administración.
-            Si superas 30 productos, el mantenimiento pasa a $35/mes. Para más
-            de 50 productos, cotizamos según tus necesidades.
+            Si superas 35 productos, el mantenimiento pasa a $35/mes (hasta 75
+            productos). Para más de 75 productos, cotizamos según tus
+            necesidades.
           </p>
         </details>
 
@@ -601,12 +614,16 @@ import { Image } from "astro:assets";
           class="p-6 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-orange-500/20"
         >
           <summary class="text-lg font-semibold text-white cursor-pointer"
-            >¿Puedo solicitar funcionalidades personalizadas?</summary
+            >¿Qué incluye la mensualidad de mantenimiento?</summary
           >
           <p class="mt-4 text-gray-300">
-            Sí, pero se cotiza por separado dependiendo de la complejidad.
-            MenuChat viene con las funcionalidades básicas incluidas. Cualquier
-            desarrollo adicional tiene costo extra.
+            La mensualidad solo incluye mantenimiento de infraestructura:
+            respaldos de base de datos, servidores, almacenamiento, DNS,
+            seguridad y actualizaciones de sistema.
+            <strong
+              >NO incluye soporte a usuario, modificaciones o nuevas
+              funcionalidades.</strong
+            >
           </p>
         </details>
       </div>
