@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^6.14.0",
-    "daisyui": "^5.0.43",
+    "daisyui": "^5.1.10",
     "eslint": "^8.56.0",
     "eslint-plugin-astro": "^0.31.0",
     "postcss-html": "^1.5.0",

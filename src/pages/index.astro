@@ -1,40 +1,69 @@
 ---
-import Resume from "@/assets/documents/John Palacios - Resume (Spanish).pdf";
-import ResponsiveIllustration from "@/assets/images/brand/hero.png";
-import Experience_1 from "@/assets/images/experience/experience_1.png";
-import Experience_2 from "@/assets/images/experience/experience_2.png";
-import Experience_3 from "@/assets/images/experience/experience_3.png";
-import Project_1 from "@/assets/images/projects/project_1.png";
-import Project_2 from "@/assets/images/projects/project_2.png";
-import Subtitle from "@/components/heading/Subtitle.astro";
-import HeroSection from "@/components/sections/HeroSection.astro";
-import ServicesSection from "@/components/sections/ServicesSection.astro";
-import CompetitiveAdvantagesSection from "@/components/sections/CompetitiveAdvantagesSection.astro";
-import ClientsSection from "@/components/sections/ClientsSection.astro";
-import ContactForm from "@/components/forms/ContactForm.astro";
-import TechnologySection from "@/sections/general/TechnologySection.astro";
-import ServiceSection from "@/sections/general/ServiceSection.astro";
 import Layout from "@/layouts/Layout.astro";
+import { Image } from "astro:assets";
+import SocialLinks from "@/components/ui/SocialLinks.astro";
+import ProfilePic from "@/assets/images/brand/hero.png";
+import { Smartphone, Calendar, MessageCircle } from "lucide-react";
 ---
 
-<Layout
-  title="Desarrollo Web Profesional | Sitios Web y E-commerce | RysthDesign Guayaquil"
->
-  <!-- Hero Section -->
-  <HeroSection />
+<Layout title="John Palacios - Desarrollador Web">
+  <div class="flex items-center justify-center min-h-screen p-4 bg-zinc-950">
+    <div class="w-full max-w-md mx-auto">
+      <div class="flex flex-col items-center text-center space-y-8">
+        <div class="flex items-center space-x-6">
+          <div
+            class="w-16 h-16 rounded-full overflow-hidden border-2 border-gray-700"
+          >
+            <Image
+              src={ProfilePic}
+              alt="John Palacios"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <SocialLinks />
+        </div>
 
-  <!-- Technology Stack Section -->
-  <TechnologySection />
+        <div class="space-y-4">
+          <div class="text-amber-400 text-sm font-medium tracking-[0.2em] uppercase">
+            FULL-STACK DEVELOPER
+          </div>
 
-  <!-- Nueva Sección de Ventajas Competitivas -->
-  <CompetitiveAdvantagesSection />
+          <h1 class="text-white text-4xl md:text-5xl font-bold leading-tight">
+            John Palacios
+          </h1>
 
-  <!-- Nueva Sección de Servicios -->
-  <ServicesSection />
+          <p class="text-gray-400 text-base leading-relaxed max-w-sm mx-auto">
+            Desarrollador de software apasionado por crear soluciones web
+            modernas y eficientes.
+          </p>
+        </div>
 
-  <!-- Nueva Sección de Clientes -->
-  <ClientsSection />
+        <div class="space-y-4 w-full">
+          <a
+            href="/#proyectos"
+            class="w-full bg-gradient-to-r from-orange-500 via-orange-600 to-purple-600 hover:from-orange-600 hover:via-orange-700 hover:to-purple-700 text-white font-medium py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg flex items-center justify-between group"
+          >
+            <span>Mis Proyectos</span>
+            <Smartphone className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
+          </a>
 
-  <!-- Contact Form Section -->
-  <ContactForm />
+          <a
+            href="/#experiencia"
+            class="w-full bg-gradient-to-r from-purple-600 via-purple-700 to-pink-600 hover:from-purple-700 hover:via-purple-800 hover:to-pink-700 text-white font-medium py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg flex items-center justify-between group"
+          >
+            <span>Mi Experiencia</span>
+            <Calendar className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
+          </a>
+
+          <a
+            href="mailto:john@rysth.com"
+            class="w-full bg-gradient-to-r from-red-500 via-red-600 to-orange-500 hover:from-red-600 hover:via-red-700 hover:to-orange-600 text-white font-medium py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg flex items-center justify-between group"
+          >
+            <span>Contáctame</span>
+            <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </Layout>
