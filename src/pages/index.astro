@@ -8,37 +8,37 @@ import { Smartphone, Calendar, MessageCircle } from "lucide-react";
 
 <Layout title="John Palacios - Desarrollador Web">
   <div class="flex items-center justify-center min-h-screen p-4 bg-zinc-950">
-    <div class="w-full max-w-md mx-auto">
-      <div class="flex flex-col items-center text-center space-y-8">
-        <div class="flex items-center space-x-6">
+    <div class="w-full max-w-xl p-10 mx-auto border bg-neutral-900 rounded-3xl">
+      <div class="flex flex-col items-center space-y-8 text-center">
+        <div class="flex items-center justify-between w-full">
           <div
-            class="w-16 h-16 rounded-full overflow-hidden border-2 border-gray-700"
+            class="w-16 h-16 overflow-hidden border-2 border-gray-700 rounded-full"
           >
             <Image
               src={ProfilePic}
               alt="John Palacios"
-              class="w-full h-full object-cover"
+              class="object-cover w-full h-full"
             />
           </div>
           <SocialLinks />
         </div>
 
-        <div class="space-y-4">
-          <div class="text-amber-400 text-sm font-medium tracking-[0.2em] uppercase">
+        <div class="w-full space-y-2 text-left">
+          <div class="text-amber-400 text-xs font-medium tracking-[0.2em] uppercase">
             FULL-STACK DEVELOPER
           </div>
 
-          <h1 class="text-white text-4xl md:text-5xl font-bold leading-tight">
-            John Palacios
+          <h1 class="text-3xl font-bold leading-tight text-white md:text-4xl">
+            RysthDesign
           </h1>
 
-          <p class="text-gray-400 text-base leading-relaxed max-w-sm mx-auto">
+          <p class="max-w-sm mr-auto text-base leading-relaxed text-gray-400">
             Desarrollador de software apasionado por crear soluciones web
             modernas y eficientes.
           </p>
         </div>
 
-        <div class="space-y-4 w-full">
+        <div class="w-full space-y-4">
           <a
             href="/#proyectos"
             class="w-full bg-gradient-to-r from-orange-500 via-orange-600 to-purple-600 hover:from-orange-600 hover:via-orange-700 hover:to-purple-700 text-white font-medium py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg flex items-center justify-between group"
