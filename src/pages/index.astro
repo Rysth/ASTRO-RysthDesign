@@ -1,220 +1,40 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import { Image } from "astro:assets";
-import SocialLinks from "@/components/ui/SocialLinks.astro";
-import ProfilePic from "@/assets/images/brand/hero.png";
-import { Smartphone, Calendar, MessageCircle } from "lucide-react";
+import Resume from "@/assets/documents/John Palacios - Resume (Spanish).pdf";
+import ResponsiveIllustration from "@/assets/images/brand/hero.png";
 import Experience_1 from "@/assets/images/experience/experience_1.png";
 import Experience_2 from "@/assets/images/experience/experience_2.png";
 import Experience_3 from "@/assets/images/experience/experience_3.png";
+import Project_1 from "@/assets/images/projects/project_1.png";
+import Project_2 from "@/assets/images/projects/project_2.png";
+import Subtitle from "@/components/heading/Subtitle.astro";
+import HeroSection from "@/components/sections/HeroSection.astro";
+import ServicesSection from "@/components/sections/ServicesSection.astro";
+import CompetitiveAdvantagesSection from "@/components/sections/CompetitiveAdvantagesSection.astro";
+import ClientsSection from "@/components/sections/ClientsSection.astro";
+import ContactForm from "@/components/forms/ContactForm.astro";
+import TechnologySection from "@/sections/general/TechnologySection.astro";
+import ServiceSection from "@/sections/general/ServiceSection.astro";
+import Layout from "@/layouts/Layout.astro";
 ---
 
-<Layout title="John Palacios - Desarrollador Web">
-  <div class="flex items-center justify-center min-h-screen p-4 bg-zinc-950">
-    <div class="w-full max-w-xl p-10 mx-auto border bg-neutral-900 rounded-3xl">
-      <div class="flex flex-col items-center space-y-8 text-center">
-        <div class="flex items-center justify-between w-full">
-          <div
-            class="w-16 h-16 overflow-hidden border-2 border-gray-700 rounded-full"
-          >
-            <Image
-              src={ProfilePic}
-              alt="John Palacios"
-              class="object-cover w-full h-full"
-            />
-          </div>
-          <SocialLinks />
-        </div>
+<Layout
+  title="Desarrollo Web Profesional | Sitios Web y E-commerce | RysthDesign Guayaquil"
+>
+  <!-- Hero Section -->
+  <HeroSection />
 
-        <div class="w-full space-y-2 text-left">
-          <div class="text-amber-400 text-xs font-medium tracking-[0.2em] uppercase">
-            FULL-STACK DEVELOPER
-          </div>
+  <!-- Technology Stack Section -->
+  <TechnologySection />
 
-          <h1 class="text-3xl font-bold leading-tight text-white md:text-4xl">
-            RysthDesign
-          </h1>
+  <!-- Nueva Sección de Ventajas Competitivas -->
+  <CompetitiveAdvantagesSection />
 
-          <p class="max-w-sm mr-auto text-base leading-relaxed text-gray-400">
-            Desarrollador de software apasionado por crear soluciones web
-            modernas y eficientes.
-          </p>
-        </div>
+  <!-- Nueva Sección de Servicios -->
+  <ServicesSection />
 
-        <div class="w-full space-y-4">
-          <button
-            id="btn-proyectos"
-            type="button"
-            class="w-full bg-gradient-to-r from-orange-500 via-orange-600 to-purple-600 hover:from-orange-600 hover:via-orange-700 hover:to-purple-700 text-white font-medium py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg flex items-center justify-between group"
-          >
-            <span>Mis Proyectos</span>
-            <Smartphone className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
-          </button>
+  <!-- Nueva Sección de Clientes -->
+  <ClientsSection />
 
-          <button
-            id="btn-experiencia"
-            type="button"
-            class="w-full bg-gradient-to-r from-purple-600 via-purple-700 to-pink-600 hover:from-purple-700 hover:via-purple-800 hover:to-pink-700 text-white font-medium py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg flex items-center justify-between group"
-          >
-            <span>Mi Experiencia</span>
-            <Calendar className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
-          </button>
-
-          <a
-            href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20interesa%20crear%20un%20sitio%20web%20profesional.%20%C2%BFPodr%C3%ADamos%20hablar%3F"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="w-full bg-gradient-to-r from-[#25D366] via-[#25D366] to-[#128C7E] hover:from-[#128C7E] hover:via-[#128C7E] hover:to-[#075E54] text-white font-medium py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg flex items-center justify-between group"
-          >
-            <span>Contáctame por WhatsApp</span>
-            <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
-          </a>
-        </div>
-
-        <!-- Panels (actúan como tabs) -->
-        <section id="panel-proyectos" class="hidden w-full">
-          <div class="mt-6 grid gap-4">
-            <!-- QuickInventory -->
-            <article class="p-5 rounded-2xl border border-primary bg-card-gradient backdrop-blur-xl">
-              <header class="flex items-center justify-between mb-2">
-                <h3 class="text-xl font-bold text-white">QuickInventory</h3>
-                <span class="badge gradient-primary text-white border-0">SaaS</span>
-              </header>
-              <p class="text-gray-300 text-sm">
-                Sistema de Inventario y Punto de Venta con reportes, multi‑sucursales y control de stock en tiempo real.
-              </p>
-              <div class="mt-4 flex gap-3">
-                <button type="button" class="btn btn-sm rounded-full gradient-primary text-white border-0" onclick="(function(){const d=document.getElementById('modal_quickinventory'); if(d && d.showModal) d.showModal();})()">Ver detalles</button>
-              </div>
-            </article>
-
-            <!-- TrámitesEC -->
-            <article class="p-5 rounded-2xl border border-secondary bg-card-gradient backdrop-blur-xl">
-              <header class="flex items-center justify-between mb-2">
-                <h3 class="text-xl font-bold text-white">TrámitesEC</h3>
-                <span class="badge gradient-secondary text-white border-0">Plataforma</span>
-              </header>
-              <p class="text-gray-300 text-sm">
-                Plataforma para gestión de trámites y turnos en línea con panel administrativo y notificaciones.
-              </p>
-              <div class="mt-4 flex gap-3">
-                <button type="button" class="btn btn-sm rounded-full gradient-secondary text-white border-0" onclick="(function(){const d=document.getElementById('modal_tramites'); if(d && d.showModal) d.showModal();})()">Ver detalles</button>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section id="panel-experiencia" class="hidden w-full">
-          <div class="mt-6 space-y-6">
-            <!-- Cierpronti -->
-            <div class="space-y-2">
-              <div class="flex gap-4">
-                <figure>
-                  <Image src={Experience_1} alt="Cierpronti" class="object-contain h-full mx-auto max-w-20" />
-                </figure>
-                <div class="items-center w-full space-y-2 md:flex md:justify-between md:space-y-0">
-                  <h3 class="text-lg font-semibold leading-tight text-white">Cierpronti — Analista de Sistemas y Soporte IT</h3>
-                  <p class="text-sm text-gray-400">Abr 2024 – Dic 2024</p>
-                </div>
-              </div>
-              <p class="text-sm text-gray-300">Soporte a usuarios, mantenimiento de sistemas y automatización de procesos internos.</p>
-            </div>
-
-            <!-- RysthDesign -->
-            <div class="space-y-2">
-              <div class="flex gap-4">
-                <figure>
-                  <Image src={Experience_2} alt="RysthDesign" class="object-contain h-full mx-auto max-w-20" />
-                </figure>
-                <div class="items-center w-full space-y-2 md:flex md:justify-between md:space-y-0">
-                  <h3 class="text-lg font-semibold leading-tight text-white">RysthDesign — Desarrollador Full‑Stack</h3>
-                  <p class="text-sm text-gray-400">2023 – Actualidad</p>
-                </div>
-              </div>
-              <p class="text-sm text-gray-300">Desarrollo de sitios web, e‑commerce y sistemas a medida para clientes de Ecuador y LATAM.</p>
-            </div>
-
-            <!-- Novicompu -->
-            <div class="space-y-2">
-              <div class="flex gap-4">
-                <figure>
-                  <Image src={Experience_3} alt="Novicompu" class="object-contain h-full mx-auto max-w-20" />
-                </figure>
-                <div class="items-center w-full space-y-2 md:flex md:justify-between md:space-y-0">
-                  <h3 class="text-lg font-semibold leading-tight text-white">Novicompu — Desarrollador Backend</h3>
-                  <p class="text-sm text-gray-400">Mar 2025 – Actualidad</p>
-                </div>
-              </div>
-              <p class="text-sm text-gray-300">Desarrollo de APIs y servicios backend para aplicaciones web y móviles.</p>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
-  </div>
+  <!-- Contact Form Section -->
+  <ContactForm />
 </Layout>
-
-<dialog id="modal_quickinventory" class="modal modal-bottom sm:modal-middle">
-  <div class="modal-box bg-[#1a1a1a] text-white">
-    <h3 class="text-lg font-bold">QuickInventory - Sistema de Inventario y POS</h3>
-    <div class="py-4 text-gray-300 text-sm">
-      <p class="mb-3">Control de stock, compras, ventas, facturación, roles y reportes avanzados.</p>
-      <h4 class="mb-2 font-semibold">Tecnologías:</h4>
-      <div class="flex flex-wrap gap-2 mb-4">
-        <span class="badge">Node.js</span>
-        <span class="badge">React</span>
-        <span class="badge">PostgreSQL</span>
-        <span class="badge">Docker</span>
-      </div>
-    </div>
-    <div class="modal-action">
-      <form method="dialog">
-        <button class="btn">Cerrar</button>
-      </form>
-    </div>
-  </div>
-  <form method="dialog" class="modal-backdrop">
-    <button>cerrar</button>
-  </form>
-  </dialog>
-
-<dialog id="modal_tramites" class="modal modal-bottom sm:modal-middle">
-  <div class="modal-box bg-[#1a1a1a] text-white">
-    <h3 class="text-lg font-bold">TrámitesEC - Gestión de Trámites</h3>
-    <div class="py-4 text-gray-300 text-sm">
-      <p class="mb-3">Turnos en línea, estados de trámite, notificaciones por email y panel administrativo.</p>
-      <h4 class="mb-2 font-semibold">Tecnologías:</h4>
-      <div class="flex flex-wrap gap-2 mb-4">
-        <span class="badge">Astro</span>
-        <span class="badge">TypeScript</span>
-        <span class="badge">Supabase</span>
-      </div>
-    </div>
-    <div class="modal-action">
-      <form method="dialog">
-        <button class="btn">Cerrar</button>
-      </form>
-    </div>
-  </div>
-  <form method="dialog" class="modal-backdrop">
-    <button>cerrar</button>
-  </form>
-  </dialog>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const btnProy = document.getElementById('btn-proyectos');
-    const btnExp = document.getElementById('btn-experiencia');
-    const panelProy = document.getElementById('panel-proyectos');
-    const panelExp = document.getElementById('panel-experiencia');
-
-    function show(panel) {
-      if (panelProy) panelProy.classList.add('hidden');
-      if (panelExp) panelExp.classList.add('hidden');
-      if (panel) panel.classList.remove('hidden');
-    }
-
-    btnProy?.addEventListener('click', () => show(panelProy));
-    btnExp?.addEventListener('click', () => show(panelExp));
-  });
-</script>
