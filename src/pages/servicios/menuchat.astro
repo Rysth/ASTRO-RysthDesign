@@ -15,6 +15,7 @@ import {
   FaEdit,
 } from "react-icons/fa";
 import ServiceImage from "@/assets/images/services/service_2.png";
+import MenuChatVideo from "@/assets/videos/MenuChat-DEMO.mp4";
 import { Image } from "astro:assets";
 ---
 
@@ -145,15 +146,35 @@ import { Image } from "astro:assets";
         <!-- Right - Preview -->
         <div class="relative">
           <div class="relative overflow-hidden shadow-2xl rounded-2xl">
+            <!-- Video Preview -->
+            <video
+              class="object-cover w-full h-80 lg:h-96"
+              autoplay
+              loop
+              muted
+              playsinline
+              poster={ServiceImage.src}
+            >
+              <source src={MenuChatVideo} type="video/mp4" />
+              <!-- Fallback image if video doesn't load -->
+              <Image
+                src={ServiceImage}
+                alt="MenuChat Preview"
+                class="object-cover w-full h-80 lg:h-96"
+              />
+            </video>
+            <!-- Play indicator overlay -->
             <div
-              class="absolute inset-0 z-10 bg-gradient-to-r from-orange-500/20 to-red-500/20"
+              class="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-orange-500/10 to-red-500/10"
             >
             </div>
-            <Image
-              src={ServiceImage}
-              alt="MenuChat Preview"
-              class="object-cover w-full h-80 lg:h-96"
-            />
+          </div>
+          <!-- Video label -->
+          <div class="flex items-center justify-center gap-2 px-4 py-2 mx-auto mt-4 border rounded-full w-fit bg-orange-500/20 border-orange-500/30">
+            <svg class="w-4 h-4 text-orange-400" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <span class="text-sm font-semibold text-orange-400">Demo en Vivo</span>
           </div>
         </div>
       </div>
