@@ -8,9 +8,11 @@ import FloatingButtons from "@/components/ui/FloatingButtons.astro";
 interface Props {
   title: string;
   description?: string;
+  canonical?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, canonical } = Astro.props;
+const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <!doctype html>
@@ -24,10 +26,11 @@ const { title, description } = Astro.props;
     />
     <meta
       name="keywords"
-      content="diseño web guayaquil, paginas web guayaquil, desarrollo web ecuador, diseño de paginas web, desarrollo de aplicaciones web, tiendas online ecuador, sitios web profesionales, agencia web guayaquil"
+      content="diseño web guayaquil, diseño web ecuador, paginas web guayaquil, desarrollo web ecuador, desarrollo web guayaquil, diseño de paginas web, desarrollo de aplicaciones web, tiendas online ecuador, sitios web profesionales, agencia web guayaquil, crear pagina web guayaquil, empresa desarrollo web ecuador, diseño web responsive, desarrollo e-commerce ecuador, agencia diseño web, desarrollador web guayaquil, diseño paginas web profesionales, sitios web baratos guayaquil, desarrollo web a medida ecuador"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="canonical" href={canonicalURL} />
     <link
       href="
 https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css
@@ -36,6 +39,11 @@ https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css
     />
 
     <meta name="generator" content={Astro.generator} />
+    <meta name="author" content="RysthDesign - Agencia Web Guayaquil" />
+    <meta name="geo.region" content="EC-G" />
+    <meta name="geo.placename" content="Guayaquil" />
+    <meta name="geo.position" content="-2.1709979;-79.9223592" />
+    <meta name="ICBM" content="-2.1709979, -79.9223592" />
     <title>{title}</title>
 
     <!-- Open Graph / Facebook -->
@@ -64,20 +72,26 @@ https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css
       content="https://www.rysthdesign.com/og-image.jpg"
     />
 
-    <!-- Local Business Schema -->
+    <!-- Schema.org Organization + LocalBusiness -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
+        "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
         "name": "RysthDesign",
-        "description": "Agencia de diseño y desarrollo web en Guayaquil, Ecuador",
+        "legalName": "RysthDesign - Agencia de Desarrollo Web",
+        "description": "Agencia líder de diseño y desarrollo web en Guayaquil, Ecuador. Especialistas en sitios web profesionales, e-commerce, aplicaciones web y diseño responsive.",
         "url": "https://www.rysthdesign.com",
+        "logo": "https://www.rysthdesign.com/favicon.png",
+        "image": "https://www.rysthdesign.com/og-image.jpg",
         "telephone": "+593988949117",
+        "email": "contacto@rysthdesign.com",
+        "foundingDate": "2023",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Guayaquil",
           "addressLocality": "Guayaquil",
           "addressRegion": "Guayas",
+          "postalCode": "090101",
           "addressCountry": "EC"
         },
         "geo": {
@@ -85,8 +99,99 @@ https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css
           "latitude": -2.1709979,
           "longitude": -79.9223592
         },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Guayaquil"
+          },
+          {
+            "@type": "City",
+            "name": "Quito"
+          },
+          {
+            "@type": "Country",
+            "name": "Ecuador"
+          }
+        ],
+        "serviceArea": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": -2.1709979,
+            "longitude": -79.9223592
+          },
+          "geoRadius": "1000km"
+        },
         "openingHours": "Mo-Fr 09:00-18:00",
-        "priceRange": "$$"
+        "priceRange": "$$",
+        "sameAs": [
+          "https://www.facebook.com/rysthdesign",
+          "https://www.instagram.com/rysthdesign",
+          "https://www.linkedin.com/company/rysthdesign"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Servicios de Desarrollo Web",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Diseño Web Profesional",
+                "description": "Sitios web modernos y responsivos adaptados a tu negocio"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Desarrollo de E-commerce",
+                "description": "Tiendas online completas con pasarelas de pago"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Desarrollo de Aplicaciones Web",
+                "description": "Aplicaciones web personalizadas y escalables"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "MenuChat - Sistema de Menú Digital",
+                "description": "Sistema de menú digital con código QR para restaurantes"
+              }
+            }
+          ]
+        },
+        "knowsAbout": [
+          "Desarrollo Web",
+          "Diseño Web",
+          "E-commerce",
+          "React",
+          "Astro",
+          "Tailwind CSS",
+          "SEO",
+          "Aplicaciones Web"
+        ]
+      }
+    </script>
+
+    <!-- WebSite Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "RysthDesign",
+        "url": "https://www.rysthdesign.com",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.rysthdesign.com/servicios?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
       }
     </script>
   </head>

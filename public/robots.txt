@@ -1,4 +1,21 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /admin/
 
+# Sitemaps
 Sitemap: https://www.rysthdesign.com/sitemap-index.xml
+
+# Rastreo optimizado
+Crawl-delay: 1
+
+# Google Bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
