@@ -16,11 +16,32 @@ import {
 } from "react-icons/fa";
 import ServiceImage from "@/assets/images/services/service_1.webp";
 import { Image } from "astro:assets";
+
+// Calcular la fecha del último día del mes actual
+const now = new Date();
+const lastDayOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+const months = [
+  "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+  "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+];
+const promoEndDate = `${lastDayOfMonth.getDate()} de ${months[lastDayOfMonth.getMonth()]} ${lastDayOfMonth.getFullYear()}`;
+
+// Precios Landing Page
+const precioRegularLanding = 175;
+const descuentoLanding = 25;
+const precioLanding = precioRegularLanding - descuentoLanding; // $150
+const renovacionLanding = 75;
+
+// Precios Sitio Completo
+const precioRegularCompleto = 375;
+const descuentoCompleto = 25;
+const precioCompleto = precioRegularCompleto - descuentoCompleto; // $350
+const renovacionCompleto = 150;
 ---
 
 <Layout
   title="Diseño Web Profesional | Landing Pages y Sitios Web | RysthDesign"
-  description="Creamos sitios web profesionales y landing pages. Landing Page $160 | Sitio Web Completo $380. Hosting y dominio gratis por 1 año."
+  description="Creamos sitios web profesionales y landing pages. Landing Page $150 + $75/año | Sitio Web Completo $350 + $150/año."
 >
   <PageHeader title="Diseño Web" currentPage="Diseño Web" />
 
@@ -363,12 +384,16 @@ import { Image } from "astro:assets";
               Perfecto para presentar tu negocio rápidamente
             </p>
             <div class="space-y-2">
+              <div class="flex items-center justify-center gap-2 mb-2">
+                <span class="text-xl text-gray-400 line-through">${precioRegularLanding}</span>
+                <span class="px-2 py-1 text-xs font-bold text-white bg-red-500 rounded">${descuentoLanding} OFF</span>
+              </div>
               <div class="flex items-baseline justify-center gap-2">
-                <span class="text-4xl font-black text-blue-400">$160</span>
-                <span class="text-gray-400">pago único</span>
+                <span class="text-4xl font-black text-blue-400">${precioLanding}</span>
+                <span class="text-gray-400">pago inicial</span>
               </div>
               <div class="text-sm text-green-400">
-                + Hosting y dominio gratis por 1 año
+                + ${renovacionLanding}/año renovación
               </div>
             </div>
           </div>
@@ -425,7 +450,7 @@ import { Image } from "astro:assets";
           <!-- CTA -->
           <div class="text-center">
             <a
-              href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20interesa%20la%20Landing%20Page%20por%20%24160%20con%20hosting%20y%20dominio%20gratis%20por%201%20a%C3%B1o.%20%C2%BFPodr%C3%ADamos%20hablar%20sobre%20mi%20proyecto%3F"
+              href={`https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20interesa%20la%20Landing%20Page%20por%20%24${precioLanding}%20%2B%20%24${renovacionLanding}%2Fa%C3%B1o%20renovaci%C3%B3n.%20%C2%BFPodr%C3%ADamos%20hablar%20sobre%20mi%20proyecto%3F`}
               target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center gap-2 px-8 py-4 font-semibold text-white transition-all duration-300 rounded-full shadow-lg bg-gradient-to-r from-blue-500 to-blue-600 hover:shadow-xl hover:scale-105"
@@ -460,12 +485,16 @@ import { Image } from "astro:assets";
               Sitio web profesional con todas las páginas
             </p>
             <div class="space-y-2">
+              <div class="flex items-center justify-center gap-2 mb-2">
+                <span class="text-xl text-gray-400 line-through">${precioRegularCompleto}</span>
+                <span class="px-2 py-1 text-xs font-bold text-white bg-red-500 rounded">${descuentoCompleto} OFF</span>
+              </div>
               <div class="flex items-baseline justify-center gap-2">
-                <span class="text-4xl font-black text-purple-400">$380</span>
-                <span class="text-gray-400">pago único</span>
+                <span class="text-4xl font-black text-purple-400">${precioCompleto}</span>
+                <span class="text-gray-400">pago inicial</span>
               </div>
               <div class="text-sm text-green-400">
-                + Hosting y dominio gratis por 1 año
+                + ${renovacionCompleto}/año renovación
               </div>
             </div>
           </div>
@@ -530,7 +559,7 @@ import { Image } from "astro:assets";
           <!-- CTA -->
           <div class="text-center">
             <a
-              href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20interesa%20el%20Sitio%20Web%20Completo%20por%20%24380%20con%20hosting%20y%20dominio%20gratis%20por%201%20a%C3%B1o.%20%C2%BFPodr%C3%ADamos%20hablar%20sobre%20mi%20proyecto%3F"
+              href={`https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20interesa%20el%20Sitio%20Web%20Completo%20por%20%24${precioCompleto}%20%2B%20%24${renovacionCompleto}%2Fa%C3%B1o%20renovaci%C3%B3n.%20%C2%BFPodr%C3%ADamos%20hablar%20sobre%20mi%20proyecto%3F`}
               target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center gap-2 px-8 py-4 font-semibold text-white transition-all duration-300 rounded-full shadow-lg bg-gradient-to-r from-purple-500 to-purple-600 hover:shadow-xl hover:scale-105"
@@ -551,12 +580,11 @@ import { Image } from "astro:assets";
           class="max-w-2xl p-6 mx-auto border rounded-2xl bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border-yellow-500/20 backdrop-blur-xl"
         >
           <div class="flex items-center justify-center gap-2 mb-4">
-            <span class="text-2xl">💰</span>
-            <h3 class="text-xl font-bold text-yellow-400">¿Qué Pasa Después Del Año?</h3>
+            <span class="text-2xl">🎁</span>
+            <h3 class="text-xl font-bold text-yellow-400">¡Promoción Especial hasta el {promoEndDate}!</h3>
           </div>
           <p class="mb-4 text-gray-300">
-            Después del primer año, solo pagas el costo del hosting y dominio
-            (aproximadamente $50-80/año). Tu sitio web ya está pagado para siempre.
+            <span class="font-semibold text-yellow-400">¡Ahorra $25!</span> Landing Page: ${precioLanding} (reg. ${precioRegularLanding}) + ${renovacionLanding}/año • Sitio Completo: ${precioCompleto} (reg. ${precioRegularCompleto}) + ${renovacionCompleto}/año. La renovación anual incluye hosting, dominio y mantenimiento.
           </p>
           <div
             class="p-3 mb-4 border rounded-lg bg-blue-500/10 border-blue-500/20"
