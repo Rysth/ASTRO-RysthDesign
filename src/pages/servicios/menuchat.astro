@@ -483,28 +483,29 @@ const precioAnualDespues = 450;
                   >${precioPrimerAno}</span
                 >
                 <span class="text-lg text-gray-400">/1er año</span>
-                <div class="mb-2 text-sm text-blue-400">
-                  60% inicio (${Math.round(precioPrimerAno * 0.6)}) + 40%
-                  entrega (${Math.round(precioPrimerAno * 0.4)})
-                </div>
-                <div class="text-xs text-gray-400">
-                  Renovación: ${precioAnualDespues}/año después del 1er año
-                </div>
-                <div
-                  class="px-4 py-2 border rounded-lg bg-green-500/10 border-green-500/20"
-                >
-                  <p class="text-sm font-semibold text-green-400">
-                    ✅ Incluye hasta 75 productos
-                  </p>
-                  <p class="text-xs text-gray-400">
-                    Con variantes • Sin mensualidades
-                  </p>
-                </div>
+              </div>
+              <div class="mb-2 text-sm text-blue-400">
+                60% inicio (${Math.round(precioPrimerAno * 0.6)}) + 40%
+                entrega (${Math.round(precioPrimerAno * 0.4)})
+              </div>
+              <div class="text-xs text-gray-400">
+                Luego ${precioAnualDespues}/año renovación
+              </div>
+              <div
+                class="px-4 py-2 mt-4 border rounded-lg bg-green-500/10 border-green-500/20"
+              >
+                <p class="text-sm font-semibold text-green-400">
+                  ✅ Incluye hasta 75 productos
+                </p>
+                <p class="text-xs text-gray-400">
+                  Con variantes • Sin mensualidades
+                </p>
               </div>
             </div>
+          </div>
 
-            <!-- What's Included -->
-            <div class="mb-8">
+          <!-- What's Included -->
+          <div class="mb-8">
               <h4 class="mb-4 text-lg font-bold text-center text-white">
                 ¿Qué Incluye?
               </h4>
@@ -560,67 +561,9 @@ const precioAnualDespues = 450;
               </div>
             </div>
 
-            <!-- Pricing Plans -->
-            <div class="mb-6 space-y-3">
-              <div
-                class="p-4 border-2 rounded-lg bg-gradient-to-r from-orange-500/10 to-red-500/10 border-orange-500/30"
-              >
-                <div class="flex items-center justify-between mb-2">
-                  <span class="text-lg font-bold text-orange-400"
-                    >Plan Base</span
-                  >
-                  <span
-                    class="px-2 py-1 text-xs font-bold text-white bg-orange-500 rounded"
-                    >INCLUIDO</span
-                  >
-                </div>
-                <div class="mb-2">
-                  <span class="text-2xl font-bold text-white"
-                    >${precioPrimerAno}/1er año</span
-                  >
-                </div>
-                <p class="mb-1 text-sm text-gray-300">
-                  ✅ Hasta 75 productos con variantes
-                </p>
-                <p class="text-xs text-gray-400">
-                  Todo incluido • ${precioAnualDespues}/año renovación
-                </p>
-              </div>
-              <div
-                class="p-4 border rounded-lg bg-gradient-to-r from-green-500/10 to-blue-500/10 border-green-500/20"
-              >
-                <div class="flex items-center justify-between mb-2">
-                  <span class="text-lg font-bold text-green-400"
-                    >Plan Expansión</span
-                  >
-                  <span
-                    class="px-2 py-1 text-xs font-bold text-white bg-green-600 rounded"
-                    >OPCIONAL</span
-                  >
-                </div>
-                <div class="mb-2">
-                  <span class="text-2xl font-bold text-white">$14.99/mes</span>
-                </div>
-                <p class="mb-1 text-sm text-gray-300">
-                  ✅ Hasta 150 productos con variantes
-                </p>
-                <p class="text-xs text-gray-400">
-                  Solo si necesitas más de 75 productos
-                </p>
-              </div>
-              <div
-                class="p-3 border rounded-lg bg-gradient-to-r from-blue-500/10 to-purple-500/10 border-blue-500/20"
-              >
-                <p class="text-xs text-center text-gray-400">
-                  💡 <strong>Más de 150 productos:</strong> Cotización personalizada
-                  según necesidades
-                </p>
-              </div>
-            </div>
-
-            <!-- CTA -->
-            <div class="text-center">
-              <a
+          <!-- CTA -->
+          <div class="text-center">
+            <a
                 href={`https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20interesa%20MenuChat%20(%24${precioPrimerAno}%20primer%20a%C3%B1o%2C%20todo%20incluido%20hasta%2075%20productos).%20%C2%BFPodr%C3%ADamos%20agendar%20una%20reuni%C3%B3n%20para%20ver%20c%C3%B3mo%20puede%20ayudar%20a%20mi%20negocio%3F`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -628,10 +571,10 @@ const precioAnualDespues = 450;
               >
                 <FaWhatsapp className="text-lg" />
                 <span>Comenzar Ahora</span>
-              </a>
-              <p class="mt-3 text-xs text-gray-400">
-                Entrega en 7 días | Todo incluido sin cargos adicionales
-              </p>
+            </a>
+            <p class="mt-3 text-xs text-gray-400">
+              Entrega en 7 días | Todo incluido sin cargos adicionales
+            </p>
             </div>
           </div>
         </div>
