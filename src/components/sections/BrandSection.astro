@@ -1,0 +1,164 @@
+---
+import { FaCheckCircle, FaUsers, FaAward, FaTrophy } from "react-icons/fa";
+---
+
+<!-- Brand/Trust Section - Inspired by Zubaz -->
+<section class="relative py-12 px-4 bg-gradient-to-br from-[#1a1a2e] via-[#0a0a0a] to-[#100f1e] border-y border-gray-800">
+  <!-- Grid Pattern Background -->
+  <div class="absolute inset-0 opacity-5">
+    <div
+      class="absolute inset-0"
+      style="background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 50px 50px;"
+    >
+    </div>
+  </div>
+
+  <div class="relative z-10 max-w-screen-xl mx-auto">
+    <div class="grid items-center gap-8 md:grid-cols-2 lg:grid-cols-5">
+      <!-- Left Content - Takes 2 columns on lg -->
+      <div class="lg:col-span-2">
+        <div class="space-y-4">
+          <div
+            class="flex items-center gap-2 text-[#a78bfa] font-jetbrains text-xs uppercase tracking-wider"
+          >
+            <div class="w-2 h-2 bg-[#a78bfa] rounded-full animate-pulse"></div>
+            <span>Clientes Satisfechos</span>
+          </div>
+
+          <h3
+            class="text-2xl font-bold leading-tight text-white md:text-3xl lg:text-4xl"
+          >
+            Más de <span class="text-[#a78bfa]">15 proyectos</span> confían en nuestras
+            soluciones web
+          </h3>
+
+          <p class="text-sm text-gray-400 md:text-base">
+            Empresas y emprendedores que ya están digitalizando sus negocios con
+            nosotros
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Content - Stats Grid - Takes 3 columns on lg -->
+      <div class="grid grid-cols-2 gap-4 lg:col-span-3 md:grid-cols-3">
+        <!-- Stat Card 1 -->
+        <div
+          class="relative p-4 overflow-hidden border group bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-sm border-[#a78bfa]/20 rounded-xl hover:border-[#a78bfa]/40 transition-all duration-300"
+        >
+          <div
+            class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-[#a78bfa]/5 to-[#4361ee]/5 group-hover:opacity-100"
+          >
+          </div>
+          <div class="relative">
+            <div
+              class="flex items-center justify-center w-10 h-10 mb-3 rounded-full bg-gradient-to-r from-[#a78bfa]/20 to-[#4361ee]/20"
+            >
+              <FaUsers className="text-[#a78bfa] text-lg" />
+            </div>
+            <div class="text-3xl font-black text-white">15+</div>
+            <div class="text-xs text-gray-400">Proyectos Entregados</div>
+          </div>
+        </div>
+
+        <!-- Stat Card 2 -->
+        <div
+          class="relative p-4 overflow-hidden border group bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-sm border-[#4361ee]/20 rounded-xl hover:border-[#4361ee]/40 transition-all duration-300"
+        >
+          <div
+            class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-[#4361ee]/5 to-[#6366f1]/5 group-hover:opacity-100"
+          >
+          </div>
+          <div class="relative">
+            <div
+              class="flex items-center justify-center w-10 h-10 mb-3 rounded-full bg-gradient-to-r from-[#4361ee]/20 to-[#6366f1]/20"
+            >
+              <FaAward className="text-[#4361ee] text-lg" />
+            </div>
+            <div class="text-3xl font-black text-white">100%</div>
+            <div class="text-xs text-gray-400">Satisfacción</div>
+          </div>
+        </div>
+
+        <!-- Stat Card 3 -->
+        <div
+          class="relative p-4 overflow-hidden border group bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-sm border-[#6366f1]/20 rounded-xl hover:border-[#6366f1]/40 transition-all duration-300 col-span-2 md:col-span-1"
+        >
+          <div
+            class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-[#6366f1]/5 to-[#8b5cf6]/5 group-hover:opacity-100"
+          >
+          </div>
+          <div class="relative">
+            <div
+              class="flex items-center justify-center w-10 h-10 mb-3 rounded-full bg-gradient-to-r from-[#6366f1]/20 to-[#8b5cf6]/20"
+            >
+              <FaTrophy className="text-[#6366f1] text-lg" />
+            </div>
+            <div class="text-3xl font-black text-white">2+</div>
+            <div class="text-xs text-gray-400">Años Operando</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust Badges / Tech Stack Mini Logos -->
+    <div class="mt-12">
+      <div class="flex flex-wrap items-center justify-center gap-6 md:gap-8">
+        <!-- Badge 1 -->
+        <div
+          class="flex items-center gap-2 px-4 py-2 border bg-gradient-to-r from-[#1a1a2e]/60 to-[#2d2d44]/60 backdrop-blur-sm border-gray-700/30 rounded-full"
+        >
+          <div
+            class="flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-r from-[#a78bfa]/20 to-[#4361ee]/20"
+          >
+            <FaCheckCircle className="text-[#a78bfa] text-xs" />
+          </div>
+          <span class="text-xs font-semibold text-gray-300"
+            >Hosting Incluido</span
+          >
+        </div>
+
+        <!-- Badge 2 -->
+        <div
+          class="flex items-center gap-2 px-4 py-2 border bg-gradient-to-r from-[#1a1a2e]/60 to-[#2d2d44]/60 backdrop-blur-sm border-gray-700/30 rounded-full"
+        >
+          <div
+            class="flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-r from-[#4361ee]/20 to-[#6366f1]/20"
+          >
+            <FaCheckCircle className="text-[#4361ee] text-xs" />
+          </div>
+          <span class="text-xs font-semibold text-gray-300"
+            >Soporte Técnico</span
+          >
+        </div>
+
+        <!-- Badge 3 -->
+        <div
+          class="flex items-center gap-2 px-4 py-2 border bg-gradient-to-r from-[#1a1a2e]/60 to-[#2d2d44]/60 backdrop-blur-sm border-gray-700/30 rounded-full"
+        >
+          <div
+            class="flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-r from-[#6366f1]/20 to-[#8b5cf6]/20"
+          >
+            <FaCheckCircle className="text-[#6366f1] text-xs" />
+          </div>
+          <span class="text-xs font-semibold text-gray-300"
+            >Garantía de Calidad</span
+          >
+        </div>
+
+        <!-- Badge 4 -->
+        <div
+          class="flex items-center gap-2 px-4 py-2 border bg-gradient-to-r from-[#1a1a2e]/60 to-[#2d2d44]/60 backdrop-blur-sm border-gray-700/30 rounded-full"
+        >
+          <div
+            class="flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-r from-[#8b5cf6]/20 to-[#a78bfa]/20"
+          >
+            <FaCheckCircle className="text-[#8b5cf6] text-xs" />
+          </div>
+          <span class="text-xs font-semibold text-gray-300"
+            >Actualización Anual</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

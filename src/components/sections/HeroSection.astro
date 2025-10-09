@@ -1,222 +1,225 @@
 ---
-import {
-  FaArrowRight,
-  FaCheckCircle,
-  FaCode,
-  FaLaptopCode,
-  FaShoppingCart,
-  FaRocket,
-} from "react-icons/fa";
+import { FaPlay } from "react-icons/fa";
+import { Image } from "astro:assets";
+import Project_1 from "@/assets/images/projects/project_1.png";
+import Project_2 from "@/assets/images/projects/project_2.png";
+import Project_3 from "@/assets/images/projects/project_3.png";
 ---
 
-<!-- Hero Section - Desarrollo Web Profesional -->
+<!-- Hero Section - Zubaz Style -->
 <section
-  class="relative min-h-screen pt-26 pb-8 px-4 lg:pt-16 bg-gradient-to-br from-[#0a0a0a] via-[#100f1e] to-[#1a1a2e] overflow-hidden"
+  class="relative pt-32 pb-16 px-4 bg-gradient-to-br from-[#0a0a0a] via-[#100f1e] to-[#1a1a2e] overflow-hidden"
+  style="background-image: url('data:image/svg+xml,%3Csvg width=\"100\" height=\"100\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cdefs%3E%3Cpattern id=\"grid\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\"%3E%3Cpath d=\"M 50 0 L 0 0 0 50\" fill=\"none\" stroke=\"rgba(167, 139, 250, 0.03)\" stroke-width=\"1\"/%3E%3C/pattern%3E%3C/defs%3E%3Crect width=\"100\" height=\"100\" fill=\"url(%23grid)\"/%3E%3C/svg%3E')"
 >
-  <!-- Elementos decorativos de fondo -->
-  <div class="absolute inset-0 opacity-30">
+  <!-- Decorative Background Shape -->
+  <div class="absolute inset-0 opacity-20">
     <div
-      class="absolute rounded-full top-20 left-10 w-72 h-72 bg-purple-500/20 blur-3xl"
+      class="absolute rounded-full top-0 right-0 w-[600px] h-[600px] bg-purple-500/20 blur-3xl"
     >
     </div>
     <div
-      class="absolute rounded-full bottom-20 right-10 w-96 h-96 bg-blue-500/20 blur-3xl"
-    >
-    </div>
-    <div
-      class="absolute transform -translate-x-1/2 -translate-y-1/2 rounded-full top-1/2 left-1/2 w-80 h-80 bg-indigo-500/10 blur-3xl"
+      class="absolute rounded-full bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/20 blur-3xl"
     >
     </div>
   </div>
 
-  <article
-    class="relative z-10 items-center max-w-screen-xl min-h-screen mx-auto md:grid md:grid-cols-2 md:gap-12"
-  >
-    <div class="flex flex-col justify-center space-y-6 md:space-y-8">
-      <!-- Badge superior -->
-      <div
-        class="flex items-center gap-2 text-[#a78bfa] font-jetbrains text-sm uppercase tracking-wider"
+  <div class="relative z-10 max-w-screen-xl mx-auto">
+    <!-- Hero Content - Centered -->
+    <div class="text-center space-y-8 mb-16">
+      <h1
+        class="text-4xl font-black leading-tight text-white md:text-5xl lg:text-6xl max-w-4xl mx-auto"
       >
-        <div class="w-2 h-2 bg-[#a78bfa] rounded-full animate-pulse"></div>
-        <span>Partner Tecnológico</span>
-      </div>
-
-      <!-- Título principal -->
-      <div class="space-y-4">
-        <h1
-          class="text-4xl font-black md:text-5xl lg:text-6xl lg:!leading-[4rem] text-white"
+        Desarrolla tu negocio con una
+        <span
+          class="bg-gradient-to-r from-[#a78bfa] to-[#4361ee] bg-clip-text text-transparent"
         >
-          Diseño Web Profesional en
-          <span class="relative">
-            <span
-              class="bg-gradient-to-r from-[#a78bfa] to-[#4361ee] bg-clip-text text-transparent"
-            >
-              Guayaquil, Ecuador
-            </span>
-            <div
-              class="absolute -inset-1 bg-gradient-to-r from-[#a78bfa] to-[#4361ee] rounded-lg blur opacity-30 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"
-            >
-            </div>
-          </span>
-        </h1>
+          presencia digital profesional
+        </span>
+      </h1>
 
-        <h2 class="max-w-xl text-lg leading-relaxed text-gray-300 font-normal">
-          Agencia líder en desarrollo web y aplicaciones web en Ecuador. Creamos sitios web modernos, landing pages profesionales y soluciones digitales personalizadas que impulsan tu negocio. Más de 10 proyectos exitosos en Guayaquil y todo Ecuador.
-        </h2>
-      </div>
+      <p
+        class="max-w-3xl mx-auto text-base leading-relaxed text-gray-300 md:text-lg"
+      >
+        Somos tu agencia de desarrollo web en Ecuador. Creamos sitios web
+        modernos, catálogos digitales y aplicaciones web personalizadas que
+        impulsan el crecimiento de microempresas y pequeños negocios.
+      </p>
 
-      <!-- Botones CTA -->
-      <div class="flex flex-wrap gap-4">
+      <!-- CTA Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
         <a
           href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20servicios%20de%20desarrollo%20web.%20%C2%BFPodr%C3%ADan%20proporcionarme%20informaci%C3%B3n%20sobre%20precios%20y%20tiempos%20de%20entrega%3F"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center gap-3 px-8 py-4 text-white bg-gradient-to-r from-[#a78bfa] to-[#4361ee] rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 font-semibold"
+          class="inline-flex items-center gap-3 px-8 py-4 text-base font-semibold text-white transition-all duration-300 rounded-full shadow-xl bg-gradient-to-r from-[#a78bfa] to-[#4361ee] hover:shadow-2xl hover:scale-105"
         >
-          Comenzar Ahora
-          <FaArrowRight className="text-sm" />
+          <span>Cotiza Tu Proyecto Gratis</span>
         </a>
 
         <a
-          href="#clientes"
-          class="px-8 py-4 text-[#a78bfa] border-2 border-[#a78bfa]/50 rounded-full hover:bg-[#a78bfa]/10 transition-all duration-300 font-semibold backdrop-blur-sm"
+          href="https://micropets-demo.rysthdesign.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-3 px-6 py-4 text-base font-semibold text-white transition-all duration-300 backdrop-blur-sm bg-white/10 border border-white/20 rounded-full hover:bg-white/20"
         >
-          Ver Portfolio
+          <div
+            class="flex items-center justify-center w-10 h-10 rounded-full bg-white/20"
+          >
+            <FaPlay className="text-white text-sm ml-0.5" />
+          </div>
+          <span>Ver Demo en Vivo</span>
         </a>
       </div>
 
-      <!-- Características destacadas -->
-      <div class="pt-6 space-y-4">
-        <div class="flex items-center gap-3 text-gray-300">
-          <div
-            class="flex items-center justify-center w-8 h-8 rounded-full bg-[#a78bfa]/20"
-          >
-            <FaCheckCircle className="text-[#a78bfa] text-sm" />
-          </div>
-          <span class="text-sm">Diseños web modernos y responsivos</span>
-        </div>
-
-        <div class="flex items-center gap-3 text-gray-300">
-          <div
-            class="flex items-center justify-center w-8 h-8 rounded-full bg-[#a78bfa]/20"
-          >
-            <FaCheckCircle className="text-[#a78bfa] text-sm" />
-          </div>
-          <span class="text-sm"
-            >Catálogos digitales que generan más ventas</span
-          >
-        </div>
-
-        <div class="flex items-center gap-3 text-gray-300">
-          <div
-            class="flex items-center justify-center w-8 h-8 rounded-full bg-[#a78bfa]/20"
-          >
-            <FaCheckCircle className="text-[#a78bfa] text-sm" />
-          </div>
-          <span class="text-sm">Aplicaciones web escalables y seguras</span>
-        </div>
-      </div>
-
-      <!-- Social proof -->
-      <div class="flex items-center gap-4 pt-4">
-        <div class="flex -space-x-3">
-          <div
-            class="w-8 h-8 bg-gradient-to-r from-[#a78bfa] to-[#4361ee] rounded-full border-2 border-[#100f1e]"
-          >
-          </div>
-          <div
-            class="w-8 h-8 bg-gradient-to-r from-[#4361ee] to-[#6366f1] rounded-full border-2 border-[#100f1e]"
-          >
-          </div>
-          <div
-            class="w-8 h-8 bg-gradient-to-r from-[#6366f1] to-[#8b5cf6] rounded-full border-2 border-[#100f1e]"
-          >
-          </div>
-          <div
-            class="w-8 h-8 bg-gradient-to-r from-[#8b5cf6] to-[#a78bfa] rounded-full border-2 border-[#100f1e]"
-          >
-          </div>
-        </div>
-        <div class="text-sm text-gray-400">
-          <span class="font-semibold text-white">+10 proyectos</span> exitosos entregados
-        </div>
+      <!-- Decorative Shape -->
+      <div class="flex justify-center pt-4">
+        <svg
+          class="w-16 h-16 text-[#a78bfa]/30 animate-bounce"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
       </div>
     </div>
 
-    <!-- Lado derecho - Elemento visual moderno -->
-    <div class="relative flex items-center justify-center mt-8 md:mt-0">
-      <!-- Círculo principal con gradiente -->
-      <div class="relative w-80 h-80 md:w-96 md:h-96">
-        <!-- Círculo exterior con animación -->
+    <!-- Hero Bottom - Mockup Showcase (Zubaz Style) -->
+    <div class="relative">
+      <!-- Main Mockup/Screenshot -->
+      <div
+        class="relative max-w-5xl mx-auto animate-fadeInUp"
+        style="animation-delay: 0.2s;"
+      >
         <div
-          class="absolute inset-0 rounded-full bg-gradient-to-r from-[#a78bfa] via-[#4361ee] to-[#6366f1] opacity-20 animate-spin-slow"
+          class="relative overflow-hidden border-8 shadow-2xl rounded-2xl border-gray-800/50 shadow-purple-900/20"
         >
+          <Image
+            src={Project_3}
+            alt="MicroPets - Sistema de Gestión Veterinaria"
+            class="object-cover w-full h-auto"
+          />
         </div>
+      </div>
 
-        <!-- Círculo medio -->
+      <!-- Floating Card 1 - Top Left -->
+      <div
+        class="absolute top-8 left-4 md:left-12 lg:left-24 max-w-[200px] md:max-w-[240px] animate-float hidden md:block"
+      >
         <div
-          class="absolute inset-4 rounded-full bg-gradient-to-r from-[#4361ee] to-[#a78bfa] opacity-30 animate-pulse"
+          class="overflow-hidden shadow-xl rounded-xl border-4 border-gray-800/50 shadow-blue-900/30"
         >
+          <Image
+            src={Project_1}
+            alt="QuickInventory Sistema"
+            class="object-cover w-full h-auto"
+          />
         </div>
+      </div>
 
-        <!-- Círculo interior -->
+      <!-- Floating Card 2 - Top Right -->
+      <div
+        class="absolute top-8 right-4 md:right-12 lg:right-24 max-w-[200px] md:max-w-[240px] animate-float hidden md:block"
+        style="animation-delay: 1s;"
+      >
         <div
-          class="absolute inset-8 rounded-full bg-gradient-to-br from-[#1a1a2e] to-[#2d2d44] backdrop-blur-xl border border-[#a78bfa]/30 flex items-center justify-center"
+          class="overflow-hidden shadow-xl rounded-xl border-4 border-gray-800/50 shadow-purple-900/30"
         >
-          <!-- Icono central -->
-          <div class="text-6xl text-[#a78bfa] animate-pulse">
-            <FaLaptopCode />
+          <Image
+            src={Project_2}
+            alt="TrámitesEC Sistema"
+            class="object-cover w-full h-auto"
+          />
+        </div>
+      </div>
+
+      <!-- Floating Stat Card 3 - Bottom Left -->
+      <div
+        class="absolute -bottom-4 left-4 md:left-12 lg:left-32 animate-float hidden lg:block"
+        style="animation-delay: 2s;"
+      >
+        <div
+          class="p-6 border shadow-xl bg-gradient-to-br from-[#1a1a2e]/95 to-[#2d2d44]/95 backdrop-blur-xl border-green-500/30 rounded-2xl"
+        >
+          <div class="flex items-center gap-4">
+            <div
+              class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-green-500/20 to-emerald-500/20"
+            >
+              <svg
+                class="w-6 h-6 text-green-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="text-2xl font-black text-white">100%</div>
+              <div class="text-xs text-gray-400">Satisfacción</div>
+            </div>
           </div>
         </div>
-
-        <!-- Elementos flotantes -->
-        <div
-          class="absolute -top-4 -right-4 w-16 h-16 bg-[#a78bfa]/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-[#a78bfa]/30 animate-breathing"
-        >
-          <FaCode className="text-[#a78bfa] text-xl" />
-        </div>
-
-        <div
-          class="absolute -bottom-4 -left-4 w-16 h-16 bg-[#4361ee]/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-[#4361ee]/30 animate-breathing"
-          style="animation-delay: 1s;"
-        >
-          <FaShoppingCart className="text-[#4361ee] text-xl" />
-        </div>
-
-        <div
-          class="absolute top-1/2 -left-8 w-12 h-12 bg-[#6366f1]/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-[#6366f1]/30 animate-breathing"
-          style="animation-delay: 2s;"
-        >
-          <FaRocket className="text-[#6366f1] text-lg" />
-        </div>
       </div>
 
-      <!-- Logos flotantes de tecnologías -->
-      <div class="absolute space-y-4 top-4 right-4">
+      <!-- Floating Stat Card 4 - Bottom Right -->
+      <div
+        class="absolute -bottom-4 right-4 md:right-12 lg:right-32 animate-float hidden lg:block"
+        style="animation-delay: 1.5s;"
+      >
         <div
-          class="flex items-center justify-center w-12 h-12 border rounded-lg bg-white/10 backdrop-blur-sm border-white/20"
+          class="p-6 border shadow-xl bg-gradient-to-br from-[#1a1a2e]/95 to-[#2d2d44]/95 backdrop-blur-xl border-[#a78bfa]/30 rounded-2xl"
         >
-          <span class="text-xs font-bold text-white">Docker</span>
-        </div>
-        <div
-          class="flex items-center justify-center w-12 h-12 border rounded-lg bg-white/10 backdrop-blur-sm border-white/20"
-        >
-          <span class="text-xs font-bold text-white">VPS</span>
-        </div>
-      </div>
-
-      <div class="absolute space-y-4 bottom-4 left-4">
-        <div
-          class="flex items-center justify-center w-12 h-12 border rounded-lg bg-white/10 backdrop-blur-sm border-white/20"
-        >
-          <span class="text-xs font-bold text-white">Deploy</span>
-        </div>
-        <div
-          class="flex items-center justify-center w-12 h-12 border rounded-lg bg-white/10 backdrop-blur-sm border-white/20"
-        >
-          <span class="text-xs font-bold text-white">CI/CD</span>
+          <div class="flex items-center gap-4">
+            <div
+              class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-[#a78bfa]/20 to-[#4361ee]/20"
+            >
+              <svg
+                class="w-6 h-6 text-[#a78bfa]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <div class="text-2xl font-black text-white">15+</div>
+              <div class="text-xs text-gray-400">Proyectos</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </article>
+  </div>
 </section>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeInUp {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+</style>

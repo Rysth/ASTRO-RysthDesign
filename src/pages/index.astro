@@ -15,26 +15,54 @@ import ContactForm from "@/components/forms/ContactForm.astro";
 import TechnologySection from "@/sections/general/TechnologySection.astro";
 import ServiceSection from "@/sections/general/ServiceSection.astro";
 import Layout from "@/layouts/Layout.astro";
+
+// New Zubaz-Inspired Components
+import BrandSection from "@/components/sections/BrandSection.astro";
+import ContentAlternatingSection from "@/components/sections/ContentAlternatingSection.astro";
+import FeaturesGridSection from "@/components/sections/FeaturesGridSection.astro";
+import CTASection from "@/components/sections/CTASection.astro";
 ---
 
 <Layout
   title="Desarrollo Web Profesional | Sitios Web y E-commerce | RysthDesign Guayaquil"
 >
-  <!-- Hero Section -->
-  <HeroSection />
+  <!-- Hero Section - Professional Landing -->
+  <section id="inicio">
+    <HeroSection />
+  </section>
+
+  <!-- Brand/Trust Section - Social Proof -->
+  <BrandSection />
 
   <!-- Technology Stack Section -->
-  <TechnologySection />
+  <section id="tecnologias">
+    <TechnologySection />
+  </section>
 
-  <!-- Nueva Sección de Ventajas Competitivas -->
-  <CompetitiveAdvantagesSection />
+  <!-- Content Alternating Sections - Showcase Features with Images -->
+  <ContentAlternatingSection />
 
-  <!-- Nueva Sección de Servicios -->
-  <ServicesSection />
+  <!-- Features Grid Section - Complete Feature List -->
+  <FeaturesGridSection />
 
-  <!-- Nueva Sección de Clientes -->
-  <ClientsSection />
+  <!-- Services Section - Core Offerings -->
+  <section id="servicios">
+    <ServicesSection />
+  </section>
+
+  <!-- Competitive Advantages Section -->
+  <!-- <CompetitiveAdvantagesSection /> -->
+
+  <!-- Clients/Portfolio Section - Social Proof -->
+  <section id="clientes">
+    <ClientsSection />
+  </section>
+
+  <!-- CTA Section - Call to Action -->
+  <CTASection />
 
   <!-- Contact Form Section -->
-  <ContactForm />
+  <section id="contacto">
+    <ContactForm />
+  </section>
 </Layout>
