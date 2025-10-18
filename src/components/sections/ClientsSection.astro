@@ -9,6 +9,7 @@ import {
 import Project_1 from "@/assets/images/projects/project_1.png";
 import Project_2 from "@/assets/images/projects/project_2.png";
 import Project_3 from "@/assets/images/projects/project_3.png";
+import Project_4 from "@/assets/images/projects/project_4.png";
 import { Image } from "astro:assets";
 ---
 
@@ -60,7 +61,7 @@ import { Image } from "astro:assets";
     </div>
 
     <!-- Testimonials Grid - Real Projects -->
-    <div class="grid gap-8 mb-16 lg:grid-cols-3">
+    <div class="grid gap-8 mb-16 md:grid-cols-2 lg:grid-cols-2">
       <!-- QuickInventory Case -->
       <div class="relative group">
         <div
@@ -282,6 +283,67 @@ import { Image } from "astro:assets";
           </div>
         </div>
       </div>
+
+      <!-- Novitec Case ---->
+      <div class="relative group">
+        <div
+          class="absolute inset-0 transition-opacity duration-300 opacity-0 gradient-quaternary rounded-2xl group-hover:opacity-10"
+        >
+        </div>
+        <div
+          class="relative h-full bg-card-gradient backdrop-blur-xl border border-blue-500/30 rounded-2xl transition-all duration-300 group-hover:border-blue-500/40 overflow-hidden"
+        >
+          <!-- Project Image ---->
+          <div
+            class="overflow-hidden cursor-pointer h-72"
+            onclick="modal_novitec.showModal()"
+          >
+            <Image
+              src={Project_4}
+              alt="Novitec Sitio Web"
+              class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+
+          <div class="p-6">
+            <div
+              class="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30"
+            >
+              <FaQuoteLeft className="text-blue-500 text-lg" />
+            </div>
+
+            <blockquote class="mb-4 text-sm leading-relaxed text-gray-300">
+              "Novitec nos ayudó a tener presencia digital profesional. Nuestro sitio web muestra claramente nuestros servicios de reparación y ha generado confianza en nuevos clientes que nos contactan por primera vez."
+            </blockquote>
+
+            <div class="flex gap-1 mb-4">
+              {
+                [...Array(5)].map(() => (
+                  <FaStar className="text-yellow-400 text-sm" />
+                ))
+              }
+            </div>
+
+            <div class="pt-4 border-t border-gray-700">
+              <h4 class="text-sm font-semibold text-white">Novitec</h4>
+              <p class="text-xs text-gray-400">Reparación de Equipos Tecnológicos</p>
+              <p class="text-blue-500 text-xs font-medium mt-1">
+                Landing Page Profesional
+              </p>
+              <div class="flex gap-2 mt-2">
+                <span class="text-white bg-cyan-600 badge badge-xs">Astro</span>
+                <span class="text-white bg-blue-500 badge badge-xs">TailwindCSS</span>
+              </div>
+              <button
+                onclick="modal_novitec.showModal()"
+                class="inline-block mt-2 text-xs text-blue-500 hover:text-blue-400 transition-colors underline"
+              >
+                Ver detalles completos →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </article>
 
@@ -448,6 +510,50 @@ import { Image } from "astro:assets";
             </button>
           </form>
         </div>
+      </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+      <button>cerrar</button>
+    </form>
+  </dialog>
+
+  <!-- Novitec Modal -->
+  <dialog id="modal_novitec" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box bg-[#1a1a1a] text-white">
+      <h3 class="text-lg font-bold">
+        Novitec - Landing Page Profesional
+      </h3>
+      <div class="py-4">
+        <p class="mb-3">
+          Landing page profesional desarrollada para empresa de reparación de equipos tecnológicos, diseñada para mostrar servicios y generar confianza en los clientes.
+        </p>
+        <h4 class="mb-2 font-semibold">Características principales:</h4>
+        <ul class="pl-5 mb-4 space-y-1 text-gray-300 list-disc">
+          <li>🔧 Presentación clara de servicios de reparación</li>
+          <li>💻 Especialidades: Laptops, celulares, tablets, motos eléctricas</li>
+          <li>📱 Diseño responsivo optimizado para móviles</li>
+          <li>🎨 Diseño moderno y profesional</li>
+          <li>📞 Información de contacto prominente</li>
+          <li>⚡ Carga rápida y SEO optimizado</li>
+        </ul>
+        <h4 class="mb-2 font-semibold">Tecnologías utilizadas:</h4>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="text-white bg-cyan-600 badge badge-sm">Astro</span>
+          <span class="text-white bg-blue-500 badge badge-sm">TailwindCSS</span>
+          <span class="text-white bg-yellow-500 badge badge-sm">JavaScript</span>
+          <span class="text-white bg-green-500 badge badge-sm">Hosting Optimizado</span>
+        </div>
+        <h4 class="mb-2 font-semibold">Resultados del cliente:</h4>
+        <p class="text-gray-300">
+          Novitec ahora cuenta con presencia digital profesional que transmite confianza a nuevos clientes y permite mostrar claramente sus servicios de reparación especializada.
+        </p>
+      </div>
+      <div class="modal-action">
+        <form method="dialog">
+          <button class="bg-[#4361ee] text-white hover:bg-opacity-90 btn">
+            Cerrar
+          </button>
+        </form>
       </div>
     </div>
     <form method="dialog" class="modal-backdrop">

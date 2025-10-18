@@ -14,7 +14,7 @@ import {
   FaShieldAlt,
   FaSearch,
 } from "react-icons/fa";
-import ServiceImage from "@/assets/images/services/service_1.webp";
+import ServiceImage from "@/assets/images/projects/project_4.png";
 import { Image } from "astro:assets";
 
 // Calcular la fecha del último día del mes actual
@@ -27,21 +27,21 @@ const months = [
 const promoEndDate = `${lastDayOfMonth.getDate()} de ${months[lastDayOfMonth.getMonth()]} ${lastDayOfMonth.getFullYear()}`;
 
 // Precios Landing Page
-const precioRegularLanding = 175;
+const precioRegularLanding = 165;
 const descuentoLanding = 25;
-const precioLanding = precioRegularLanding - descuentoLanding; // $150
-const renovacionLanding = 75;
+const precioLanding = precioRegularLanding - descuentoLanding; // $140
+const renovacionLanding = 60;
 
 // Precios Sitio Completo
-const precioRegularCompleto = 375;
+const precioRegularCompleto = 305;
 const descuentoCompleto = 25;
-const precioCompleto = precioRegularCompleto - descuentoCompleto; // $350
-const renovacionCompleto = 150;
+const precioCompleto = precioRegularCompleto - descuentoCompleto; // $280
+const renovacionCompleto = 100;
 ---
 
 <Layout
   title="Diseño Web Profesional | Landing Pages y Sitios Web | RysthDesign"
-  description="Creamos sitios web profesionales y landing pages. Landing Page $150 + $75/año | Sitio Web Completo $350 + $150/año."
+  description="Creamos sitios web profesionales y landing pages. Landing Page $140 + $60/año | Sitio Web Completo $280 + $100/año."
 >
   <PageHeader title="Diseño Web" currentPage="Diseño Web" />
 
