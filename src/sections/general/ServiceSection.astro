@@ -6,6 +6,7 @@ import {
   HiOutlineCodeBracketSquare,
   HiOutlineBuildingStorefront,
 } from "react-icons/hi2";
+import { FaWhatsapp } from "react-icons/fa";
 ---
 
 <section class="p-4">
@@ -14,7 +15,9 @@ import {
       title="Nuestros Servicios"
       description="Desarrollo web y diseño de sitios intuitivos, con enfoque en plataformas e-commerce innovadoras y experiencia de usuario."
     />
-    <section class="grid grid-cols-1 gap-6 mt-16 md:mt-20 md:grid-cols-3">
+    <section
+      class="grid grid-cols-1 gap-6 mt-16 md:mt-20 md:grid-cols-2 lg:grid-cols-4"
+    >
       <div>
         <ServiceCard
           title="Aplicaciones Web"
@@ -55,6 +58,21 @@ import {
         <div class="justify-center hidden mt-4">
           <a
             href="/servicios/tienda-en-linea"
+            class="mx-auto text-white border-transparent btn btn-neutral bg-brand-blue"
+            >Conocer Más</a
+          >
+        </div>
+      </div>
+      <div>
+        <ServiceCard
+          title="ChatWoot CRM"
+          description="Centraliza la atención al cliente con WhatsApp Business en una sola plataforma profesional."
+          IconComponent={FaWhatsapp}
+          bgColorClass="bg-green-100"
+        />
+        <div class="flex justify-center mt-4">
+          <a
+            href="/servicios/chatwoot"
             class="mx-auto text-white border-transparent btn btn-neutral bg-brand-blue"
             >Conocer Más</a
           >
