@@ -12,7 +12,8 @@ interface Props {
 }
 
 const { title, description, canonical } = Astro.props;
-const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).toString();
+const canonicalURL =
+  canonical || new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <!doctype html>
@@ -161,12 +162,7 @@ https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "RysthDesign",
-        "url": "https://www.rysthdesign.com",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://www.rysthdesign.com/servicios?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
+        "url": "https://www.rysthdesign.com"
       }
     </script>
   </head>

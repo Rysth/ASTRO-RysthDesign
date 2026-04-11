@@ -1,10 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import BrandImage from "../../assets/images/brand/brand.svg";
-
-// Get current path to handle navigation properly
-const currentPath = Astro.url.pathname;
-const isHomePage = currentPath === "/";
 ---
 
 <nav
@@ -27,68 +23,32 @@ const isHomePage = currentPath === "/";
       <div class="hidden md:block">
         <div class="flex items-baseline ml-10 space-x-8">
           <a
-            href={isHomePage ? "#inicio" : "/#inicio"}
+            href="#inicio"
             class="font-jetbrains px-3 py-2 text-sm font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 border-b-2 border-transparent hover:text-[#4361ee] hover:border-[#4361ee] hover:bg-[#4361ee]/10 rounded-t-md"
           >
             Inicio
           </a>
           <a
-            href={isHomePage ? "#tecnologias" : "/#tecnologias"}
+            href="#tecnologias"
             class="font-jetbrains px-3 py-2 text-sm font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 border-b-2 border-transparent hover:text-[#4361ee] hover:border-[#4361ee] hover:bg-[#4361ee]/10 rounded-t-md"
           >
             Tecnologías
           </a>
-
-          <!-- Services Dropdown -->
-          <div class="relative group">
-            <button
-              class="font-jetbrains flex items-center gap-1 px-3 py-2 text-sm font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 border-b-2 border-transparent hover:text-[#4361ee] hover:border-[#4361ee] hover:bg-[#4361ee]/10 rounded-t-md"
-              id="services-dropdown"
-            >
-              Servicios
-              <svg
-                class="w-4 h-4 transition-transform group-hover:rotate-180"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </button>
-
-            <!-- Dropdown Menu -->
-            <div
-              class="absolute left-0 z-50 invisible mt-2 transition-all duration-300 opacity-0 top-full group-hover:visible group-hover:opacity-100"
-            >
-              <div
-                class="bg-[#1a1a2e]/95 backdrop-blur-md border border-gray-700/50 rounded-xl shadow-xl min-w-[200px] py-2"
-              >
-                <a
-                  href={isHomePage ? "#servicios" : "/#servicios"}
-                  class="block px-4 py-3 text-sm text-gray-300 hover:text-[#4361ee] hover:bg-[#4361ee]/10 transition-all duration-300 border-l-4 border-transparent hover:border-l-[#4361ee]"
-                >
-                  Todos los Servicios
-                </a>
-                <a
-                  href="/servicios/chatwoot"
-                  class="block px-4 py-3 text-sm text-gray-300 hover:text-[#4361ee] hover:bg-[#4361ee]/10 transition-all duration-300 border-l-4 border-transparent hover:border-l-[#4361ee]"
-                >
-                  ChatWoot - Chat Omnicanal
-                </a>
-              </div>
-            </div>
-          </div>
+          <a
+            href="#servicios"
+            class="font-jetbrains px-3 py-2 text-sm font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 border-b-2 border-transparent hover:text-[#4361ee] hover:border-[#4361ee] hover:bg-[#4361ee]/10 rounded-t-md"
+          >
+            Servicios
+          </a>
 
           <a
-            href={isHomePage ? "#clientes" : "/#clientes"}
+            href="#clientes"
             class="font-jetbrains px-3 py-2 text-sm font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 border-b-2 border-transparent hover:text-[#4361ee] hover:border-[#4361ee] hover:bg-[#4361ee]/10 rounded-t-md"
           >
             Clientes
           </a>
           <a
-            href={isHomePage ? "#contacto" : "/#contacto"}
+            href="#contacto"
             class="font-jetbrains px-3 py-2 text-sm font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 border-b-2 border-transparent hover:text-[#4361ee] hover:border-[#4361ee] hover:bg-[#4361ee]/10 rounded-t-md"
           >
             Contacto
@@ -149,63 +109,32 @@ const isHomePage = currentPath === "/";
       class="px-2 pt-3 pb-4 space-y-2 border-t shadow-xl bg-[#100f1e]/98 border-gray-700/50 backdrop-blur-md"
     >
       <a
-        href={isHomePage ? "#inicio" : "/#inicio"}
+        href="#inicio"
         class="font-jetbrains block px-4 py-3 text-base font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 rounded-lg hover:text-[#4361ee] hover:bg-gradient-to-r hover:from-[#4361ee]/10 hover:to-[#4361ee]/5 border-l-4 border-transparent hover:border-l-[#4361ee]"
       >
         Inicio
       </a>
       <a
-        href={isHomePage ? "#tecnologias" : "/#tecnologias"}
+        href="#tecnologias"
         class="font-jetbrains block px-4 py-3 text-base font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 rounded-lg hover:text-[#4361ee] hover:bg-gradient-to-r hover:from-[#4361ee]/10 hover:to-[#4361ee]/5 border-l-4 border-transparent hover:border-l-[#4361ee]"
       >
         Tecnologías
       </a>
-
-      <!-- Mobile Services Dropdown -->
-      <div class="relative">
-        <button
-          class="font-jetbrains flex items-center justify-between w-full px-4 py-3 text-base font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 rounded-lg hover:text-[#4361ee] hover:bg-gradient-to-r hover:from-[#4361ee]/10 hover:to-[#4361ee]/5 border-l-4 border-transparent hover:border-l-[#4361ee]"
-          id="mobile-services-dropdown"
-        >
-          <span>Servicios</span>
-          <svg
-            class="w-4 h-4 transition-transform"
-            id="mobile-services-icon"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-              clip-rule="evenodd"></path>
-          </svg>
-        </button>
-
-        <!-- Mobile Dropdown Content -->
-        <div class="hidden pl-6 mt-2 space-y-2" id="mobile-services-content">
-          <a
-            href={isHomePage ? "#servicios" : "/#servicios"}
-            class="block px-4 py-2 text-sm text-gray-400 hover:text-[#4361ee] transition-all duration-300"
-          >
-            Todos los Servicios
-          </a>
-          <a
-            href="/servicios/chatwoot"
-            class="block px-4 py-2 text-sm text-gray-400 hover:text-[#4361ee] transition-all duration-300"
-          >
-            ChatWoot - Chat Omnicanal
-          </a>
-        </div>
-      </div>
+      <a
+        href="#servicios"
+        class="font-jetbrains block px-4 py-3 text-base font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 rounded-lg hover:text-[#4361ee] hover:bg-gradient-to-r hover:from-[#4361ee]/10 hover:to-[#4361ee]/5 border-l-4 border-transparent hover:border-l-[#4361ee]"
+      >
+        Servicios
+      </a>
 
       <a
-        href={isHomePage ? "#clientes" : "/#clientes"}
+        href="#clientes"
         class="font-jetbrains block px-4 py-3 text-base font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 rounded-lg hover:text-[#4361ee] hover:bg-gradient-to-r hover:from-[#4361ee]/10 hover:to-[#4361ee]/5 border-l-4 border-transparent hover:border-l-[#4361ee]"
       >
         Clientes
       </a>
       <a
-        href={isHomePage ? "#contacto" : "/#contacto"}
+        href="#contacto"
         class="font-jetbrains block px-4 py-3 text-base font-semibold text-gray-300 uppercase tracking-wide transition-all duration-300 rounded-lg hover:text-[#4361ee] hover:bg-gradient-to-r hover:from-[#4361ee]/10 hover:to-[#4361ee]/5 border-l-4 border-transparent hover:border-l-[#4361ee]"
       >
         Contacto
@@ -236,13 +165,6 @@ const isHomePage = currentPath === "/";
   document.addEventListener("DOMContentLoaded", function () {
     const mobileMenuButton = document.getElementById("mobile-menu-button");
     const mobileMenu = document.getElementById("mobile-menu");
-    const mobileServicesDropdown = document.getElementById(
-      "mobile-services-dropdown",
-    );
-    const mobileServicesContent = document.getElementById(
-      "mobile-services-content",
-    );
-    const mobileServicesIcon = document.getElementById("mobile-services-icon");
 
     if (mobileMenuButton && mobileMenu) {
       mobileMenuButton.addEventListener("click", function () {
@@ -261,44 +183,32 @@ const isHomePage = currentPath === "/";
       });
     }
 
-    // Mobile Services Dropdown
-    if (mobileServicesDropdown && mobileServicesContent && mobileServicesIcon) {
-      mobileServicesDropdown.addEventListener("click", function (e) {
-        e.preventDefault();
-        mobileServicesContent.classList.toggle("hidden");
-        mobileServicesIcon.classList.toggle("rotate-180");
-      });
-    }
-
     // Close mobile menu when clicking on links
-    const mobileLinks = mobileMenu?.querySelectorAll(
-      'a[href^="#"], a[href^="/#"], a[href^="/servicios"]',
-    );
+    const mobileLinks = mobileMenu?.querySelectorAll('a[href^="#"]');
     mobileLinks?.forEach((link) => {
       link.addEventListener("click", () => {
+        if (!mobileMenu) {
+          return;
+        }
+
         mobileMenu.classList.add("hidden");
         const icon = mobileMenuButton?.querySelector("svg");
         if (icon) {
           icon.classList.remove("rotate-180");
         }
         mobileMenuButton?.setAttribute("aria-expanded", "false");
-
-        // Close services dropdown too
-        if (mobileServicesContent) {
-          mobileServicesContent.classList.add("hidden");
-        }
-        if (mobileServicesIcon) {
-          mobileServicesIcon.classList.remove("rotate-180");
-        }
       });
     });
 
     // Close mobile menu when clicking outside
     document.addEventListener("click", function (event) {
+      const eventTarget = event.target instanceof Node ? event.target : null;
+
       if (
         mobileMenu &&
-        !mobileMenu.contains(event.target) &&
-        !mobileMenuButton?.contains(event.target)
+        eventTarget &&
+        !mobileMenu.contains(eventTarget) &&
+        !mobileMenuButton?.contains(eventTarget)
       ) {
         mobileMenu.classList.add("hidden");
         const icon = mobileMenuButton?.querySelector("svg");
@@ -306,14 +216,6 @@ const isHomePage = currentPath === "/";
           icon.classList.remove("rotate-180");
         }
         mobileMenuButton?.setAttribute("aria-expanded", "false");
-
-        // Close services dropdown too
-        if (mobileServicesContent) {
-          mobileServicesContent.classList.add("hidden");
-        }
-        if (mobileServicesIcon) {
-          mobileServicesIcon.classList.remove("rotate-180");
-        }
       }
     });
   });
