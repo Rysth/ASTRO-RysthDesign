@@ -9,6 +9,7 @@ import {
   FaRocket,
   FaShoppingCart,
   FaDatabase,
+  FaWhatsapp,
 } from "react-icons/fa";
 ---
 
@@ -58,7 +59,7 @@ import {
     </div>
 
     <!-- Services Grid -->
-    <div class="grid gap-8 mb-12 md:grid-cols-3">
+    <div class="grid gap-8 mb-12 md:grid-cols-2 lg:grid-cols-4">
       <!-- Service 1: Custom Web Applications -->
       <div
         class="p-8 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-[#a78bfa]/20 flex flex-col gap-4"
@@ -173,6 +174,44 @@ import {
           class="inline-flex items-center gap-2 px-5 py-2.5 font-semibold text-white transition-all duration-300 rounded-full shadow-lg bg-gradient-to-r from-green-500 to-teal-500 hover:shadow-xl hover:scale-105 text-sm mt-auto"
         >
           <span>Cotizar</span>
+          <FaArrowRight className="text-xs" />
+        </a>
+      </div>
+
+      <!-- Service 4: ChatWoot -->
+      <div
+        class="p-8 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-[#25D366]/20 flex flex-col gap-4"
+      >
+        <div
+          class="flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-r from-[#25D366]/20 to-[#128C7E]/20 border border-[#25D366]/30"
+        >
+          <FaWhatsapp className="text-[#25D366] text-2xl" />
+        </div>
+        <h4 class="text-xl font-bold text-white">
+          ChatWoot - Chat Omnicanal
+        </h4>
+        <p class="text-sm text-gray-400 flex-1">
+          Centraliza WhatsApp, Facebook e Instagram en una sola plataforma. Atención al cliente 24/7 con historial completo y respuestas rápidas.
+        </p>
+        <div class="space-y-2">
+          <div class="flex items-center gap-2 text-sm text-gray-300">
+            <FaCheckCircle className="text-[#25D366] flex-shrink-0" />
+            <span>WhatsApp + Facebook + Instagram</span>
+          </div>
+          <div class="flex items-center gap-2 text-sm text-gray-300">
+            <FaCheckCircle className="text-[#25D366] flex-shrink-0" />
+            <span>Historial por cliente</span>
+          </div>
+          <div class="flex items-center gap-2 text-sm text-gray-300">
+            <FaCheckCircle className="text-[#25D366] flex-shrink-0" />
+            <span>Respuestas 5x más rápidas</span>
+          </div>
+        </div>
+        <a
+          href="/servicios/chatwoot"
+          class="inline-flex items-center gap-2 px-5 py-2.5 font-semibold text-white transition-all duration-300 rounded-full shadow-lg bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:shadow-xl hover:scale-105 text-sm mt-auto"
+        >
+          <span>Ver ChatWoot</span>
           <FaArrowRight className="text-xs" />
         </a>
       </div>
