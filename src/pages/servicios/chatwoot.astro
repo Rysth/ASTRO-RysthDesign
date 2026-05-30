@@ -19,12 +19,11 @@ import { Image } from "astro:assets";
 ---
 
 <Layout
-  title="ChatWoot - Sistema de Atención al Cliente | WhatsApp Business | RysthDesign"
-  description="Transforma la atención a tus clientes con ChatWoot. Centraliza WhatsApp, Facebook e Instagram en una sola plataforma. Implementación personalizada desde cero según tus necesidades."
+  title="ChatWoot para WhatsApp | Atencion al Cliente para Empresas | RysthDesign"
+  description="Centraliza toda la atencion de tu negocio en WhatsApp desde una sola plataforma. Gestiona conversaciones, organiza tu equipo y responde mas rapido."
 >
-  <PageHeader title="ChatWoot - Chat Omnicanal" currentPage="ChatWoot" />
+  <PageHeader title="ChatWoot para WhatsApp" currentPage="ChatWoot" />
 
-  <!-- Hero Section Chatwoot -->
   <section
     class="relative py-16 px-4 bg-gradient-to-br from-[#0a0a0a] via-[#100f1e] to-[#1a1a2e] overflow-hidden"
   >
@@ -41,7 +40,6 @@ import { Image } from "astro:assets";
 
     <article class="relative z-10 max-w-screen-xl mx-auto">
       <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
-        <!-- Left Content -->
         <div class="space-y-8">
           <div class="space-y-6">
             <div
@@ -49,36 +47,33 @@ import { Image } from "astro:assets";
             >
               <FaWhatsapp className="text-[#25D366] text-lg" />
               <span class="text-[#25D366] font-semibold text-sm"
-                >¿Listo Para Transformar La Atención A Tus Clientes?</span
+                >Atencion profesional por WhatsApp</span
               >
             </div>
 
             <h1 class="text-4xl font-black text-white md:text-5xl lg:text-6xl">
-              Todo Lo Que Hace Para Tu Negocio
+              Transforma WhatsApp en el centro de atencion
               <span
                 class="block bg-gradient-to-r from-[#25D366] to-[#128C7E] bg-clip-text text-transparent"
               >
-                ChatWoot
+                de tu empresa
               </span>
             </h1>
 
             <p class="text-xl leading-relaxed text-gray-300">
-              ChatWoot es tu solución de Chat Omnicanal para atención al
-              cliente. Centraliza WhatsApp (normal y Business), Facebook e
-              Instagram en una sola plataforma usando Evolution API. Nunca
-              pierdas un mensaje importante y brinda atención personalizada 24/7.
-              El software se implementa desde cero y el valor depende de tus
-              necesidades específicas.
+              Centraliza toda la atencion de tu negocio en WhatsApp desde una
+              sola plataforma. Gestiona conversaciones, organiza tu equipo y
+              responde mas rapido desde una plataforma web disenada para
+              negocios.
             </p>
           </div>
 
-          <!-- Quick Stats -->
           <div class="grid grid-cols-3 gap-4">
             <div
               class="text-center p-4 rounded-xl bg-gradient-to-br from-[#25D366]/10 to-[#128C7E]/10 border border-[#25D366]/20"
             >
               <div class="text-2xl font-bold text-[#25D366]">5x</div>
-              <div class="text-xs text-gray-400">Más Rápido</div>
+              <div class="text-xs text-gray-400">Mas rapido</div>
             </div>
             <div
               class="p-4 text-center border rounded-xl bg-gradient-to-br from-blue-500/10 to-purple-600/10 border-blue-500/20"
@@ -89,34 +84,32 @@ import { Image } from "astro:assets";
             <div
               class="p-4 text-center border rounded-xl bg-gradient-to-br from-purple-500/10 to-pink-600/10 border-purple-500/20"
             >
-              <div class="text-2xl font-bold text-purple-400">24/7</div>
-              <div class="text-xs text-gray-400">Disponible</div>
+              <div class="text-2xl font-bold text-purple-400">Web</div>
+              <div class="text-xs text-gray-400">Desde PC</div>
             </div>
           </div>
 
-          <!-- CTA Buttons -->
           <div class="flex flex-wrap gap-4">
             <a
-              href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20interesa%20ChatWoot%20para%20centralizar%20la%20atenci%C3%B3n%20al%20cliente%20de%20mi%20negocio.%20%C2%BFPodr%C3%ADamos%20agendar%20una%20demo%3F"
+              href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20quiero%20solicitar%20una%20demostracion%20de%20ChatWoot%20para%20organizar%20la%20atencion%20por%20WhatsApp%20de%20mi%20negocio."
               target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#25D366] to-[#128C7E] rounded-full text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
               <FaWhatsapp className="text-lg" />
-              <span>Solicitar Demo Gratuita</span>
+              <span>Solicita una demostracion</span>
             </a>
 
             <a
               href="#pricing"
               class="inline-flex items-center gap-2 px-8 py-4 text-[#25D366] border-2 border-[#25D366]/50 rounded-full hover:bg-[#25D366]/10 transition-all duration-300 font-semibold backdrop-blur-sm"
             >
-              <span>Ver Precios</span>
+              <span>Conoce como funciona</span>
               <FaArrowRight className="text-sm" />
             </a>
           </div>
         </div>
 
-        <!-- Right - Dashboard Preview -->
         <div class="relative">
           <div class="relative overflow-hidden shadow-2xl rounded-2xl">
             <div
@@ -125,7 +118,7 @@ import { Image } from "astro:assets";
             </div>
             <Image
               src={ServiceImage}
-              alt="ChatWoot Dashboard Preview"
+              alt="Panel web de atencion por WhatsApp"
               class="object-cover w-full h-80 lg:h-96"
             />
           </div>
@@ -134,92 +127,72 @@ import { Image } from "astro:assets";
     </article>
   </section>
 
-  <!-- Before/After Section -->
   <section
     class="relative py-16 px-4 bg-gradient-to-br from-[#1a1a2e] to-[#0a0a0a]"
   >
     <article class="relative z-10 max-w-screen-xl mx-auto">
       <div class="mb-16 text-center">
         <h2 class="mb-6 text-3xl font-black text-white md:text-4xl lg:text-5xl">
-          La Transformación Que Necesita Tu Negocio
+          No pierdas mas clientes por respuestas tardias
         </h2>
+        <p class="max-w-3xl mx-auto text-lg text-gray-300">
+          Cuando WhatsApp crece sin control, los mensajes se acumulan, las
+          ventas se enfruan y el equipo pierde seguimiento. ChatWoot convierte
+          esa conversacion diaria en un proceso ordenado y medible.
+        </p>
       </div>
 
       <div class="grid gap-8 lg:grid-cols-2">
-        <!-- Before -->
         <div
           class="p-8 border rounded-2xl bg-gradient-to-br from-red-500/10 to-red-600/10 border-red-500/20"
         >
           <div class="flex items-center gap-3 mb-6">
-            <span class="text-4xl">😵</span>
-            <h3 class="text-2xl font-bold text-red-400">¡Antes!</h3>
+            <FaClock className="text-red-400 text-3xl" />
+            <h3 class="text-2xl font-bold text-red-400">Sin una plataforma</h3>
           </div>
           <ul class="space-y-4">
             <li class="flex items-start gap-3">
               <span class="text-lg text-red-400">•</span>
-              <span class="text-gray-300"
-                >Mensajes perdidos en WhatsApp Business</span
-              >
+              <span class="text-gray-300">Mensajes olvidados o sin responder</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="text-lg text-red-400">•</span>
-              <span class="text-gray-300"
-                >Clientes que repiten su historial</span
-              >
+              <span class="text-gray-300">Clientes sin historial claro</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="text-lg text-red-400">•</span>
-              <span class="text-gray-300"
-                >Respuestas lentas = ventas perdidas</span
-              >
+              <span class="text-gray-300">Equipo sin asignaciones definidas</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="text-lg text-red-400">•</span>
-              <span class="text-gray-300"
-                >Equipo desorganizado y confundido</span
-              >
+              <span class="text-gray-300">Poco control sobre ventas y soporte</span>
             </li>
           </ul>
         </div>
 
-        <!-- After -->
         <div
           class="p-8 rounded-2xl bg-gradient-to-br from-[#25D366]/10 to-[#128C7E]/10 border border-[#25D366]/20"
         >
           <div class="flex items-center gap-3 mb-6">
-            <span class="text-4xl">🤩</span>
-            <h3 class="text-2xl font-bold text-[#25D366]">Después</h3>
+            <FaRocket className="text-[#25D366] text-3xl" />
+            <h3 class="text-2xl font-bold text-[#25D366]">Con ChatWoot</h3>
           </div>
           <ul class="space-y-4">
             <li class="flex items-start gap-3">
-              <FaCheckCircle
-                className="text-[#25D366] mt-1 text-lg flex-shrink-0"
-              />
-              <span class="text-gray-300"
-                >Centraliza todos los canales en 1 pantalla</span
-              >
+              <FaCheckCircle className="text-[#25D366] mt-1 text-lg flex-shrink-0" />
+              <span class="text-gray-300">Todas tus conversaciones de WhatsApp en una sola pantalla</span>
             </li>
             <li class="flex items-start gap-3">
-              <FaCheckCircle
-                className="text-[#25D366] mt-1 text-lg flex-shrink-0"
-              />
-              <span class="text-gray-300"
-                >Historial único por cliente (sin repetir datos)</span
-              >
+              <FaCheckCircle className="text-[#25D366] mt-1 text-lg flex-shrink-0" />
+              <span class="text-gray-300">Chats asignados a cada miembro del equipo</span>
             </li>
             <li class="flex items-start gap-3">
-              <FaCheckCircle
-                className="text-[#25D366] mt-1 text-lg flex-shrink-0"
-              />
-              <span class="text-gray-300"
-                >Plantillas rápidas para responder en segundos</span
-              >
+              <FaCheckCircle className="text-[#25D366] mt-1 text-lg flex-shrink-0" />
+              <span class="text-gray-300">Historial completo para dar seguimiento sin perder contexto</span>
             </li>
             <li class="flex items-start gap-3">
-              <FaCheckCircle
-                className="text-[#25D366] mt-1 text-lg flex-shrink-0"
-              />
-              <span class="text-gray-300">Organiza a tu equipo fácilmente</span>
+              <FaCheckCircle className="text-[#25D366] mt-1 text-lg flex-shrink-0" />
+              <span class="text-gray-300">Respuestas rapidas para atender mejor y vender mas</span>
             </li>
           </ul>
         </div>
@@ -227,19 +200,21 @@ import { Image } from "astro:assets";
     </article>
   </section>
 
-  <!-- Features Section -->
   <section
     class="relative py-16 px-4 bg-gradient-to-br from-[#0a0a0a] via-[#100f1e] to-[#1a1a2e]"
   >
     <article class="relative z-10 max-w-screen-xl mx-auto">
       <div class="mb-16 text-center">
         <h2 class="mb-6 text-3xl font-black text-white md:text-4xl lg:text-5xl">
-          Características Que Transformarán Tu Negocio
+          Ventajas para tu operacion diaria
         </h2>
+        <p class="max-w-3xl mx-auto text-lg text-gray-300">
+          Una plataforma web pensada para negocios que necesitan orden,
+          velocidad de respuesta y seguimiento real de cada cliente.
+        </p>
       </div>
 
       <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-        <!-- Feature 1 -->
         <div
           class="p-6 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-[#25D366]/20"
         >
@@ -249,14 +224,13 @@ import { Image } from "astro:assets";
             <FaWhatsapp className="text-[#25D366] text-2xl" />
           </div>
           <h3 class="mb-3 text-lg font-bold text-center text-white">
-            Atiende por WhatsApp Business
+            WhatsApp centralizado
           </h3>
           <p class="text-sm text-center text-gray-300">
-            Todos tus mensajes de WhatsApp en una sola pantalla
+            Gestiona todas las conversaciones desde una bandeja web organizada.
           </p>
         </div>
 
-        <!-- Feature 2 -->
         <div
           class="p-6 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-blue-500/20"
         >
@@ -266,14 +240,13 @@ import { Image } from "astro:assets";
             <FaUsers className="text-blue-400 text-2xl" />
           </div>
           <h3 class="mb-3 text-lg font-bold text-center text-white">
-            Nunca pierdas el historial de un cliente
+            Equipo organizado
           </h3>
           <p class="text-sm text-center text-gray-300">
-            Historial completo de conversaciones y datos
+            Crea usuarios, departamentos y asigna chats al agente correcto.
           </p>
         </div>
 
-        <!-- Feature 3 -->
         <div
           class="p-6 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-purple-500/20"
         >
@@ -283,14 +256,13 @@ import { Image } from "astro:assets";
             <FaShieldAlt className="text-purple-400 text-2xl" />
           </div>
           <h3 class="mb-3 text-lg font-bold text-center text-white">
-            Organiza a tu equipo fácilmente
+            Control de clientes
           </h3>
           <p class="text-sm text-center text-gray-300">
-            Asigna conversaciones y gestiona permisos
+            Usa historial, etiquetas y clasificacion para dar mejor seguimiento.
           </p>
         </div>
 
-        <!-- Feature 4 -->
         <div
           class="p-6 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-yellow-500/20"
         >
@@ -300,307 +272,254 @@ import { Image } from "astro:assets";
             <FaBolt className="text-yellow-400 text-2xl" />
           </div>
           <h3 class="mb-3 text-lg font-bold text-center text-white">
-            Responde hasta 5 veces más rápido
+            Respuesta mas rapida
           </h3>
           <p class="text-sm text-center text-gray-300">
-            Plantillas rápidas y respuestas automáticas
+            Acelera la atencion con respuestas rapidas y procesos claros.
           </p>
         </div>
       </div>
     </article>
   </section>
 
-  <!-- Pricing Section -->
-  <section
-    id="pricing"
-    class="relative py-16 px-4 bg-gradient-to-br from-[#1a1a2e] to-[#0a0a0a]"
-  >
+  <section class="relative py-16 px-4 bg-gradient-to-br from-[#1a1a2e] to-[#0a0a0a]">
     <article class="relative z-10 max-w-screen-xl mx-auto">
       <div class="mb-16 text-center">
         <h2 class="mb-6 text-3xl font-black text-white md:text-4xl lg:text-5xl">
-          Inversión Personalizada a tu Medida
+          Beneficios incluidos
         </h2>
-        <p class="max-w-2xl mx-auto text-lg text-gray-300">
-          Cada negocio es diferente. El software se implementa desde cero y el
-          valor se ajusta según tus necesidades específicas de canales, usuarios
-          e integraciones.
-        </p>
-
-        <!-- Clarificación del modelo de pago -->
-        <div
-          class="max-w-3xl p-4 mx-auto mt-8 border rounded-xl bg-gradient-to-r from-blue-500/10 to-purple-500/10 border-blue-500/20 backdrop-blur-xl"
-        >
-          <h3 class="mb-2 text-lg font-bold text-blue-400">
-            💡 ¿Cómo Funciona el Pago?
-          </h3>
-          <div class="grid gap-4 text-sm text-gray-300 md:grid-cols-2">
-            <div class="text-center">
-              <div class="font-semibold text-yellow-400">
-                Implementación Única
-              </div>
-              <p>
-                Se paga una sola vez por la configuración completa del sistema
-                desde cero, adaptada a tu negocio
-              </p>
-            </div>
-            <div class="text-center">
-              <div class="font-semibold text-green-400">
-                Fee Mensual Recurrente
-              </div>
-              <p>
-                Fee por cada usuario de tu equipo + fee de infraestructura
-                (servidor exclusivo, respaldos y soporte)
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
 
-      <div class="flex justify-center max-w-4xl mx-auto">
-        <!-- Plan Personalizado -->
-        <div
-          class="p-8 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-[#25D366]/20 relative max-w-md w-full"
-        >
-          <!-- Popular Badge -->
-          <div class="absolute top-0 transform -translate-y-1/2 right-8">
-            <div
-              class="bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white px-4 py-1 rounded-full text-sm font-semibold"
-            >
-              Personalizado
-            </div>
+      <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {[
+          "Centraliza todas las conversaciones de WhatsApp.",
+          "Organiza agentes y departamentos.",
+          "Asigna chats a miembros del equipo.",
+          "Consulta el historial completo de conversaciones.",
+          "Usa etiquetas para clasificar clientes.",
+          "Ahorra tiempo con respuestas rapidas.",
+          "Accede desde computadora.",
+          "Trabaja desde una plataforma web accesible desde cualquier lugar.",
+          "Mejora el control y seguimiento de clientes.",
+        ].map((benefit) => (
+          <div
+            class="flex items-start gap-3 p-5 rounded-xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 border border-[#25D366]/20"
+          >
+            <FaCheckCircle className="text-[#25D366] mt-1 flex-shrink-0" />
+            <span class="text-gray-300">{benefit}</span>
           </div>
-
-          <div class="mb-8 text-center">
-            <h3 class="mb-4 text-2xl font-bold text-white">
-              ChatWoot Chat Omnicanal
-            </h3>
-            <p class="mb-4 text-sm text-gray-400">
-              Solución completa para centralizar WhatsApp, Facebook e Instagram
-            </p>
-            <div class="space-y-2">
-              <div class="flex items-baseline justify-center gap-2">
-                <span class="text-4xl font-black text-[#25D366]"
-                  >A Cotizar</span
-                >
-              </div>
-              <div class="flex items-baseline justify-center gap-2">
-                <span class="text-xl font-bold text-white"
-                  >Implementación + Fees Recurrentes</span
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- What's Included -->
-          <div class="mb-8">
-            <h4 class="mb-4 text-lg font-bold text-center text-white">
-              ¿Qué Incluye?
-            </h4>
-            <div class="space-y-3">
-              <div class="flex items-center gap-3">
-                <FaCheckCircle
-                  className="text-[#25D366] text-sm flex-shrink-0"
-                />
-                <span class="text-sm text-gray-300">
-                  Configuración completa del sistema desde cero
-                </span>
-              </div>
-              <div class="flex items-center gap-3">
-                <FaCheckCircle
-                  className="text-[#25D366] text-sm flex-shrink-0"
-                />
-                <span class="text-sm text-gray-300">
-                  Conexión de WhatsApp, Facebook e Instagram
-                </span>
-              </div>
-              <div class="flex items-center gap-3">
-                <FaCheckCircle
-                  className="text-[#25D366] text-sm flex-shrink-0"
-                />
-                <span class="text-sm text-gray-300">
-                  Soporte técnico inicial (7 días)
-                </span>
-              </div>
-              <div class="flex items-center gap-3">
-                <FaCheckCircle
-                  className="text-[#25D366] text-sm flex-shrink-0"
-                />
-                <span class="text-sm text-gray-300">
-                  Guía completa de uso del sistema
-                </span>
-              </div>
-              <div class="flex items-center gap-3">
-                <FaCheckCircle
-                  className="text-[#25D366] text-sm flex-shrink-0"
-                />
-                <span class="text-sm text-gray-300"
-                  >Usuarios según tu equipo</span
-                >
-              </div>
-              <div class="flex items-center gap-3">
-                <FaCheckCircle
-                  className="text-[#25D366] text-sm flex-shrink-0"
-                />
-                <span class="text-sm text-gray-300">
-                  Plantillas y respuestas automáticas
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- CTA -->
-          <div class="text-center">
-            <a
-              href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20interesa%20ChatWoot%20para%20centralizar%20WhatsApp%2C%20Facebook%20e%20Instagram.%20%C2%BFPodr%C3%ADamos%20cotizar%20seg%C3%BAn%20mis%20necesidades%3F"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#25D366] to-[#128C7E] rounded-full text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-            >
-              <FaWhatsapp className="text-lg" />
-              <span>Cotizar Ahora</span>
-            </a>
-            <p class="mt-3 text-xs text-gray-400">
-              Perfecto para negocios que quieren centralizar todos sus canales
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Implementation Timeline -->
-      <div class="mt-16 text-center">
-        <div
-          class="max-w-2xl p-6 mx-auto border rounded-2xl bg-gradient-to-r from-blue-500/10 to-purple-500/10 border-blue-500/20 backdrop-blur-xl"
-        >
-          <div class="flex items-center justify-center gap-2 mb-4">
-            <span class="text-2xl">⏱️</span>
-            <h3 class="text-xl font-bold text-blue-400">Tiempo de Implementación</h3>
-          </div>
-          <p class="mb-4 text-gray-300">
-            El tiempo de implementación varía según tus requerimientos específicos.
-            Generalmente oscila entre <span class="font-semibold text-blue-400">3 y 5 días hábiles</span>,
-            aunque puede extenderse si necesitas integraciones adicionales o
-            personalizaciones avanzadas para tu negocio.
-          </p>
-        </div>
+        ))}
       </div>
     </article>
   </section>
 
-  <!-- FAQ Section -->
   <section
+    id="pricing"
     class="relative py-16 px-4 bg-gradient-to-br from-[#0a0a0a] via-[#100f1e] to-[#1a1a2e]"
   >
     <article class="relative z-10 max-w-screen-xl mx-auto">
       <div class="mb-16 text-center">
         <h2 class="mb-6 text-3xl font-black text-white md:text-4xl lg:text-5xl">
-          Preguntas Frecuentes
+          Planes para organizar tu WhatsApp
         </h2>
+        <p class="max-w-3xl mx-auto text-lg text-gray-300">
+          Elige una implementacion inicial y un plan de mantenimiento segun el
+          tamano de tu equipo. Tambien puedes pagar anual y mantener tu sistema
+          activo durante 12 meses.
+        </p>
       </div>
 
-      <div class="max-w-3xl mx-auto space-y-6">
-        <!-- FAQ Items -->
-        <details
-          class="p-6 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-[#25D366]/20"
+      <div class="grid gap-8 lg:grid-cols-3">
+        <div
+          class="p-8 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-yellow-500/20"
         >
-          <summary class="text-lg font-semibold text-white cursor-pointer"
-            >¿Qué canales puedo conectar?</summary
-          >
-          <p class="mt-4 text-gray-300">
-            Puedes conectar los principales canales de mensajería:
-            <strong>WhatsApp (normal y Business), Instagram y Facebook Messenger</strong>.
-            También es posible integrar Telegram y otros canales según tus
-            necesidades. Nos enfocamos principalmente en WhatsApp, Facebook e
-            Instagram usando Evolution API para que tengas todos tus mensajes en
-            un solo lugar.
-          </p>
-        </details>
+          <div class="mb-8 text-center">
+            <h3 class="mb-4 text-2xl font-bold text-white">Plan Implementacion</h3>
+            <p class="mb-4 text-sm text-gray-400">
+              Puesta en marcha completa de la plataforma para tu negocio.
+            </p>
+            <div class="text-4xl font-black text-yellow-400">USD $149 - $249</div>
+            <p class="mt-2 text-xs text-gray-400">
+              Segun cantidad de usuarios y personalizacion
+            </p>
+          </div>
+          <div class="space-y-3">
+            {[
+              "Instalacion completa del sistema.",
+              "Configuracion inicial.",
+              "Conexion de WhatsApp.",
+              "Capacitacion basica.",
+              "Configuracion de usuarios.",
+              "Personalizacion basica.",
+            ].map((item) => (
+              <div class="flex items-center gap-3">
+                <FaCheckCircle className="text-yellow-400 text-sm flex-shrink-0" />
+                <span class="text-sm text-gray-300">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
 
-        <details
-          class="p-6 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-[#25D366]/20"
+        <div
+          class="p-8 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-[#25D366]/30 relative"
         >
-          <summary class="text-lg font-semibold text-white cursor-pointer"
-            >¿Cuánto tiempo toma la implementación?</summary
-          >
-          <p class="mt-4 text-gray-300">
-            El tiempo de implementación varía según tus requerimientos específicos.
-            Generalmente oscila entre <strong>3 y 5 días hábiles</strong>, aunque puede
-            extenderse si necesitas integraciones adicionales o personalizaciones
-            avanzadas para tu negocio.
-          </p>
-        </details>
+          <div class="absolute top-0 transform -translate-y-1/2 right-8">
+            <div
+              class="bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white px-4 py-1 rounded-full text-sm font-semibold"
+            >
+              Recomendado
+            </div>
+          </div>
+          <div class="mb-8 text-center">
+            <h3 class="mb-4 text-2xl font-bold text-white">Plan Mensual</h3>
+            <p class="mb-4 text-sm text-gray-400">
+              Operacion, soporte y mantenimiento continuo.
+            </p>
+            <div class="space-y-3">
+              <div>
+                <div class="text-4xl font-black text-[#25D366]">USD $25/mes</div>
+                <p class="text-xs text-gray-400">Hasta 3 usuarios</p>
+              </div>
+              <div class="h-px bg-white/10"></div>
+              <div>
+                <div class="text-4xl font-black text-[#25D366]">USD $50/mes</div>
+                <p class="text-xs text-gray-400">Hasta 10 usuarios</p>
+              </div>
+            </div>
+          </div>
+          <div class="space-y-3">
+            {[
+              "Hosting del sistema.",
+              "Mantenimiento tecnico.",
+              "Actualizaciones.",
+              "Respaldos.",
+              "Monitoreo.",
+              "Soporte tecnico.",
+            ].map((item) => (
+              <div class="flex items-center gap-3">
+                <FaCheckCircle className="text-[#25D366] text-sm flex-shrink-0" />
+                <span class="text-sm text-gray-300">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
 
-        <details
-          class="p-6 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-[#25D366]/20"
+        <div
+          class="p-8 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-blue-500/20"
         >
-          <summary class="text-lg font-semibold text-white cursor-pointer"
-            >¿Necesito conocimientos técnicos?</summary
-          >
-          <p class="mt-4 text-gray-300">
-            No. Nosotros configuramos todo el sistema y te brindamos
-            capacitación inicial para que tú y tu equipo puedan empezar a usarlo
-            de inmediato.
-          </p>
-        </details>
+          <div class="mb-8 text-center">
+            <h3 class="mb-4 text-2xl font-bold text-white">Plan Anual</h3>
+            <p class="mb-4 text-sm text-gray-400">
+              Ideal para empresas que quieren estabilidad y control de costos.
+            </p>
+            <div class="text-4xl font-black text-blue-400">USD $450/año</div>
+            <p class="mt-2 text-xs text-gray-400">
+              Incluye 12 meses de operacion y mantenimiento
+            </p>
+          </div>
+          <div class="space-y-3">
+            {[
+              "Hosting por 12 meses.",
+              "Mantenimiento incluido.",
+              "Actualizaciones del sistema.",
+              "Respaldos periodicos.",
+              "Monitoreo de disponibilidad.",
+              "Soporte tecnico durante el periodo.",
+            ].map((item) => (
+              <div class="flex items-center gap-3">
+                <FaCheckCircle className="text-blue-400 text-sm flex-shrink-0" />
+                <span class="text-sm text-gray-300">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
-        <details
-          class="p-6 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-[#25D366]/20"
+      <div class="mt-12 text-center">
+        <a
+          href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20quiero%20empezar%20a%20organizar%20mi%20WhatsApp%20con%20ChatWoot.%20Me%20interesa%20conocer%20los%20planes%20y%20agendar%20una%20llamada."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#25D366] to-[#128C7E] rounded-full text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
         >
-          <summary class="text-lg font-semibold text-white cursor-pointer"
-            >¿Incluye capacitación del equipo?</summary
-          >
-          <p class="mt-4 text-gray-300">
-            Sí. Incluimos capacitación inicial para ti y tu equipo. Te enseñamos
-            cómo usar el sistema de forma efectiva desde el primer día.
-          </p>
-        </details>
+          <FaWhatsapp className="text-lg" />
+          <span>Empieza a organizar tu WhatsApp</span>
+        </a>
+      </div>
 
-        <details
-          class="p-6 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-[#25D366]/20"
+      <div class="mt-16 text-center">
+        <div
+          class="max-w-2xl p-6 mx-auto border rounded-2xl bg-gradient-to-r from-blue-500/10 to-purple-500/10 border-blue-500/20 backdrop-blur-xl"
         >
-          <summary class="text-lg font-semibold text-white cursor-pointer"
-            >¿Cómo funciona el modelo de inversión?</summary
-          >
-          <p class="mt-4 text-gray-300">
-            Nuestro modelo de inversión se divide en tres partes claras:<br /><br />
-            <strong>1. Implementación inicial:</strong> Se paga una sola vez por la
-            configuración completa del sistema desde cero, adaptada a tu negocio.<br /><br />
-            <strong>2. Fee mensual por usuario:</strong> Cada miembro de tu equipo
-            que use el sistema tiene un costo mensual, de acuerdo a la cantidad de
-            usuarios que necesites.<br /><br />
-            <strong>3. Fee de infraestructura:</strong> Incluye el servidor exclusivo
-            para tu empresa, respaldos, monitoreo continuo, actualizaciones y soporte
-            técnico dedicado. Garantizamos que tu plataforma esté siempre disponible
-            y segura.<br /><br />
-            Si requieres nuevas funcionalidades o personalizaciones adicionales,
-            estas se cotizan por separado según el alcance.
+          <div class="flex items-center justify-center gap-2 mb-4">
+            <FaClock className="text-blue-400 text-2xl" />
+            <h3 class="text-xl font-bold text-blue-400">Tiempo de implementacion</h3>
+          </div>
+          <p class="mb-4 text-gray-300">
+            La implementacion toma entre
+            <span class="font-semibold text-blue-400">1 y 3 dias habiles</span>,
+            segun la cantidad de usuarios y la configuracion requerida.
           </p>
-        </details>
+        </div>
       </div>
     </article>
   </section>
 
-  <!-- Final CTA -->
   <section
     class="relative py-16 px-4 bg-gradient-to-br from-[#1a1a2e] to-[#0a0a0a]"
   >
+    <article class="relative z-10 max-w-screen-xl mx-auto">
+      <div class="mb-16 text-center">
+        <h2 class="mb-6 text-3xl font-black text-white md:text-4xl lg:text-5xl">
+          Preguntas frecuentes
+        </h2>
+      </div>
+
+      <div class="max-w-3xl mx-auto space-y-6">
+        {[
+          ["Necesito WhatsApp Business?", "Si. Es necesario para trabajar con una cuenta preparada para atencion empresarial."],
+          ["Puedo usarlo con varios agentes?", "Si. Puedes organizar usuarios, agentes y departamentos segun tu equipo."],
+          ["Puedo acceder desde varias computadoras?", "Si. La plataforma es web y puede utilizarse desde computadoras autorizadas."],
+          ["Incluye capacitacion?", "Si. Incluye una capacitacion basica para que tu equipo pueda empezar a usar el sistema."],
+          ["Necesito conocimientos tecnicos?", "No. Nosotros realizamos la instalacion, configuracion y puesta en marcha."],
+          ["Cuanto demora la implementacion?", "Entre 1 y 3 dias habiles, segun la cantidad de usuarios y personalizacion requerida."],
+        ].map(([question, answer]) => (
+          <details
+            class="p-6 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-[#25D366]/20"
+          >
+            <summary class="text-lg font-semibold text-white cursor-pointer">
+              {question}
+            </summary>
+            <p class="mt-4 text-gray-300">{answer}</p>
+          </details>
+        ))}
+      </div>
+    </article>
+  </section>
+
+  <section
+    class="relative py-16 px-4 bg-gradient-to-br from-[#0a0a0a] via-[#100f1e] to-[#1a1a2e]"
+  >
     <article class="relative z-10 max-w-screen-xl mx-auto text-center">
       <div class="max-w-3xl mx-auto space-y-8">
+        <FaChartLine className="mx-auto text-[#25D366] text-5xl" />
         <h2 class="text-3xl font-black text-white md:text-4xl lg:text-5xl">
-          ¿Listo Para Transformar La Atención A Tus Clientes?
+          Brinda una experiencia mas profesional a tus clientes
         </h2>
         <p class="text-xl text-gray-300">
-          Únete a los negocios que ya están usando ChatWoot para nunca perder un
-          cliente y brindar atención excepcional.
+          No pierdas mas clientes por mensajes olvidados o respuestas tardias.
+          Centraliza toda tu atencion de WhatsApp en una sola plataforma y mejora
+          la velocidad de respuesta de tu negocio.
         </p>
         <div class="flex flex-col gap-4 sm:flex-row sm:justify-center">
           <a
-            href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20interesa%20ChatWoot%20para%20centralizar%20la%20atenci%C3%B3n%20al%20cliente%20de%20mi%20negocio.%20%C2%BFPodr%C3%ADamos%20agendar%20una%20demo%3F"
+            href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20quiero%20agendar%20una%20llamada%20para%20conocer%20como%20funciona%20ChatWoot%20para%20WhatsApp."
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#25D366] to-[#128C7E] rounded-full text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
           >
             <FaWhatsapp className="text-lg" />
-            <span>Solicitar Demo Gratuita</span>
+            <span>Agenda una llamada</span>
           </a>
         </div>
       </div>
