@@ -325,8 +325,8 @@ import { Image } from "astro:assets";
         <p class="max-w-3xl mx-auto text-lg text-gray-300">
           La implementacion se paga una sola vez y es necesaria para poner en
           marcha la plataforma. Luego el mantenimiento es obligatorio para
-          mantener el sistema activo: puedes pagarlo mensual o anual con
-          descuento por pago unico.
+          mantener el sistema activo: puedes pagarlo mensual o anual con precio
+          promocional valido unicamente para el primer ano.
         </p>
       </div>
 
@@ -335,24 +335,21 @@ import { Image } from "astro:assets";
           class="p-8 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-yellow-500/20"
         >
           <div class="mb-8 text-center">
-            <h3 class="mb-4 text-2xl font-bold text-white">Plan Implementacion</h3>
+            <h3 class="mb-4 text-2xl font-bold text-white">Implementacion Inicial</h3>
             <p class="mb-4 text-sm text-gray-400">
               Pago unico obligatorio para instalar, configurar y dejar lista la
               plataforma de tu negocio.
             </p>
             <div class="text-4xl font-black text-yellow-400">USD $350 - $500</div>
             <p class="mt-2 text-xs text-gray-400">
-              Segun cantidad de WhatsApp a conectar y personalizacion
+              Inversion unica
             </p>
           </div>
           <div class="space-y-3">
             {[
-              "Instalacion completa del sistema.",
-              "Configuracion inicial.",
-              "Conexion de WhatsApp.",
-              "Capacitacion basica.",
-              "Configuracion de usuarios.",
-              "Personalizacion basica.",
+              "Plataforma lista para operar desde el primer dia.",
+              "Configuracion adaptada a las necesidades de tu negocio.",
+              "Capacitacion inicial para usted y su equipo.",
             ].map((item) => (
               <div class="flex items-center gap-3">
                 <FaCheckCircle className="text-yellow-400 text-sm flex-shrink-0" />
@@ -380,24 +377,21 @@ import { Image } from "astro:assets";
             </p>
             <div class="space-y-3">
               <div>
-                <div class="text-4xl font-black text-[#25D366]">USD $59/mes</div>
+                <div class="text-4xl font-black text-[#25D366]">USD $39/mes</div>
                 <p class="text-xs text-gray-400">Hasta 3 usuarios</p>
               </div>
               <div class="h-px bg-white/10"></div>
               <div>
-                <div class="text-4xl font-black text-[#25D366]">USD $99/mes</div>
+                <div class="text-4xl font-black text-[#25D366]">USD $79/mes</div>
                 <p class="text-xs text-gray-400">Hasta 10 usuarios</p>
               </div>
             </div>
           </div>
           <div class="space-y-3">
             {[
-              "Hosting del sistema.",
-              "Mantenimiento tecnico.",
-              "Actualizaciones.",
-              "Respaldos.",
-              "Monitoreo.",
-              "Soporte tecnico.",
+              "Actualizaciones de la plataforma.",
+              "Respaldo y monitoreo del sistema.",
+              "Soporte tecnico ante incidencias o errores operativos.",
             ].map((item) => (
               <div class="flex items-center gap-3">
                 <FaCheckCircle className="text-[#25D366] text-sm flex-shrink-0" />
@@ -411,19 +405,18 @@ import { Image } from "astro:assets";
           class="p-8 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-blue-500/20"
         >
           <div class="mb-8 text-center">
-            <h3 class="mb-4 text-2xl font-bold text-white">Plan Anual</h3>
+            <h3 class="mb-4 text-2xl font-bold text-white">Plan Anual Promocional</h3>
             <p class="mb-4 text-sm text-gray-400">
-              Opcion con descuento para pequenos negocios que prefieren pagar
-              12 meses de mantenimiento en un solo pago.
+              Precio promocional valido unicamente para el primer ano.
             </p>
             <div class="space-y-3">
               <div>
-                <div class="text-4xl font-black text-blue-400">USD $590/año</div>
+                <div class="text-4xl font-black text-blue-400">USD $390/año</div>
                 <p class="text-xs text-gray-400">Hasta 3 usuarios</p>
               </div>
               <div class="h-px bg-white/10"></div>
               <div>
-                <div class="text-4xl font-black text-blue-400">USD $990/año</div>
+                <div class="text-4xl font-black text-blue-400">USD $890/año</div>
                 <p class="text-xs text-gray-400">Hasta 10 usuarios</p>
               </div>
             </div>
@@ -433,13 +426,9 @@ import { Image } from "astro:assets";
           </div>
           <div class="space-y-3">
             {[
-              "Hosting por 12 meses.",
-              "Mantenimiento incluido.",
-              "Actualizaciones del sistema.",
-              "Respaldos periodicos.",
-              "Monitoreo de disponibilidad.",
-              "Soporte tecnico durante el periodo.",
-              "WhatsApp adicionales se cotizan segun el alcance.",
+              "Ahorro frente al pago mensual.",
+              "Un solo pago para todo el ano.",
+              "Actualizaciones, monitoreo y soporte tecnico incluidos.",
             ].map((item) => (
               <div class="flex items-center gap-3">
                 <FaCheckCircle className="text-blue-400 text-sm flex-shrink-0" />
@@ -454,10 +443,9 @@ import { Image } from "astro:assets";
         class="max-w-4xl p-5 mx-auto mt-10 border rounded-2xl bg-gradient-to-r from-[#25D366]/10 to-blue-500/10 border-[#25D366]/20 backdrop-blur-xl"
       >
         <p class="text-center text-gray-300">
-          <strong class="text-white">Inversion inicial:</strong> la implementacion
-          se paga siempre una sola vez y se suma al plan de mantenimiento
-          mensual o anual. El plan anual reemplaza los pagos mensuales y aplica
-          descuento por pago unico.
+          <strong class="text-white">Los planes incluyen 1 numero de WhatsApp conectado:</strong>
+          WhatsApp adicionales pueden incorporarse posteriormente y se cotizan
+          segun el alcance requerido.
         </p>
       </div>
 
