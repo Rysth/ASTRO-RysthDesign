@@ -323,10 +323,10 @@ import { Image } from "astro:assets";
           Planes para organizar tu WhatsApp
         </h2>
         <p class="max-w-3xl mx-auto text-lg text-gray-300">
-          Elige una implementacion inicial y un plan de mantenimiento segun el
-          tamano de tu equipo. El plan anual es ideal para pequenos negocios
-          que quieren mantener su plataforma activa todo el ano con un costo
-          fijo y soporte incluido.
+          La implementacion se paga una sola vez y es necesaria para poner en
+          marcha la plataforma. Luego el mantenimiento es obligatorio para
+          mantener el sistema activo: puedes pagarlo mensual o anual con
+          descuento por pago unico.
         </p>
       </div>
 
@@ -337,7 +337,8 @@ import { Image } from "astro:assets";
           <div class="mb-8 text-center">
             <h3 class="mb-4 text-2xl font-bold text-white">Plan Implementacion</h3>
             <p class="mb-4 text-sm text-gray-400">
-              Puesta en marcha completa de la plataforma para tu negocio.
+              Pago unico obligatorio para instalar, configurar y dejar lista la
+              plataforma de tu negocio.
             </p>
             <div class="text-4xl font-black text-yellow-400">USD $350 - $500</div>
             <p class="mt-2 text-xs text-gray-400">
@@ -374,16 +375,17 @@ import { Image } from "astro:assets";
           <div class="mb-8 text-center">
             <h3 class="mb-4 text-2xl font-bold text-white">Plan Mensual</h3>
             <p class="mb-4 text-sm text-gray-400">
-              Operacion, soporte y mantenimiento continuo.
+              Mantenimiento obligatorio para mantener la plataforma activa,
+              segura y funcionando correctamente.
             </p>
             <div class="space-y-3">
               <div>
-                <div class="text-4xl font-black text-[#25D366]">USD $25/mes</div>
+                <div class="text-4xl font-black text-[#25D366]">USD $59/mes</div>
                 <p class="text-xs text-gray-400">Hasta 3 usuarios</p>
               </div>
               <div class="h-px bg-white/10"></div>
               <div>
-                <div class="text-4xl font-black text-[#25D366]">USD $50/mes</div>
+                <div class="text-4xl font-black text-[#25D366]">USD $99/mes</div>
                 <p class="text-xs text-gray-400">Hasta 10 usuarios</p>
               </div>
             </div>
@@ -411,12 +413,22 @@ import { Image } from "astro:assets";
           <div class="mb-8 text-center">
             <h3 class="mb-4 text-2xl font-bold text-white">Plan Anual</h3>
             <p class="mb-4 text-sm text-gray-400">
-              Ideal para pequenos negocios que venden por WhatsApp y necesitan
-              estabilidad, soporte y control de costos.
+              Opcion con descuento para pequenos negocios que prefieren pagar
+              12 meses de mantenimiento en un solo pago.
             </p>
-            <div class="text-4xl font-black text-blue-400">Desde USD $650/año</div>
-            <p class="mt-2 text-xs text-gray-400">
-              Hasta 10 usuarios y 1 WhatsApp conectado
+            <div class="space-y-3">
+              <div>
+                <div class="text-4xl font-black text-blue-400">USD $590/año</div>
+                <p class="text-xs text-gray-400">Hasta 3 usuarios</p>
+              </div>
+              <div class="h-px bg-white/10"></div>
+              <div>
+                <div class="text-4xl font-black text-blue-400">USD $990/año</div>
+                <p class="text-xs text-gray-400">Hasta 10 usuarios</p>
+              </div>
+            </div>
+            <p class="mt-4 text-xs text-gray-400">
+              Incluye 1 WhatsApp conectado
             </p>
           </div>
           <div class="space-y-3">
@@ -436,6 +448,26 @@ import { Image } from "astro:assets";
             ))}
           </div>
         </div>
+      </div>
+
+      <div
+        class="max-w-4xl p-5 mx-auto mt-10 border rounded-2xl bg-gradient-to-r from-[#25D366]/10 to-blue-500/10 border-[#25D366]/20 backdrop-blur-xl"
+      >
+        <p class="text-center text-gray-300">
+          <strong class="text-white">Inversion inicial:</strong> la implementacion
+          se paga siempre una sola vez y se suma al plan de mantenimiento
+          mensual o anual. El plan anual reemplaza los pagos mensuales y aplica
+          descuento por pago unico.
+        </p>
+      </div>
+
+      <div
+        class="max-w-4xl p-5 mx-auto mt-6 border rounded-2xl bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border-yellow-500/20 backdrop-blur-xl"
+      >
+        <p class="text-center text-gray-300">
+          Para empresas con mas de 10 usuarios, varios WhatsApp conectados o
+          requerimientos avanzados, se cotiza un plan empresarial personalizado.
+        </p>
       </div>
 
       <div class="mt-12 text-center">
