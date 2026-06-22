@@ -4,6 +4,12 @@ import BrandImage from "../../assets/images/brand/brand.svg";
 
 const whatsappUrl =
   "https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20quiero%20comprar%20un%20servicio%20digital%20para%20mi%20PC.%20Me%20interesa%20Windows%2C%20Office%20o%20Minecraft.";
+const windowsUrl =
+  "https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20quiero%20comprar%20la%20activacion%20de%20Windows%2010%2F11%20de%20%248.";
+const officeUrl =
+  "https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20quiero%20comprar%20la%20activacion%20de%20Microsoft%20Office%20de%20%2412.";
+const minecraftUrl =
+  "https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20quiero%20comprar%20Minecraft%20Java%20%26%20Bedrock%20para%20PC%20de%20%2424.";
 ---
 
 <!-- Footer - Inspired by Zubaz Design -->
@@ -56,30 +62,12 @@ const whatsappUrl =
               href="/#servicios"
               class="text-sm text-gray-400 transition-colors hover:text-[#a78bfa] hover:translate-x-1 inline-block"
             >
-              Precios
+              Servicios y precios
             </a>
           </li>
           <li>
             <a
-              href="/#servicios"
-              class="text-sm text-gray-400 transition-colors hover:text-[#a78bfa] hover:translate-x-1 inline-block"
-            >
-              Servicios
-            </a>
-          </li>
-          <li>
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-sm text-gray-400 transition-colors hover:text-[#a78bfa] hover:translate-x-1 inline-block"
-            >
-              WhatsApp
-            </a>
-          </li>
-          <li>
-            <a
-              href="/#servicios"
+              href="/#faq"
               class="text-sm text-gray-400 transition-colors hover:text-[#a78bfa] hover:translate-x-1 inline-block"
             >
               Preguntas frecuentes
@@ -94,7 +82,9 @@ const whatsappUrl =
         <ul class="space-y-3">
           <li>
             <a
-              href="/#servicios"
+              href={windowsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               class="text-sm text-gray-400 transition-colors hover:text-[#a78bfa] hover:translate-x-1 inline-block"
             >
               Windows 10/11 - $8
@@ -102,7 +92,9 @@ const whatsappUrl =
           </li>
           <li>
             <a
-              href="/#servicios"
+              href={officeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               class="text-sm text-gray-400 transition-colors hover:text-[#a78bfa] hover:translate-x-1 inline-block"
             >
               Microsoft Office - $12
@@ -110,10 +102,22 @@ const whatsappUrl =
           </li>
           <li>
             <a
-              href="/#servicios"
+              href={minecraftUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               class="text-sm text-gray-400 transition-colors hover:text-[#a78bfa] hover:translate-x-1 inline-block"
             >
               Minecraft PC - $24
+            </a>
+          </li>
+          <li>
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-sm font-semibold text-[#25D366] transition-colors hover:text-[#a78bfa] hover:translate-x-1 inline-block"
+            >
+              Comprar por WhatsApp
             </a>
           </li>
         </ul>
