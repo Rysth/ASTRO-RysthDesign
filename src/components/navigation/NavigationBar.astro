@@ -2,8 +2,7 @@
 import { Image } from "astro:assets";
 import BrandImage from "../../assets/images/brand/brand.svg";
 
-const whatsappUrl =
-  "https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20quiero%20comprar%20un%20servicio%20digital%20para%20mi%20PC.%20Me%20interesa%20Windows%2C%20Office%20o%20Minecraft.";
+const purchaseUrl = "https://shlink.rysthdesign.com/purchase";
 ---
 
 <nav
@@ -49,7 +48,7 @@ const whatsappUrl =
       <!-- WhatsApp Button Desktop -->
       <div class="hidden md:block">
         <a
-          href={whatsappUrl}
+          href={purchaseUrl}
           target="_blank"
           rel="noopener noreferrer"
           class="font-jetbrains bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#128C7E] hover:to-[#075E54] text-white px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wide transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-green-500/25 transform hover:-translate-y-1 hover:scale-105 border border-green-500/20 flex items-center gap-2"
@@ -120,7 +119,7 @@ const whatsappUrl =
       <!-- Mobile WhatsApp CTA -->
       <div class="px-2 pt-4 pb-2">
         <a
-          href={whatsappUrl}
+          href={purchaseUrl}
           target="_blank"
           rel="noopener noreferrer"
           class="font-jetbrains flex items-center justify-center gap-2 px-6 py-3 text-base font-bold text-center text-white uppercase tracking-wide transition-all duration-300 bg-gradient-to-r from-[#25D366] to-[#128C7E] rounded-full hover:from-[#128C7E] hover:to-[#075E54] transform hover:scale-105 shadow-lg"

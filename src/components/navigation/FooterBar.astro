@@ -2,14 +2,10 @@
 import { Image } from "astro:assets";
 import BrandImage from "../../assets/images/brand/brand.svg";
 
-const whatsappUrl =
-  "https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20quiero%20comprar%20un%20servicio%20digital%20para%20mi%20PC.%20Me%20interesa%20Windows%2C%20Office%20o%20Minecraft.";
-const windowsUrl =
-  "https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20quiero%20comprar%20la%20activacion%20de%20Windows%2010%2F11%20de%20%248.";
-const officeUrl =
-  "https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20quiero%20comprar%20la%20activacion%20de%20Microsoft%20Office%20de%20%2412.";
-const minecraftUrl =
-  "https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20quiero%20comprar%20Minecraft%20Java%20%26%20Bedrock%20para%20PC%20de%20%2424.";
+const purchaseUrl = "https://shlink.rysthdesign.com/purchase";
+const windowsUrl = "https://shlink.rysthdesign.com/windows";
+const officeUrl = "https://shlink.rysthdesign.com/office";
+const minecraftUrl = "https://shlink.rysthdesign.com/minecraft";
 ---
 
 <!-- Footer - Inspired by Zubaz Design -->
@@ -112,7 +108,7 @@ const minecraftUrl =
           </li>
           <li>
             <a
-              href={whatsappUrl}
+              href={purchaseUrl}
               target="_blank"
               rel="noopener noreferrer"
               class="text-sm font-semibold text-[#25D366] transition-colors hover:text-[#a78bfa] hover:translate-x-1 inline-block"
