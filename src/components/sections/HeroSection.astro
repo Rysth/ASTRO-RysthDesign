@@ -1,243 +1,140 @@
 ---
 import { Image } from "astro:assets";
-import Project_1 from "@/assets/images/projects/project_1.png";
-import Project_2 from "@/assets/images/projects/project_2.png";
-import Project_3 from "@/assets/images/projects/project_3.webp";
+import WindowsImage from "@/assets/services/RDS-0001-WINDOWS.png";
+import OfficeImage from "@/assets/services/RDS-0002-OFFICE.png";
+import MinecraftImage from "@/assets/services/RDS-0003-MINECRAFT.png";
+
+const whatsappGeneral =
+  "https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20quiero%20comprar%20un%20servicio%20digital%20para%20mi%20PC.%20Me%20interesa%20Windows%2C%20Office%20o%20Minecraft.";
 ---
 
-<!-- Hero Section - Zubaz Style -->
 <section
-  class="relative pt-32 pb-16 px-4 bg-gradient-to-br from-[#0a0a0a] via-[#100f1e] to-[#1a1a2e] overflow-hidden"
-  style="background-image: url('data:image/svg+xml,%3Csvg width=\"
-  100\"
-  height='\"100\"'
-  xmlns='\"http://www.w3.org/2000/svg\"%3E%3Cdefs%3E%3Cpattern'
-  id='\"grid\"'
-  width='\"50\"'
-  height='\"50\"'
-  patternUnits='\"userSpaceOnUse\"%3E%3Cpath'
-  d='\"M'
-  50
-  0
-  L
-  0
-  0
-  0
-  50\"
-  fill='\"none\"'
-  stroke='\"rgba(167,'
-  139,
-  250,
-  0.03)\"
-  stroke-width='\"1\"/%3E%3C/pattern%3E%3C/defs%3E%3Crect'
-  width='\"100\"'
-  height='\"100\"'
-  fill='\"url(%23grid)\"/%3E%3C/svg%3E&apos;)"'
+  class="relative overflow-hidden bg-gradient-to-br from-[#050505] via-[#100f1e] to-[#1a1033] px-4 pb-16 pt-32"
 >
-  <!-- Decorative Background Shape -->
-  <div class="absolute inset-0 opacity-20">
+  <div class="absolute inset-0 opacity-25">
     <div
-      class="absolute rounded-full top-0 right-0 w-[600px] h-[600px] bg-purple-500/20 blur-3xl"
+      class="absolute -right-32 top-10 h-[520px] w-[520px] rounded-full bg-purple-600/30 blur-3xl"
     >
     </div>
     <div
-      class="absolute rounded-full bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/20 blur-3xl"
+      class="absolute -left-32 bottom-0 h-[420px] w-[420px] rounded-full bg-blue-500/20 blur-3xl"
     >
     </div>
   </div>
 
-  <div class="relative z-10 max-w-screen-xl mx-auto">
-    <!-- Hero Content - Centered -->
-    <div class="text-center space-y-8 mb-16">
-      <h1
-        class="text-4xl font-black leading-tight text-white md:text-5xl lg:text-6xl max-w-4xl mx-auto"
+  <div
+    class="relative z-10 mx-auto grid max-w-screen-xl items-center gap-12 lg:grid-cols-[1fr_0.92fr]"
+  >
+    <div class="space-y-8 text-center lg:text-left">
+      <div
+        class="inline-flex items-center gap-2 rounded-full border border-purple-400/30 bg-white/5 px-4 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-purple-200 backdrop-blur-sm"
       >
-        Desarrolla tu negocio con una
-        <span
-          class="bg-gradient-to-r from-[#a78bfa] to-[#4361ee] bg-clip-text text-transparent"
+        <span class="h-2 w-2 rounded-full bg-[#25D366]"></span>
+        Entrega digital en Ecuador
+      </div>
+
+      <div class="space-y-5">
+        <h1
+          class="mx-auto max-w-5xl text-4xl font-black leading-tight text-white md:text-6xl lg:mx-0 lg:text-7xl"
         >
-          presencia digital profesional
-        </span>
-      </h1>
+          Servicios digitales rapidos para
+          <span
+            class="bg-gradient-to-r from-[#a78bfa] to-[#4361ee] bg-clip-text text-transparent"
+          >
+            tu PC
+          </span>
+        </h1>
 
-      <p
-        class="max-w-3xl mx-auto text-base leading-relaxed text-gray-300 md:text-lg"
-      >
-        Somos tu agencia de desarrollo web en Ecuador. Creamos sitios web
-        modernos, catálogos digitales y aplicaciones web personalizadas que
-        impulsan el crecimiento de microempresas y pequeños negocios.
-      </p>
+        <p
+          class="mx-auto max-w-2xl text-base leading-relaxed text-gray-300 md:text-lg lg:mx-0"
+        >
+          Activa Windows, Microsoft Office o compra Minecraft Java & Bedrock con
+          soporte directo por WhatsApp, entrega rapida y precios claros.
+        </p>
+      </div>
 
-      <!-- CTA Buttons -->
-      <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+      <div class="grid gap-3 sm:grid-cols-3">
+        <div
+          class="rounded-2xl border border-purple-400/20 bg-white/[0.04] p-4"
+        >
+          <p class="text-sm font-semibold text-gray-300">Windows 10/11</p>
+          <p class="text-3xl font-black text-white">$8</p>
+        </div>
+        <div
+          class="rounded-2xl border border-purple-400/20 bg-white/[0.04] p-4"
+        >
+          <p class="text-sm font-semibold text-gray-300">Microsoft Office</p>
+          <p class="text-3xl font-black text-white">$12</p>
+        </div>
+        <div
+          class="rounded-2xl border border-purple-400/20 bg-white/[0.04] p-4"
+        >
+          <p class="text-sm font-semibold text-gray-300">Minecraft PC</p>
+          <p class="text-3xl font-black text-white">$24</p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-4 lg:justify-start">
         <a
-          href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20servicios%20de%20desarrollo%20web.%20%C2%BFPodr%C3%ADan%20proporcionarme%20informaci%C3%B3n%20sobre%20precios%20y%20tiempos%20de%20entrega%3F"
+          href={whatsappGeneral}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-3 px-8 py-4 text-base font-semibold text-white transition-all duration-300 rounded-full shadow-xl bg-gradient-to-r from-[#a78bfa] to-[#4361ee] hover:shadow-2xl hover:scale-105"
+          class="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#25D366] to-[#128C7E] px-8 py-4 text-base font-bold text-white shadow-xl shadow-green-900/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
         >
-          <span>Cotiza Tu Proyecto Gratis</span>
+          Comprar por WhatsApp
         </a>
-
         <a
-          href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20quisiera%20ver%20ejemplos%20de%20sus%20proyectos%20anteriores.%20%C2%BFPodr%C3%ADan%20mostrarme%20su%20portafolio%3F"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-3 px-6 py-4 text-base font-semibold text-white transition-all duration-300 backdrop-blur-sm bg-white/10 border border-white/20 rounded-full hover:bg-white/20"
+          href="#servicios"
+          class="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/20"
         >
-          <span>Ver Portfolio</span>
+          Ver servicios
         </a>
       </div>
 
-      <!-- Decorative Shape -->
-      <div class="flex justify-center pt-4">
-        <svg
-          class="w-16 h-16 text-[#a78bfa]/30 animate-bounce"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
+      <div
+        class="flex flex-wrap justify-center gap-4 text-sm text-gray-300 lg:justify-start"
+      >
+        <span class="rounded-full bg-white/5 px-4 py-2"
+          >Soporte paso a paso</span
         >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-        </svg>
+        <span class="rounded-full bg-white/5 px-4 py-2">Pago seguro</span>
+        <span class="rounded-full bg-white/5 px-4 py-2">Entrega rapida</span>
       </div>
     </div>
 
-    <!-- Hero Bottom - Mockup Showcase (Zubaz Style) -->
     <div class="relative">
-      <!-- Main Mockup/Screenshot -->
-      <div
-        class="relative max-w-5xl mx-auto animate-fadeInUp"
-        style="animation-delay: 0.2s;"
-      >
+      <div class="grid gap-4 sm:grid-cols-2">
         <div
-          class="relative overflow-hidden border-8 shadow-2xl rounded-2xl border-gray-800/50 shadow-purple-900/20"
+          class="group overflow-hidden rounded-3xl border border-purple-400/30 bg-white/[0.04] p-2 shadow-2xl shadow-purple-950/30 sm:col-span-2"
         >
           <Image
-            src={Project_3}
-            alt="MicroPets - Sistema de Gestión Veterinaria"
-            class="object-cover w-full h-auto"
+            src={MinecraftImage}
+            alt="Minecraft Java y Bedrock para PC por RysthDesign"
+            class="h-auto w-full rounded-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+            loading="eager"
           />
         </div>
-      </div>
-
-      <!-- Floating Card 1 - Top Left -->
-      <div
-        class="absolute top-8 left-4 md:left-12 lg:left-24 max-w-[200px] md:max-w-[240px] animate-float hidden md:block"
-      >
         <div
-          class="overflow-hidden shadow-xl rounded-xl border-4 border-gray-800/50 shadow-blue-900/30"
+          class="group overflow-hidden rounded-2xl border border-purple-400/20 bg-white/[0.04] p-2 shadow-xl shadow-purple-950/20"
         >
           <Image
-            src={Project_1}
-            alt="QuickInventory Sistema"
-            class="object-cover w-full h-auto"
+            src={WindowsImage}
+            alt="Activacion de Windows 10 y 11 por RysthDesign"
+            class="h-auto w-full rounded-xl transition-transform duration-500 group-hover:scale-[1.03]"
+            loading="eager"
           />
         </div>
-      </div>
-
-      <!-- Floating Card 2 - Top Right -->
-      <div
-        class="absolute top-8 right-4 md:right-12 lg:right-24 max-w-[200px] md:max-w-[240px] animate-float hidden md:block"
-        style="animation-delay: 1s;"
-      >
         <div
-          class="overflow-hidden shadow-xl rounded-xl border-4 border-gray-800/50 shadow-purple-900/30"
+          class="group overflow-hidden rounded-2xl border border-purple-400/20 bg-white/[0.04] p-2 shadow-xl shadow-purple-950/20"
         >
           <Image
-            src={Project_2}
-            alt="TrámitesEC Sistema"
-            class="object-cover w-full h-auto"
+            src={OfficeImage}
+            alt="Activacion de Microsoft Office por RysthDesign"
+            class="h-auto w-full rounded-xl transition-transform duration-500 group-hover:scale-[1.03]"
+            loading="eager"
           />
-        </div>
-      </div>
-
-      <!-- Floating Stat Card 3 - Bottom Left -->
-      <div
-        class="absolute -bottom-4 left-4 md:left-12 lg:left-32 animate-float hidden lg:block"
-        style="animation-delay: 2s;"
-      >
-        <div
-          class="p-6 border shadow-xl bg-gradient-to-br from-[#1a1a2e]/95 to-[#2d2d44]/95 backdrop-blur-xl border-green-500/30 rounded-2xl"
-        >
-          <div class="flex items-center gap-4">
-            <div
-              class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-green-500/20 to-emerald-500/20"
-            >
-              <svg
-                class="w-6 h-6 text-green-400"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-            </div>
-            <div>
-              <div class="text-2xl font-black text-white">100%</div>
-              <div class="text-xs text-gray-400">Satisfacción</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Floating Stat Card 4 - Bottom Right -->
-      <div
-        class="absolute -bottom-4 right-4 md:right-12 lg:right-32 animate-float hidden lg:block"
-        style="animation-delay: 1.5s;"
-      >
-        <div
-          class="p-6 border shadow-xl bg-gradient-to-br from-[#1a1a2e]/95 to-[#2d2d44]/95 backdrop-blur-xl border-[#a78bfa]/30 rounded-2xl"
-        >
-          <div class="flex items-center gap-4">
-            <div
-              class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-[#a78bfa]/20 to-[#4361ee]/20"
-            >
-              <svg
-                class="w-6 h-6 text-[#a78bfa]"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                ></path>
-              </svg>
-            </div>
-            <div>
-              <div class="text-2xl font-black text-white">15+</div>
-              <div class="text-xs text-gray-400">Proyectos</div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<style>
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animate-fadeInUp {
-    animation: fadeInUp 0.8s ease-out forwards;
-  }
-</style>

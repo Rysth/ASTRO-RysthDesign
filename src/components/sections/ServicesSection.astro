@@ -1,220 +1,270 @@
 ---
+import { Image } from "astro:assets";
 import {
-  FaChartLine,
-  FaArrowRight,
   FaCheckCircle,
-  FaCode,
-  FaLaptop,
-  FaMobile,
+  FaHeadset,
+  FaLock,
   FaRocket,
-  FaShoppingCart,
-  FaDatabase,
   FaWhatsapp,
 } from "react-icons/fa";
+import WindowsImage from "@/assets/services/RDS-0001-WINDOWS.png";
+import OfficeImage from "@/assets/services/RDS-0002-OFFICE.png";
+import MinecraftImage from "@/assets/services/RDS-0003-MINECRAFT.png";
+import MinecraftReviewImage from "@/assets/services/RDS-0003-0001-MINECRAFT-REVIEW.png";
+
+const services = [
+  {
+    name: "Windows 10/11",
+    price: "$8",
+    description:
+      "Activa tu Windows de forma rapida con soporte durante el proceso.",
+    image: WindowsImage,
+    alt: "Activacion de Windows 10 y 11",
+    cta: "Quiero activar Windows",
+    href: "https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20quiero%20comprar%20la%20activacion%20de%20Windows%2010%2F11%20de%20%248.",
+    benefits: [
+      "Compatible con Windows 10 y 11",
+      "Ideal para PC nuevas o formateadas",
+      "Soporte paso a paso",
+    ],
+  },
+  {
+    name: "Microsoft Office",
+    price: "$12",
+    description:
+      "Activa Office para usar Word, Excel, PowerPoint y mas en tu PC.",
+    image: OfficeImage,
+    alt: "Activacion de Microsoft Office",
+    cta: "Quiero activar Office",
+    href: "https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20quiero%20comprar%20la%20activacion%20de%20Microsoft%20Office%20de%20%2412.",
+    benefits: [
+      "Word, Excel y PowerPoint",
+      "Ideal para estudio y trabajo",
+      "Acompanamiento por WhatsApp",
+    ],
+  },
+  {
+    name: "Minecraft Java & Bedrock",
+    price: "$24",
+    description: "Compra Minecraft para PC y recibelo en tu cuenta Microsoft.",
+    image: MinecraftImage,
+    alt: "Minecraft Java y Bedrock para PC",
+    cta: "Quiero comprar Minecraft",
+    href: "https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20quiero%20comprar%20Minecraft%20Java%20%26%20Bedrock%20para%20PC%20de%20%2424.",
+    benefits: [
+      "Java Edition incluida",
+      "Bedrock Edition incluida",
+      "Se agrega a tu cuenta Microsoft",
+    ],
+  },
+];
+
+const faqs = [
+  {
+    question: "Como recibo el producto?",
+    answer:
+      "Todo se coordina por WhatsApp. Te doy las instrucciones y te acompano hasta que el servicio quede listo.",
+  },
+  {
+    question: "Cuanto tarda la entrega?",
+    answer:
+      "Normalmente la atencion es rapida. Si estoy en horario laboral, te respondo apenas tenga disponibilidad y te dejo el proceso claro.",
+  },
+  {
+    question: "Que metodos de pago aceptan?",
+    answer:
+      "Puedes escribir por WhatsApp para confirmar el metodo disponible antes de avanzar con la compra.",
+  },
+  {
+    question: "Minecraft queda en mi cuenta Microsoft?",
+    answer:
+      "Si, el servicio esta pensado para que puedas usar Minecraft Java & Bedrock en tu cuenta Microsoft para PC.",
+  },
+];
 ---
 
-<!-- Services Section -->
 <section
-  class="relative py-16 px-4 bg-gradient-to-br from-[#0a0a0a] via-[#100f1e] to-[#1a1a2e] overflow-hidden"
+  class="relative overflow-hidden bg-gradient-to-br from-[#070707] via-[#100f1e] to-[#140f28] px-4 py-20"
   id="servicios"
 >
-  <!-- Elementos decorativos de fondo -->
   <div class="absolute inset-0 opacity-20">
     <div
-      class="absolute rounded-full top-10 left-20 w-96 h-96 bg-green-500/10 blur-3xl"
+      class="absolute left-10 top-20 h-96 w-96 rounded-full bg-purple-500/20 blur-3xl"
     >
     </div>
     <div
-      class="absolute rounded-full bottom-10 right-20 w-80 h-80 bg-blue-500/10 blur-3xl"
+      class="absolute bottom-10 right-10 h-80 w-80 rounded-full bg-green-500/10 blur-3xl"
     >
     </div>
   </div>
 
-  <article class="relative z-10 max-w-screen-xl mx-auto">
-    <!-- Header Section -->
-    <div class="mb-16 space-y-6 text-center">
+  <article class="relative z-10 mx-auto max-w-screen-xl space-y-16">
+    <div class="mx-auto max-w-3xl space-y-5 text-center">
       <div
-        class="flex items-center justify-center gap-2 text-[#a78bfa] font-jetbrains text-sm uppercase tracking-wider"
+        class="font-jetbrains text-sm font-semibold uppercase tracking-[0.24em] text-[#a78bfa]"
       >
-        <div class="w-2 h-2 bg-[#a78bfa] rounded-full animate-pulse"></div>
-        <span>Nuestros Servicios</span>
+        Servicios estrella
       </div>
-
-      <h2 class="text-3xl font-black text-white md:text-4xl lg:text-5xl">
-        Soluciones Digitales
-        <span
-          class="text-transparent bg-gradient-to-r from-[#25D366] to-[#128C7E] bg-clip-text"
-        >
-          Profesionales
-        </span>
+      <h2 class="text-3xl font-black text-white md:text-5xl">
+        Compra digital, soporte directo y precios claros
       </h2>
-
-      <p
-        class="max-w-3xl mx-auto text-base leading-relaxed text-gray-300 md:text-lg"
-      >
-        Construimos soluciones digitales profesionales que transforman tu
-        negocio. Desde aplicaciones web a medida hasta tiendas en línea y
-        landing pages de alto impacto, tenemos el servicio que necesitas.
+      <p class="text-base leading-relaxed text-gray-300 md:text-lg">
+        Tres productos simples para vender por pauta: Windows, Office y
+        Minecraft. Sin cotizaciones largas, sin reuniones y con cierre por
+        WhatsApp.
       </p>
     </div>
 
-    <!-- Services Grid -->
-    <div class="grid gap-8 mb-12 md:grid-cols-2 lg:grid-cols-4">
-      <!-- Service 1: Custom Web Applications -->
-      <div
-        class="p-8 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-[#a78bfa]/20 flex flex-col gap-4"
-      >
+    <div class="grid gap-8 lg:grid-cols-3">
+      {
+        services.map((service) => (
+          <div class="flex flex-col overflow-hidden rounded-3xl border border-purple-400/20 bg-white/[0.04] shadow-2xl shadow-purple-950/20 backdrop-blur-xl">
+            <div class="relative overflow-hidden border-b border-purple-400/10 bg-black/30 p-3">
+              <Image
+                src={service.image}
+                alt={service.alt}
+                class="aspect-square w-full rounded-2xl object-cover transition-transform duration-500 hover:scale-[1.02]"
+              />
+            </div>
+            <div class="flex flex-1 flex-col gap-5 p-6">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h3 class="text-2xl font-black text-white">{service.name}</h3>
+                  <p class="mt-2 text-sm leading-relaxed text-gray-400">
+                    {service.description}
+                  </p>
+                </div>
+                <div class="rounded-2xl bg-gradient-to-r from-[#a78bfa] to-[#4361ee] px-4 py-3 text-center shadow-lg shadow-purple-900/30">
+                  <p class="text-xs font-bold uppercase tracking-wider text-white/80">
+                    Precio
+                  </p>
+                  <p class="text-3xl font-black text-white">{service.price}</p>
+                </div>
+              </div>
+
+              <div class="space-y-3">
+                {service.benefits.map((benefit) => (
+                  <div class="flex items-center gap-3 text-sm text-gray-300">
+                    <FaCheckCircle className="shrink-0 text-[#25D366]" />
+                    <span>{benefit}</span>
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href={service.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-auto inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#25D366] to-[#128C7E] px-6 py-4 font-bold text-white shadow-lg shadow-green-950/30 transition-all duration-300 hover:scale-105"
+              >
+                <FaWhatsapp />
+                <span>{service.cta}</span>
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div
+      class="grid gap-6 rounded-3xl border border-purple-400/20 bg-white/[0.04] p-6 md:grid-cols-3 md:p-8"
+    >
+      <div class="flex items-start gap-4">
+        <div class="rounded-2xl bg-purple-500/15 p-4 text-[#a78bfa]">
+          <FaRocket />
+        </div>
+        <div>
+          <h3 class="font-bold text-white">Entrega rapida</h3>
+          <p class="mt-1 text-sm text-gray-400">
+            Proceso pensado para ventas digitales sin reuniones largas.
+          </p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4">
+        <div class="rounded-2xl bg-green-500/15 p-4 text-[#25D366]">
+          <FaHeadset />
+        </div>
+        <div>
+          <h3 class="font-bold text-white">Soporte por WhatsApp</h3>
+          <p class="mt-1 text-sm text-gray-400">
+            Te acompano paso a paso durante la compra o activacion.
+          </p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4">
+        <div class="rounded-2xl bg-blue-500/15 p-4 text-blue-300">
+          <FaLock />
+        </div>
+        <div>
+          <h3 class="font-bold text-white">Compra segura</h3>
+          <p class="mt-1 text-sm text-gray-400">
+            Atencion directa, confirmacion y evidencia del proceso.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid items-center gap-10 lg:grid-cols-2">
+      <div class="space-y-6">
         <div
-          class="flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-r from-[#a78bfa]/20 to-[#4361ee]/20 border border-[#a78bfa]/30"
+          class="font-jetbrains text-sm font-semibold uppercase tracking-[0.24em] text-[#a78bfa]"
         >
-          <FaCode className="text-[#a78bfa] text-2xl" />
+          Prueba social
         </div>
-        <h4 class="text-xl font-bold text-white">Aplicaciones Web a Medida</h4>
-        <p class="text-sm text-gray-400 flex-1">
-          Sistemas web completos con React y Ruby on Rails: gestión de
-          inventarios, plataformas de reservas, dashboards administrativos y
-          cualquier proceso que necesites digitalizar.
+        <h2 class="text-3xl font-black text-white md:text-4xl">
+          Clientes reales, entregas verificadas y soporte directo
+        </h2>
+        <p class="text-gray-300">
+          Usa reseñas y capturas reales para aumentar confianza en las pautas.
+          Minecraft sera el primer producto a validar por su ticket mas alto.
         </p>
-        <div class="space-y-2">
-          <div class="flex items-center gap-2 text-sm text-gray-300">
-            <FaCheckCircle className="text-[#a78bfa] flex-shrink-0" />
-            <span>Stack React + Rails + PostgreSQL</span>
+        <div class="grid gap-3 sm:grid-cols-3">
+          <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+            <p class="text-2xl font-black text-white">$40</p>
+            <p class="text-sm text-gray-400">Pack completo</p>
           </div>
-          <div class="flex items-center gap-2 text-sm text-gray-300">
-            <FaCheckCircle className="text-[#a78bfa] flex-shrink-0" />
-            <span>Integración de pasarelas de pago</span>
+          <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+            <p class="text-2xl font-black text-white">$30</p>
+            <p class="text-sm text-gray-400">Minecraft + Windows</p>
           </div>
-          <div class="flex items-center gap-2 text-sm text-gray-300">
-            <FaCheckCircle className="text-[#a78bfa] flex-shrink-0" />
-            <span>Despliegue con Docker</span>
+          <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+            <p class="text-2xl font-black text-white">$18</p>
+            <p class="text-sm text-gray-400">Windows + Office</p>
           </div>
         </div>
-        <a
-          href="#contacto"
-          class="inline-flex items-center gap-2 px-5 py-2.5 font-semibold text-white transition-all duration-300 rounded-full shadow-lg bg-gradient-to-r from-[#a78bfa] to-[#4361ee] hover:shadow-xl hover:scale-105 text-sm mt-auto"
-        >
-          <span>Cotizar</span>
-          <FaArrowRight className="text-xs" />
-        </a>
       </div>
 
-      <!-- Service 2: Landing Pages -->
       <div
-        class="p-8 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-blue-500/20 flex flex-col gap-4"
+        class="overflow-hidden rounded-3xl border border-purple-400/20 bg-white/[0.04] p-3 shadow-2xl shadow-purple-950/30"
       >
-        <div
-          class="flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30"
-        >
-          <FaLaptop className="text-blue-400 text-2xl" />
-        </div>
-        <h4 class="text-xl font-bold text-white">
-          Landing Pages Profesionales
-        </h4>
-        <p class="text-sm text-gray-400 flex-1">
-          Sitios web corporativos y páginas de aterrizaje optimizadas para
-          convertir visitantes en clientes. Diseño moderno, carga ultrarrápida y
-          SEO desde el primer día.
-        </p>
-        <div class="space-y-2">
-          <div class="flex items-center gap-2 text-sm text-gray-300">
-            <FaCheckCircle className="text-blue-400 flex-shrink-0" />
-            <span>Astro + TailwindCSS</span>
-          </div>
-          <div class="flex items-center gap-2 text-sm text-gray-300">
-            <FaCheckCircle className="text-blue-400 flex-shrink-0" />
-            <span>Optimización SEO incluida</span>
-          </div>
-          <div class="flex items-center gap-2 text-sm text-gray-300">
-            <FaCheckCircle className="text-blue-400 flex-shrink-0" />
-            <span>Diseño 100% responsive</span>
-          </div>
-        </div>
-        <a
-          href="#contacto"
-          class="inline-flex items-center gap-2 px-5 py-2.5 font-semibold text-white transition-all duration-300 rounded-full shadow-lg bg-gradient-to-r from-blue-500 to-cyan-500 hover:shadow-xl hover:scale-105 text-sm mt-auto"
-        >
-          <span>Cotizar</span>
-          <FaArrowRight className="text-xs" />
-        </a>
+        <Image
+          src={MinecraftReviewImage}
+          alt="Venta finalizada de Minecraft con cliente satisfecho"
+          class="w-full rounded-2xl"
+        />
       </div>
+    </div>
 
-      <!-- Service 3: E-commerce -->
-      <div
-        class="p-8 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-green-500/20 flex flex-col gap-4"
-      >
-        <div
-          class="flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-r from-green-500/20 to-teal-500/20 border border-green-500/30"
+    <div class="mx-auto max-w-4xl space-y-6">
+      <div class="text-center">
+        <p
+          class="font-jetbrains text-sm font-semibold uppercase tracking-[0.24em] text-[#a78bfa]"
         >
-          <FaShoppingCart className="text-green-400 text-2xl" />
-        </div>
-        <h4 class="text-xl font-bold text-white">
-          E-commerce y Tiendas Online
-        </h4>
-        <p class="text-sm text-gray-400 flex-1">
-          Tiendas en línea completas con carrito de compras, gestión de
-          inventario, pagos seguros y panel de administración. Vende tus
-          productos o servicios las 24 horas.
+          Preguntas frecuentes
         </p>
-        <div class="space-y-2">
-          <div class="flex items-center gap-2 text-sm text-gray-300">
-            <FaCheckCircle className="text-green-400 flex-shrink-0" />
-            <span>Pasarelas de pago integradas</span>
-          </div>
-          <div class="flex items-center gap-2 text-sm text-gray-300">
-            <FaCheckCircle className="text-green-400 flex-shrink-0" />
-            <span>Panel de administración</span>
-          </div>
-          <div class="flex items-center gap-2 text-sm text-gray-300">
-            <FaCheckCircle className="text-green-400 flex-shrink-0" />
-            <span>Gestión de inventario</span>
-          </div>
-        </div>
-        <a
-          href="#contacto"
-          class="inline-flex items-center gap-2 px-5 py-2.5 font-semibold text-white transition-all duration-300 rounded-full shadow-lg bg-gradient-to-r from-green-500 to-teal-500 hover:shadow-xl hover:scale-105 text-sm mt-auto"
-        >
-          <span>Cotizar</span>
-          <FaArrowRight className="text-xs" />
-        </a>
+        <h2 class="mt-3 text-3xl font-black text-white">Antes de comprar</h2>
       </div>
-
-      <!-- Service 4: ChatWoot -->
-      <div
-        class="p-8 rounded-2xl bg-gradient-to-br from-[#1a1a2e]/80 to-[#2d2d44]/80 backdrop-blur-xl border border-[#25D366]/20 flex flex-col gap-4"
-      >
-        <div
-          class="flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-r from-[#25D366]/20 to-[#128C7E]/20 border border-[#25D366]/30"
-        >
-          <FaWhatsapp className="text-[#25D366] text-2xl" />
-        </div>
-        <h4 class="text-xl font-bold text-white">
-          ChatWoot para WhatsApp
-        </h4>
-        <p class="text-sm text-gray-400 flex-1">
-          Centraliza la atencion al cliente por WhatsApp en una plataforma web
-          con historial completo, agentes organizados y respuestas rapidas.
-        </p>
-        <div class="space-y-2">
-          <div class="flex items-center gap-2 text-sm text-gray-300">
-            <FaCheckCircle className="text-[#25D366] flex-shrink-0" />
-            <span>WhatsApp organizado</span>
-          </div>
-          <div class="flex items-center gap-2 text-sm text-gray-300">
-            <FaCheckCircle className="text-[#25D366] flex-shrink-0" />
-            <span>Historial por cliente</span>
-          </div>
-          <div class="flex items-center gap-2 text-sm text-gray-300">
-            <FaCheckCircle className="text-[#25D366] flex-shrink-0" />
-            <span>Respuestas 5x mas rapidas</span>
-          </div>
-        </div>
-        <a
-          href="/servicios/chatwoot"
-          class="inline-flex items-center gap-2 px-5 py-2.5 font-semibold text-white transition-all duration-300 rounded-full shadow-lg bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:shadow-xl hover:scale-105 text-sm mt-auto"
-        >
-          <span>Ver ChatWoot</span>
-          <FaArrowRight className="text-xs" />
-        </a>
+      <div class="grid gap-4 md:grid-cols-2">
+        {
+          faqs.map((faq) => (
+            <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
+              <h3 class="font-bold text-white">{faq.question}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-gray-400">
+                {faq.answer}
+              </p>
+            </div>
+          ))
+        }
       </div>
     </div>
   </article>

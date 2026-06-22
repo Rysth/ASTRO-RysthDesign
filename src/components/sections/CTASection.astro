@@ -1,264 +1,88 @@
 ---
-import {
-  FaWhatsapp,
-  FaLaptopCode,
-  FaRocket,
-  FaCheck,
-  FaArrowRight,
-} from "react-icons/fa";
-import { Image } from "astro:assets";
-import Project_3 from "@/assets/images/projects/project_3.webp";
+import { FaArrowRight, FaCheck, FaWhatsapp } from "react-icons/fa";
+
+const whatsappUrl =
+  "https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20quiero%20comprar%20un%20servicio%20digital.%20Me%20puedes%20ayudar%20con%20Windows%2C%20Office%20o%20Minecraft%3F";
 ---
 
-<!-- CTA Section - Web Development Services -->
 <section
-  class="relative py-20 px-4 overflow-hidden bg-gradient-to-br from-[#4361ee] via-[#3451d8] to-[#2941c8]"
+  class="relative overflow-hidden bg-gradient-to-br from-[#4361ee] via-[#5b2bd6] to-[#12091f] px-4 py-20"
 >
-  <!-- Background Pattern -->
   <div class="absolute inset-0 opacity-10">
     <div
       class="absolute inset-0"
-      style="background-image: radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px); background-size: 24px 24px;"
+      style="background-image: radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px); background-size: 24px 24px;"
     >
     </div>
   </div>
 
-  <!-- Decorative Blobs -->
-  <div class="absolute inset-0 overflow-hidden">
+  <div class="relative z-10 mx-auto max-w-5xl text-center">
     <div
-      class="absolute rounded-full top-0 right-[-10%] w-[500px] h-[500px] bg-purple-500/15 blur-3xl"
+      class="mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-white"
     >
+      <span class="h-2 w-2 rounded-full bg-[#25D366]"></span>
+      Compra digital por WhatsApp
     </div>
-    <div
-      class="absolute rounded-full bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-blue-300/15 blur-3xl"
-    >
+
+    <h2 class="text-4xl font-black leading-tight text-white md:text-6xl">
+      Listo para activar tu PC o comprar Minecraft?
+    </h2>
+
+    <p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white/85">
+      Escríbeme, dime que producto necesitas y te ayudo con el proceso: Windows
+      desde $8, Office desde $12 y Minecraft Java & Bedrock por $24.
+    </p>
+
+    <div class="mt-8 flex flex-wrap justify-center gap-4">
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group inline-flex items-center gap-3 rounded-full bg-white px-8 py-5 font-bold text-[#4361ee] shadow-xl transition-all duration-300 hover:scale-105 hover:bg-white/90"
+      >
+        <FaWhatsapp className="text-xl text-[#25D366]" />
+        <span>Escribeme por WhatsApp</span>
+        <FaArrowRight
+          className="transition-transform group-hover:translate-x-1"
+        />
+      </a>
+
+      <a
+        href="#servicios"
+        class="inline-flex items-center gap-3 rounded-full border border-white/30 bg-white/10 px-8 py-5 font-semibold text-white backdrop-blur-md transition-all duration-300 hover:bg-white/20"
+      >
+        Ver precios
+      </a>
     </div>
-    <div
-      class="absolute rounded-full top-1/2 left-1/4 w-32 h-32 bg-white/5 blur-2xl"
-    >
-    </div>
-  </div>
 
-  <!-- Grid Lines -->
-  <div class="absolute inset-0 opacity-5">
-    <div class="absolute top-0 left-1/4 w-px h-full bg-white"></div>
-    <div class="absolute top-0 right-1/4 w-px h-full bg-white"></div>
-  </div>
-
-  <div class="relative z-10 max-w-7xl mx-auto">
-    <div class="grid items-center gap-12 lg:gap-16 md:grid-cols-2">
-      <!-- Content Left -->
-      <div class="order-2 space-y-8 md:order-1">
-        <!-- Badge -->
-        <div
-          class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20"
-        >
-          <span class="relative flex h-2 w-2">
-            <span
-              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"
-            ></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-white"
-            ></span>
-          </span>
-          <span class="text-sm font-semibold text-white tracking-wide"
-            >Transforma Tu Negocio</span
-          >
-        </div>
-
-        <!-- Headline -->
-        <h2
-          class="text-4xl font-black leading-tight text-white md:text-5xl lg:text-6xl tracking-tight"
-        >
-          <span class="block">Lleva tu empresa al</span>
-          <span class="block mt-1">siguiente nivel digital</span>
-        </h2>
-
-        <!-- Subheadline -->
-        <p class="text-lg leading-relaxed text-white/90 md:text-xl max-w-lg">
-          No dejes que tu competencia te adelante. Obtén un sitio web
-          profesional y comienza a generar más ventas hoy mismo.
+    <div class="mt-10 grid gap-4 text-left sm:grid-cols-3">
+      <div
+        class="rounded-2xl border border-white/15 bg-white/10 p-5 text-white backdrop-blur-md"
+      >
+        <FaCheck className="mb-3 text-[#25D366]" />
+        <p class="font-bold">Entrega digital</p>
+        <p class="mt-1 text-sm text-white/70">
+          Sin reuniones largas ni procesos complicados.
         </p>
-
-        <!-- CTA Buttons -->
-        <div class="flex flex-wrap gap-4">
-          <!-- Primary CTA -->
-          <a
-            href="https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20servicios.%20%C2%BFPodr%C3%ADan%20darme%20m%C3%A1s%20informaci%C3%B3n%3F"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group inline-flex items-center gap-3 px-8 py-5 bg-white text-[#4361ee] font-bold rounded-full hover:bg-white/90 hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl"
-          >
-            <FaWhatsapp className="text-xl" />
-            <span>Contáctanos</span>
-            <FaArrowRight
-              className="text-lg transition-transform group-hover:translate-x-1"
-            />
-          </a>
-
-          <!-- Secondary CTA -->
-          <a
-            href="#servicios"
-            class="inline-flex items-center gap-3 px-8 py-5 bg-white/10 backdrop-blur-md border border-white/30 text-white font-semibold rounded-full hover:bg-white/20 hover:border-white/50 transition-all duration-300"
-          >
-            <FaLaptopCode className="text-lg" />
-            <span>Ver Servicios</span>
-          </a>
-
-          <!-- ChatWoot CTA -->
-          <a
-            href="/servicios/chatwoot"
-            class="inline-flex items-center gap-3 px-8 py-5 bg-[#25D366]/20 backdrop-blur-md border border-[#25D366]/40 text-white font-semibold rounded-full hover:bg-[#25D366]/30 hover:border-[#25D366]/60 transition-all duration-300"
-          >
-            <FaWhatsapp className="text-lg" />
-            <span>Ver ChatWoot</span>
-          </a>
-        </div>
-
-        <!-- Trust Badges -->
-        <div class="flex flex-wrap gap-6 pt-2">
-          <div class="flex items-center gap-3">
-            <div
-              class="flex items-center justify-center w-10 h-10 rounded-full bg-white/15"
-            >
-              <FaCheck className="w-4 h-4 text-white" />
-            </div>
-            <div>
-              <div class="text-xs text-white/70">Experiencia</div>
-              <div class="font-bold text-white">5+ Años</div>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-3">
-            <div
-              class="flex items-center justify-center w-10 h-10 rounded-full bg-white/15"
-            >
-              <FaCheck className="w-4 h-4 text-white" />
-            </div>
-            <div>
-              <div class="text-xs text-white/70">Proyectos</div>
-              <div class="font-bold text-white">50+ Completados</div>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-3">
-            <div
-              class="flex items-center justify-center w-10 h-10 rounded-full bg-white/15"
-            >
-              <FaCheck className="w-4 h-4 text-white" />
-            </div>
-            <div>
-              <div class="text-xs text-white/70">Clientes</div>
-              <div class="font-bold text-white">100% Satisfechos</div>
-            </div>
-          </div>
-        </div>
       </div>
-
-      <!-- Mockup/Image Right -->
-      <div class="relative order-1 md:order-2">
-        <div class="relative mx-auto max-w-sm md:max-w-md lg:max-w-lg">
-          <!-- Main Device Mockup -->
-          <div
-            class="relative overflow-hidden border-[6px] shadow-2xl rounded-[2rem] border-white/20 shadow-black/40 group"
-          >
-            <Image
-              src={Project_3}
-              alt="MicroPets - Sistema Profesional"
-              class="object-cover w-full h-auto transition-transform duration-700 group-hover:scale-105"
-            />
-            <!-- Overlay gradient -->
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            >
-            </div>
-          </div>
-
-          <!-- Floating Badge 1 - Delivery -->
-          <div
-            class="absolute -top-6 -right-6 md:-right-8 p-4 bg-white rounded-2xl shadow-2xl animate-float hidden md:block"
-          >
-            <div class="flex items-center gap-3">
-              <div
-                class="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-green-400 to-green-600"
-              >
-                <FaRocket className="text-white text-2xl" />
-              </div>
-              <div>
-                <div class="text-xs font-semibold text-gray-500">
-                  Entrega en
-                </div>
-                <div class="text-xl font-black text-gray-800">15-30 días</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Floating Badge 2 - Satisfaction -->
-          <div
-            class="absolute -bottom-6 -left-6 md:-left-8 p-4 bg-white rounded-2xl shadow-2xl animate-float hidden md:block"
-            style="animation-delay: 1.5s;"
-          >
-            <div class="flex items-center gap-3">
-              <div>
-                <div class="text-xs font-semibold text-gray-500 mb-1">
-                  Satisfacción
-                </div>
-                <div class="flex items-center gap-1 mb-1">
-                  {
-                    [...Array(5)].map(() => (
-                      <svg
-                        class="w-4 h-4 text-yellow-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))
-                  }
-                </div>
-                <div
-                  class="text-lg font-black text-transparent bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text"
-                >
-                  100% Garantizada
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Floating Badge 3 - Support -->
-          <div
-            class="absolute top-1/4 -left-4 md:-left-6 p-3 bg-white/90 backdrop-blur-md rounded-xl shadow-lg animate-float hidden md:block"
-            style="animation-delay: 0.8s;"
-          >
-            <div class="flex items-center gap-2">
-              <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse">
-              </div>
-              <div class="text-xs font-semibold text-gray-700">
-                Soporte 24/7
-              </div>
-            </div>
-          </div>
-
-          <!-- Decorative Shape (Behind mockup) -->
-          <div
-            class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-br from-white/10 to-purple-500/10 rounded-[3rem] blur-3xl"
-          >
-          </div>
-        </div>
+      <div
+        class="rounded-2xl border border-white/15 bg-white/10 p-5 text-white backdrop-blur-md"
+      >
+        <FaCheck className="mb-3 text-[#25D366]" />
+        <p class="font-bold">Soporte directo</p>
+        <p class="mt-1 text-sm text-white/70">
+          Atencion personalizada durante la compra.
+        </p>
+      </div>
+      <div
+        class="rounded-2xl border border-white/15 bg-white/10 p-5 text-white backdrop-blur-md"
+      >
+        <FaCheck className="mb-3 text-[#25D366]" />
+        <p class="font-bold">Precios claros</p>
+        <p class="mt-1 text-sm text-white/70">
+          Windows $8, Office $12 y Minecraft $24.
+        </p>
       </div>
     </div>
-  </div>
-
-  <!-- Bottom Wave -->
-  <div class="absolute -bottom-1 left-0 right-0">
-    <svg
-      class="w-full h-12 md:h-16 text-white"
-      viewBox="0 0 1440 64"
-      preserveAspectRatio="none"
-    >
-      <path
-        fill="currentColor"
-        d="M0,32L48,37.3C96,43,192,53,288,53.3C384,53,480,43,576,37.3C672,32,768,32,864,37.3C960,43,1056,53,1152,53.3C1248,53,1344,43,1392,37.3L1440,32L1440,64L1392,64C1344,64,1248,64,1152,64C1056,64,960,64,864,64C768,64,672,64,576,64C480,64,384,64,288,64C192,64,96,64,48,64L0,64Z"
-      ></path>
-    </svg>
   </div>
 </section>

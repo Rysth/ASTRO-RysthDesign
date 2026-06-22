@@ -1,6 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import BrandImage from "../../assets/images/brand/brand.svg";
+
+const whatsappUrl =
+  "https://wa.me/593988949117?text=Hola%20RysthDesign%2C%20quiero%20comprar%20un%20servicio%20digital%20para%20mi%20PC.%20Me%20interesa%20Windows%2C%20Office%20o%20Minecraft.";
 ---
 
 <!-- Footer - Inspired by Zubaz Design -->
@@ -31,9 +34,8 @@ import BrandImage from "../../assets/images/brand/brand.svg";
           />
         </a>
         <p class="text-sm leading-relaxed text-gray-400">
-          Somos tu socio de innovación, entregando soluciones de vanguardia que
-          elevan tu negocio al siguiente nivel con tecnología moderna y
-          personalizada.
+          Servicios digitales para PC en Ecuador: activacion de Windows,
+          Microsoft Office y Minecraft Java & Bedrock con soporte por WhatsApp.
         </p>
       </div>
 
@@ -51,10 +53,10 @@ import BrandImage from "../../assets/images/brand/brand.svg";
           </li>
           <li>
             <a
-              href="/#tecnologias"
+              href="/#servicios"
               class="text-sm text-gray-400 transition-colors hover:text-[#a78bfa] hover:translate-x-1 inline-block"
             >
-              Tecnologías
+              Precios
             </a>
           </li>
           <li>
@@ -67,18 +69,20 @@ import BrandImage from "../../assets/images/brand/brand.svg";
           </li>
           <li>
             <a
-              href="/#clientes"
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               class="text-sm text-gray-400 transition-colors hover:text-[#a78bfa] hover:translate-x-1 inline-block"
             >
-              Clientes
+              WhatsApp
             </a>
           </li>
           <li>
             <a
-              href="/#contacto"
+              href="/#servicios"
               class="text-sm text-gray-400 transition-colors hover:text-[#a78bfa] hover:translate-x-1 inline-block"
             >
-              Contacto
+              Preguntas frecuentes
             </a>
           </li>
         </ul>
@@ -90,10 +94,10 @@ import BrandImage from "../../assets/images/brand/brand.svg";
         <ul class="space-y-3">
           <li>
             <a
-              href="/servicios/chatwoot"
+              href="/#servicios"
               class="text-sm text-gray-400 transition-colors hover:text-[#a78bfa] hover:translate-x-1 inline-block"
             >
-              ChatWoot - Chat Omnicanal
+              Windows 10/11 - $8
             </a>
           </li>
           <li>
@@ -101,15 +105,15 @@ import BrandImage from "../../assets/images/brand/brand.svg";
               href="/#servicios"
               class="text-sm text-gray-400 transition-colors hover:text-[#a78bfa] hover:translate-x-1 inline-block"
             >
-              Soluciones Digitales
+              Microsoft Office - $12
             </a>
           </li>
           <li>
             <a
-              href="mailto:support@rysthdesign.com"
+              href="/#servicios"
               class="text-sm text-gray-400 transition-colors hover:text-[#a78bfa] hover:translate-x-1 inline-block"
             >
-              Soporte
+              Minecraft PC - $24
             </a>
           </li>
         </ul>
