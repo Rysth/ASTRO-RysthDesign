@@ -17,6 +17,7 @@ import WindowsImage from "@/assets/services/RDS-0001-WINDOWS.png";
 import OfficeImage from "@/assets/services/RDS-0002-OFFICE.png";
 import MinecraftImage from "@/assets/services/RDS-0003-MINECRAFT.png";
 import MinecraftReviewImage from "@/assets/services/RDS-0003-0001-MINECRAFT-REVIEW.png";
+import InstaCommentImage from "@/assets/services/RDS-0004-INSTCOMMENT.png";
 
 const instaCommentFeatures = [
   {
@@ -44,14 +45,14 @@ const instaCommentFeatures = [
   },
 ];
 
-const instaCommentReserveMessage = encodeURIComponent(
-  "Hola, quiero reservar uno de los 3 cupos de Gestion de Comentarios de Instagram",
-);
-const instaCommentDemoMessage = encodeURIComponent(
-  "Hola, quiero ver una demo de RD InstaComment antes de reservar mi cupo",
-);
-const instaCommentReserveUrl = `https://wa.me/593988949117?text=${instaCommentReserveMessage}`;
-const instaCommentDemoUrl = `https://wa.me/593988949117?text=${instaCommentDemoMessage}`;
+const instaCommentReserveUrl = "https://shlink.rysthdesign.com/instacomment";
+const instaCommentDemoParams = new URLSearchParams({
+  phone: "593988949117",
+  text: "Hola RysthDesign, estoy interesado en ver una demo de RD InstaComment.",
+  type: "phone_number",
+  app_absent: "0",
+});
+const instaCommentDemoUrl = `https://api.whatsapp.com/send/?${instaCommentDemoParams.toString()}`;
 
 const services = [
   {
@@ -312,6 +313,16 @@ const faqs = [
           </div>
 
           <div class="space-y-4">
+            <div
+              class="overflow-hidden rounded-3xl border border-purple-400/20 bg-white/[0.04] p-3 shadow-2xl shadow-purple-950/30"
+            >
+              <Image
+                src={InstaCommentImage}
+                alt="Panel de RD InstaComment para gestionar comentarios de Instagram"
+                class="aspect-square w-full rounded-2xl object-cover transition-transform duration-500 hover:scale-[1.02]"
+              />
+            </div>
+
             <div
               class="rounded-2xl bg-gradient-to-r from-[#a78bfa] to-[#4361ee] p-6 text-center shadow-lg shadow-purple-900/30"
             >
