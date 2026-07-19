@@ -1,58 +1,16 @@
 ---
 import { Image } from "astro:assets";
 import {
-  FaBell,
   FaCheckCircle,
-  FaComments,
-  FaFire,
   FaHeadset,
-  FaInstagram,
-  FaLink,
   FaLock,
   FaRocket,
-  FaUserShield,
   FaWhatsapp,
 } from "react-icons/fa";
 import WindowsImage from "@/assets/services/RDS-0001-WINDOWS.png";
 import OfficeImage from "@/assets/services/RDS-0002-OFFICE.png";
 import MinecraftImage from "@/assets/services/RDS-0003-MINECRAFT.png";
 import MinecraftReviewImage from "@/assets/services/RDS-0003-0001-MINECRAFT-REVIEW.png";
-import InstaCommentImage from "@/assets/services/RDS-0004-INSTCOMMENT.png";
-
-const instaCommentFeatures = [
-  {
-    icon: FaComments,
-    title: "Respuestas centralizadas",
-    description:
-      "Responde todos los comentarios de tus publicaciones desde un solo panel.",
-  },
-  {
-    icon: FaLink,
-    title: "Vinculacion segura",
-    description:
-      "Conexion oficial con la Instagram Graph API, sin compartir contrasenas.",
-  },
-  {
-    icon: FaBell,
-    title: "Notificaciones al instante",
-    description: "Enterate al instante cuando llega un comentario nuevo.",
-  },
-  {
-    icon: FaUserShield,
-    title: "Tu instancia privada",
-    description:
-      "Cada cliente tiene un entorno aislado: dominio, base de datos, licencia y configuracion exclusivos.",
-  },
-];
-
-const instaCommentReserveUrl = "https://shlink.rysthdesign.com/instacomment";
-const instaCommentDemoParams = new URLSearchParams({
-  phone: "593988949117",
-  text: "Hola RysthDesign, estoy interesado en ver una demo de RD InstaComment.",
-  type: "phone_number",
-  app_absent: "0",
-});
-const instaCommentDemoUrl = `https://api.whatsapp.com/send/?${instaCommentDemoParams.toString()}`;
 
 const services = [
   {
@@ -206,167 +164,6 @@ const faqs = [
           </div>
         ))
       }
-    </div>
-
-    <div class="space-y-6">
-      <div
-        class="font-jetbrains text-sm font-semibold uppercase tracking-[0.24em] text-[#a78bfa]"
-      >
-        Nuevo servicio
-      </div>
-
-      <div
-        class="overflow-hidden rounded-3xl border border-purple-400/20 bg-white/[0.04] shadow-2xl shadow-purple-950/20 backdrop-blur-xl"
-      >
-        <div
-          class="grid gap-8 p-6 md:p-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start"
-        >
-          <div class="space-y-6">
-            <div class="flex flex-wrap items-center gap-3">
-              <span
-                class="inline-flex items-center gap-2 rounded-full border border-purple-400/30 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-purple-200 backdrop-blur-sm"
-              >
-                <span class="h-2 w-2 rounded-full bg-[#25D366]"></span>
-                Servicio Digital
-              </span>
-              <span
-                class="inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-500/15 px-4 py-2 text-xs font-bold uppercase tracking-[0.15em] text-amber-300"
-              >
-                <FaFire className="shrink-0" />
-                Precio de lanzamiento fijo - solo para los primeros 3 clientes
-              </span>
-            </div>
-
-            <div class="flex items-start gap-4">
-              <div class="rounded-2xl bg-purple-500/15 p-4 text-[#a78bfa]">
-                <FaInstagram className="text-2xl" />
-              </div>
-              <div>
-                <h3 class="text-2xl font-black text-white md:text-3xl">
-                  Gestion de Comentarios de Instagram
-                </h3>
-                <p
-                  class="mt-1 text-xs font-semibold uppercase tracking-wide text-gray-500"
-                >
-                  RD InstaComment
-                </p>
-              </div>
-            </div>
-
-            <p class="text-sm leading-relaxed text-gray-300 md:text-base">
-              Responde, organiza y no pierdas ningun comentario de tu negocio
-              en Instagram desde un panel centralizado, con tu propia
-              instancia privada.
-            </p>
-
-            <div class="grid gap-4 sm:grid-cols-2">
-              {
-                instaCommentFeatures.map((feature) => (
-                  <div class="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                    <div class="shrink-0 rounded-xl bg-purple-500/15 p-2.5 text-[#a78bfa]">
-                      <feature.icon />
-                    </div>
-                    <div>
-                      <h4 class="text-sm font-bold text-white">
-                        {feature.title}
-                      </h4>
-                      <p class="mt-1 text-xs leading-relaxed text-gray-400">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </div>
-                ))
-              }
-            </div>
-
-            <div class="flex flex-wrap gap-3">
-              <a
-                href={instaCommentReserveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#25D366] to-[#128C7E] px-6 py-4 font-bold text-white shadow-lg shadow-green-950/30 transition-all duration-300 hover:scale-105"
-              >
-                <FaWhatsapp />
-                <span>Reservar mi cupo</span>
-              </a>
-              <a
-                href={instaCommentDemoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center justify-center gap-3 rounded-full border border-white/20 bg-white/10 px-6 py-4 font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/20"
-              >
-                Ver demo
-              </a>
-            </div>
-
-            <div class="flex flex-wrap gap-3 text-xs text-gray-300">
-              <span class="rounded-full bg-white/5 px-4 py-2">
-                Configuracion incluida
-              </span>
-              <span class="rounded-full bg-white/5 px-4 py-2">
-                Pago seguro
-              </span>
-              <span class="rounded-full bg-white/5 px-4 py-2">
-                Solo 3 cupos disponibles
-              </span>
-            </div>
-          </div>
-
-          <div class="space-y-4">
-            <div
-              class="overflow-hidden rounded-3xl border border-purple-400/20 bg-white/[0.04] p-3 shadow-2xl shadow-purple-950/30"
-            >
-              <Image
-                src={InstaCommentImage}
-                alt="Panel de RD InstaComment para gestionar comentarios de Instagram"
-                class="aspect-square w-full rounded-2xl object-cover transition-transform duration-500 hover:scale-[1.02]"
-              />
-            </div>
-
-            <div
-              class="rounded-2xl bg-gradient-to-r from-[#a78bfa] to-[#4361ee] p-6 text-center shadow-lg shadow-purple-900/30"
-            >
-              <p
-                class="text-xs font-bold uppercase tracking-wider text-white/80"
-              >
-                Precio de lanzamiento
-              </p>
-              <p class="mt-2 text-3xl font-black text-white md:text-4xl">
-                $250/año + $15/mes
-              </p>
-              <p class="mt-3 text-xs leading-relaxed text-white/80">
-                Licencia anual de la plataforma mas mantenimiento y hosting
-                mensual. Precio congelado todos los años mientras seas cliente
-                activo.
-              </p>
-            </div>
-
-            <div
-              class="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]"
-            >
-              <div
-                class="flex items-center justify-between border-b border-white/10 px-5 py-4"
-              >
-                <span class="text-sm text-gray-300">Licencia anual</span>
-                <span class="text-sm font-bold text-white">
-                  $250{" "}
-                  <span class="font-normal text-gray-500">
-                    / se renueva cada año
-                  </span>
-                </span>
-              </div>
-              <div class="flex items-center justify-between px-5 py-4">
-                <span class="text-sm text-gray-300">
-                  Mantenimiento y hosting
-                </span>
-                <span class="text-sm font-bold text-white">
-                  $15 <span class="font-normal text-gray-500">/ mes</span>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
     <div
