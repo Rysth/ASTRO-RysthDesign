@@ -1,0 +1,49 @@
+---
+import Star from "@/components/ui/Star.astro";
+
+export interface Props {
+  resena: {
+    autor: string;
+    inicial: string;
+    estrellas: number;
+    fecha: string;
+    texto: string;
+  };
+}
+
+const { resena } = Astro.props;
+---
+
+<div class="flex h-full flex-col gap-4 rounded-card border border-slate bg-carbon p-6">
+  <div class="flex items-center gap-3">
+    <span
+      class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate font-mono text-body text-white"
+    >
+      {resena.inicial}
+    </span>
+    <div class="flex flex-col">
+      <span class="text-small font-medium text-white">{resena.autor}</span>
+      <span class="text-eyebrow font-mono text-smoke">{resena.fecha}</span>
+    </div>
+  </div>
+
+  <div class="flex items-center gap-1" aria-label={`${resena.estrellas} de 5 estrellas`}>
+    {
+      Array.from({ length: 5 }).map((_, i) => (
+        <Star size={12} filled={i < resena.estrellas} />
+      ))
+    }
+  </div>
+
+  <details class="group">
+    <summary class="cursor-pointer list-none">
+      <span class="text-small line-clamp-4 block text-smoke group-open:line-clamp-none">
+        {resena.texto}
+      </span>
+      <span class="mt-2 inline-block text-eyebrow font-mono uppercase text-violeta">
+        <span class="group-open:hidden">Leer más</span>
+        <span class="hidden group-open:inline">Leer menos</span>
+      </span>
+    </summary>
+  </details>
+</div>

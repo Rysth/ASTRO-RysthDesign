@@ -1,9 +1,13 @@
 ---
 import Eyebrow from "@/components/ui/Eyebrow.astro";
 import Star from "@/components/ui/Star.astro";
+import ReviewCard from "@/components/ReviewCard.astro";
 import resenas from "@/data/resenas.json";
 
 const estrellasPromedio = Math.round(resenas.rating);
+// Ritmo del marquee: ~5s por tarjeta, para que la velocidad se sienta igual
+// sin importar cuántas reseñas haya.
+const duracionMarquee = `${resenas.resenas.length * 5}s`;
 ---
 
 <section
@@ -52,42 +56,51 @@ const estrellasPromedio = Math.round(resenas.rating);
 
   {
     resenas.resenas.length > 0 ? (
-      <ul class="pista m-0 mt-8 list-none p-0" tabindex="0">
-        {resenas.resenas.map((r) => (
-          <li class="flex flex-col gap-4 rounded-card border border-slate bg-carbon p-6">
-            <div class="flex items-center gap-3">
-              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate font-mono text-body text-white">
-                {r.inicial}
-              </span>
-              <div class="flex flex-col">
-                <span class="text-small font-medium text-white">{r.autor}</span>
-                <span class="text-eyebrow font-mono text-smoke">{r.fecha}</span>
-              </div>
-            </div>
+      <Fragment>
+        {/* Escritorio/tablet: arrastras vos, con mouse o trackpad. */}
+        <ul class="pista m-0 mt-8 hidden list-none p-0 md:flex" tabindex="0">
+          {resenas.resenas.map((r) => (
+            <li>
+              <ReviewCard resena={r} />
+            </li>
+          ))}
+        </ul>
 
-            <div
-              class="flex items-center gap-1"
-              aria-label={`${r.estrellas} de 5 estrellas`}
-            >
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star size={12} filled={i < r.estrellas} />
-              ))}
-            </div>
+        {/* Móvil: avanza solo. El checkbox oculto es el control de pausa —
+            100% CSS, sin JS, y accesible por teclado/lector de pantalla. */}
+        <div
+          class="marquee-viewport mt-8 md:hidden"
+          style={`--marquee-duration: ${duracionMarquee}`}
+        >
+          <input type="checkbox" id="pausar-resenas" class="peer sr-only" />
 
-            <details class="group">
-              <summary class="cursor-pointer list-none">
-                <span class="text-small line-clamp-4 block text-smoke group-open:line-clamp-none">
-                  {r.texto}
-                </span>
-                <span class="mt-2 inline-block text-eyebrow font-mono uppercase text-violeta">
-                  <span class="group-open:hidden">Leer más</span>
-                  <span class="hidden group-open:inline">Leer menos</span>
-                </span>
-              </summary>
-            </details>
-          </li>
-        ))}
-      </ul>
+          <ul class="marquee-track m-0 list-none p-0">
+            {resenas.resenas.map((r) => (
+              <li class="marquee-item">
+                <ReviewCard resena={r} />
+              </li>
+            ))}
+            {resenas.resenas.map((r) => (
+              <li class="marquee-item" aria-hidden="true" inert>
+                <ReviewCard resena={r} />
+              </li>
+            ))}
+          </ul>
+
+          <label
+            for="pausar-resenas"
+            class="mt-4 inline-block cursor-pointer text-eyebrow font-mono uppercase text-smoke peer-checked:hidden"
+          >
+            Pausar autoplay
+          </label>
+          <label
+            for="pausar-resenas"
+            class="mt-4 hidden cursor-pointer text-eyebrow font-mono uppercase text-violeta peer-checked:inline-block"
+          >
+            Reanudar autoplay
+          </label>
+        </div>
+      </Fragment>
     ) : (
       <p class="mt-8 text-small text-smoke">
         Reseñas en camino.
@@ -113,7 +126,8 @@ const estrellasPromedio = Math.round(resenas.rating);
 
 <style>
   .pista {
-    display: flex;
+    /* display lo maneja Tailwind (hidden md:flex) — no lo fijes acá o
+       pisa el "hidden" en móvil. */
     gap: var(--space-16);
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -127,9 +141,50 @@ const estrellasPromedio = Math.round(resenas.rating);
     scroll-snap-align: start;
     flex: 0 0 clamp(280px, 80vw, 360px);
   }
+
+  .marquee-viewport {
+    overflow: hidden;
+  }
+  .marquee-track {
+    display: flex;
+    gap: var(--space-16);
+    width: max-content;
+    animation: resenas-marquee var(--marquee-duration, 24s) linear infinite;
+  }
+  .marquee-item {
+    flex: 0 0 clamp(280px, 80vw, 360px);
+  }
+  @keyframes resenas-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      /* La pista trae las reseñas duplicadas para el loop. -50% solo, sin
+         ajuste, deja un salto de medio gap al reiniciar — se resta ese medio
+         gap para que el loop sea perfectamente continuo. */
+      transform: translateX(calc(-50% - var(--space-16) / 2));
+    }
+  }
+  /* Selector por ID a propósito: le gana en especificidad al shorthand
+     `animation` de arriba, que si no reinicia animation-play-state a
+     "running" y el pausado (hover/foco/checkbox) nunca se nota. */
+  #pausar-resenas:checked ~ .marquee-track,
+  .marquee-track:hover,
+  .marquee-track:focus-within {
+    animation-play-state: paused;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .pista {
       scroll-behavior: auto;
+    }
+    /* Con reduced-motion, la versión de escritorio (arrastrable, sin
+       autoplay) reemplaza al marquee incluso en móvil. */
+    .marquee-viewport {
+      display: none;
+    }
+    .pista {
+      display: flex !important;
     }
   }
 </style>
