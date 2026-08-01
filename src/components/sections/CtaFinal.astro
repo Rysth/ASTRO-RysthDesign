@@ -1,19 +1,25 @@
 ---
 import Button from "@/components/ui/Button.astro";
 import { waLink } from "@/data/site.ts";
+
+export interface Props {
+  titulo?: string;
+  mensaje?: string;
+}
+
+const {
+  titulo = "¿Listo para que tu sitio cargue en menos de un segundo?",
+  mensaje = "Hola, quiero saber cómo funciona el sistema de RysthDesign para mi negocio.",
+} = Astro.props;
 ---
 
 <section class="mx-auto max-w-screen-xl px-4 py-16 md:px-6 md:py-24">
   <div
     class="flex flex-col items-center gap-6 rounded-card border border-slate bg-carbon px-6 py-16 text-center"
   >
-    <h2 class="text-h2 max-w-[20ch] text-white">
-      ¿Listo para que tu sitio cargue en menos de un segundo?
-    </h2>
+    <h2 class="text-h2 max-w-[20ch] text-white">{titulo}</h2>
     <Button
-      href={waLink(
-        "Hola, quiero saber cómo funciona el sistema de RysthDesign para mi negocio.",
-      )}
+      href={waLink(mensaje)}
       target="_blank"
       rel="noopener noreferrer"
       variant="primary"

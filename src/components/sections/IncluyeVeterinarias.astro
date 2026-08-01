@@ -1,0 +1,76 @@
+---
+import SectionHeader from "@/components/ui/SectionHeader.astro";
+import Card from "@/components/ui/Card.astro";
+import Chevron from "@/components/ui/Chevron.astro";
+import { planes } from "@/data/planes.ts";
+
+// Mismos dos planes de siempre (src/data/planes.ts) — acá solo se traduce
+// el "incluye" al lenguaje del rubro. Precio, entrega y rondas son los reales.
+const incluyeVet: Record<string, string[]> = {
+  landing: [
+    "Una página con precios de consulta, vacunación y desparasitación visibles",
+    "Botón de WhatsApp para agendar citas",
+    "Horario de atención y aparte el número de urgencias",
+    "Ficha de Google Business optimizada",
+    "Carga en menos de 1 segundo, garantizado",
+  ],
+  informativo: [
+    "Página de equipo con foto y credenciales de cada veterinario",
+    "Catálogo de servicios con precios: consulta, vacunación, desparasitación, peluquería, cirugía",
+    "Galería de pacientes",
+    "Botón de WhatsApp para agendar citas",
+    "2 rondas de cambios",
+  ],
+};
+---
+
+<section
+  id="el-servicio"
+  class="mx-auto max-w-screen-xl scroll-mt-16 px-4 py-16 md:px-6 md:py-24"
+>
+  <SectionHeader
+    eyebrow="Qué incluye"
+    title="Pensado para cómo trabaja una veterinaria"
+  />
+
+  <div class="mx-auto mt-12 grid max-w-3xl gap-6 sm:grid-cols-2">
+    {
+      planes.map((plan) => (
+        <Card
+          border={plan.destacado ? "violeta" : "slate"}
+          padding="lg"
+          class="relative flex flex-col gap-6"
+        >
+          {plan.destacado && (
+            <span class="absolute -top-3 left-6 rounded-button bg-violeta px-3 py-1 text-small font-medium text-white">
+              Más elegido
+            </span>
+          )}
+
+          <div class="flex flex-col gap-2">
+            <h3 class="text-h3 text-white">{plan.nombre}</h3>
+          </div>
+
+          <div class="flex flex-col gap-1 border-y border-slate py-4">
+            <p class="text-eyebrow font-mono uppercase text-smoke">Setup</p>
+            <p class="text-h3 text-white">${plan.setup}</p>
+            <p class="text-eyebrow mt-2 font-mono uppercase text-smoke">Anual</p>
+            <p class="text-h3 text-white">${plan.anual}</p>
+            <p class="text-small mt-2 font-mono text-smoke">
+              Entrega en {plan.entregaDias} días
+            </p>
+          </div>
+
+          <ul class="flex flex-col gap-3">
+            {(incluyeVet[plan.slug] ?? plan.incluye).map((item) => (
+              <li class="flex items-start gap-2">
+                <Chevron size={12} class="mt-1" />
+                <span class="text-small text-smoke">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </Card>
+      ))
+    }
+  </div>
+</section>

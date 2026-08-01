@@ -1,0 +1,23 @@
+---
+import SectionHeader from "@/components/ui/SectionHeader.astro";
+import { datosAuditoria, totalAuditadas } from "@/data/auditoria.ts";
+---
+
+<section class="mx-auto max-w-screen-xl px-4 py-16 md:px-6 md:py-24">
+  <SectionHeader
+    eyebrow="La auditoría"
+    title={`Revisamos ${totalAuditadas} veterinarias de Guayaquil en Google Maps`}
+    description="Sin hablar con nadie: solo Maps, PageSpeed Insights y abrir cada sitio en el celular."
+  />
+
+  <div class="mt-12 grid gap-8 sm:grid-cols-2">
+    {
+      datosAuditoria.map((dato) => (
+        <div class="flex flex-col gap-2">
+          <p class="text-display text-white">{dato.numero}</p>
+          <p class="text-eyebrow font-mono uppercase text-smoke">{dato.label}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>

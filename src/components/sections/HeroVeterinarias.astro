@@ -1,0 +1,43 @@
+---
+import Eyebrow from "@/components/ui/Eyebrow.astro";
+import Button from "@/components/ui/Button.astro";
+import Chevron from "@/components/ui/Chevron.astro";
+import RaceBars from "@/components/RaceBars.astro";
+import { waLink } from "@/data/site.ts";
+---
+
+<section class="mx-auto max-w-screen-xl px-4 pb-16 pt-12 md:px-6 md:pb-24 md:pt-16">
+  <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+    <div class="flex flex-col items-start gap-6">
+      <Eyebrow text="Para veterinarias" />
+      <h1 class="text-display text-white">
+        La web de tu veterinaria, lista en 7 días
+      </h1>
+      <p class="text-body max-w-[65ch] text-smoke">
+        Precios de consulta visibles, agenda por WhatsApp y carga en menos de
+        un segundo — mientras la mayoría de veterinarias en Guayaquil ni
+        siquiera tiene sitio web.
+      </p>
+      <div class="flex flex-wrap items-center gap-6">
+        <Button
+          href={waLink(
+            "Hola, tengo una veterinaria y quiero saber cómo funciona el sistema de RysthDesign.",
+          )}
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="primary"
+        >
+          Agendar por WhatsApp
+        </Button>
+        <Button href="#el-demo" variant="secondary">
+          Ver el demo
+          <Chevron size={10} />
+        </Button>
+      </div>
+    </div>
+
+    <div class="flex justify-center lg:justify-end">
+      <RaceBars />
+    </div>
+  </div>
+</section>
