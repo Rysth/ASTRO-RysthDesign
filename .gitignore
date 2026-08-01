@@ -17,5 +17,8 @@ pnpm-debug.log*
 .env
 .env.production
 
+# datos scrapeados de auditorías (contienen info de negocios de terceros)
+data/
+
 # macOS-specific files
 .DS_Store
