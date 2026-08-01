@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+import SectionHeader from "@/components/ui/SectionHeader.astro";
+import { trabajos } from "@/data/trabajos.ts";
+---
+
+{
+  trabajos.length > 0 && (
+    <section
+      id="trabajos"
+      class="mx-auto max-w-screen-xl px-4 py-16 md:px-6 md:py-24"
+    >
+      <SectionHeader eyebrow="Trabajos" title="Sitios ya publicados" />
+
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {trabajos.map((trabajo) => (
+          <a
+            href={trabajo.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex flex-col overflow-hidden rounded-card border border-slate bg-carbon transition-colors duration-150 ease-out hover:border-violeta"
+          >
+            <div class="relative">
+              <Image
+                src={trabajo.captura}
+                alt={`Captura del sitio de ${trabajo.nombre}`}
+                width={640}
+                height={400}
+                loading="lazy"
+                format="webp"
+                class="aspect-[8/5] w-full object-cover object-top"
+              />
+              <span class="absolute right-3 top-3 rounded-button bg-senal px-2 py-1 text-eyebrow font-mono uppercase text-void">
+                {trabajo.pagespeed} PageSpeed
+              </span>
+            </div>
+
+            <div class="flex flex-col gap-2 p-6">
+              <div class="flex flex-wrap items-center gap-2">
+                <h3 class="text-h3 text-white">{trabajo.nombre}</h3>
+                {trabajo.muestra && (
+                  <span class="rounded-button border border-slate bg-carbon px-2 py-1 text-eyebrow font-mono uppercase text-smoke">
+                    Proyecto de muestra
+                  </span>
+                )}
+              </div>
+              <p class="text-small text-smoke">{trabajo.rubro}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  )
+}

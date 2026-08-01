@@ -1,0 +1,114 @@
+---
+// Carrera de barras de carga: sitio típico en WordPress (4.8s) vs hecho con
+// RysthDesign (0.6s). Reutilizado en el hero de la home y en el de /veterinarias.
+---
+
+<div
+  data-hero-mockup
+  class="w-full max-w-sm rounded-card border border-slate bg-carbon p-4"
+>
+  <p class="text-eyebrow mb-6 font-mono uppercase text-smoke">
+    Velocidad de carga · en vivo
+  </p>
+  <div class="flex flex-col gap-6">
+    <div class="flex flex-col gap-2">
+      <div class="flex items-center justify-between gap-4">
+        <span class="text-small text-smoke">Sitio típico en WordPress</span>
+        <span data-timer="wordpress" class="text-small font-mono text-smoke">
+          0.0s
+        </span>
+      </div>
+      <div class="h-2 w-full overflow-hidden rounded-button bg-slate">
+        <div data-bar="wordpress" class="h-full w-0 rounded-button bg-smoke"></div>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <div class="flex items-center justify-between gap-4">
+        <span class="text-small text-white">Hecho con RysthDesign</span>
+        <span data-timer="rysth" class="text-small font-mono text-senal">
+          0.0s
+        </span>
+      </div>
+      <div class="h-2 w-full overflow-hidden rounded-button bg-slate">
+        <div data-bar="rysth" class="h-full w-0 rounded-button bg-senal"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const mockup = document.querySelector("[data-hero-mockup]");
+
+  const bars = {
+    wordpress: {
+      bar: document.querySelector<HTMLElement>('[data-bar="wordpress"]'),
+      timer: document.querySelector<HTMLElement>('[data-timer="wordpress"]'),
+      duration: 4800,
+    },
+    rysth: {
+      bar: document.querySelector<HTMLElement>('[data-bar="rysth"]'),
+      timer: document.querySelector<HTMLElement>('[data-timer="rysth"]'),
+      duration: 600,
+    },
+  };
+
+  function setFinal() {
+    for (const key in bars) {
+      const { bar, timer, duration } = bars[key as keyof typeof bars];
+      if (bar) bar.style.width = "100%";
+      if (timer) timer.textContent = `${(duration / 1000).toFixed(1)}s`;
+    }
+  }
+
+  function race() {
+    const start = performance.now();
+    const maxDuration = Math.max(
+      ...Object.values(bars).map((entry) => entry.duration),
+    );
+
+    function frame(now: number) {
+      const elapsed = now - start;
+
+      for (const key in bars) {
+        const { bar, timer, duration } = bars[key as keyof typeof bars];
+        const progress = Math.min(elapsed / duration, 1);
+        if (bar) bar.style.width = `${progress * 100}%`;
+        if (timer) {
+          timer.textContent = `${(Math.min(elapsed, duration) / 1000).toFixed(1)}s`;
+        }
+      }
+
+      if (elapsed < maxDuration) {
+        requestAnimationFrame(frame);
+      } else {
+        setFinal();
+      }
+    }
+
+    requestAnimationFrame(frame);
+  }
+
+  if (mockup) {
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (reduceMotion) {
+      setFinal();
+    } else {
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              race();
+              io.disconnect();
+            }
+          });
+        },
+        { threshold: 0.3 },
+      );
+      io.observe(mockup);
+    }
+  }
+</script>
