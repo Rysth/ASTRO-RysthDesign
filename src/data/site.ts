@@ -1,5 +1,4 @@
-// TODO: reemplazar con el número real (formato 593XXXXXXXXX, sin +).
-export const WHATSAPP_NUMBER = "TODO";
+export const WHATSAPP_NUMBER = "593988949117";
 
 // TODO: ciudad para SEO local (Layout.astro y schema.org de la Fase 3).
 export const CITY = "TODO";
