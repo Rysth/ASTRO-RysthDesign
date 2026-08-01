@@ -1,190 +1,20 @@
-@import url("https://fonts.cdnfonts.com/css/inter");
-@import url("https://fonts.cdnfonts.com/css/jetbrains-mono");
-
 @import "tailwindcss";
-@plugin "daisyui" {
-  themes: light --default;
+
+/* Fase 1 agrega tokens.css con la identidad de marca (colores, tipografía, espaciado). */
+
+html {
+  scroll-behavior: smooth;
 }
 
-:root {
-  /* Manteniendo tus colores base como solicitaste */
-  --CL-primary: #050505;
-  --CL-secondary: #100f1e;
-  --CL-tertiary: #4c4ff2;
-
-  /* Nuevos colores complementarios para mejor contraste */
-  --CL-accent: #4361ee; /* Azul para acentos */
-  --CL-accent-light: #d8e1ff; /* Fondo claro para secciones */
-  --CL-accent-dark: #0a2472; /* Para hover y énfasis */
-  --CL-success: #2ecc71; /* Color para elementos de éxito/check */
-  --CL-warm: #f59e0b; /* Color cálido para llamadas a la acción secundarias */
-
-  /* Gradientes globales para consistencia */
-  --gradient-primary: linear-gradient(135deg, #a78bfa 0%, #4361ee 100%);
-  --gradient-secondary: linear-gradient(135deg, #4361ee 0%, #6366f1 100%);
-  --gradient-tertiary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-  --gradient-quaternary: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
-
-  /* Colores de fondo globales */
-  --bg-dark: linear-gradient(135deg, #0a0a0a 0%, #100f1e 50%, #1a1a2e 100%);
-  --bg-card: linear-gradient(
-    135deg,
-    rgba(26, 26, 46, 0.8) 0%,
-    rgba(45, 45, 68, 0.8) 100%
-  );
-
-  /* Colores de borde y efectos */
-  --border-primary: rgba(167, 139, 250, 0.2);
-  --border-secondary: rgba(67, 97, 238, 0.2);
-  --border-tertiary: rgba(99, 102, 241, 0.2);
-  --border-quaternary: rgba(139, 92, 246, 0.2);
-}
-
-/* Custom font classes */
-.font-jetbrains {
-  font-family: "JetBrains Mono", monospace;
-  font-weight: 500;
-  letter-spacing: -0.025em;
-}
-
-/* Navbar specific utilities */
-.navbar-dark {
-  background-color: var(--CL-secondary);
-  border-color: rgba(75, 85, 99, 0.3);
-}
-
-.navbar-link {
-  color: rgb(209, 213, 219);
-  transition: all 0.3s ease;
-}
-
-.navbar-link:hover {
-  color: var(--CL-accent);
-  background-color: rgba(67, 97, 238, 0.1);
-}
-
-/* Clases utilitarias globales para consistencia */
-.bg-dark-gradient {
-  background: var(--bg-dark);
-}
-
-.bg-card-gradient {
-  background: var(--bg-card);
-}
-
-.gradient-primary {
-  background: var(--gradient-primary);
-}
-
-.gradient-secondary {
-  background: var(--gradient-secondary);
-}
-
-.gradient-tertiary {
-  background: var(--gradient-tertiary);
-}
-
-.gradient-quaternary {
-  background: var(--gradient-quaternary);
-}
-
-.border-primary {
-  border-color: var(--border-primary);
-}
-
-.border-secondary {
-  border-color: var(--border-secondary);
-}
-
-.border-tertiary {
-  border-color: var(--border-tertiary);
-}
-
-.border-quaternary {
-  border-color: var(--border-quaternary);
-}
-
-/* width */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: transparent;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--CL-primary);
+  background: #22222e;
   border-radius: 10rem;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #000;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Account for fixed navbar */
-}
-
-body {
-  font-family: "Inter", sans-serif;
-  background-color: var(--CL-secondary);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Inter", sans-serif;
-  font-weight: 900;
-}
-
-/* Animaciones personalizadas */
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes breathing {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.8;
-  }
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.animate-spin-slow {
-  animation: spin-slow 20s linear infinite;
-}
-
-.animate-breathing {
-  animation: breathing 3s ease-in-out infinite;
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
 }

@@ -1,9 +1,5 @@
 ---
-import "animate.css";
 import "../styles/global.css";
-import NavigationBar from "@/components/navigation/NavigationBar.astro";
-import FooterBar from "@/components/navigation/FooterBar.astro";
-import FloatingButtons from "@/components/ui/FloatingButtons.astro";
 
 interface Props {
   title: string;
@@ -17,34 +13,21 @@ const canonicalURL =
 ---
 
 <!doctype html>
-<html lang="es" data-theme="light">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta
       name="description"
       content={description ||
-        "Compra servicios digitales para PC en Ecuador. Activacion de Windows 10/11, Microsoft Office y Minecraft Java & Bedrock con entrega rapida y soporte por WhatsApp."}
-    />
-    <meta
-      name="keywords"
-      content="activar Windows Ecuador, licencia Windows 10 Ecuador, licencia Windows 11 Ecuador, activar Office Ecuador, licencia Microsoft Office Ecuador, comprar Minecraft Java Bedrock Ecuador, Minecraft para PC Ecuador, servicios digitales Ecuador, RysthDesign"
+        "Sitios web que no se quedan quietos: capturan, responden y te avisan."}
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="canonical" href={canonicalURL} />
-    <link
-      href="
-https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css
-"
-      rel="stylesheet"
-    />
 
     <meta name="generator" content={Astro.generator} />
-    <meta name="author" content="RysthDesign - Servicios Digitales Ecuador" />
-    <meta name="geo.region" content="EC-G" />
-    <meta name="geo.placename" content="Guayaquil" />
-    <meta name="geo.position" content="-2.1709979;-79.9223592" />
-    <meta name="ICBM" content="-2.1709979, -79.9223592" />
+    <meta name="author" content="RysthDesign" />
+    <!-- TODO: ciudad para geo.placename / geo.position una vez confirmada -->
     <title>{title}</title>
 
     <!-- Open Graph / Facebook -->
@@ -53,11 +36,8 @@ https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css
     <meta property="og:title" content={title} />
     <meta
       property="og:description"
-      content={description || "Servicios digitales para PC en Ecuador"}
-    />
-    <meta
-      property="og:image"
-      content="https://www.rysthdesign.com/og-image.jpg"
+      content={description ||
+        "Sitios web que no se quedan quietos: capturan, responden y te avisan."}
     />
 
     <!-- Twitter -->
@@ -66,139 +46,15 @@ https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css
     <meta property="twitter:title" content={title} />
     <meta
       property="twitter:description"
-      content={description || "Servicios digitales para PC en Ecuador"}
-    />
-    <meta
-      property="twitter:image"
-      content="https://www.rysthdesign.com/og-image.jpg"
+      content={description ||
+        "Sitios web que no se quedan quietos: capturan, responden y te avisan."}
     />
 
-    <!-- Schema.org Organization + LocalBusiness -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": ["Organization", "LocalBusiness", "Store"],
-        "name": "RysthDesign",
-        "legalName": "RysthDesign - Servicios Digitales Ecuador",
-        "description": "Servicios digitales para PC en Ecuador. Activacion de Windows 10/11, Microsoft Office y Minecraft Java & Bedrock con entrega rapida y soporte por WhatsApp.",
-        "url": "https://www.rysthdesign.com",
-        "logo": "https://www.rysthdesign.com/favicon.png",
-        "image": "https://www.rysthdesign.com/og-image.jpg",
-        "telephone": "+593988949117",
-        "email": "contacto@rysthdesign.com",
-        "foundingDate": "2023",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Guayaquil",
-          "addressLocality": "Guayaquil",
-          "addressRegion": "Guayas",
-          "postalCode": "090101",
-          "addressCountry": "EC"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": -2.1709979,
-          "longitude": -79.9223592
-        },
-        "areaServed": [
-          {
-            "@type": "City",
-            "name": "Guayaquil"
-          },
-          {
-            "@type": "City",
-            "name": "Quito"
-          },
-          {
-            "@type": "Country",
-            "name": "Ecuador"
-          }
-        ],
-        "serviceArea": {
-          "@type": "GeoCircle",
-          "geoMidpoint": {
-            "@type": "GeoCoordinates",
-            "latitude": -2.1709979,
-            "longitude": -79.9223592
-          },
-          "geoRadius": "1000km"
-        },
-        "openingHours": "Mo-Fr 09:00-18:00",
-        "priceRange": "$",
-        "sameAs": [
-          "https://www.facebook.com/rysthdesign",
-          "https://www.instagram.com/rysthdesign",
-          "https://www.linkedin.com/company/rysthdesign"
-        ],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Servicios Digitales para PC",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "price": "8",
-              "priceCurrency": "USD",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Activacion Windows 10/11",
-                "description": "Activacion de Windows 10 y Windows 11 con soporte por WhatsApp"
-              }
-            },
-            {
-              "@type": "Offer",
-              "price": "12",
-              "priceCurrency": "USD",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Activacion Microsoft Office",
-                "description": "Activacion de Microsoft Office con soporte por WhatsApp"
-              }
-            },
-            {
-              "@type": "Offer",
-              "price": "24",
-              "priceCurrency": "USD",
-              "itemOffered": {
-                "@type": "Product",
-                "name": "Minecraft Java & Bedrock para PC",
-                "description": "Minecraft Java & Bedrock para PC con entrega digital"
-              }
-            }
-          ]
-        },
-        "knowsAbout": [
-          "Activacion Windows",
-          "Microsoft Office",
-          "Minecraft Java Bedrock",
-          "Servicios Digitales",
-          "Soporte por WhatsApp"
-        ]
-      }
-    </script>
-
-    <!-- WebSite Schema -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "RysthDesign",
-        "url": "https://www.rysthdesign.com",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://www.rysthdesign.com/servicios?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      }
-    </script>
+    <!-- TODO: Schema.org ProfessionalService (Fase 3) -->
   </head>
   <body>
-    <NavigationBar />
     <main>
       <slot />
     </main>
-    <FooterBar />
-
-    <!-- Floating Buttons -->
-    <FloatingButtons />
   </body>
 </html>
