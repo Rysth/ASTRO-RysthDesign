@@ -1,5 +1,6 @@
 ---
-import Chevron from "@/components/ui/Chevron.astro";
+import { Image } from "astro:assets";
+import brand from "@/assets/images/brand/brand.svg";
 
 const links = [
   { href: "#servicios", label: "Servicios" },
@@ -14,12 +15,9 @@ const year = new Date().getFullYear();
   <div
     class="mx-auto flex max-w-screen-xl flex-col items-center justify-between gap-6 px-4 py-8 text-center md:flex-row md:px-6 md:text-left"
   >
-    <div class="flex items-center gap-2">
-      <Chevron size={14} color="violeta" />
-      <div>
-        <p class="font-display text-body text-white">RysthDesign</p>
-        <p class="text-small font-mono text-smoke">Web · Automatización</p>
-      </div>
+    <div class="flex flex-col items-center gap-2 md:items-start">
+      <Image src={brand} alt="RysthDesign" class="h-6 w-auto" />
+      <p class="text-small font-mono text-smoke">Web · Automatización</p>
     </div>
 
     <ul class="flex flex-wrap items-center justify-center gap-6">

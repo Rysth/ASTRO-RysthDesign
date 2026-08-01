@@ -1,4 +1,5 @@
 ---
+// Forma exacta del triángulo superior del logo (src/assets/images/brand/brand.svg).
 export interface Props {
   size?: number;
   color?: "violeta" | "senal" | "smoke" | "white" | "carbon";
@@ -6,6 +7,7 @@ export interface Props {
 }
 
 const { size = 14, color = "violeta", class: className } = Astro.props;
+const height = Math.round(size * (202 / 330) * 10) / 10;
 
 const colors = {
   violeta: "text-violeta",
@@ -18,11 +20,16 @@ const colors = {
 
 <svg
   width={size}
-  height={size}
-  viewBox="0 0 16 16"
+  height={height}
+  viewBox="0 0 330 202"
   fill="currentColor"
   aria-hidden="true"
   class:list={[colors[color], "shrink-0", className]}
 >
-  <path d="M8 2L14 13H2L8 2Z"></path>
+  <path
+    d="M190.14 96.189L129.261 35.31L48.777 115.794H0V201.894H84.606V201.394L84.774 201.562L190.14 96.189Z"
+  ></path>
+  <path
+    d="M103.929 60.879L164.808 0L280.608 115.8H329.381V201.9H244.781V201.4L244.613 201.568L103.929 60.879Z"
+  ></path>
 </svg>
