@@ -1,0 +1,135 @@
+---
+import Eyebrow from "@/components/ui/Eyebrow.astro";
+import Star from "@/components/ui/Star.astro";
+import resenas from "@/data/resenas.json";
+
+const estrellasPromedio = Math.round(resenas.rating);
+---
+
+<section
+  id="resenas"
+  role="region"
+  aria-label="Reseñas de clientes"
+  class="mx-auto max-w-screen-xl px-4 py-16 md:px-6 md:py-24"
+>
+  <Eyebrow text="Reseñas" />
+
+  <div
+    class="mt-6 flex flex-wrap items-center justify-between gap-6 border-b border-slate pb-8"
+  >
+    <div class="flex items-center gap-4">
+      <p class="font-display text-h2 text-white">{resenas.rating.toFixed(1)}</p>
+      <div class="flex flex-col gap-1">
+        <div
+          class="flex items-center gap-1"
+          aria-label={`Calificación ${resenas.rating} de 5 estrellas`}
+        >
+          {
+            Array.from({ length: 5 }).map((_, i) => (
+              <Star size={16} filled={i < estrellasPromedio} />
+            ))
+          }
+        </div>
+        <p class="text-small font-mono text-smoke">
+          {resenas.total} reseñas en Google
+        </p>
+      </div>
+    </div>
+
+    {
+      resenas.perfilUrl && (
+        <a
+          href={resenas.perfilUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-small text-violeta transition-colors duration-150 ease-out hover:text-violeta-deep"
+        >
+          Ver todas en Google
+        </a>
+      )
+    }
+  </div>
+
+  {
+    resenas.resenas.length > 0 ? (
+      <ul class="pista m-0 mt-8 list-none p-0" tabindex="0">
+        {resenas.resenas.map((r) => (
+          <li class="flex flex-col gap-4 rounded-card border border-slate bg-carbon p-6">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate font-mono text-body text-white">
+                {r.inicial}
+              </span>
+              <div class="flex flex-col">
+                <span class="text-small font-medium text-white">{r.autor}</span>
+                <span class="text-eyebrow font-mono text-smoke">{r.fecha}</span>
+              </div>
+            </div>
+
+            <div
+              class="flex items-center gap-1"
+              aria-label={`${r.estrellas} de 5 estrellas`}
+            >
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star size={12} filled={i < r.estrellas} />
+              ))}
+            </div>
+
+            <details class="group">
+              <summary class="cursor-pointer list-none">
+                <span class="text-small line-clamp-4 block text-smoke group-open:line-clamp-none">
+                  {r.texto}
+                </span>
+                <span class="mt-2 inline-block text-eyebrow font-mono uppercase text-violeta">
+                  <span class="group-open:hidden">Leer más</span>
+                  <span class="hidden group-open:inline">Leer menos</span>
+                </span>
+              </summary>
+            </details>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="mt-8 text-small text-smoke">
+        Reseñas en camino.
+        {resenas.perfilUrl && (
+          <>
+            {" "}
+            Mientras tanto, visítanos en{" "}
+            <a
+              href={resenas.perfilUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-violeta hover:text-violeta-deep"
+            >
+              Google
+            </a>
+            .
+          </>
+        )}
+      </p>
+    )
+  }
+</section>
+
+<style>
+  .pista {
+    display: flex;
+    gap: var(--space-16);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-bottom: var(--space-8);
+  }
+  .pista::-webkit-scrollbar {
+    display: none;
+  }
+  .pista > * {
+    scroll-snap-align: start;
+    flex: 0 0 clamp(280px, 80vw, 360px);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .pista {
+      scroll-behavior: auto;
+    }
+  }
+</style>

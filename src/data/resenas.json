@@ -1,0 +1,32 @@
+{
+  "rating": 5,
+  "total": 21,
+  "perfilUrl": "https://www.google.com/maps/place/?q=place_id:ChIJoTQWarIsBWkRp53tvPtWxDI",
+  "actualizado": "2026-08-01",
+  "resenas": [
+    {
+      "autor": "Sr. Aku",
+      "inicial": "S",
+      "estrellas": 5,
+      "fecha": "2023-09-13",
+      "texto": "10/10 buen servicio, muy amable y seguro, eso sin mencionar lo económico. Recomendadísimo.",
+      "origen": "manual"
+    },
+    {
+      "autor": "Yordani Sosa",
+      "inicial": "Y",
+      "estrellas": 5,
+      "fecha": "2023-07-11",
+      "texto": "Rápido y seguro. Simplemente el mejor. Recomendado al 1000% 🥰🙌🏽",
+      "origen": "manual"
+    },
+    {
+      "autor": "Esteban Xavier Neira Vela",
+      "inicial": "E",
+      "estrellas": 5,
+      "fecha": "2023-07-05",
+      "texto": "Excelente super recomendado 👍",
+      "origen": "manual"
+    }
+  ]
+}

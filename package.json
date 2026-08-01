@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "eslint": "npx eslint src/**/*.{js,astro} --fix"
+    "eslint": "npx eslint src/**/*.{js,astro} --fix",
+    "resenas": "node scripts/fetch-resenas.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.0.5",
