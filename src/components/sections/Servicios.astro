@@ -8,10 +8,10 @@ import { planes } from "@/data/planes.ts";
 <section id="servicios" class="mx-auto max-w-screen-xl scroll-mt-16 px-4 py-16 md:px-6 md:py-24">
   <SectionHeader
     eyebrow="Servicios"
-    title="Tres formas de dejar de perder clientes"
+    title="Dos formas de estar donde te buscan"
   />
 
-  <div class="mt-12 grid gap-6 lg:grid-cols-3">
+  <div class="mx-auto mt-12 grid max-w-3xl gap-6 sm:grid-cols-2">
     {
       planes.map((plan) => (
         <Card
@@ -32,15 +32,19 @@ import { planes } from "@/data/planes.ts";
 
           <div class="flex flex-col gap-1 border-y border-slate py-4">
             <p class="text-eyebrow font-mono uppercase text-smoke">Setup</p>
-            <p class="text-h3 text-white">{plan.setup}</p>
+            <p class="text-h3 text-white">${plan.setup}</p>
             <p class="text-eyebrow mt-2 font-mono uppercase text-smoke">
               Anual
             </p>
-            <p class="text-h3 text-white">{plan.anual}</p>
+            <p class="text-h3 text-white">${plan.anual}</p>
+            <p class="text-small mt-2 font-mono text-smoke">
+              Entrega en {plan.entregaDias} días · {plan.rondas}{" "}
+              {plan.rondas === 1 ? "ronda" : "rondas"} de cambios
+            </p>
           </div>
 
           <ul class="flex flex-col gap-3">
-            {plan.items.map((item) => (
+            {plan.incluye.map((item) => (
               <li class="flex items-start gap-2">
                 <Chevron size={12} class="mt-1" />
                 <span class="text-small text-smoke">{item}</span>

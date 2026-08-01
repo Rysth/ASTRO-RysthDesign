@@ -1,34 +1,34 @@
 export interface PasoProceso {
   numero: string;
   titulo: string;
-  descripcion: string;
   duracion: string;
+  detalle: string;
 }
 
-// Duración en TODO: son compromisos de entrega reales — confirmar antes de publicar.
 export const proceso: PasoProceso[] = [
   {
     numero: "01",
     titulo: "Diagnóstico",
-    descripcion: "Revisamos qué necesita tu negocio y definimos el alcance.",
-    duracion: "TODO: días",
+    duracion: "1 día",
+    detalle:
+      "Llamada de 30 minutos. Salimos con el alcance cerrado y el precio en firme.",
   },
   {
     numero: "02",
     titulo: "Diseño",
-    descripcion: "Armamos la estructura y el diseño sobre el sistema de marca.",
-    duracion: "TODO: días",
+    duracion: "2 a 4 días",
+    detalle: "Te muestro la pantalla antes de programar nada. Aquí entran tus cambios.",
   },
   {
     numero: "03",
-    titulo: "Automatización",
-    descripcion: "Configuramos WhatsApp, capturas y avisos según el plan elegido.",
-    duracion: "TODO: días",
+    titulo: "Desarrollo",
+    duracion: "3 a 6 días",
+    detalle: "Lo construyo en Astro y lo optimizo hasta que cargue en menos de un segundo.",
   },
   {
     numero: "04",
-    titulo: "Entrega y ajustes",
-    descripcion: "Publicamos el sitio y hacemos los ajustes finales.",
-    duracion: "TODO: días",
+    titulo: "Entrega",
+    duracion: "1 día",
+    detalle: "Dominio activo, Google Business listo y 20 minutos para enseñarte a usarlo.",
   },
 ];

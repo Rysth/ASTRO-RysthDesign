@@ -1,55 +1,48 @@
 export interface Plan {
+  slug: string;
   nombre: string;
+  setup: number;
+  anual: number;
   paraQuien: string;
-  setup: string;
-  anual: string;
-  items: string[];
-  destacado?: boolean;
+  destacado: boolean;
+  entregaDias: number;
+  rondas: number;
+  incluye: string[];
 }
 
-// Precios en TODO: son cifras de negocio, no las inventamos — confirmar antes de publicar.
 export const planes: Plan[] = [
   {
-    nombre: "Presencia",
-    paraQuien:
-      "Para negocios que necesitan estar en internet ya, sin automatización todavía.",
-    setup: "TODO: precio de setup",
-    anual: "TODO: precio anual",
-    items: [
-      "Sitio a medida sobre el sistema de marca",
-      "Responsive real desde 360px",
-      "Formulario de contacto",
-      "SEO técnico básico",
-      "Hosting y dominio configurados",
+    slug: "landing",
+    nombre: "Landing Page",
+    setup: 250,
+    anual: 120,
+    paraQuien: "Para el negocio con un solo objetivo: que lo llamen.",
+    destacado: false,
+    entregaDias: 7,
+    rondas: 1,
+    incluye: [
+      "Una página de hasta 6 secciones",
+      "Dominio, hosting y SSL incluidos",
+      "Botón de WhatsApp y formulario de contacto",
+      "Ficha de Google Business optimizada",
+      "Carga en menos de 1 segundo, garantizado",
     ],
   },
   {
-    nombre: "Negocio",
-    paraQuien:
-      "Para negocios que reciben mensajes por WhatsApp y no dan abasto respondiendo.",
-    setup: "TODO: precio de setup",
-    anual: "TODO: precio anual",
+    slug: "informativo",
+    nombre: "Sitio Informativo",
+    setup: 450,
+    anual: 140,
+    paraQuien: "Para el negocio con varios servicios que necesita explicarlos.",
     destacado: true,
-    items: [
-      "Todo lo del plan Presencia",
-      "WhatsApp con respuesta automática",
-      "Captura de datos del cliente que escribe",
-      "Aviso al dueño ante cada mensaje nuevo",
-      "Panel simple para ver conversaciones",
-    ],
-  },
-  {
-    nombre: "Sistema",
-    paraQuien:
-      "Para negocios que quieren el flujo completo: sitio, WhatsApp y seguimiento de clientes.",
-    setup: "TODO: precio de setup",
-    anual: "TODO: precio anual",
-    items: [
-      "Todo lo del plan Negocio",
-      "CRM conectado para dar seguimiento",
-      "Reportes de mensajes y conversiones",
-      "Automatizaciones a medida",
-      "Soporte prioritario",
+    entregaDias: 12,
+    rondas: 2,
+    incluye: [
+      "Hasta 6 páginas",
+      "Catálogo de hasta 40 productos",
+      "Blog que administras tú mismo",
+      "SEO configurado página por página",
+      "2 rondas de cambios",
     ],
   },
 ];
