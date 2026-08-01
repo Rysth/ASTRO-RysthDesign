@@ -1,0 +1,24 @@
+---
+import Button from "@/components/ui/Button.astro";
+import { waLink } from "@/data/site.ts";
+---
+
+<section class="mx-auto max-w-screen-xl px-4 py-16 md:px-6 md:py-24">
+  <div
+    class="flex flex-col items-center gap-6 rounded-card border border-slate bg-carbon px-6 py-16 text-center"
+  >
+    <h2 class="text-h2 max-w-[20ch] text-white">
+      ¿Listo para que tu web empiece a trabajar por ti?
+    </h2>
+    <Button
+      href={waLink(
+        "Hola, quiero saber cómo funciona el sistema de RysthDesign para mi negocio.",
+      )}
+      target="_blank"
+      rel="noopener noreferrer"
+      variant="primary"
+    >
+      Hablar por WhatsApp
+    </Button>
+  </div>
+</section>

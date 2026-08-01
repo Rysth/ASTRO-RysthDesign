@@ -1,0 +1,38 @@
+---
+import SectionHeader from "@/components/ui/SectionHeader.astro";
+
+const datos = [
+  {
+    numero: "11 pm",
+    label: "Hora típica en la que un cliente escribe y nadie responde",
+  },
+  {
+    numero: "3 seg",
+    label: "Lo que tarda en salir una respuesta automática",
+  },
+  {
+    numero: "24/7",
+    label: "Horas al día que tu sistema sigue atendiendo aunque tú no estés",
+  },
+];
+---
+
+<section class="mx-auto max-w-screen-xl px-4 py-16 md:px-6 md:py-24">
+  <SectionHeader
+    eyebrow="El problema"
+    title="Cada mensaje sin responder es un cliente que se va con otro"
+  />
+
+  <div class="mt-12 grid gap-8 sm:grid-cols-3">
+    {
+      datos.map((dato) => (
+        <div class="flex flex-col gap-2">
+          <p class="text-display text-white">{dato.numero}</p>
+          <p class="text-eyebrow font-mono uppercase text-smoke">
+            {dato.label}
+          </p>
+        </div>
+      ))
+    }
+  </div>
+</section>

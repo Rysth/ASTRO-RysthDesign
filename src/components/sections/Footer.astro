@@ -1,0 +1,43 @@
+---
+import Chevron from "@/components/ui/Chevron.astro";
+
+const links = [
+  { href: "#servicios", label: "Servicios" },
+  { href: "#proceso", label: "Proceso" },
+  { href: "#faq", label: "Preguntas" },
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-slate">
+  <div
+    class="mx-auto flex max-w-screen-xl flex-col items-center justify-between gap-6 px-4 py-8 text-center md:flex-row md:px-6 md:text-left"
+  >
+    <div class="flex items-center gap-2">
+      <Chevron size={14} color="violeta" />
+      <div>
+        <p class="font-display text-body text-white">RysthDesign</p>
+        <p class="text-small font-mono text-smoke">Web · Automatización</p>
+      </div>
+    </div>
+
+    <ul class="flex flex-wrap items-center justify-center gap-6">
+      {
+        links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="text-small text-smoke transition-colors duration-150 ease-out hover:text-white"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <p class="text-small text-smoke">© {year} RysthDesign</p>
+  </div>
+  <!-- TODO: agregar redes sociales reales (Instagram/LinkedIn) cuando se confirmen las URLs. -->
+</footer>

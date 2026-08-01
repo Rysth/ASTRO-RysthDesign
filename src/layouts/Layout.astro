@@ -4,6 +4,8 @@ import "@fontsource/inter/400.css";
 import "@fontsource/inter/500.css";
 import "@fontsource/jetbrains-mono/500.css";
 import "../styles/global.css";
+import Nav from "@/components/sections/Nav.astro";
+import Footer from "@/components/sections/Footer.astro";
 
 interface Props {
   title: string;
@@ -57,8 +59,10 @@ const canonicalURL =
     <!-- TODO: Schema.org ProfessionalService (Fase 3) -->
   </head>
   <body>
+    <Nav />
     <main>
       <slot />
     </main>
+    <Footer />
   </body>
 </html>

@@ -1,0 +1,51 @@
+---
+import Chevron from "@/components/ui/Chevron.astro";
+import Button from "@/components/ui/Button.astro";
+import { waLink } from "@/data/site.ts";
+
+const links = [
+  { href: "#servicios", label: "Servicios" },
+  { href: "#proceso", label: "Proceso" },
+  { href: "#faq", label: "Preguntas" },
+];
+---
+
+<header
+  class="sticky top-0 z-50 border-b border-slate bg-void/90 backdrop-blur"
+>
+  <nav
+    class="mx-auto flex h-16 max-w-screen-xl items-center justify-between px-4 md:px-6"
+  >
+    <a href="/" class="flex items-center gap-2">
+      <Chevron size={18} color="violeta" />
+      <span class="font-display text-h3 text-white">RysthDesign</span>
+    </a>
+
+    <ul class="hidden items-center gap-8 md:flex">
+      {
+        links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="text-body text-smoke transition-colors duration-150 ease-out hover:text-white"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <Button
+      href={waLink(
+        "Hola, vi tu web y quiero saber cómo funciona el sistema de RysthDesign.",
+      )}
+      target="_blank"
+      rel="noopener noreferrer"
+      variant="secondary"
+      aria-label="Escribir por WhatsApp"
+    >
+      WhatsApp
+    </Button>
+  </nav>
+</header>

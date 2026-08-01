@@ -2,6 +2,7 @@
 export interface Props {
   href?: string;
   variant?: "primary" | "secondary";
+  size?: "sm" | "md";
   type?: "button" | "submit";
   target?: string;
   rel?: string;
@@ -12,6 +13,7 @@ export interface Props {
 const {
   href,
   variant = "primary",
+  size = "md",
   type = "button",
   target,
   rel,
@@ -23,7 +25,10 @@ const base =
   "inline-flex items-center justify-center gap-2 font-body font-medium transition-colors duration-150 ease-out";
 
 const variants = {
-  primary: "bg-senal text-void px-6 py-3 rounded-button hover:bg-senal-deep",
+  primary:
+    size === "sm"
+      ? "bg-senal text-void px-4 py-2 text-small rounded-button hover:bg-senal-deep"
+      : "bg-senal text-void px-6 py-3 rounded-button hover:bg-senal-deep",
   secondary: "text-violeta hover:text-violeta-deep",
 };
 

@@ -1,0 +1,54 @@
+---
+import SectionHeader from "@/components/ui/SectionHeader.astro";
+
+const preguntas = [
+  {
+    pregunta: "¿Qué pasa si no renuevo el mantenimiento?",
+    respuesta:
+      "El sitio deja de recibir actualizaciones y soporte, y las automatizaciones de WhatsApp se desactivan. El sitio en sí sigue existiendo, pero sin mantenimiento activo.",
+  },
+  {
+    pregunta: "¿El sitio es mío?",
+    respuesta:
+      "Sí. El diseño, el contenido y el dominio son tuyos. Lo que se paga de forma recurrente es el mantenimiento, el hosting y las automatizaciones activas — no el sitio en sí.",
+  },
+  {
+    pregunta: "¿Cuántas rondas de cambios entran?",
+    respuesta: "TODO: definir número de rondas de cambio incluidas por plan.",
+  },
+  {
+    pregunta: "¿Por qué no es más barato?",
+    respuesta:
+      "Porque no es una plantilla. Cada sitio se diseña sobre el sistema de marca y se conecta a WhatsApp de verdad — no es un link genérico de contacto.",
+  },
+  {
+    pregunta: "¿Cuánto tarda la entrega?",
+    respuesta: "TODO: confirmar tiempo total de entrega según el plan.",
+  },
+  {
+    pregunta: "¿Necesito saber de tecnología para usarlo?",
+    respuesta:
+      "No. Tú recibes los mensajes y avisos directo en tu WhatsApp. Nosotros configuramos todo lo técnico.",
+  },
+];
+---
+
+<section id="faq" class="mx-auto max-w-screen-xl scroll-mt-16 px-4 py-16 md:px-6 md:py-24">
+  <SectionHeader eyebrow="Preguntas frecuentes" title="Antes de escribir" />
+
+  <div class="mt-12 flex max-w-[75ch] flex-col gap-4">
+    {
+      preguntas.map((item) => (
+        <details class="group rounded-card border border-slate bg-carbon p-6">
+          <summary class="text-body flex cursor-pointer list-none items-center justify-between gap-4 font-medium text-white">
+            {item.pregunta}
+            <span class="font-mono text-smoke transition-transform duration-150 ease-out group-open:rotate-45">
+              +
+            </span>
+          </summary>
+          <p class="text-small mt-4 text-smoke">{item.respuesta}</p>
+        </details>
+      ))
+    }
+  </div>
+</section>
