@@ -1,9 +1,28 @@
 @import "tailwindcss";
-
-/* Fase 1 agrega tokens.css con la identidad de marca (colores, tipografía, espaciado). */
+@import "./tokens.css";
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--void);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+:focus-visible {
+  outline: 2px solid var(--violeta);
+  outline-offset: 2px;
 }
 
 ::-webkit-scrollbar {
@@ -15,6 +34,6 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #22222e;
+  background: var(--slate);
   border-radius: 10rem;
 }

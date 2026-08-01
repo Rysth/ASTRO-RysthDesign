@@ -1,0 +1,27 @@
+---
+import Chevron from "./Chevron.astro";
+
+export interface Props {
+  text: string;
+  color?: "smoke" | "violeta";
+  class?: string;
+}
+
+const { text, color = "smoke", class: className } = Astro.props;
+
+const colors = {
+  smoke: "text-smoke",
+  violeta: "text-violeta",
+};
+---
+
+<p
+  class:list={[
+    "flex items-center gap-2 font-mono text-eyebrow uppercase",
+    colors[color],
+    className,
+  ]}
+>
+  <Chevron size={12} color="violeta" />
+  {text}
+</p>

@@ -1,0 +1,42 @@
+---
+export interface Props {
+  href?: string;
+  variant?: "primary" | "secondary";
+  type?: "button" | "submit";
+  target?: string;
+  rel?: string;
+  class?: string;
+  "aria-label"?: string;
+}
+
+const {
+  href,
+  variant = "primary",
+  type = "button",
+  target,
+  rel,
+  class: className,
+  ...rest
+} = Astro.props;
+
+const base =
+  "inline-flex items-center justify-center gap-2 font-body font-medium transition-colors duration-150 ease-out";
+
+const variants = {
+  primary: "bg-senal text-void px-6 py-3 rounded-button hover:bg-senal-deep",
+  secondary: "text-violeta hover:text-violeta-deep",
+};
+
+const Tag = href ? "a" : "button";
+---
+
+<Tag
+  href={href}
+  target={href ? target : undefined}
+  rel={href ? rel : undefined}
+  type={href ? undefined : type}
+  class:list={[base, variants[variant], className]}
+  {...rest}
+>
+  <slot />
+</Tag>

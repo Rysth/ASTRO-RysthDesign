@@ -1,0 +1,28 @@
+---
+export interface Props {
+  size?: number;
+  color?: "violeta" | "senal" | "smoke" | "white" | "carbon";
+  class?: string;
+}
+
+const { size = 14, color = "violeta", class: className } = Astro.props;
+
+const colors = {
+  violeta: "text-violeta",
+  senal: "text-senal",
+  smoke: "text-smoke",
+  white: "text-white",
+  carbon: "text-carbon",
+};
+---
+
+<svg
+  width={size}
+  height={size}
+  viewBox="0 0 16 16"
+  fill="currentColor"
+  aria-hidden="true"
+  class:list={[colors[color], "shrink-0", className]}
+>
+  <path d="M8 2L14 13H2L8 2Z"></path>
+</svg>

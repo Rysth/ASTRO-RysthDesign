@@ -1,10 +1,62 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import Button from "@/components/ui/Button.astro";
+import Card from "@/components/ui/Card.astro";
+import Eyebrow from "@/components/ui/Eyebrow.astro";
+import SectionHeader from "@/components/ui/SectionHeader.astro";
+import Chevron from "@/components/ui/Chevron.astro";
 ---
 
 <Layout
   title="RysthDesign | Web · Automatización"
   description="Sitios web que no se quedan quietos: capturan, responden y te avisan."
 >
-  <!-- Fase 0: landing en blanco. Secciones se agregan en Fase 2. -->
+  <!-- Vista temporal de la Fase 1 (sistema de diseño). Se reemplaza en la Fase 2. -->
+  <section class="mx-auto flex max-w-screen-md flex-col gap-12 px-4 py-24">
+    <SectionHeader
+      eyebrow="Sistema de diseño"
+      title="Vista previa de tokens y primitivas"
+      description="Esto es temporal — verifica colores, tipografía, espaciado y componentes antes de construir la landing en la Fase 2."
+    />
+
+    <div class="flex flex-wrap gap-4">
+      <Button href="#" variant="primary">Botón primario</Button>
+      <Button href="#" variant="secondary">Enlace secundario <Chevron size={10} /></Button>
+    </div>
+
+    <div class="grid gap-6 sm:grid-cols-2">
+      <Card border="slate">
+        <Eyebrow text="Card borde slate" />
+        <h3 class="text-h3 mt-2 text-white">Presencia</h3>
+        <p class="text-body mt-2 text-smoke">Texto de cuerpo en Inter, 1.0625rem.</p>
+      </Card>
+      <Card border="violeta">
+        <Eyebrow text="Card borde violeta" color="violeta" />
+        <h3 class="text-h3 mt-2 text-white">Negocio</h3>
+        <p class="text-body mt-2 text-smoke">Variante destacada, como la tarjeta del medio.</p>
+      </Card>
+    </div>
+
+    <div class="flex flex-wrap items-end gap-8">
+      <div>
+        <p class="text-small text-smoke">Void</p>
+        <div class="mt-1 size-16 rounded-card border border-slate bg-void"></div>
+      </div>
+      <div>
+        <p class="text-small text-smoke">Carbon</p>
+        <div class="mt-1 size-16 rounded-card border border-slate bg-carbon"></div>
+      </div>
+      <div>
+        <p class="text-small text-smoke">Violeta</p>
+        <div class="mt-1 size-16 rounded-card bg-violeta"></div>
+      </div>
+      <div>
+        <p class="text-small text-smoke">Señal</p>
+        <div class="mt-1 size-16 rounded-card bg-senal"></div>
+      </div>
+    </div>
+
+    <p class="text-display text-white">Aa</p>
+    <p class="font-mono text-eyebrow uppercase text-smoke">Eyebrow mono 500</p>
+  </section>
 </Layout>
