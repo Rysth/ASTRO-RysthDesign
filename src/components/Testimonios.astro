@@ -1,0 +1,123 @@
+---
+import Eyebrow from "@/components/ui/Eyebrow.astro";
+import TestimonioCard from "@/components/TestimonioCard.astro";
+import { testimonios } from "@/data/testimonios.ts";
+
+// Mismo ritmo que Resenas.astro: ~5s por tarjeta.
+const duracionMarquee = `${testimonios.length * 5}s`;
+---
+
+{
+  testimonios.length > 0 && (
+    <section
+      id="testimonios"
+      role="region"
+      aria-label="Testimonios de clientes"
+      class="mx-auto max-w-screen-xl px-4 py-16 md:px-6 md:py-24"
+    >
+      <Eyebrow text="Testimonios" />
+      <h2 class="mt-4 font-display text-h2 text-white">
+        Lo que dicen quienes ya trabajaron con nosotros
+      </h2>
+
+      {/* Escritorio/tablet: arrastras vos, con mouse o trackpad. */}
+      <ul class="pista m-0 mt-8 hidden list-none p-0 md:flex" tabindex="0">
+        {testimonios.map((t) => (
+          <li>
+            <TestimonioCard testimonio={t} />
+          </li>
+        ))}
+      </ul>
+
+      {/* Móvil: avanza solo. El checkbox oculto es el control de pausa —
+          100% CSS, sin JS, y accesible por teclado/lector de pantalla. */}
+      <div
+        class="marquee-viewport mt-8 md:hidden"
+        style={`--marquee-duration: ${duracionMarquee}`}
+      >
+        <input type="checkbox" id="pausar-testimonios" class="peer sr-only" />
+
+        <ul class="marquee-track m-0 list-none p-0">
+          {testimonios.map((t) => (
+            <li class="marquee-item">
+              <TestimonioCard testimonio={t} />
+            </li>
+          ))}
+          {testimonios.map((t) => (
+            <li class="marquee-item" aria-hidden="true" inert>
+              <TestimonioCard testimonio={t} />
+            </li>
+          ))}
+        </ul>
+
+        <label
+          for="pausar-testimonios"
+          class="mt-4 inline-block cursor-pointer text-eyebrow font-mono uppercase text-smoke peer-checked:hidden"
+        >
+          Pausar autoplay
+        </label>
+        <label
+          for="pausar-testimonios"
+          class="mt-4 hidden cursor-pointer text-eyebrow font-mono uppercase text-violeta peer-checked:inline-block"
+        >
+          Reanudar autoplay
+        </label>
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .pista {
+    gap: var(--space-16);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-bottom: var(--space-8);
+  }
+  .pista::-webkit-scrollbar {
+    display: none;
+  }
+  .pista > * {
+    scroll-snap-align: start;
+    flex: 0 0 clamp(280px, 80vw, 360px);
+  }
+
+  .marquee-viewport {
+    overflow: hidden;
+  }
+  .marquee-track {
+    display: flex;
+    gap: var(--space-16);
+    width: max-content;
+    animation: testimonios-marquee var(--marquee-duration, 24s) linear infinite;
+  }
+  .marquee-item {
+    flex: 0 0 clamp(280px, 80vw, 360px);
+  }
+  @keyframes testimonios-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-50% - var(--space-16) / 2));
+    }
+  }
+  #pausar-testimonios:checked ~ .marquee-track,
+  .marquee-track:hover,
+  .marquee-track:focus-within {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pista {
+      scroll-behavior: auto;
+    }
+    .marquee-viewport {
+      display: none;
+    }
+    .pista {
+      display: flex !important;
+    }
+  }
+</style>

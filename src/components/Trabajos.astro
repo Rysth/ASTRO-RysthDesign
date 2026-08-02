@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import SectionHeader from "@/components/ui/SectionHeader.astro";
 import { trabajos } from "@/data/trabajos.ts";
 ---
@@ -13,49 +12,78 @@ import { trabajos } from "@/data/trabajos.ts";
       <SectionHeader eyebrow="Trabajos" title="Sitios ya publicados" />
 
       <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {trabajos.map((trabajo) => (
-          <a
-            href={trabajo.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group flex flex-col overflow-hidden rounded-card border border-slate bg-carbon transition-colors duration-150 ease-out hover:border-violeta"
-          >
-            <div class="relative">
-              <Image
-                src={trabajo.captura}
-                alt={`Captura del sitio de ${trabajo.nombre}`}
-                width={640}
-                height={400}
-                loading="lazy"
-                format="webp"
-                class="aspect-[8/5] w-full object-cover object-top"
-              />
-              <span class="absolute right-3 top-3 rounded-button bg-senal px-2 py-1 text-eyebrow font-mono uppercase text-void">
-                {trabajo.pagespeed} PageSpeed
-              </span>
-            </div>
+        {trabajos.map((trabajo) => {
+          const Wrapper = trabajo.permisoPublicar ? "a" : "div";
+          const wrapperProps = trabajo.permisoPublicar
+            ? {
+                href: trabajo.url,
+                target: "_blank",
+                rel: "noopener noreferrer",
+              }
+            : {};
 
-            <div class="flex flex-col gap-2 p-6">
-              <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-h3 text-white">{trabajo.nombre}</h3>
+          return (
+            <Wrapper
+              {...wrapperProps}
+              class="group flex flex-col overflow-hidden rounded-card border border-slate bg-carbon transition-colors duration-150 ease-out hover:border-violeta"
+            >
+              {/* Bloque neutro: sin captura real, sin datos de clientes visibles. */}
+              <div class="relative flex aspect-[8/5] flex-col items-center justify-center gap-3 border-b border-slate bg-carbon px-6 text-center">
+                {trabajo.pagespeed != null && (
+                  <span class="absolute right-3 top-3 rounded-button bg-senal px-2 py-1 text-eyebrow font-mono uppercase text-void">
+                    {trabajo.pagespeed} PageSpeed
+                  </span>
+                )}
                 {trabajo.muestra && (
-                  <span class="rounded-button border border-slate bg-carbon px-2 py-1 text-eyebrow font-mono uppercase text-smoke">
+                  <span class="absolute left-3 top-3 rounded-button border border-slate bg-carbon px-2 py-1 text-eyebrow font-mono uppercase text-smoke">
                     Proyecto de muestra
                   </span>
                 )}
+
+                {trabajo.permisoPublicar ? (
+                  <Fragment>
+                    <p class="font-display text-h3 text-white">
+                      {trabajo.nombre}
+                    </p>
+                    <p class="text-small text-smoke">{trabajo.rubro}</p>
+                  </Fragment>
+                ) : (
+                  <p class="font-display text-h3 text-white">
+                    {trabajo.anonimo}
+                  </p>
+                )}
+
+                <ul class="flex flex-wrap justify-center gap-2">
+                  {trabajo.tecnologias.map((tech) => (
+                    <li class="rounded-button border border-slate px-2 py-1 text-eyebrow font-mono uppercase text-smoke">
+                      {tech}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <p class="text-small text-smoke">{trabajo.rubro}</p>
-              <p class="text-small text-smoke/80">{trabajo.descripcion}</p>
-              <ul class="mt-2 flex flex-wrap gap-2">
-                {trabajo.tecnologias.map((tech) => (
-                  <li class="rounded-button border border-slate px-2 py-1 text-eyebrow font-mono uppercase text-smoke">
-                    {tech}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </a>
-        ))}
+
+              <div class="flex flex-col gap-2 p-6">
+                <p class="text-small text-smoke">{trabajo.descripcion}</p>
+
+                {trabajo.resultado && (
+                  <p class="text-small font-medium text-senal">
+                    {trabajo.resultado}
+                  </p>
+                )}
+
+                {trabajo.testimonio && (
+                  <blockquote class="mt-2 border-l-2 border-slate pl-3 text-small text-smoke">
+                    “{trabajo.testimonio.texto}”
+                    <footer class="mt-1 text-eyebrow font-mono uppercase text-smoke/70">
+                      {trabajo.testimonio.autor}, {trabajo.testimonio.cargo} ·{" "}
+                      {trabajo.testimonio.empresa}
+                    </footer>
+                  </blockquote>
+                )}
+              </div>
+            </Wrapper>
+          );
+        })}
       </div>
     </section>
   )

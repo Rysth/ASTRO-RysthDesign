@@ -1,0 +1,30 @@
+---
+import type { Testimonio } from "@/data/testimonios";
+
+export interface Props {
+  testimonio: Testimonio;
+}
+
+const { testimonio } = Astro.props;
+---
+
+<div class="flex h-full flex-col gap-4 rounded-card border border-slate bg-carbon p-6">
+  <details class="group">
+    <summary class="cursor-pointer list-none">
+      <span class="text-small line-clamp-4 block text-smoke group-open:line-clamp-none">
+        “{testimonio.texto}”
+      </span>
+      <span class="mt-2 inline-block text-eyebrow font-mono uppercase text-violeta">
+        <span class="group-open:hidden">Leer más</span>
+        <span class="hidden group-open:inline">Leer menos</span>
+      </span>
+    </summary>
+  </details>
+
+  <div class="mt-auto flex flex-col">
+    <span class="text-small font-medium text-white">{testimonio.autor}</span>
+    <span class="text-eyebrow font-mono text-smoke">
+      {testimonio.cargo} · {testimonio.empresa}
+    </span>
+  </div>
+</div>
