@@ -1,14 +1,39 @@
 ---
 import Eyebrow from "@/components/ui/Eyebrow.astro";
-import TestimonioCard from "@/components/TestimonioCard.astro";
+import Star from "@/components/ui/Star.astro";
+import OpinionCard, { type Opinion } from "@/components/OpinionCard.astro";
 import { testimonios } from "@/data/testimonios.ts";
+import resenas from "@/data/resenas.json";
 
-// Mismo ritmo que Resenas.astro: ~5s por tarjeta.
-const duracionMarquee = `${testimonios.length * 5}s`;
+const propias: Opinion[] = testimonios.map((t) => ({
+  texto: t.texto,
+  autor: t.autor,
+  detalle: `${t.cargo} · ${t.empresa}`,
+  esGoogle: false,
+}));
+
+// resenas.mostrar es el interruptor manual de las reseñas de Google (ver
+// scripts/fetch-resenas.mjs) — si está en false, no se suman acá aunque
+// haya datos cacheados.
+const google: Opinion[] = resenas.mostrar
+  ? resenas.resenas.map((r) => ({
+      texto: r.texto,
+      autor: r.autor,
+      detalle: r.fecha,
+      estrellas: r.estrellas,
+      esGoogle: true,
+    }))
+  : [];
+
+const opiniones = [...propias, ...google];
+
+// Ritmo del marquee: ~5s por tarjeta, para que la velocidad se sienta igual
+// sin importar cuántas opiniones haya.
+const duracionMarquee = `${opiniones.length * 5}s`;
 ---
 
 {
-  testimonios.length > 0 && (
+  opiniones.length > 0 && (
     <section
       id="testimonios"
       role="region"
@@ -20,11 +45,39 @@ const duracionMarquee = `${testimonios.length * 5}s`;
         Lo que dicen quienes ya trabajaron con nosotros
       </h2>
 
+      {
+        resenas.mostrar && resenas.total > 0 && (
+          <div class="mt-4 flex flex-wrap items-center gap-2 text-small text-smoke">
+            <div
+              class="flex items-center gap-1"
+              aria-label={`Calificación ${resenas.rating} de 5 estrellas`}
+            >
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star size={14} filled={i < Math.round(resenas.rating)} />
+              ))}
+            </div>
+            <span class="font-mono">
+              {resenas.rating.toFixed(1)} · {resenas.total} reseñas en Google
+            </span>
+            {resenas.perfilUrl && (
+              <a
+                href={resenas.perfilUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-violeta transition-colors duration-150 ease-out hover:text-violeta-deep"
+              >
+                Ver todas en Google
+              </a>
+            )}
+          </div>
+        )
+      }
+
       {/* Escritorio/tablet: arrastras vos, con mouse o trackpad. */}
       <ul class="pista m-0 mt-8 hidden list-none p-0 md:flex" tabindex="0">
-        {testimonios.map((t) => (
+        {opiniones.map((o) => (
           <li>
-            <TestimonioCard testimonio={t} />
+            <OpinionCard opinion={o} />
           </li>
         ))}
       </ul>
@@ -38,14 +91,14 @@ const duracionMarquee = `${testimonios.length * 5}s`;
         <input type="checkbox" id="pausar-testimonios" class="peer sr-only" />
 
         <ul class="marquee-track m-0 list-none p-0">
-          {testimonios.map((t) => (
+          {opiniones.map((o) => (
             <li class="marquee-item">
-              <TestimonioCard testimonio={t} />
+              <OpinionCard opinion={o} />
             </li>
           ))}
-          {testimonios.map((t) => (
+          {opiniones.map((o) => (
             <li class="marquee-item" aria-hidden="true" inert>
-              <TestimonioCard testimonio={t} />
+              <OpinionCard opinion={o} />
             </li>
           ))}
         </ul>

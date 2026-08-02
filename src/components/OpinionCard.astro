@@ -1,0 +1,58 @@
+---
+import Star from "@/components/ui/Star.astro";
+
+export interface Opinion {
+  texto: string;
+  autor: string;
+  detalle: string;
+  estrellas?: number;
+  esGoogle: boolean;
+}
+
+export interface Props {
+  opinion: Opinion;
+}
+
+const { opinion } = Astro.props;
+---
+
+<div class="flex h-full flex-col gap-4 rounded-card border border-slate bg-carbon p-6">
+  {
+    opinion.estrellas != null && (
+      <div
+        class="flex items-center gap-1"
+        aria-label={`${opinion.estrellas} de 5 estrellas`}
+      >
+        {Array.from({ length: 5 }).map((_, i) => (
+          <Star size={12} filled={i < opinion.estrellas!} />
+        ))}
+      </div>
+    )
+  }
+
+  <details class="group">
+    <summary class="cursor-pointer list-none">
+      <span class="text-small line-clamp-4 block text-smoke group-open:line-clamp-none">
+        “{opinion.texto}”
+      </span>
+      <span class="mt-2 inline-block text-eyebrow font-mono uppercase text-violeta">
+        <span class="group-open:hidden">Leer más</span>
+        <span class="hidden group-open:inline">Leer menos</span>
+      </span>
+    </summary>
+  </details>
+
+  <div class="mt-auto flex flex-col gap-1">
+    <div class="flex flex-wrap items-center gap-2">
+      <span class="text-small font-medium text-white">{opinion.autor}</span>
+      {
+        opinion.esGoogle && (
+          <span class="rounded-button border border-slate px-2 py-1 text-eyebrow font-mono uppercase text-smoke">
+            Google
+          </span>
+        )
+      }
+    </div>
+    <span class="text-eyebrow font-mono text-smoke">{opinion.detalle}</span>
+  </div>
+</div>
