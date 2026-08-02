@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import SectionHeader from "@/components/ui/SectionHeader.astro";
 import { trabajos } from "@/data/trabajos.ts";
 ---
@@ -13,63 +14,81 @@ import { trabajos } from "@/data/trabajos.ts";
 
       <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {trabajos.map((trabajo) => {
-          const Wrapper = trabajo.permisoPublicar ? "a" : "div";
-          const wrapperProps = trabajo.permisoPublicar
+          const Wrapper = trabajo.mostrarEnlace ? "a" : "div";
+          const wrapperProps = trabajo.mostrarEnlace
             ? {
                 href: trabajo.url,
                 target: "_blank",
                 rel: "noopener noreferrer",
               }
             : {};
+          const titulo = trabajo.permisoPublicar ? trabajo.nombre : trabajo.anonimo;
 
           return (
             <Wrapper
               {...wrapperProps}
-              class="group flex flex-col overflow-hidden rounded-card border border-slate bg-carbon transition-colors duration-150 ease-out hover:border-violeta"
+              class={`group flex flex-col overflow-hidden rounded-card border border-slate bg-carbon transition-colors duration-150 ease-out ${
+                trabajo.mostrarEnlace ? "hover:border-violeta" : ""
+              }`}
             >
-              {/* Bloque neutro: sin captura real, sin datos de clientes visibles. */}
-              <div class="relative flex aspect-[8/5] flex-col items-center justify-center gap-3 border-b border-slate bg-carbon px-6 text-center">
+              <div class="relative aspect-[8/5] border-b border-slate">
                 {trabajo.pagespeed != null && (
-                  <span class="absolute right-3 top-3 rounded-button bg-senal px-2 py-1 text-eyebrow font-mono uppercase text-void">
+                  <span class="absolute right-3 top-3 z-10 rounded-button bg-senal px-2 py-1 text-eyebrow font-mono uppercase text-void">
                     {trabajo.pagespeed} PageSpeed
                   </span>
                 )}
                 {trabajo.muestra && (
-                  <span class="absolute left-3 top-3 rounded-button border border-slate bg-carbon px-2 py-1 text-eyebrow font-mono uppercase text-smoke">
+                  <span class="absolute left-3 top-3 z-10 rounded-button border border-slate bg-carbon px-2 py-1 text-eyebrow font-mono uppercase text-smoke">
                     Proyecto de muestra
                   </span>
                 )}
 
-                {trabajo.permisoPublicar ? (
-                  <Fragment>
-                    <p class="font-display text-h3 text-white">
-                      {trabajo.nombre}
-                    </p>
-                    <p class="text-small text-smoke">{trabajo.rubro}</p>
-                  </Fragment>
+                {trabajo.captura ? (
+                  <Image
+                    src={trabajo.captura}
+                    alt={`Captura del proyecto ${titulo}`}
+                    width={640}
+                    height={400}
+                    loading="lazy"
+                    format="webp"
+                    class="h-full w-full object-cover object-top"
+                  />
                 ) : (
-                  <p class="font-display text-h3 text-white">
-                    {trabajo.anonimo}
-                  </p>
+                  // Bloque neutro: sin captura todavía, sin datos de clientes visibles.
+                  <div class="flex h-full flex-col items-center justify-center gap-3 bg-carbon px-6 text-center">
+                    <p class="font-display text-h3 text-white">{titulo}</p>
+                    {trabajo.permisoPublicar && (
+                      <p class="text-small text-smoke">{trabajo.rubro}</p>
+                    )}
+                    <ul class="flex flex-wrap justify-center gap-2">
+                      {trabajo.tecnologias.map((tech) => (
+                        <li class="rounded-button border border-slate px-2 py-1 text-eyebrow font-mono uppercase text-smoke">
+                          {tech}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 )}
-
-                <ul class="flex flex-wrap justify-center gap-2">
-                  {trabajo.tecnologias.map((tech) => (
-                    <li class="rounded-button border border-slate px-2 py-1 text-eyebrow font-mono uppercase text-smoke">
-                      {tech}
-                    </li>
-                  ))}
-                </ul>
               </div>
 
               <div class="flex flex-col gap-2 p-6">
-                <p class="text-small text-smoke">{trabajo.descripcion}</p>
+                <div class="flex flex-wrap items-center gap-2">
+                  <h3 class="text-h3 text-white">{titulo}</h3>
+                </div>
+                {trabajo.permisoPublicar && (
+                  <p class="text-small text-smoke">{trabajo.rubro}</p>
+                )}
+                <p class="text-small text-smoke/80">{trabajo.descripcion}</p>
 
                 {trabajo.resultado && (
                   <p class="text-small font-medium text-senal">
                     {trabajo.resultado}
                   </p>
                 )}
+
+                <p class="text-eyebrow font-mono uppercase text-smoke">
+                  {trabajo.tecnologias.join(" · ")}
+                </p>
 
                 {trabajo.testimonio && (
                   <blockquote class="mt-2 border-l-2 border-slate pl-3 text-small text-smoke">

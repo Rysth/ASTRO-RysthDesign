@@ -1,3 +1,8 @@
+import type { ImageMetadata } from "astro";
+import gocar from "@/assets/images/trabajos/gocar.webp";
+import tramitesec from "@/assets/images/trabajos/tramitesec.webp";
+import quickinventory from "@/assets/images/trabajos/quickinventory.webp";
+
 export interface Testimonio {
   texto: string;
   autor: string;
@@ -10,6 +15,10 @@ export interface Trabajo {
   rubro: string;
   descripcion: string;
   tecnologias: string[];
+  // Foto oficial (mockup tipo "shots"). Opcional: si todavía no existe una
+  // captura para el proyecto, la tarjeta cae al bloque neutro (nombre +
+  // rubro + stack) en vez de mostrar nada.
+  captura?: ImageMetadata;
   // Impacto en una línea. Opcional: solo se muestra cuando hay una cifra
   // real que respaldarlo, nunca una estimación.
   resultado?: string;
@@ -18,6 +27,9 @@ export interface Trabajo {
   // vez de nombre/rubro/descripcion) y no enlaza al sitio real.
   permisoPublicar: boolean;
   anonimo?: string;
+  // Si es false, la tarjeta no es un link clickeable (el proyecto se
+  // muestra pero no se manda tráfico al login real del cliente).
+  mostrarEnlace: boolean;
   // Solo aplica a sitios estáticos propios; en apps con sesión (como las de
   // acá abajo) el badge se malinterpreta al lado de la propuesta de
   // velocidad, así que se omite.
@@ -28,22 +40,14 @@ export interface Trabajo {
 
 export const trabajos: Trabajo[] = [
   {
-    nombre: "StockManager",
-    rubro: "ERP y facturación electrónica",
-    descripcion:
-      "Facturación electrónica integrada al SRI con firma digital XAdES-BES y generación de RIDE.",
-    tecnologias: ["React 19", "Rails 8", "PostgreSQL", "Sidekiq", "Redis"],
-    permisoPublicar: true,
-    url: "https://stockmanager.rysthdesign.com/",
-    muestra: false,
-  },
-  {
     nombre: "GoCar",
     rubro: "Plataforma de sorteos",
     descripcion:
       "Sorteos con selección de boletos en tiempo real y pagos por Payphone. Cliente en Cuenca.",
     tecnologias: ["React", "Zustand", "Rails", "Docker"],
+    captura: gocar,
     permisoPublicar: true,
+    mostrarEnlace: false,
     url: "https://gocar.rysthdesign.com/",
     muestra: false,
   },
@@ -52,7 +56,9 @@ export const trabajos: Trabajo[] = [
     rubro: "Gestión de trámites vehiculares",
     descripcion: "Gestión de trámites de matriculación vehicular.",
     tecnologias: ["React", "Tailwind", "Rails", "Docker"],
+    captura: tramitesec,
     permisoPublicar: true,
+    mostrarEnlace: false,
     url: "https://react-tramitesec-uxbm.onrender.com/",
     muestra: false,
   },
@@ -61,7 +67,9 @@ export const trabajos: Trabajo[] = [
     rubro: "Control de stock para minimarkets",
     descripcion: "Control de stock y ventas para minimarkets.",
     tecnologias: ["Rails"],
+    captura: quickinventory,
     permisoPublicar: true,
+    mostrarEnlace: false,
     url: "https://inventory.rysthdesign.com/",
     muestra: false,
   },
