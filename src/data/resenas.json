@@ -1,9 +1,49 @@
 {
   "rating": 5,
   "total": 21,
-  "perfilUrl": "https://www.google.com/maps/place/?q=place_id:ChIJoTQWarIsBWkRp53tvPtWxDI",
+  "perfilUrl": "https://maps.google.com/?cid=3658144436538154407&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
   "actualizado": "2026-08-01",
   "resenas": [
+    {
+      "autor": "Sr. Aku",
+      "inicial": "S",
+      "estrellas": 5,
+      "fecha": "2023-09-14",
+      "texto": "10/10 Excellent service, very friendly and safe, not to mention very affordable.\n\nHighly recommended.",
+      "origen": "api"
+    },
+    {
+      "autor": "Emperatriz Protectora",
+      "inicial": "E",
+      "estrellas": 5,
+      "fecha": "2023-06-10",
+      "texto": "Reliable, safe, and economical, I recommend it for its good service and product safety.",
+      "origen": "api"
+    },
+    {
+      "autor": "Azlx wg",
+      "inicial": "A",
+      "estrellas": 5,
+      "fecha": "2023-04-10",
+      "texto": "Very good, reliable, excellent service, great friend",
+      "origen": "api"
+    },
+    {
+      "autor": "Manuel Medina",
+      "inicial": "M",
+      "estrellas": 5,
+      "fecha": "2023-04-15",
+      "texto": "Very reliable and very fast for buying games and other things, I recommend it for game purchases",
+      "origen": "api"
+    },
+    {
+      "autor": "Ls Gu",
+      "inicial": "L",
+      "estrellas": 5,
+      "fecha": "2023-04-06",
+      "texto": "Very good, fast and reliable 👌👌",
+      "origen": "api"
+    },
     {
       "autor": "Sr. Aku",
       "inicial": "S",
