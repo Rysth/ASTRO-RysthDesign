@@ -1,0 +1,94 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+const actualizado = "1 de agosto de 2026";
+---
+
+<Layout
+  title="Términos y condiciones | RysthDesign"
+  description="Condiciones del servicio: entrega, rondas de cambios, anticipo, propiedad y renovación."
+  noindex
+>
+  <div class="mx-auto max-w-screen-md px-4 py-16 md:px-6 md:py-24">
+    <h1 class="text-h2 text-white">Términos y condiciones</h1>
+    <p class="mt-2 text-small font-mono text-smoke">
+      Última actualización: {actualizado}
+    </p>
+
+    <div class="mt-10 flex flex-col gap-8 text-body text-smoke">
+      <p>
+        Estas condiciones aplican a los servicios de diseño y desarrollo web
+        que ofrece RysthDesign. Al contratar un plan, aceptas los términos
+        descritos a continuación.
+      </p>
+
+      <section>
+        <h2 class="text-h3 text-white">Rondas de cambios</h2>
+        <p class="mt-3">
+          Cada plan incluye un número fijo de rondas de cambios sobre el
+          diseño y contenido inicial (ver detalle en cada plan en la sección
+          de Servicios). Cambios adicionales fuera de esas rondas, o
+          cambios de alcance (nuevas secciones, funcionalidades no
+          contempladas en el plan) se cotizan aparte.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-h3 text-white">Tiempos de entrega</h2>
+        <p class="mt-3">
+          El plazo de entrega de cada plan empieza a contar desde que
+          recibimos todo el contenido necesario para trabajar (textos,
+          imágenes, logo, accesos, etc.), no desde la fecha de contratación.
+          Si el contenido llega incompleto o por partes, el plazo se ajusta en
+          consecuencia.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-h3 text-white">Pago</h2>
+        <p class="mt-3">
+          Se requiere un anticipo del 50% del valor de configuración (setup)
+          para iniciar el proyecto. El 50% restante se paga contra entrega,
+          antes de publicar el sitio en su dominio final. El costo anual
+          (hosting, dominio y mantenimiento) se factura por adelantado cada
+          año, a partir de la fecha de publicación.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-h3 text-white">Propiedad del dominio y el código</h2>
+        <p class="mt-3">
+          El dominio se registra a nombre del cliente. El código del sitio es
+          propiedad del cliente una vez pagado en su totalidad. RysthDesign
+          conserva el derecho de mostrar el proyecto como parte de su
+          portafolio, salvo acuerdo distinto por escrito.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-h3 text-white">Renovación</h2>
+        <p class="mt-3">
+          El plan anual cubre hosting, dominio y mantenimiento básico del
+          sitio por un año. Si no se renueva al vencimiento, el sitio entra en
+          un periodo de gracia de 30 días durante el cual sigue publicado. Si
+          pasado ese plazo no se renueva, el sitio se da de baja y el hosting
+          se libera. El dominio, al estar a nombre del cliente, no se ve
+          afectado y puede renovarse o transferirse de forma independiente.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-h3 text-white">Contacto</h2>
+        <p class="mt-3">
+          Cualquier duda sobre estos términos, escribe a{" "}
+          <a
+            href="mailto:support@rysthdesign.com"
+            class="text-violeta hover:text-violeta-deep"
+          >
+            support@rysthdesign.com
+          </a>.
+        </p>
+      </section>
+    </div>
+  </div>
+</Layout>

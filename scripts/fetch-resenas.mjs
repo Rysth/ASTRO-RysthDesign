@@ -31,7 +31,14 @@ function cargarEnv() {
 
 function leerExistente() {
   if (!existsSync(dataPath)) {
-    return { rating: 0, total: 0, perfilUrl: "", actualizado: "", resenas: [] };
+    return {
+      mostrar: true,
+      rating: 0,
+      total: 0,
+      perfilUrl: "",
+      actualizado: "",
+      resenas: [],
+    };
   }
   return JSON.parse(readFileSync(dataPath, "utf-8"));
 }
@@ -87,6 +94,7 @@ const resenasApi = (datos.reviews ?? []).map((r) => ({
 const resenasManuales = existente.resenas.filter((r) => r.origen === "manual");
 
 const actualizado = {
+  mostrar: existente.mostrar ?? true,
   rating: datos.rating ?? existente.rating,
   total: datos.userRatingCount ?? existente.total,
   perfilUrl: datos.googleMapsUri ?? existente.perfilUrl,

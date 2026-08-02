@@ -1,27 +1,19 @@
 ---
 import SectionHeader from "@/components/ui/SectionHeader.astro";
+import { datosAuditoria, fuenteAuditoria } from "@/data/auditoria.ts";
 
-// Cifras en TODO: son cifras de negocio, no las inventamos — confirmar antes de publicar.
-const datos = [
-  {
-    numero: "TODO: seg",
-    label: "Lo que tarda en cargar un sitio de WordPress típico en celular",
-  },
-  {
-    numero: "TODO: %",
-    label: "Visitantes que abandonan un sitio que tarda más de 3 segundos",
-  },
-  {
-    numero: "0.6 seg",
-    label: "Lo que tarda en cargar un sitio hecho con RysthDesign",
-  },
-];
+// Cifras de la auditoría propia (src/data/auditoria.ts): sin presencia web,
+// solo Instagram/Facebook y PageSpeed promedio. Nada inventado.
+const [sinPresencia, , soloRedes, , pageSpeed] = datosAuditoria;
+
+const datos = [sinPresencia, soloRedes, pageSpeed];
 ---
 
 <section class="mx-auto max-w-screen-xl px-4 py-16 md:px-6 md:py-24">
   <SectionHeader
     eyebrow="El problema"
-    title="Cada segundo de carga es un cliente que se va con otro"
+    title="Auditamos 190 veterinarias de Guayaquil: casi nadie aparece en Google"
+    description="Revisamos cada una en Google Maps, sitio por sitio. El mismo patrón se repite en la mayoría de los rubros locales."
   />
 
   <div class="mt-12 grid gap-8 sm:grid-cols-3">
@@ -36,4 +28,6 @@ const datos = [
       ))
     }
   </div>
+
+  <p class="mt-8 text-xs font-mono text-smoke">{fuenteAuditoria}</p>
 </section>

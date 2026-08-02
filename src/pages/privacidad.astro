@@ -1,0 +1,95 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+const actualizado = "1 de agosto de 2026";
+---
+
+<Layout
+  title="Política de privacidad | RysthDesign"
+  description="Qué datos recogemos, para qué los usamos y cómo pedir que los borremos."
+  noindex
+>
+  <div class="mx-auto max-w-screen-md px-4 py-16 md:px-6 md:py-24">
+    <h1 class="text-h2 text-white">Política de privacidad</h1>
+    <p class="mt-2 text-small font-mono text-smoke">
+      Última actualización: {actualizado}
+    </p>
+
+    <div class="mt-10 flex flex-col gap-8 text-body text-smoke">
+      <p>
+        Esta página explica qué información recoge RysthDesign a través de
+        rysthdesign.com, para qué se usa y qué puedes hacer al respecto.
+      </p>
+
+      <section>
+        <h2 class="text-h3 text-white">Qué datos recogemos</h2>
+        <ul class="mt-3 flex flex-col gap-3">
+          <li>
+            <strong class="text-white">WhatsApp.</strong> Cuando escribes por los
+            botones de WhatsApp del sitio, la conversación queda en WhatsApp
+            con tu número de teléfono, nombre de perfil y el contenido de los
+            mensajes, igual que cualquier chat de WhatsApp.
+          </li>
+          <li>
+            <strong class="text-white">Formulario de contacto.</strong> Cuando
+            el sitio tenga un formulario de contacto activo, recogerá los
+            datos que escribas ahí (por ejemplo nombre, correo y mensaje) para
+            poder responderte. Si en algún momento no está activo, esta
+            sección no aplica todavía.
+          </li>
+          <li>
+            <strong class="text-white">Google Analytics.</strong> Cuando esté
+            activo, Google Analytics recoge datos de navegación de forma
+            agregada y anónima (páginas visitadas, tiempo en el sitio,
+            dispositivo y ubicación aproximada) para entender cómo se usa el
+            sitio. No lo usamos para identificarte individualmente.
+          </li>
+          <li>
+            <strong class="text-white">Cookies.</strong> El sitio puede usar
+            cookies técnicas necesarias para su funcionamiento y, si Google
+            Analytics está activo, cookies de medición. No usamos cookies de
+            publicidad ni de seguimiento entre sitios.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-h3 text-white">Para qué usamos estos datos</h2>
+        <p class="mt-3">
+          Para responder tus consultas, entender qué partes del sitio
+          funcionan y mejorar el servicio. No vendemos ni compartimos tus
+          datos con terceros para fines publicitarios.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-h3 text-white">Cómo pedir que borremos tus datos</h2>
+        <p class="mt-3">
+          Escríbenos a{" "}
+          <a
+            href="mailto:support@rysthdesign.com"
+            class="text-violeta hover:text-violeta-deep"
+          >
+            support@rysthdesign.com
+          </a>{" "}
+          indicando qué dato quieres que eliminemos (por ejemplo, tu
+          conversación de WhatsApp o los datos de un formulario). Respondemos
+          en un plazo razonable y confirmamos cuando el borrado esté hecho.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-h3 text-white">Contacto</h2>
+        <p class="mt-3">
+          Cualquier duda sobre esta política, escribe a{" "}
+          <a
+            href="mailto:support@rysthdesign.com"
+            class="text-violeta hover:text-violeta-deep"
+          >
+            support@rysthdesign.com
+          </a>.
+        </p>
+      </section>
+    </div>
+  </div>
+</Layout>

@@ -10,6 +10,8 @@ const estrellasPromedio = Math.round(resenas.rating);
 const duracionMarquee = `${resenas.resenas.length * 5}s`;
 ---
 
+{
+  resenas.mostrar && (
 <section
   id="resenas"
   role="region"
@@ -123,6 +125,8 @@ const duracionMarquee = `${resenas.resenas.length * 5}s`;
     )
   }
 </section>
+  )
+}
 
 <style>
   .pista {

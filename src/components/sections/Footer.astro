@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import brand from "@/assets/images/brand/brand.svg";
-import { waLink } from "@/data/site.ts";
+import { waLink, SOCIAL_LINKS } from "@/data/site.ts";
 
 const links = [
   { href: "#servicios", label: "Servicios" },
@@ -10,10 +10,15 @@ const links = [
   { href: "/veterinarias", label: "Para veterinarias" },
 ];
 
+const legales = [
+  { href: "/privacidad", label: "Privacidad" },
+  { href: "/terminos", label: "Términos" },
+];
+
 const social = [
-  { href: "https://instagram.com/rysthdesign", label: "Instagram" },
-  { href: "https://facebook.com/rysthdesign", label: "Facebook" },
-  { href: "https://tiktok.com/@rysthdesign", label: "TikTok" },
+  { href: SOCIAL_LINKS.instagram, label: "Instagram" },
+  { href: SOCIAL_LINKS.facebook, label: "Facebook" },
+  { href: SOCIAL_LINKS.tiktok, label: "TikTok" },
   {
     href: waLink("Hola, vi tu web y quiero saber cómo funciona RysthDesign."),
     label: "WhatsApp",
@@ -61,6 +66,22 @@ const year = new Date().getFullYear();
       }
     </ul>
 
-    <p class="text-small text-smoke">© {year} RysthDesign</p>
+    <div class="flex flex-col items-center gap-2 md:items-end">
+      <p class="text-small text-smoke">© {year} RysthDesign</p>
+      <ul class="flex items-center gap-4">
+        {
+          legales.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class="text-small text-smoke transition-colors duration-150 ease-out hover:text-white"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </div>
 </footer>
