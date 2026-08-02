@@ -45,6 +45,14 @@ import { trabajos } from "@/data/trabajos.ts";
                 )}
               </div>
               <p class="text-small text-smoke">{trabajo.rubro}</p>
+              <p class="text-small text-smoke/80">{trabajo.descripcion}</p>
+              <ul class="mt-2 flex flex-wrap gap-2">
+                {trabajo.tecnologias.map((tech) => (
+                  <li class="rounded-button border border-slate px-2 py-1 text-eyebrow font-mono uppercase text-smoke">
+                    {tech}
+                  </li>
+                ))}
+              </ul>
             </div>
           </a>
         ))}
