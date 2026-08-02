@@ -1,13 +1,18 @@
 ---
 import SectionHeader from "@/components/ui/SectionHeader.astro";
-import { datosAuditoria, totalAuditadas } from "@/data/auditoria.ts";
+import {
+  datosAuditoria,
+  totalAuditadas,
+  porcentajeSinSitioPropio,
+  fuenteAuditoria,
+} from "@/data/auditoria.ts";
 ---
 
 <section class="mx-auto max-w-screen-xl px-4 py-16 md:px-6 md:py-24">
   <SectionHeader
     eyebrow="La auditoría"
-    title={`Revisamos ${totalAuditadas} veterinarias de Guayaquil en Google Maps`}
-    description="Sin hablar con nadie: solo Maps, PageSpeed Insights y abrir cada sitio en el celular."
+    title={`El ${porcentajeSinSitioPropio}% de las veterinarias de Guayaquil no tiene sitio web propio`}
+    description={`Revisamos las ${totalAuditadas} veterinarias de Guayaquil en Google Maps. Sin hablar con nadie: solo Maps, PageSpeed Insights y abrir cada sitio en el celular.`}
   />
 
   <div class="mt-12 grid gap-8 sm:grid-cols-2">
@@ -20,4 +25,6 @@ import { datosAuditoria, totalAuditadas } from "@/data/auditoria.ts";
       ))
     }
   </div>
+
+  <p class="mt-8 text-xs font-mono text-smoke">{fuenteAuditoria}</p>
 </section>
