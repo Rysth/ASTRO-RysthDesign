@@ -19,6 +19,7 @@ export interface Trabajo {
   // captura para el proyecto, la tarjeta cae al bloque neutro (nombre +
   // rubro + stack) en vez de mostrar nada.
   captura?: ImageMetadata;
+  capturaAjuste?: string;
   // Impacto en una línea. Opcional: solo se muestra cuando hay una cifra
   // real que respaldarlo, nunca una estimación.
   resultado?: string;
@@ -57,6 +58,7 @@ export const trabajos: Trabajo[] = [
     descripcion: "Gestión de trámites de matriculación vehicular.",
     tecnologias: ["React", "Tailwind", "Rails", "Docker"],
     captura: tramitesec,
+    capturaAjuste: "-translate-y-[20%]",
     permisoPublicar: true,
     mostrarEnlace: false,
     url: "https://react-tramitesec-uxbm.onrender.com/",
@@ -68,6 +70,7 @@ export const trabajos: Trabajo[] = [
     descripcion: "Control de stock y ventas para minimarkets.",
     tecnologias: ["Rails"],
     captura: quickinventory,
+    capturaAjuste: "-translate-y-[10%]",
     permisoPublicar: true,
     mostrarEnlace: false,
     url: "https://inventory.rysthdesign.com/",
