@@ -22,7 +22,9 @@ import { trabajos } from "@/data/trabajos.ts";
                 rel: "noopener noreferrer",
               }
             : {};
-          const titulo = trabajo.permisoPublicar ? trabajo.nombre : trabajo.anonimo;
+          const titulo = trabajo.permisoPublicar
+            ? trabajo.nombre
+            : trabajo.anonimo;
 
           return (
             <Wrapper
@@ -31,7 +33,7 @@ import { trabajos } from "@/data/trabajos.ts";
                 trabajo.mostrarEnlace ? "hover:border-violeta" : ""
               }`}
             >
-              <div class="relative aspect-[8/5] border-b border-slate">
+              <div class="relative aspect-[8/5] overflow-hidden border-b border-slate bg-[#351184]">
                 {trabajo.pagespeed != null && (
                   <span class="absolute right-3 top-3 z-10 rounded-button bg-senal px-2 py-1 text-eyebrow font-mono uppercase text-void">
                     {trabajo.pagespeed} PageSpeed
@@ -51,7 +53,7 @@ import { trabajos } from "@/data/trabajos.ts";
                     height={400}
                     loading="lazy"
                     format="webp"
-                    class="h-full w-full object-cover object-top"
+                    class={`block h-full w-full object-cover object-center ${trabajo.capturaAjuste ?? ""}`}
                   />
                 ) : (
                   // Bloque neutro: sin captura todavía, sin datos de clientes visibles.
