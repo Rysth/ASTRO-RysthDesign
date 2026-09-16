@@ -33,7 +33,14 @@ import { trabajos } from "@/data/trabajos.ts";
                 trabajo.mostrarEnlace ? "hover:border-violeta" : ""
               }`}
             >
-              <div class="relative aspect-[8/5] overflow-hidden border-b border-slate bg-[#351184]">
+              <div
+                class="relative overflow-hidden border-b border-slate bg-[#351184]"
+                style={
+                  trabajo.captura
+                    ? `aspect-ratio: ${trabajo.captura.width} / ${trabajo.captura.height};`
+                    : "aspect-ratio: 8 / 5;"
+                }
+              >
                 {trabajo.pagespeed != null && (
                   <span class="absolute right-3 top-3 z-10 rounded-button bg-senal px-2 py-1 text-eyebrow font-mono uppercase text-void">
                     {trabajo.pagespeed} PageSpeed
@@ -49,11 +56,9 @@ import { trabajos } from "@/data/trabajos.ts";
                   <Image
                     src={trabajo.captura}
                     alt={`Captura del proyecto ${titulo}`}
-                    width={640}
-                    height={400}
                     loading="lazy"
                     format="webp"
-                    class={`block h-full w-full object-cover object-center ${trabajo.capturaAjuste ?? ""}`}
+                    class="block h-full w-full object-cover object-center"
                   />
                 ) : (
                   // Bloque neutro: sin captura todavía, sin datos de clientes visibles.

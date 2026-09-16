@@ -2,13 +2,22 @@
 import SectionHeader from "@/components/ui/SectionHeader.astro";
 import Card from "@/components/ui/Card.astro";
 import Chevron from "@/components/ui/Chevron.astro";
+import Button from "@/components/ui/Button.astro";
 import { planes } from "@/data/planes.ts";
+import { waLink } from "@/data/site.ts";
+
+const sistemaAMedidaIncluye = [
+  "Lógica, flujos y funcionalidades propias de tu negocio",
+  "Panel de administración o gestión a tu medida",
+  "Integraciones con pagos, APIs o sistemas externos",
+  "Acompañamiento durante todo el desarrollo, casi un mes de trabajo",
+];
 ---
 
 <section id="servicios" class="mx-auto max-w-screen-xl scroll-mt-16 px-4 py-16 md:px-6 md:py-24">
   <SectionHeader
     eyebrow="Servicios"
-    title="Dos formas de estar donde te buscan"
+    title="Planes para estar donde te buscan"
   />
 
   <div class="mx-auto mt-12 grid max-w-3xl gap-6 sm:grid-cols-2">
@@ -54,5 +63,57 @@ import { planes } from "@/data/planes.ts";
         </Card>
       ))
     }
+  </div>
+
+  <div class="mx-auto mt-6 max-w-3xl">
+    <Card border="violeta" padding="lg" class="flex flex-col gap-6">
+      <div class="flex flex-col gap-2">
+        <h3 class="text-h3 text-white">Sistema Web a Medida</h3>
+        <p class="text-small text-smoke">
+          Para el negocio que necesita algo que un plan fijo no cubre: lógica
+          propia, integraciones, paneles o procesos a medida.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-1 border-y border-slate py-4 sm:flex-row sm:gap-8">
+        <div class="flex flex-col gap-1">
+          <p class="text-eyebrow font-mono uppercase text-smoke">Setup</p>
+          <p class="text-h3 text-white">$800 – $2500+</p>
+          <p class="text-small font-mono text-smoke">
+            Según el alcance, casi un mes de trabajo
+          </p>
+        </div>
+        <div class="flex flex-col gap-1">
+          <p class="text-eyebrow font-mono uppercase text-smoke">
+            Mantenimiento
+          </p>
+          <p class="text-h3 text-white">$25 – $100/mes</p>
+          <p class="text-small font-mono text-smoke">
+            Según la lógica y el alcance del negocio
+          </p>
+        </div>
+      </div>
+
+      <ul class="flex flex-col gap-3">
+        {sistemaAMedidaIncluye.map((item) => (
+          <li class="flex items-start gap-2">
+            <Chevron size={12} class="mt-1" />
+            <span class="text-small text-smoke">{item}</span>
+          </li>
+        ))}
+      </ul>
+
+      <Button
+        href={waLink(
+          "Hola, quiero cotizar un sistema web a medida para mi negocio."
+        )}
+        target="_blank"
+        rel="noopener noreferrer"
+        variant="primary"
+        class="self-start"
+      >
+        Cotizar por WhatsApp
+      </Button>
+    </Card>
   </div>
 </section>
