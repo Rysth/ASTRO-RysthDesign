@@ -1,0 +1,119 @@
+---
+import Eyebrow from "@/components/ui/Eyebrow.astro";
+import Chevron from "@/components/ui/Chevron.astro";
+import { planes, aMedida } from "@/data/planes.ts";
+import { waLink } from "@/data/site.ts";
+---
+
+<section
+  id="precios"
+  class="mx-auto max-w-screen-xl scroll-mt-16 px-4 py-16 md:px-6 md:py-24"
+>
+  <div data-reveal class="grid items-end gap-6 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
+    <div class="flex flex-col gap-4">
+      <Eyebrow text="Software listo para usar" />
+      <h2 class="text-h2 text-white">
+        Precio y alcance claros
+        <span class="text-violeta">desde el inicio.</span>
+      </h2>
+    </div>
+    <p class="text-body max-w-[48ch] text-smoke">
+      Sistemas ya construidos y probados, instalados solo para tu negocio.
+      Pagas la instalación una vez y una cuota mensual con hosting y soporte.
+    </p>
+  </div>
+
+  {
+    planes.map((plan) => (
+      <article
+        data-reveal
+        class="mt-12 grid overflow-hidden rounded-card border border-violeta bg-carbon lg:grid-cols-[1.4fr_1fr]"
+      >
+        <div class="flex flex-col gap-6 p-6 lg:p-8">
+          <div class="flex flex-col gap-2">
+            <p class="font-mono text-eyebrow uppercase text-violeta">
+              {plan.categoria}
+            </p>
+            <h3 class="text-h2 text-white">{plan.nombre}</h3>
+            <p class="text-body max-w-[60ch] text-smoke">{plan.paraQuien}</p>
+          </div>
+
+          <ul class="grid gap-x-6 gap-y-3 border-t border-slate pt-6 sm:grid-cols-2">
+            {plan.incluye.map((item) => (
+              <li class="flex items-start gap-2 text-small text-white">
+                <Chevron size={12} color="senal" class="mt-1" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="flex flex-col gap-6 border-t border-slate bg-void/40 p-6 lg:border-l lg:border-t-0 lg:p-8">
+          <div class="flex flex-col gap-2">
+            <span class="self-start rounded-button bg-violeta-deep px-2 py-1 font-mono text-eyebrow uppercase text-white">
+              {plan.nota}
+            </span>
+            <p class="mt-2 flex items-baseline gap-2">
+              <span class="font-mono text-eyebrow text-smoke">USD</span>
+              <span class="font-display text-display text-white">{plan.setup}</span>
+              <span class="font-mono text-eyebrow text-smoke">instalación</span>
+            </p>
+            <p class="font-mono text-small text-white">
+              + ${plan.mensual}/mes
+              <span class="text-smoke">· hosting y soporte</span>
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-3 border-t border-slate pt-6">
+            <p class="font-mono text-eyebrow uppercase text-smoke">
+              Complementos opcionales
+            </p>
+            <dl class="flex flex-col gap-2">
+              {plan.complementos.map((c) => (
+                <div class="flex items-baseline justify-between gap-4 text-small">
+                  <dt class="text-white">{c.nombre}</dt>
+                  <dd class="shrink-0 font-mono text-smoke">{c.precio}</dd>
+                </div>
+              ))}
+            </dl>
+            <p class="text-small text-smoke">
+              Sin complementos cobras por transferencia y en efectivo.
+            </p>
+          </div>
+
+          <a
+            href={waLink(
+              `Hola, me interesa ${plan.nombre} para mi agencia. ¿Me muestras una demo?`,
+            )}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-auto flex items-center justify-between gap-4 rounded-button bg-senal px-6 py-3 font-medium text-void transition-colors duration-150 ease-out hover:bg-senal-deep"
+          >
+            Pedir una demo
+            <Chevron size={10} color="carbon" class="rotate-90" />
+          </a>
+        </div>
+      </article>
+    ))
+  }
+
+  <a
+    data-reveal
+    href={waLink(`Hola, quiero cotizar un ${aMedida.nombre.toLowerCase()} para mi negocio.`)}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="group mt-6 flex flex-col justify-between gap-4 rounded-card border border-slate p-6 transition-colors duration-150 ease-out hover:border-violeta sm:flex-row sm:items-center"
+  >
+    <div class="flex flex-col gap-2">
+      <p class="font-mono text-eyebrow uppercase text-smoke">
+        ¿Necesitas otra cosa? · Desde USD {aMedida.desde}
+      </p>
+      <p class="text-body font-medium text-white">{aMedida.nombre}</p>
+      <p class="text-small text-smoke">{aMedida.descripcion}</p>
+    </div>
+    <span class="flex shrink-0 items-center gap-2 text-violeta transition-colors duration-150 ease-out group-hover:text-white">
+      Cotizar
+      <Chevron size={10} class="rotate-90" />
+    </span>
+  </a>
+</section>

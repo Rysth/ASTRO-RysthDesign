@@ -1,42 +1,129 @@
 ---
+import { Image } from "astro:assets";
 import Eyebrow from "@/components/ui/Eyebrow.astro";
 import Button from "@/components/ui/Button.astro";
 import Chevron from "@/components/ui/Chevron.astro";
-import RaceBars from "@/components/RaceBars.astro";
 import { waLink } from "@/data/site.ts";
+import { planes } from "@/data/planes.ts";
+import { trabajos } from "@/data/trabajos.ts";
+
+const desde = Math.min(...planes.map((plan) => plan.setup));
+
+const datos = [
+  { valor: "<1s", label: "Tiempo de carga" },
+  { valor: "95+", label: "Lighthouse móvil" },
+  { valor: "100%", label: "Dominio a tu nombre" },
+];
+
+// Solo proyectos con captura y permiso: el primero va grande, el resto debajo.
+const [principal, ...resto] = trabajos.filter(
+  (trabajo) => trabajo.captura && trabajo.permisoPublicar,
+);
 ---
 
-<section class="mx-auto max-w-screen-xl px-4 pb-16 pt-12 md:px-6 md:pb-24 md:pt-16">
-  <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-    <div class="flex flex-col items-start gap-6">
-      <Eyebrow text="Web · Rendimiento" />
+<section
+  id="inicio"
+  class="hero border-b border-slate"
+>
+  <div
+    class="mx-auto grid max-w-screen-xl items-center gap-12 px-4 pb-16 pt-12 md:px-6 md:pb-24 md:pt-16 lg:grid-cols-[1.1fr_1fr] lg:gap-16"
+  >
+    <div data-reveal class="flex flex-col items-start gap-6">
+      <Eyebrow text="Web · Guayaquil · Todo Ecuador" />
+
       <h1 class="text-display text-white">
-        Sitios que cargan en menos de un segundo
+        Tu web lista en días.
+        <span class="text-violeta">Desde ${desde}.</span>
       </h1>
-      <p class="text-body max-w-[65ch] text-smoke">
-        Y que aparecen cuando te buscan en Google. Astro estático, 95+ en
-        Lighthouse móvil, ficha de Google Business lista desde el día uno.
+
+      <p class="text-body max-w-[52ch] text-smoke">
+        Sitios rápidos que aparecen en Google y llevan cada visita directo a
+        tu WhatsApp. Precio cerrado antes de empezar, sin pagos mensuales
+        sorpresa.
       </p>
+
       <div class="flex flex-wrap items-center gap-6">
         <Button
-          href={waLink(
-            "Hola, vi tu web y quiero saber cómo funciona el sistema de RysthDesign.",
-          )}
+          href={waLink("Hola, vi tu web y quiero cotizar un sitio para mi negocio.")}
           target="_blank"
           rel="noopener noreferrer"
           variant="primary"
         >
-          Hablar por WhatsApp
+          Cotizar por WhatsApp
         </Button>
-        <Button href="#proceso" variant="secondary">
-          Ver cómo funciona
-          <Chevron size={10} />
+        <Button href="#precios" variant="secondary">
+          Ver precios
+          <Chevron size={10} class="rotate-180" />
         </Button>
       </div>
+
+      <dl class="mt-4 grid w-full max-w-md grid-cols-3 border-t border-slate pt-6">
+        {
+          datos.map((dato) => (
+            <div class="flex flex-col gap-1">
+              <dt class="order-2 font-mono text-eyebrow uppercase text-smoke">
+                {dato.label}
+              </dt>
+              <dd class="order-1 font-display text-h3 text-white">
+                {dato.valor}
+              </dd>
+            </div>
+          ))
+        }
+      </dl>
     </div>
 
-    <div class="flex justify-center lg:justify-end">
-      <RaceBars />
-    </div>
+    {
+      principal && (
+        <div id="proyectos" data-reveal class="flex scroll-mt-24 flex-col gap-3">
+          <figure class="overflow-hidden rounded-card border border-slate bg-carbon">
+            <div class="flex items-center gap-2 border-b border-slate px-4 py-3">
+              <span class="h-2 w-2 rounded-full bg-slate" />
+              <span class="h-2 w-2 rounded-full bg-slate" />
+              <span class="h-2 w-2 rounded-full bg-slate" />
+              <span class="ml-2 truncate font-mono text-eyebrow text-smoke">
+                {principal.nombre.toLowerCase()} · {principal.rubro}
+              </span>
+            </div>
+            <Image
+              src={principal.captura!}
+              alt={`Captura del proyecto ${principal.nombre}`}
+              widths={[640, 960]}
+              sizes="(min-width: 1024px) 560px, 100vw"
+              loading="eager"
+              class="block h-auto w-full"
+            />
+          </figure>
+
+          <div class="grid grid-cols-2 gap-3">
+            {resto.slice(0, 2).map((trabajo) => (
+              <figure class="overflow-hidden rounded-card border border-slate bg-carbon">
+                <Image
+                  src={trabajo.captura!}
+                  alt={`Captura del proyecto ${trabajo.nombre}`}
+                  widths={[320, 560]}
+                  sizes="(min-width: 1024px) 280px, 50vw"
+                  loading="lazy"
+                  class="block aspect-[8/5] h-auto w-full object-cover object-top"
+                />
+                <figcaption class="border-t border-slate px-3 py-2">
+                  <p class="truncate text-small text-white">{trabajo.nombre}</p>
+                  <p class="truncate font-mono text-eyebrow text-smoke">
+                    {trabajo.rubro}
+                  </p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      )
+    }
   </div>
 </section>
+
+<style>
+  /* Único degradado permitido por la identidad: Void a Carbon en el hero. */
+  .hero {
+    background: linear-gradient(180deg, var(--void) 0%, var(--carbon) 100%);
+  }
+</style>

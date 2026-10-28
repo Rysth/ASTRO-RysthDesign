@@ -37,3 +37,20 @@ h3 {
   background: var(--slate);
   border-radius: 10rem;
 }
+
+/* Un solo reveal por sección (fade + 12px de subida). Sin JS o con
+   movimiento reducido, todo se ve desde el inicio. */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+      opacity 500ms ease-out,
+      transform 500ms ease-out;
+  }
+
+  .js [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
