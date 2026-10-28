@@ -69,7 +69,15 @@ const schema = {
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <script is:inline>document.documentElement.classList.add("js");</script>
+    <script is:inline>
+      document.documentElement.classList.add("js");
+      // Tema guardado por el visitante. Por defecto, claro.
+      let theme = "light";
+      try {
+        if (localStorage.getItem("theme") === "dark") theme = "dark";
+      } catch {}
+      if (theme === "light") document.documentElement.dataset.theme = "light";
+    </script>
     <meta
       name="description"
       content={description ||

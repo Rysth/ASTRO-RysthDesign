@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import Eyebrow from "@/components/ui/Eyebrow.astro";
 import Chevron from "@/components/ui/Chevron.astro";
 import { planes, aMedida } from "@/data/planes.ts";
@@ -29,7 +30,18 @@ import { waLink } from "@/data/site.ts";
         data-reveal
         class="mt-12 grid overflow-hidden rounded-card border border-violeta bg-carbon lg:grid-cols-[1.4fr_1fr]"
       >
-        <div class="flex flex-col gap-6 p-6 lg:p-8">
+        <div class="order-1 flex flex-col gap-6 p-6 lg:p-8">
+          {plan.captura && (
+            <Image
+              src={plan.captura}
+              alt={`Web de reservas de ${plan.nombre} para una agencia de tours`}
+              widths={[640, 960, 1280]}
+              sizes="(min-width: 1024px) 680px, 100vw"
+              loading="lazy"
+              class="block h-auto w-full rounded-card border border-slate"
+            />
+          )}
+
           <div class="flex flex-col gap-2">
             <p class="font-mono text-eyebrow uppercase text-violeta">
               {plan.categoria}
@@ -37,20 +49,11 @@ import { waLink } from "@/data/site.ts";
             <h3 class="text-h2 text-white">{plan.nombre}</h3>
             <p class="text-body max-w-[60ch] text-smoke">{plan.paraQuien}</p>
           </div>
-
-          <ul class="grid gap-x-6 gap-y-3 border-t border-slate pt-6 sm:grid-cols-2">
-            {plan.incluye.map((item) => (
-              <li class="flex items-start gap-2 text-small text-white">
-                <Chevron size={12} color="senal" class="mt-1" />
-                {item}
-              </li>
-            ))}
-          </ul>
         </div>
 
-        <div class="flex flex-col gap-6 border-t border-slate bg-void/40 p-6 lg:border-l lg:border-t-0 lg:p-8">
+        <div class="order-3 flex flex-col gap-6 border-t border-slate bg-void/40 p-6 lg:order-2 lg:border-l lg:border-t-0 lg:p-8">
           <div class="flex flex-col gap-2">
-            <span class="self-start rounded-button bg-violeta-deep px-2 py-1 font-mono text-eyebrow uppercase text-white">
+            <span class="self-start rounded-button bg-violeta-deep px-2 py-1 font-mono text-eyebrow uppercase text-paper">
               {plan.nota}
             </span>
             <p class="mt-2 flex items-baseline gap-2">
@@ -87,12 +90,21 @@ import { waLink } from "@/data/site.ts";
             )}
             target="_blank"
             rel="noopener noreferrer"
-            class="mt-auto flex items-center justify-between gap-4 rounded-button bg-senal px-6 py-3 font-medium text-void transition-colors duration-150 ease-out hover:bg-senal-deep"
+            class="mt-auto flex items-center justify-between gap-4 rounded-button bg-senal px-6 py-3 font-medium text-ink transition-colors duration-150 ease-out hover:bg-senal-deep"
           >
             Pedir una demo
-            <Chevron size={10} color="carbon" class="rotate-90" />
+            <Chevron size={10} color="ink" class="rotate-90" />
           </a>
         </div>
+
+        <ul class="order-2 grid gap-x-6 gap-y-3 border-t border-slate p-6 sm:grid-cols-2 lg:order-3 lg:col-span-2 lg:grid-cols-3 lg:p-8">
+          {plan.incluye.map((item) => (
+            <li class="flex items-start gap-2 text-small text-white">
+              <Chevron size={12} color="senal" class="mt-1" />
+              {item}
+            </li>
+          ))}
+        </ul>
       </article>
     ))
   }

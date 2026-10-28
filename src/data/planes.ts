@@ -1,3 +1,6 @@
+import type { ImageMetadata } from "astro";
+import microtours from "@/assets/images/trabajos/microtours.webp";
+
 export interface Complemento {
   nombre: string;
   precio: string;
@@ -7,6 +10,7 @@ export interface Plan {
   slug: string;
   nombre: string;
   categoria: string;
+  captura?: ImageMetadata;
   setup: number;
   mensual: number;
   // Escalón de precio: se respeta hacia atrás para quien ya entró.
@@ -21,6 +25,7 @@ export const planes: Plan[] = [
     slug: "microtours",
     nombre: "MicroTours",
     categoria: "Sistema de reservas",
+    captura: microtours,
     setup: 300,
     mensual: 25,
     nota: "Lanzamiento · primeros 2 clientes",

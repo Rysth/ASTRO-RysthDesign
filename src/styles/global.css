@@ -6,6 +6,15 @@ html {
   color-scheme: dark;
 }
 
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
+/* El logo es blanco puro; en modo claro se usa la versión Void sobre Blanco. */
+html[data-theme="light"] .logo {
+  filter: invert(1);
+}
+
 body {
   background-color: var(--void);
   color: var(--white);

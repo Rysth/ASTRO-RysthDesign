@@ -12,6 +12,10 @@
   --senal: #00e5a0;
   --senal-deep: #00b87f;
 
+  /* Texto sobre Señal y sobre Violeta: no cambian con el tema. */
+  --ink: #08080c;
+  --paper: #ffffff;
+
   /* Tipografía — sección 4 */
   --font-display: "Sora", sans-serif;
   --font-body: "Inter", sans-serif;
@@ -45,6 +49,21 @@
   --transition-hover: 150ms ease-out;
 }
 
+/* Modo claro. Mismos nombres de token, valores invertidos: --void es el
+   fondo, --white el texto principal. Violeta y Señal se oscurecen un paso
+   para mantener contraste sobre blanco. */
+:root[data-theme="light"] {
+  --void: #f6f6f9;
+  --carbon: #ffffff;
+  --slate: #e2e2ea;
+  --white: #0e0e14;
+  --smoke: #5a5a6b;
+  --violeta: #5b3fd9;
+  --violeta-deep: #4a2fc4;
+  --senal: #00c98c;
+  --senal-deep: #00b87f;
+}
+
 /* Mapeo a Tailwind v4. Reinicia las paletas por defecto: solo existen las
    clases que salen de los tokens de arriba (bg-red-500 etc. no funcionan). */
 @theme {
@@ -58,6 +77,8 @@
   --color-violeta-deep: var(--violeta-deep);
   --color-senal: var(--senal);
   --color-senal-deep: var(--senal-deep);
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
   --color-transparent: transparent;
   --color-current: currentColor;
 
