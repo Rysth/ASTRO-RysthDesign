@@ -71,11 +71,11 @@ export const planes: Plan[] = [
       "Compras al proveedor: recibir mercadería y pagos por abonos",
       "Pedidos, cobros y saldos por cliente",
       "Cobro por transferencia con comprobante que sube el cliente",
-      "Facturación electrónica SRI solo cuando el cliente la pide",
       "Hasta 5 usuarios. La vendedora vende; compras y stock solo tú",
       "Tu catálogo cargado (hasta 500 productos) y 2 capacitaciones por Meet",
     ],
     complementos: [
+      { nombre: "Facturación electrónica SRI", precio: "+$10/mes" },
       { nombre: "Usuario adicional (desde el sexto)", precio: "$6.99/mes" },
       { nombre: "Catálogo de más de 500 productos", precio: "+$30" },
       { nombre: "Capacitación extra por Meet", precio: "$15/hora" },
