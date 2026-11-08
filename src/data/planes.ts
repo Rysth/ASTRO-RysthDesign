@@ -75,7 +75,8 @@ export const planes: Plan[] = [
       "Tu catálogo cargado (hasta 500 productos) y 2 capacitaciones por Meet",
     ],
     complementos: [
-      { nombre: "Facturación electrónica SRI", precio: "+$10/mes" },
+      { nombre: "Facturación SRI (hasta 350 facturas al mes)", precio: "+$10/mes" },
+      { nombre: "Facturación SRI ilimitada", precio: "+$18/mes" },
       { nombre: "Usuario adicional (desde el sexto)", precio: "$6.99/mes" },
       { nombre: "Catálogo de más de 500 productos", precio: "+$30" },
       { nombre: "Capacitación extra por Meet", precio: "$15/hora" },
