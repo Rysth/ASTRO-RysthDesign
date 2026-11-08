@@ -83,9 +83,9 @@ const preguntas = [
       "No. MicroERP se abre en el navegador de tu computadora, tablet o celular. Entras con tu usuario y contraseña desde donde estés.",
   },
   {
-    pregunta: "¿Cómo paso mis productos?",
+    pregunta: "¿Cómo ingreso mis productos?",
     respuesta:
-      "Me mandas tu lista en Excel (nombre, precio, tallas o colores, fotos si las tienes) y yo la cargo. Hasta 500 productos van incluidos en la instalación.",
+      "En la capacitación por Google Meet te enseño a crearlos con sus tallas, colores y fotos, para que tú manejes tu catálogo.",
   },
   {
     pregunta: "¿Incluye facturación electrónica?",
@@ -137,7 +137,7 @@ const preguntas = [
           </Button>
         </div>
         <p class="font-mono text-small text-smoke">
-          USD {plan.setup} instalación + ${plan.mensual}/mes. Primer mes gratis.
+          USD {plan.setup} instalación + ${plan.mensual}/mes. Primer mes gratis. Precio de lanzamiento: primeros 5 clientes.
         </p>
       </div>
 
@@ -351,11 +351,11 @@ const preguntas = [
     <div class="mx-auto grid max-w-screen-xl gap-12 px-4 py-16 md:px-6 md:py-24 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
       <div data-reveal class="flex flex-col gap-6">
         <Eyebrow text="Precio" />
-        <h2 class="text-h2 text-white">Pagas la mitad cuando ya estás vendiendo.</h2>
+        <h2 class="text-h2 text-white">Pagas la segunda mitad cuando está listo.</h2>
         <p class="text-body max-w-[48ch] text-smoke">
-          La instalación se paga en dos partes. La segunda, solo cuando tu tienda ya
-          está trabajando con MicroERP. Después, una mensualidad con servidor,
-          respaldos y soporte por WhatsApp.
+          La instalación se paga en dos partes. La segunda, solo cuando el sistema
+          está listo y ya recibiste tu capacitación. Después, una mensualidad con
+          actualizaciones y soporte por WhatsApp. La facturación SRI es un adicional.
         </p>
         <Button href={demo} target="_blank" rel="noopener noreferrer" variant="primary" class="self-start">
           Pedir una demo por Meet
@@ -377,6 +377,7 @@ const preguntas = [
           <p class="text-small text-white">
             Mensualidad desde el segundo mes
             <span class="block text-smoke">Mínimo 6 meses. O $250 por un año.</span>
+            <span class="block text-smoke">Precio de lanzamiento para los primeros 5 clientes. Después, la instalación sube a $350.</span>
           </p>
           <p class="shrink-0 font-display text-h3 text-white">${plan.mensual}/mes</p>
         </div>

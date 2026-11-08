@@ -63,7 +63,7 @@ export const planes: Plan[] = [
     mensaje: "Hola, vi MicroERP en tu web. ¿Me muestras una demo por Meet para mi tienda?",
     setup: 300,
     mensual: 25,
-    nota: "Primer mes gratis",
+    nota: "Lanzamiento · primeros 5 clientes",
     paraQuien:
       "Para tiendas de zapatos, cosméticos, tecnología o suplementos. Sabes cuánto te queda de cada talla, color o sabor, qué vendió cada vendedora y quién te debe.",
     incluye: [
@@ -72,13 +72,12 @@ export const planes: Plan[] = [
       "Pedidos, cobros y saldos por cliente",
       "Cobro por transferencia con comprobante que sube el cliente",
       "Hasta 5 usuarios. La vendedora vende; compras y stock solo tú",
-      "Tu catálogo cargado (hasta 500 productos) y 2 capacitaciones por Meet",
+      "1 capacitación por Google Meet y primer mes gratis",
     ],
     complementos: [
       { nombre: "Facturación SRI (hasta 350 facturas al mes)", precio: "+$10/mes" },
       { nombre: "Facturación SRI ilimitada", precio: "+$18/mes" },
       { nombre: "Usuario adicional (desde el sexto)", precio: "$6.99/mes" },
-      { nombre: "Catálogo de más de 500 productos", precio: "+$30" },
       { nombre: "Capacitación extra por Meet", precio: "$15/hora" },
     ],
   },
