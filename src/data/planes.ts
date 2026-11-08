@@ -63,7 +63,7 @@ export const planes: Plan[] = [
     mensaje: "Hola, vi MicroERP en tu web. ¿Me muestras una demo por Meet para mi tienda?",
     setup: 300,
     mensual: 25,
-    nota: "Lanzamiento · primeros 5 clientes",
+    nota: "Lanzamiento · primeros 3 clientes",
     paraQuien:
       "Para tiendas de zapatos, cosméticos, tecnología o suplementos. Sabes cuánto te queda de cada talla, color o sabor, qué vendió cada vendedora y quién te debe.",
     incluye: [
