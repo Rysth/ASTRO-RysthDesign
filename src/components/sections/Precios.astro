@@ -34,7 +34,7 @@ import { waLink } from "@/data/site.ts";
           {plan.captura && (
             <Image
               src={plan.captura}
-              alt={`Web de reservas de ${plan.nombre} para una agencia de tours`}
+              alt={plan.capturaAlt}
               widths={[640, 960, 1280]}
               sizes="(min-width: 1024px) 680px, 100vw"
               loading="lazy"
@@ -48,6 +48,15 @@ import { waLink } from "@/data/site.ts";
             </p>
             <h3 class="text-h2 text-white">{plan.nombre}</h3>
             <p class="text-body max-w-[60ch] text-smoke">{plan.paraQuien}</p>
+            {plan.landing && (
+              <a
+                href={plan.landing}
+                class="mt-2 flex items-center gap-2 self-start text-violeta transition-colors duration-150 ease-out hover:text-violeta-deep"
+              >
+                Ver cómo funciona {plan.nombre}
+                <Chevron size={10} class="rotate-90" />
+              </a>
+            )}
           </div>
         </div>
 
@@ -80,14 +89,14 @@ import { waLink } from "@/data/site.ts";
               ))}
             </dl>
             <p class="text-small text-smoke">
-              Sin complementos cobras por transferencia y en efectivo.
+              {plan.slug === "microtours"
+                ? "Sin complementos cobras por transferencia y en efectivo."
+                : "Pagas la instalación en dos partes: mitad al empezar y mitad cuando ya estás vendiendo."}
             </p>
           </div>
 
           <a
-            href={waLink(
-              `Hola, me interesa ${plan.nombre} para mi agencia. ¿Me muestras una demo?`,
-            )}
+            href={waLink(plan.mensaje)}
             target="_blank"
             rel="noopener noreferrer"
             class="mt-auto flex items-center justify-between gap-4 rounded-button bg-senal px-6 py-3 font-medium text-ink transition-colors duration-150 ease-out hover:bg-senal-deep"

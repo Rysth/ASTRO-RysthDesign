@@ -1,0 +1,523 @@
+---
+import { Image } from "astro:assets";
+import Layout from "@/layouts/Layout.astro";
+import Eyebrow from "@/components/ui/Eyebrow.astro";
+import Button from "@/components/ui/Button.astro";
+import Chevron from "@/components/ui/Chevron.astro";
+import SectionHeader from "@/components/ui/SectionHeader.astro";
+import CtaFinal from "@/components/sections/CtaFinal.astro";
+import { waLink } from "@/data/site.ts";
+import { planes } from "@/data/planes.ts";
+import capturaExistencias from "@/assets/images/trabajos/microerp-existencias.png";
+import capturaPedido from "@/assets/images/trabajos/microerp-pedido.png";
+
+const plan = planes.find((p) => p.slug === "microerp")!;
+const demo = waLink(plan.mensaje);
+
+// Demo del hero: un modelo real del catálogo de prueba, talla × color.
+const tallas = [37, 38, 39, 40, 41];
+const colores = [
+  { nombre: "Negro", muestra: "#1c1c22", stock: [2, 4, 3, 1, 0] },
+  { nombre: "Café", muestra: "#6b4226", stock: [1, 3, 5, 2, 2] },
+  { nombre: "Arena", muestra: "#c8b08a", stock: [0, 2, 2, 3, 1] },
+];
+const total = colores.reduce((s, c) => s + c.stock.reduce((a, b) => a + b, 0), 0);
+
+const dia = [
+  {
+    titulo: "Compras",
+    detalle: "Pides al proveedor con la cuadrícula de tallas y colores. Anotas su número de factura.",
+  },
+  {
+    titulo: "Recibes",
+    detalle: "Llega la mercadería: confirmas lo que llegó, todo o una parte. El stock y el costo se actualizan solos.",
+  },
+  {
+    titulo: "Vendes",
+    detalle: "Tu vendedora arma el pedido con la foto de cada producto y se lo manda al cliente por WhatsApp.",
+  },
+  {
+    titulo: "Cobras",
+    detalle: "Efectivo, transferencia o abonos. El cliente sube la foto del comprobante y tú solo verificas.",
+  },
+  {
+    titulo: "Facturas",
+    detalle: "Si el cliente pide factura, la emites al SRI con un botón. Si no la pide, no se envía nada.",
+  },
+];
+
+const tiendas = [
+  { rubro: "Zapatos", varia: "Talla y color", ejemplo: ["Negro · 39", "Café · 41"] },
+  { rubro: "Cosméticos", varia: "Tono y tamaño", ejemplo: ["Tono 220", "Mate · 30 ml"] },
+  { rubro: "Tecnología", varia: "Modelo y capacidad", ejemplo: ["128 GB", "Azul · 256 GB"] },
+  { rubro: "Suplementos", varia: "Sabor y presentación", ejemplo: ["Vainilla · 2 lb", "Fresa · 5 lb"] },
+];
+
+const roles = [
+  {
+    quien: "Tú, la dueña o el dueño",
+    puede: [
+      "Ves las ventas de todas tus vendedoras",
+      "Compras al proveedor y le pagas por abonos",
+      "Ajustas el stock con un motivo: conteo, daño o pérdida",
+      "Creas productos, precios y variantes",
+      "Revisas facturas, cobros y quién te debe",
+    ],
+  },
+  {
+    quien: "Tu vendedora",
+    puede: [
+      "Arma pedidos y crea clientes con 3 datos",
+      "Cobra y marca como entregado",
+      "Consulta cuánto queda de cada talla",
+      "Ve solo sus propios pedidos",
+      "No puede tocar compras ni ajustar el stock",
+    ],
+  },
+];
+
+const preguntas = [
+  {
+    pregunta: "¿Tengo que instalar algo?",
+    respuesta:
+      "No. MicroERP se abre en el navegador de tu computadora, tablet o celular. Entras con tu usuario y contraseña desde donde estés.",
+  },
+  {
+    pregunta: "¿Cómo paso mis productos?",
+    respuesta:
+      "Me mandas tu lista en Excel (nombre, precio, tallas o colores, fotos si las tienes) y yo la cargo. Hasta 500 productos van incluidos en la instalación.",
+  },
+  {
+    pregunta: "¿Tengo que facturar todas las ventas?",
+    respuesta:
+      "No. Vendes y cobras normal. La factura electrónica sale solo cuando tocas «Emitir factura electrónica», para el cliente que la pide. Necesitas tu firma electrónica vigente (archivo .p12).",
+  },
+  {
+    pregunta: "¿Cuántos usuarios puedo tener?",
+    respuesta:
+      "Hasta 5 usuarios incluidos: tú y tus vendedoras, cada una con su propio usuario. Desde el sexto, cada usuario adicional cuesta $6.99 al mes.",
+  },
+  {
+    pregunta: "¿Funciona sin internet?",
+    respuesta:
+      "Necesita internet, igual que WhatsApp. Si la conexión se cae, MicroERP te avisa y vuelve solo apenas regresa.",
+  },
+  {
+    pregunta: "¿Qué pasa si un día ya no lo quiero?",
+    respuesta:
+      "Después de los 6 meses mínimos puedes cancelar cuando quieras, avisando con un mes. Te entrego tus productos, clientes y ventas en Excel.",
+  },
+];
+---
+
+<Layout
+  title="MicroERP: inventario y ventas para tu tienda | RysthDesign"
+  description="Sistema de inventario, compras y ventas para tiendas de zapatos, cosméticos, tecnología y suplementos en Ecuador. Stock por talla y color, cobros, facturación SRI. USD 300 de instalación y $25 al mes."
+>
+  <!-- Hero -->
+  <section class="hero border-b border-slate">
+    <div
+      class="mx-auto grid max-w-screen-xl items-center gap-12 px-4 pb-16 pt-12 md:px-6 md:pb-24 md:pt-16 lg:grid-cols-[1fr_1.05fr] lg:gap-16"
+    >
+      <div data-reveal class="flex flex-col items-start gap-6">
+        <Eyebrow text="MicroERP · Inventario para tiendas" />
+        <h1 class="text-display text-white">Tu stock exacto, talla por talla.</h1>
+        <p class="text-body max-w-[50ch] text-smoke">
+          MicroERP lleva el inventario, las compras y las ventas de tu tienda.
+          Cada venta descuenta del stock y cada compra lo suma. Sin cuaderno ni
+          Excel.
+        </p>
+        <div class="flex flex-wrap items-center gap-6">
+          <Button href={demo} target="_blank" rel="noopener noreferrer" variant="primary">
+            Pedir una demo por Meet
+          </Button>
+          <Button href="#precio" variant="secondary">
+            Ver precio
+            <Chevron size={10} class="rotate-180" />
+          </Button>
+        </div>
+        <p class="font-mono text-small text-smoke">
+          USD {plan.setup} instalación + ${plan.mensual}/mes. Primer mes gratis.
+        </p>
+      </div>
+
+      <!-- Demo interactiva: tocar una talla = vender un par -->
+      <div data-reveal class="stock rounded-card border border-slate bg-carbon" data-stock>
+        <div class="flex items-center justify-between gap-4 border-b border-slate px-4 py-3">
+          <div class="flex min-w-0 flex-col">
+            <p class="truncate text-small font-medium text-white">Botín de gamuza</p>
+            <p class="font-mono text-eyebrow text-smoke">Existencias por talla y color</p>
+          </div>
+          <p class="shrink-0 text-right">
+            <span class="font-display text-h3 text-white" data-total>{total}</span>
+            <span class="block font-mono text-eyebrow text-smoke">pares en tienda</span>
+          </p>
+        </div>
+
+        <div class="overflow-x-auto px-4 pb-4 pt-3">
+          <table class="w-full border-separate border-spacing-1">
+            <caption class="sr-only">Pares disponibles por color y talla</caption>
+            <colgroup>
+              <col class="w-[24%]" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col" class="px-2 text-left font-mono text-eyebrow font-normal text-smoke">Color</th>
+                {tallas.map((t) => (
+                  <th scope="col" class="font-mono text-eyebrow font-normal text-smoke">{t}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {colores.map((c) => (
+                <tr>
+                  <th scope="row" class="px-2 text-left font-normal">
+                    <span class="flex items-center gap-2 text-small text-white">
+                      <span class="swatch h-3 w-3 shrink-0 rounded-full" style={`background:${c.muestra}`} />
+                      {c.nombre}
+                    </span>
+                  </th>
+                  {c.stock.map((n, i) => (
+                    <td>
+                      <button
+                        type="button"
+                        class="cell w-full rounded-button border border-slate py-3 font-mono text-small"
+                        data-cell
+                        data-color={c.nombre}
+                        data-talla={tallas[i]}
+                        data-qty={n}
+                        disabled={n === 0}
+                      >
+                        {n === 0 ? "0" : n}
+                      </button>
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="flex items-center justify-between gap-4 border-t border-slate px-4 py-3">
+          <p class="min-w-0 text-small text-smoke" aria-live="polite" data-log>
+            Toca una talla para vender un par.
+          </p>
+          <button
+            type="button"
+            class="hidden shrink-0 font-mono text-eyebrow uppercase text-violeta transition-colors duration-150 ease-out hover:text-white"
+            data-reset
+          >
+            Reiniciar
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Un día en la tienda (secuencia real) -->
+  <section class="mx-auto max-w-screen-xl px-4 py-16 md:px-6 md:py-24">
+    <SectionHeader
+      eyebrow="Cómo se usa"
+      title="Un día normal en tu tienda"
+      description="Cinco momentos, cada uno con su botón. Lo demás (stock, costo promedio, saldos) se calcula solo."
+    />
+    <ol data-reveal class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
+      {
+        dia.map((paso, i) => (
+          <li class="flex flex-col gap-3 border-t border-slate pt-4">
+            <span class="flex items-center gap-2 font-mono text-small text-violeta">
+              <Chevron size={12} />
+              {i + 1}
+            </span>
+            <h3 class="text-h3 text-white">{paso.titulo}</h3>
+            <p class="text-small text-smoke">{paso.detalle}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <!-- Capturas reales -->
+  <section class="border-y border-slate bg-carbon">
+    <div class="mx-auto flex max-w-screen-xl flex-col gap-12 px-4 py-16 md:px-6 md:py-24">
+      <SectionHeader
+        eyebrow="Capturas reales"
+        title="Así se ve con una zapatería"
+        description="Datos de prueba de una tienda con 150 combinaciones de talla y color."
+      />
+
+      <figure data-reveal class="flex flex-col gap-3">
+        <div class="overflow-hidden rounded-card border border-slate">
+          <Image
+            src={capturaExistencias}
+            alt="Lista de existencias de MicroERP: foto, producto, color, talla, precio y cantidad disponible"
+            widths={[640, 960, 1440]}
+            sizes="(min-width: 1280px) 1200px, 100vw"
+            loading="lazy"
+            class="block h-auto w-full"
+          />
+        </div>
+        <figcaption class="text-small text-smoke">
+          Existencias: cada talla y color en su fila, con foto. Ordenas por lo que más
+          tienes o filtras lo agotado.
+        </figcaption>
+      </figure>
+
+      <figure data-reveal class="grid items-center gap-8 lg:grid-cols-[1.5fr_1fr]">
+        <div class="overflow-hidden rounded-card border border-slate">
+          <Image
+            src={capturaPedido}
+            alt="Pedido en MicroERP con el producto, el pago registrado, el comprobante de transferencia del cliente y el margen"
+            widths={[640, 960, 1440]}
+            sizes="(min-width: 1024px) 720px, 100vw"
+            loading="lazy"
+            class="block h-auto w-full"
+          />
+        </div>
+        <figcaption class="flex flex-col gap-4">
+          <h3 class="text-h3 text-white">Un pedido, de principio a fin</h3>
+          <ul class="flex flex-col gap-3">
+            {
+              [
+                "El cliente subió la foto de su transferencia desde el enlace que le llegó por WhatsApp",
+                "La vendedora registró el pago y la tarea de verificar se cerró sola",
+                "Abajo ves cuánto ganaste en esa venta",
+              ].map((item) => (
+                <li class="flex items-start gap-2 text-small text-white">
+                  <Chevron size={12} color="senal" class="mt-1" />
+                  {item}
+                </li>
+              ))
+            }
+          </ul>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Para qué tiendas -->
+  <section class="mx-auto max-w-screen-xl px-4 py-16 md:px-6 md:py-24">
+    <SectionHeader
+      eyebrow="Para qué tiendas"
+      title="Si tu producto tiene variantes, es para ti"
+      description="La misma cuadrícula sirve para lo que cambie en tu producto."
+    />
+    <dl data-reveal class="mt-12 grid border-t border-slate sm:grid-cols-2 lg:grid-cols-4">
+      {
+        tiendas.map((t) => (
+          <div class="flex flex-col gap-3 border-b border-slate py-6 sm:pr-6 lg:border-b-0">
+            <dt class="text-h3 font-display text-white">{t.rubro}</dt>
+            <dd class="text-small text-smoke">{t.varia}</dd>
+            <dd class="flex flex-wrap gap-2">
+              {t.ejemplo.map((e) => (
+                <span class="rounded-button border border-slate px-2 py-1 font-mono text-eyebrow text-white">
+                  {e}
+                </span>
+              ))}
+            </dd>
+          </div>
+        ))
+      }
+    </dl>
+  </section>
+
+  <!-- Roles -->
+  <section class="mx-auto max-w-screen-xl px-4 pb-16 md:px-6 md:pb-24">
+    <SectionHeader
+      eyebrow="Quién hace qué"
+      title="Tu vendedora vende. Tú controlas."
+    />
+    <div data-reveal class="mt-12 grid gap-6 md:grid-cols-2">
+      {
+        roles.map((r) => (
+          <div class="flex flex-col gap-4 rounded-card border border-slate p-6">
+            <h3 class="text-h3 text-white">{r.quien}</h3>
+            <ul class="flex flex-col gap-3">
+              {r.puede.map((p) => (
+                <li class="flex items-start gap-2 text-small text-white">
+                  <Chevron size={12} class="mt-1" />
+                  {p}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Precio -->
+  <section id="precio" class="scroll-mt-16 border-y border-slate bg-carbon">
+    <div class="mx-auto grid max-w-screen-xl gap-12 px-4 py-16 md:px-6 md:py-24 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
+      <div data-reveal class="flex flex-col gap-6">
+        <Eyebrow text="Precio" />
+        <h2 class="text-h2 text-white">Pagas la mitad cuando ya estás vendiendo.</h2>
+        <p class="text-body max-w-[48ch] text-smoke">
+          La instalación se paga en dos partes. La segunda, solo cuando tu tienda ya
+          está trabajando con MicroERP. Después, una mensualidad con servidor,
+          respaldos y soporte por WhatsApp.
+        </p>
+        <Button href={demo} target="_blank" rel="noopener noreferrer" variant="primary" class="self-start">
+          Pedir una demo por Meet
+        </Button>
+      </div>
+
+      <div data-reveal class="flex flex-col rounded-card border border-violeta bg-void">
+        <div class="grid grid-cols-2 border-b border-slate">
+          <div class="flex flex-col gap-1 border-r border-slate p-6">
+            <p class="font-mono text-eyebrow uppercase text-smoke">Al empezar</p>
+            <p class="font-display text-h2 text-white">${plan.setup / 2}</p>
+          </div>
+          <div class="flex flex-col gap-1 p-6">
+            <p class="font-mono text-eyebrow uppercase text-smoke">Al entregar</p>
+            <p class="font-display text-h2 text-white">${plan.setup / 2}</p>
+          </div>
+        </div>
+        <div class="flex items-baseline justify-between gap-4 border-b border-slate p-6">
+          <p class="text-small text-white">
+            Mensualidad desde el segundo mes
+            <span class="block text-smoke">Mínimo 6 meses. O $250 por un año.</span>
+          </p>
+          <p class="shrink-0 font-display text-h3 text-white">${plan.mensual}/mes</p>
+        </div>
+        <ul class="grid gap-3 p-6 sm:grid-cols-2">
+          {
+            plan.incluye.map((item) => (
+              <li class="flex items-start gap-2 text-small text-white">
+                <Chevron size={12} color="senal" class="mt-1" />
+                {item}
+              </li>
+            ))
+          }
+        </ul>
+        <dl class="flex flex-col gap-2 border-t border-slate p-6">
+          {
+            plan.complementos.map((c) => (
+              <div class="flex items-baseline justify-between gap-4 text-small">
+                <dt class="text-smoke">{c.nombre}</dt>
+                <dd class="shrink-0 font-mono text-white">{c.precio}</dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preguntas -->
+  <section class="mx-auto max-w-screen-xl px-4 py-16 md:px-6 md:py-24">
+    <SectionHeader eyebrow="Preguntas frecuentes" title="Antes de pedir la demo" />
+    <div class="mt-12 flex max-w-[75ch] flex-col gap-4">
+      {
+        preguntas.map((item) => (
+          <details class="group rounded-card border border-slate bg-carbon p-6">
+            <summary class="text-body flex cursor-pointer list-none items-center justify-between gap-4 font-medium text-white">
+              {item.pregunta}
+              <span class="font-mono text-smoke transition-transform duration-150 ease-out group-open:rotate-45">+</span>
+            </summary>
+            <p class="text-small mt-4 text-smoke">{item.respuesta}</p>
+          </details>
+        ))
+      }
+    </div>
+  </section>
+
+  <CtaFinal
+    titulo="Te muestro MicroERP con productos como los tuyos."
+    mensaje={plan.mensaje}
+  />
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(180deg, var(--void) 0%, var(--carbon) 100%);
+  }
+
+  .cell {
+    color: var(--white);
+    background: var(--void);
+    cursor: pointer;
+    transition:
+      border-color var(--transition-hover),
+      background-color var(--transition-hover);
+  }
+
+  .cell:hover:not(:disabled) {
+    border-color: var(--violeta);
+  }
+
+  /* Última unidad: se nota sin gritar. */
+  .cell[data-qty="1"] {
+    color: var(--violeta);
+  }
+
+  .cell:disabled {
+    cursor: default;
+    color: var(--smoke);
+    background: transparent;
+    border-style: dashed;
+  }
+
+  .cell.is-sold {
+    border-color: var(--violeta);
+    background: color-mix(in srgb, var(--violeta) 14%, var(--void));
+  }
+
+  .swatch {
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--white) 18%, transparent);
+  }
+</style>
+
+<script>
+  const box = document.querySelector<HTMLElement>("[data-stock]");
+  if (box) {
+    const cells = [...box.querySelectorAll<HTMLButtonElement>("[data-cell]")];
+    const totalEl = box.querySelector<HTMLElement>("[data-total]")!;
+    const log = box.querySelector<HTMLElement>("[data-log]")!;
+    const reset = box.querySelector<HTMLButtonElement>("[data-reset]")!;
+    const initial = cells.map((c) => Number(c.dataset.qty));
+    const intro = log.textContent;
+
+    const label = (c: HTMLButtonElement) => {
+      const n = Number(c.dataset.qty);
+      const what = `${c.dataset.color}, talla ${c.dataset.talla}`;
+      c.setAttribute("aria-label", n ? `Vender un par ${what}. Quedan ${n}.` : `${what}: agotado`);
+    };
+
+    const render = () => {
+      totalEl.textContent = String(cells.reduce((s, c) => s + Number(c.dataset.qty), 0));
+    };
+
+    cells.forEach(label);
+
+    for (const cell of cells) {
+      cell.addEventListener("click", () => {
+        const n = Number(cell.dataset.qty) - 1;
+        if (n < 0) return;
+        cell.dataset.qty = String(n);
+        cell.textContent = String(n);
+        cell.disabled = n === 0;
+        label(cell);
+        cell.classList.add("is-sold");
+        setTimeout(() => cell.classList.remove("is-sold"), 400);
+        log.textContent =
+          `Venta: −1 ${cell.dataset.color} talla ${cell.dataset.talla}. ` +
+          (n ? `Quedan ${n}.` : "Agotado: ya aparece en el filtro «Agotados».");
+        reset.classList.remove("hidden");
+        render();
+      });
+    }
+
+    reset.addEventListener("click", () => {
+      cells.forEach((c, i) => {
+        c.dataset.qty = String(initial[i]);
+        c.textContent = String(initial[i]);
+        c.disabled = initial[i] === 0;
+        label(c);
+      });
+      log.textContent = intro;
+      reset.classList.add("hidden");
+      render();
+    });
+  }
+</script>

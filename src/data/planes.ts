@@ -1,5 +1,6 @@
 import type { ImageMetadata } from "astro";
 import microtours from "@/assets/images/trabajos/microtours.webp";
+import microerpExistencias from "@/assets/images/trabajos/microerp-existencias.png";
 
 export interface Complemento {
   nombre: string;
@@ -11,6 +12,11 @@ export interface Plan {
   nombre: string;
   categoria: string;
   captura?: ImageMetadata;
+  capturaAlt: string;
+  // Página propia con el detalle del sistema (landing).
+  landing?: string;
+  // Mensaje de WhatsApp del botón «Pedir una demo».
+  mensaje: string;
   setup: number;
   mensual: number;
   // Escalón de precio: se respeta hacia atrás para quien ya entró.
@@ -26,6 +32,8 @@ export const planes: Plan[] = [
     nombre: "MicroTours",
     categoria: "Sistema de reservas",
     captura: microtours,
+    capturaAlt: "Web de reservas de MicroTours para una agencia de tours",
+    mensaje: "Hola, me interesa MicroTours para mi agencia. ¿Me muestras una demo?",
     setup: 300,
     mensual: 25,
     nota: "Lanzamiento · primeros 2 clientes",
@@ -43,6 +51,34 @@ export const planes: Plan[] = [
     complementos: [
       { nombre: "Pago con tarjeta (Payphone)", precio: "+$50 · $10/mes" },
       { nombre: "Facturación electrónica SRI", precio: "desde $15/mes" },
+    ],
+  },
+  {
+    slug: "microerp",
+    nombre: "MicroERP",
+    categoria: "Inventario y ventas",
+    captura: microerpExistencias,
+    capturaAlt: "Existencias de una zapatería en MicroERP, con foto, talla y color de cada producto",
+    landing: "/microerp",
+    mensaje: "Hola, vi MicroERP en tu web. ¿Me muestras una demo por Meet para mi tienda?",
+    setup: 300,
+    mensual: 25,
+    nota: "Primer mes gratis",
+    paraQuien:
+      "Para tiendas de zapatos, cosméticos, tecnología o suplementos. Sabes cuánto te queda de cada talla, color o sabor, qué vendió cada vendedora y quién te debe.",
+    incluye: [
+      "Existencias por talla, color o presentación, con foto",
+      "Compras al proveedor: recibir mercadería y pagos por abonos",
+      "Pedidos, cobros y saldos por cliente",
+      "Cobro por transferencia con comprobante que sube el cliente",
+      "Facturación electrónica SRI solo cuando el cliente la pide",
+      "Hasta 5 usuarios. La vendedora vende; compras y stock solo tú",
+      "Tu catálogo cargado (hasta 500 productos) y 2 capacitaciones por Meet",
+    ],
+    complementos: [
+      { nombre: "Usuario adicional (desde el sexto)", precio: "$6.99/mes" },
+      { nombre: "Catálogo de más de 500 productos", precio: "+$30" },
+      { nombre: "Capacitación extra por Meet", precio: "$15/hora" },
     ],
   },
 ];
