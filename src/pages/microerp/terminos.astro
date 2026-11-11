@@ -3,9 +3,8 @@ import Layout from "@/layouts/Layout.astro";
 import { CITY } from "@/data/site.ts";
 import { planes } from "@/data/planes.ts";
 
-const actualizado = "10 de noviembre de 2026";
+const actualizado = "11 de noviembre de 2026";
 const plan = planes.find((p) => p.slug === "microerp")!;
-const niveles = plan.niveles ?? [];
 const correo = "support@rysthdesign.com";
 
 // Cada sección: título y párrafos (o lista con `items`).
@@ -26,27 +25,25 @@ const secciones: Seccion[] = [
     ],
   },
   {
-    titulo: "2. Prueba gratis, planes y pagos",
+    titulo: "2. Instalación, mensualidad y pagos",
     parrafos: [
-      `Prueba gratis: ${plan.prueba} días, sin tarjeta. Al terminar, eliges un plan o la cuenta se suspende. Si eliges un plan, conservas todo lo que cargaste durante la prueba. Si no, tus datos se eliminan 30 días después.`,
+      `Instalación: $${plan.setup}, en dos pagos de $${plan.setup / 2}. El primero al empezar; el segundo cuando el sistema ya está funcionando y recibiste tu capacitación. Incluye la configuración con tu logo, bodega y formas de pago, hasta 5 usuarios y 1 capacitación por Google Meet. No incluye cargar tu catálogo, salvo que contrates ese servicio.`,
+      `Mensualidad: $${plan.mensual} al mes desde el segundo mes (el primero es gratis), o $250 por un año completo. Incluye alojamiento, actualizaciones, respaldos y soporte según la sección 3.`,
     ],
-    items: niveles.map(
-      (n) => `Plan ${n.nombre}: $${n.mensual} al mes o $${n.anual} al año. ${n.incluye.join(", ")}.`,
-    ),
+    items: plan.complementos.map((c) => `${c.nombre}: ${c.precio}.`),
     despues: [
-      "Los precios son finales, sin IVA adicional. El pago es por adelantado, por transferencia bancaria o el medio que te indiquemos. El plan anual se paga completo al inicio.",
-      "Si un pago no llega a tiempo, te avisamos y tienes 7 días de gracia. Pasado ese plazo, la cuenta puede suspenderse; tus datos se conservan según la sección 6.",
+      "Los precios publicados son el precio final. El pago es por transferencia bancaria o el medio que te indiquemos; la mensualidad se paga por adelantado y el año completo, al inicio.",
+      "Si un pago no llega a tiempo, te avisamos y tienes 7 días de gracia. Pasado ese plazo, el servicio puede suspenderse; tus datos se conservan según la sección 6.",
       "Los precios pueden cambiar con aviso de al menos 30 días, y el cambio se aplica desde el siguiente periodo que pagues.",
-      "Sin permanencia: puedes dejar de pagar cuando quieras. No se devuelve el dinero de un periodo ya empezado, salvo que la ley lo exija.",
-      "Pausa: en temporada baja puedes pausar tu cuenta por $3 al mes. Mientras está pausada no puedes usar el sistema, pero tus datos se conservan.",
+      "Sin permanencia: avisas con un mes y dejas de pagar. No se devuelve el dinero de un periodo ya empezado ni el primer pago de la instalación una vez empezado el trabajo, salvo que la ley lo exija.",
     ],
   },
   {
-    titulo: "3. Soporte",
+    titulo: "3. Soporte y capacitación",
     parrafos: [
+      "Incluye 1 capacitación por Google Meet al entregarte el sistema. Capacitaciones extra: $15 la hora.",
       "Atendemos por WhatsApp los errores del sistema (algo que no funciona como debe), de lunes a viernes en horario de oficina.",
-      "Las dudas de uso se resuelven con los videos y las preguntas frecuentes de MicroERP. Las capacitaciones en vivo no están incluidas en los planes.",
-      "«Te lo dejamos listo» (carga del catálogo) es un servicio aparte, con precio acordado antes de empezar.",
+      "La carga del catálogo y cualquier cambio a la medida son servicios aparte, con precio acordado antes de empezar.",
     ],
   },
   {
@@ -90,7 +87,7 @@ const secciones: Seccion[] = [
   {
     titulo: "8. Propiedad del software",
     parrafos: [
-      "MicroERP, su diseño y sus módulos propios son de RysthDesign. Recibes el derecho a usarlo mientras tu plan esté vigente; no lo compras ni puedes revenderlo. Partes del sistema usan software de código abierto, que se rige por sus propias licencias.",
+      "MicroERP, su diseño y sus módulos propios son de RysthDesign. Recibes el derecho a usarlo mientras estés al día con la mensualidad; no lo compras ni puedes revenderlo. Partes del sistema usan software de código abierto, que se rige por sus propias licencias.",
     ],
   },
   {
@@ -124,7 +121,7 @@ const secciones: Seccion[] = [
 
 <Layout
   title="Términos de MicroERP | RysthDesign"
-  description="Condiciones de uso de MicroERP: prueba gratis, planes, pagos, soporte, respaldos y tratamiento de datos personales."
+  description="Condiciones de uso de MicroERP: instalación, mensualidad, pagos, soporte, respaldos y tratamiento de datos personales."
   noindex
 >
   <div class="mx-auto max-w-screen-md px-4 py-16 md:px-6 md:py-24">
@@ -136,8 +133,7 @@ const secciones: Seccion[] = [
     <div class="mt-10 flex flex-col gap-8 text-body text-smoke">
       <p>
         Estas condiciones aplican al uso de MicroERP, el sistema de inventario,
-        compras y ventas de RysthDesign. Al empezar la prueba gratis o pagar un
-        plan, las aceptas. Para los servicios de diseño y desarrollo web aplican
+        compras y ventas de RysthDesign. Al pagar la instalación, las aceptas. Para los servicios de diseño y desarrollo web aplican
         los <a href="/terminos" class="text-violeta underline underline-offset-4">términos generales</a>.
       </p>
 

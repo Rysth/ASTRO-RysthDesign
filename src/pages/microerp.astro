@@ -12,8 +12,8 @@ import capturaExistencias from "@/assets/images/trabajos/microerp-existencias.pn
 import capturaPedido from "@/assets/images/trabajos/microerp-pedido.png";
 
 const plan = planes.find((p) => p.slug === "microerp")!;
-const prueba = waLink(plan.mensaje);
-const niveles = plan.niveles ?? [];
+const demo = waLink(plan.mensaje);
+const pago = plan.setup / 2;
 
 // Demo del hero: un modelo real del catálogo de prueba, talla × color.
 const tallas = [37, 38, 39, 40, 41];
@@ -43,7 +43,7 @@ const dia = [
   },
   {
     titulo: "Facturas",
-    detalle: "Si el cliente pide factura, la emites al SRI con un botón. Si no la pide, no se envía nada.",
+    detalle: "Con el complemento SRI, si el cliente pide factura la emites con un botón. Si no la pide, no se envía nada.",
   },
 ];
 
@@ -86,22 +86,22 @@ const preguntas = [
   {
     pregunta: "¿Cómo ingreso mis productos?",
     respuesta:
-      "Tú mismo, con videos cortos que te muestran cómo crear productos con sus tallas, colores y fotos, o subiendo tu lista en Excel. Si prefieres no hacerlo, por $60–100 una sola vez cargamos tu catálogo por ti.",
+      "En la capacitación por Google Meet te enseño a crearlos con sus tallas, colores y fotos, para que tú manejes tu catálogo. Si prefieres no hacerlo, por $60–100 una sola vez cargamos tu catálogo por ti.",
   },
   {
     pregunta: "¿Incluye facturación electrónica?",
     respuesta:
-      "Sí, sin costo extra: hasta 30 facturas al mes en el plan Emprende y sin límite en el plan Negocio. Vendes y cobras normal, y la factura sale solo cuando tocas «Emitir factura electrónica», para el cliente que la pide. Necesitas tu firma electrónica vigente (archivo .p12).",
+      "Es un complemento: $10 al mes hasta 350 facturas al mes, o $18 al mes sin límite. Vendes y cobras normal, y la factura electrónica sale solo cuando tocas «Emitir factura electrónica», para el cliente que la pide. Necesitas tu firma electrónica vigente (archivo .p12).",
   },
   {
     pregunta: "¿Cuántos usuarios puedo tener?",
     respuesta:
-      "El plan Emprende es para 1 usuario: tú. El plan Negocio incluye hasta 5: tú y tus vendedoras, cada una con su propio usuario y viendo solo sus ventas.",
+      "Hasta 5 usuarios incluidos: tú y tus vendedoras, cada una con su propio usuario y viendo solo sus ventas. Desde el sexto, cada usuario adicional cuesta $6.99 al mes.",
   },
   {
     pregunta: "¿Incluye soporte?",
     respuesta:
-      "Si algo del sistema falla, te ayudamos por WhatsApp. Para aprender a usarlo tienes videos cortos y estas preguntas frecuentes.",
+      "Sí. Incluye 1 capacitación por Google Meet al entregarte el sistema y, con la mensualidad, actualizaciones, respaldos y ayuda por WhatsApp si algo falla. Capacitaciones extra: $15 la hora.",
   },
   {
     pregunta: "¿Funciona sin internet?",
@@ -109,21 +109,21 @@ const preguntas = [
       "Necesita internet, igual que WhatsApp. Si la conexión se cae, MicroERP te avisa y vuelve solo apenas regresa.",
   },
   {
-    pregunta: "¿Qué pasa al terminar los 7 días gratis?",
+    pregunta: "¿Cómo se paga la instalación?",
     respuesta:
-      "Eliges un plan y pagas por transferencia, mes a mes o el año completo con 2 meses gratis. Todo lo que cargaste durante la prueba se queda. No pedimos tarjeta para probar.",
+      "En dos pagos de $150 por transferencia: el primero al empezar y el segundo cuando tu sistema ya está funcionando y recibiste tu capacitación. El primer mes es gratis; la mensualidad de $25 empieza el segundo mes.",
   },
   {
     pregunta: "¿Qué pasa si un día ya no lo quiero?",
     respuesta:
-      "No hay permanencia: dejas de pagar y listo. En temporada baja puedes pausarlo por $3 al mes y conservar tus datos. Si te vas, te entregamos tus productos, clientes y ventas en Excel.",
+      "No hay permanencia: avisas con un mes y dejas de pagar. Te entregamos tus productos, clientes y ventas en Excel.",
   },
 ];
 ---
 
 <Layout
   title="MicroERP: inventario y ventas para tu tienda | RysthDesign"
-  description="Sistema de inventario, compras y ventas para tiendas de zapatos, cosméticos, tecnología y suplementos en Ecuador. Stock por talla y color, compras y cobros, con factura SRI incluida. Desde $15 al mes, sin instalación y con 7 días gratis."
+  description="Sistema de inventario, compras y ventas para tiendas de zapatos, cosméticos, tecnología y suplementos en Ecuador. Stock por talla y color, compras y cobros; facturación SRI opcional. USD 300 de instalación en dos pagos y $25 al mes."
 >
   <!-- Hero -->
   <section class="hero border-b border-slate">
@@ -139,8 +139,8 @@ const preguntas = [
           Excel.
         </p>
         <div class="flex flex-wrap items-center gap-6">
-          <Button href={prueba} target="_blank" rel="noopener noreferrer" variant="primary">
-            Empezar mi prueba gratis
+          <Button href={demo} target="_blank" rel="noopener noreferrer" variant="primary">
+            Pedir una demo por Meet
           </Button>
           <Button href="#precio" variant="secondary">
             Ver precio
@@ -148,7 +148,7 @@ const preguntas = [
           </Button>
         </div>
         <p class="font-mono text-small text-smoke">
-          Desde ${plan.mensual}/mes, sin instalación. {plan.prueba} días gratis, sin tarjeta.
+          USD {plan.setup} de instalación en dos pagos + ${plan.mensual}/mes. Primer mes gratis.
           <a href="/microerp/terminos" class="underline underline-offset-4 hover:text-white">Ver términos</a>.
         </p>
       </div>
@@ -363,44 +363,40 @@ const preguntas = [
     <div class="mx-auto grid max-w-screen-xl gap-12 px-4 py-16 md:px-6 md:py-24 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
       <div data-reveal class="flex flex-col gap-6">
         <Eyebrow text="Precio" />
-        <h2 class="text-h2 text-white">Pruébalo 7 días. Después, desde $15 al mes.</h2>
+        <h2 class="text-h2 text-white">Pagas la segunda mitad cuando ya funciona.</h2>
         <p class="text-body max-w-[48ch] text-smoke">
-          Sin instalación ni permanencia. La mensualidad incluye la factura
-          electrónica del SRI, las actualizaciones y los respaldos. Si algo del
-          sistema falla, te ayudamos por WhatsApp. Pagando el año te regalamos 2 meses.
+          La instalación se paga en dos partes. La segunda, solo cuando tu sistema
+          ya está funcionando y recibiste tu capacitación. Después, una mensualidad
+          con actualizaciones, respaldos y ayuda por WhatsApp. La facturación SRI
+          es un adicional.
         </p>
-        <Button href={prueba} target="_blank" rel="noopener noreferrer" variant="primary" class="self-start">
-          Empezar mi prueba gratis
+        <Button href={demo} target="_blank" rel="noopener noreferrer" variant="primary" class="self-start">
+          Pedir una demo por Meet
         </Button>
         <p class="text-small text-smoke">
-          Al empezar aceptas los
+          Al contratar aceptas los
           <a href="/microerp/terminos" class="underline underline-offset-4 hover:text-white">términos de MicroERP</a>.
         </p>
       </div>
 
       <div data-reveal class="flex flex-col rounded-card border border-violeta bg-void">
-        <div class="grid sm:grid-cols-2">
-          {
-            niveles.map((n, i) => (
-              <div class:list={["flex flex-col gap-3 border-b border-slate p-6", i === 0 && "sm:border-r"]}>
-                <p class="font-mono text-eyebrow uppercase text-smoke">Plan {n.nombre}</p>
-                <p class="font-display text-h2 text-white">
-                  ${n.mensual}<span class="text-small text-smoke">/mes</span>
-                </p>
-                <p class="text-small text-smoke">O ${n.anual} por un año</p>
-                <ul class="flex flex-col gap-2">
-                  {n.incluye.map((item) => (
-                    <li class="flex items-start gap-2 text-small text-white">
-                      <Chevron size={12} color="senal" class="mt-1" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))
-          }
+        <div class="grid grid-cols-2 border-b border-slate">
+          <div class="flex flex-col gap-1 border-r border-slate p-6">
+            <p class="font-mono text-eyebrow uppercase text-smoke">Al empezar</p>
+            <p class="font-display text-h2 text-white">${pago}</p>
+          </div>
+          <div class="flex flex-col gap-1 p-6">
+            <p class="font-mono text-eyebrow uppercase text-smoke">Cuando ya funciona</p>
+            <p class="font-display text-h2 text-white">${pago}</p>
+          </div>
         </div>
-        <p class="px-6 pt-6 font-mono text-eyebrow uppercase text-smoke">En los dos planes</p>
+        <div class="flex items-baseline justify-between gap-4 border-b border-slate p-6">
+          <p class="text-small text-white">
+            Mensualidad desde el segundo mes
+            <span class="block text-smoke">Sin permanencia. O $250 por un año.</span>
+          </p>
+          <p class="shrink-0 font-display text-h3 text-white">${plan.mensual}/mes</p>
+        </div>
         <ul class="grid gap-3 p-6 sm:grid-cols-2">
           {
             plan.incluye.map((item) => (
@@ -436,7 +432,7 @@ const preguntas = [
 
   <!-- Preguntas -->
   <section class="mx-auto max-w-screen-xl px-4 py-16 md:px-6 md:py-24">
-    <SectionHeader eyebrow="Preguntas frecuentes" title="Antes de empezar tu prueba" />
+    <SectionHeader eyebrow="Preguntas frecuentes" title="Antes de pedir la demo" />
     <div class="mt-12 flex max-w-[75ch] flex-col gap-4">
       {
         preguntas.map((item) => (
@@ -453,7 +449,7 @@ const preguntas = [
   </section>
 
   <CtaFinal
-    titulo="Pruébalo gratis 7 días con los productos de tu tienda."
+    titulo="Te muestro MicroERP con productos como los tuyos."
     mensaje={plan.mensaje}
   />
 </Layout>
