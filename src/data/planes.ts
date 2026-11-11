@@ -73,11 +73,11 @@ export const planes: Plan[] = [
     captura: microerpExistencias,
     capturaAlt: "Existencias de una zapatería en MicroERP, con foto, talla y color de cada producto",
     landing: "/microerp",
-    mensaje: "Hola, vi MicroERP. Quiero empezar mi prueba gratis de 14 días para mi tienda.",
+    mensaje: "Hola, vi MicroERP. Quiero empezar mi prueba gratis de 7 días para mi tienda.",
     setup: 0,
     mensual: 15,
-    prueba: 14,
-    nota: "14 días gratis · sin instalación",
+    prueba: 7,
+    nota: "7 días gratis · sin instalación",
     paraQuien:
       "Para tiendas de zapatos, cosméticos, tecnología o suplementos. Sabes cuánto te queda de cada talla, color o sabor, qué vendiste y quién te debe.",
     niveles: [
@@ -103,8 +103,7 @@ export const planes: Plan[] = [
       "Sin instalación: se abre en el navegador del celular o la computadora",
     ],
     complementos: [
-      { nombre: "Te lo dejamos listo: cargamos tu catálogo y te capacitamos", precio: "$60–100 una vez" },
-      { nombre: "Capacitación extra por Meet", precio: "$15/hora" },
+      { nombre: "Te lo dejamos listo: cargamos tu catálogo con tallas, colores y fotos", precio: "$60–100 una vez" },
     ],
   },
 ];

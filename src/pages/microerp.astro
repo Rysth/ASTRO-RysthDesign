@@ -86,7 +86,7 @@ const preguntas = [
   {
     pregunta: "¿Cómo ingreso mis productos?",
     respuesta:
-      "Tú mismo, con videos cortos que te muestran cómo crear productos con sus tallas, colores y fotos, o subiendo tu lista en Excel. Si prefieres no hacerlo, por $60–100 una sola vez cargamos tu catálogo y te capacitamos por Meet.",
+      "Tú mismo, con videos cortos que te muestran cómo crear productos con sus tallas, colores y fotos, o subiendo tu lista en Excel. Si prefieres no hacerlo, por $60–100 una sola vez cargamos tu catálogo por ti.",
   },
   {
     pregunta: "¿Incluye facturación electrónica?",
@@ -99,12 +99,17 @@ const preguntas = [
       "El plan Emprende es para 1 usuario: tú. El plan Negocio incluye hasta 5: tú y tus vendedoras, cada una con su propio usuario y viendo solo sus ventas.",
   },
   {
+    pregunta: "¿Incluye soporte?",
+    respuesta:
+      "Si algo del sistema falla, te ayudamos por WhatsApp. Para aprender a usarlo tienes videos cortos y estas preguntas frecuentes.",
+  },
+  {
     pregunta: "¿Funciona sin internet?",
     respuesta:
       "Necesita internet, igual que WhatsApp. Si la conexión se cae, MicroERP te avisa y vuelve solo apenas regresa.",
   },
   {
-    pregunta: "¿Qué pasa al terminar los 14 días gratis?",
+    pregunta: "¿Qué pasa al terminar los 7 días gratis?",
     respuesta:
       "Eliges un plan y pagas por transferencia, mes a mes o el año completo con 2 meses gratis. Todo lo que cargaste durante la prueba se queda. No pedimos tarjeta para probar.",
   },
@@ -118,7 +123,7 @@ const preguntas = [
 
 <Layout
   title="MicroERP: inventario y ventas para tu tienda | RysthDesign"
-  description="Sistema de inventario, compras y ventas para tiendas de zapatos, cosméticos, tecnología y suplementos en Ecuador. Stock por talla y color, compras y cobros; facturación SRI opcional. Desde $15 al mes, sin instalación y con 14 días gratis."
+  description="Sistema de inventario, compras y ventas para tiendas de zapatos, cosméticos, tecnología y suplementos en Ecuador. Stock por talla y color, compras y cobros, con factura SRI incluida. Desde $15 al mes, sin instalación y con 7 días gratis."
 >
   <!-- Hero -->
   <section class="hero border-b border-slate">
@@ -357,11 +362,11 @@ const preguntas = [
     <div class="mx-auto grid max-w-screen-xl gap-12 px-4 py-16 md:px-6 md:py-24 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
       <div data-reveal class="flex flex-col gap-6">
         <Eyebrow text="Precio" />
-        <h2 class="text-h2 text-white">Pruébalo 14 días. Después, desde $15 al mes.</h2>
+        <h2 class="text-h2 text-white">Pruébalo 7 días. Después, desde $15 al mes.</h2>
         <p class="text-body max-w-[48ch] text-smoke">
           Sin instalación ni permanencia. La mensualidad incluye la factura
-          electrónica del SRI, las actualizaciones, los respaldos y el soporte
-          por WhatsApp. Pagando el año te regalamos 2 meses.
+          electrónica del SRI, las actualizaciones y los respaldos. Si algo del
+          sistema falla, te ayudamos por WhatsApp. Pagando el año te regalamos 2 meses.
         </p>
         <Button href={prueba} target="_blank" rel="noopener noreferrer" variant="primary" class="self-start">
           Empezar mi prueba gratis
@@ -443,7 +448,7 @@ const preguntas = [
   </section>
 
   <CtaFinal
-    titulo="Pruébalo gratis 14 días con los productos de tu tienda."
+    titulo="Pruébalo gratis 7 días con los productos de tu tienda."
     mensaje={plan.mensaje}
   />
 </Layout>
