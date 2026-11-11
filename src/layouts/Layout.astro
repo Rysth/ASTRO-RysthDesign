@@ -58,8 +58,18 @@ const schema = {
         name: plan.nombre,
         description: plan.paraQuien,
       },
-      price: plan.setup,
+      price: plan.setup > 0 ? plan.setup : plan.mensual,
       priceCurrency: "USD",
+      ...(plan.setup > 0
+        ? {}
+        : {
+            priceSpecification: {
+              "@type": "UnitPriceSpecification",
+              price: plan.mensual,
+              priceCurrency: "USD",
+              unitCode: "MON",
+            },
+          }),
     })),
   },
 };

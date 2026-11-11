@@ -7,7 +7,8 @@ import { waLink } from "@/data/site.ts";
 import { planes } from "@/data/planes.ts";
 import { trabajos } from "@/data/trabajos.ts";
 
-const desde = Math.min(...planes.map((plan) => plan.setup));
+// Sistemas con instalación (los de suscripción no tienen precio de entrada).
+const desde = Math.min(...planes.filter((plan) => plan.setup > 0).map((plan) => plan.setup));
 
 const datos = [
   { valor: "<1s", label: "Tiempo de carga" },

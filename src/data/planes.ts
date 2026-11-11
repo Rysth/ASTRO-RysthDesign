@@ -7,6 +7,14 @@ export interface Complemento {
   precio: string;
 }
 
+// Nivel de un plan por suscripción (sin instalación).
+export interface Nivel {
+  nombre: string;
+  mensual: number;
+  anual: number;
+  incluye: string[];
+}
+
 export interface Plan {
   slug: string;
   nombre: string;
@@ -15,10 +23,15 @@ export interface Plan {
   capturaAlt: string;
   // Página propia con el detalle del sistema (landing).
   landing?: string;
-  // Mensaje de WhatsApp del botón «Pedir una demo».
+  // Mensaje de WhatsApp del botón principal («Pedir una demo» o «Empezar mi prueba gratis»).
   mensaje: string;
+  // 0 = sin instalación (suscripción con `niveles`).
   setup: number;
+  // Mensualidad más baja (en suscripción, la del primer nivel).
   mensual: number;
+  // Días de prueba gratis (solo suscripción).
+  prueba?: number;
+  niveles?: Nivel[];
   // Escalón de precio: se respeta hacia atrás para quien ya entró.
   nota: string;
   paraQuien: string;
@@ -60,24 +73,37 @@ export const planes: Plan[] = [
     captura: microerpExistencias,
     capturaAlt: "Existencias de una zapatería en MicroERP, con foto, talla y color de cada producto",
     landing: "/microerp",
-    mensaje: "Hola, vi MicroERP en tu web. ¿Me muestras una demo por Meet para mi tienda?",
-    setup: 300,
-    mensual: 25,
-    nota: "Lanzamiento · primeros 3 clientes",
+    mensaje: "Hola, vi MicroERP. Quiero empezar mi prueba gratis de 14 días para mi tienda.",
+    setup: 0,
+    mensual: 15,
+    prueba: 14,
+    nota: "14 días gratis · sin instalación",
     paraQuien:
-      "Para tiendas de zapatos, cosméticos, tecnología o suplementos. Sabes cuánto te queda de cada talla, color o sabor, qué vendió cada vendedora y quién te debe.",
+      "Para tiendas de zapatos, cosméticos, tecnología o suplementos. Sabes cuánto te queda de cada talla, color o sabor, qué vendiste y quién te debe.",
+    niveles: [
+      {
+        nombre: "Emprende",
+        mensual: 15,
+        anual: 150,
+        incluye: ["1 usuario", "Factura electrónica SRI: hasta 30 al mes"],
+      },
+      {
+        nombre: "Negocio",
+        mensual: 25,
+        anual: 250,
+        incluye: ["Hasta 5 usuarios: tú y tus vendedoras", "Facturas SRI ilimitadas", "Sucursales"],
+      },
+    ],
     incluye: [
       "Existencias por talla, color o presentación, con foto",
       "Compras al proveedor: recibir mercadería y pagos por abonos",
       "Pedidos, cobros y saldos por cliente",
       "Cobro por transferencia con comprobante que sube el cliente",
-      "Hasta 5 usuarios. La vendedora vende; compras y stock solo tú",
-      "1 capacitación por Google Meet y primer mes gratis",
+      "Factura electrónica del SRI incluida",
+      "Sin instalación: se abre en el navegador del celular o la computadora",
     ],
     complementos: [
-      { nombre: "Facturación SRI (hasta 350 facturas al mes)", precio: "+$10/mes" },
-      { nombre: "Facturación SRI ilimitada", precio: "+$18/mes" },
-      { nombre: "Usuario adicional (desde el sexto)", precio: "$6.99/mes" },
+      { nombre: "Te lo dejamos listo: cargamos tu catálogo y te capacitamos", precio: "$60–100 una vez" },
       { nombre: "Capacitación extra por Meet", precio: "$15/hora" },
     ],
   },

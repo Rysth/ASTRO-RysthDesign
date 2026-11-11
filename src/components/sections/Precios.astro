@@ -19,8 +19,8 @@ import { waLink } from "@/data/site.ts";
       </h2>
     </div>
     <p class="text-body max-w-[48ch] text-smoke">
-      Sistemas ya construidos y probados, instalados solo para tu negocio.
-      Pagas la instalación una vez y una cuota mensual con soporte.
+      Sistemas ya construidos y probados. Cada uno con su precio publicado:
+      sin sorpresas ni cobros escondidos.
     </p>
   </div>
 
@@ -65,15 +65,41 @@ import { waLink } from "@/data/site.ts";
             <span class="self-start rounded-button bg-violeta-deep px-2 py-1 font-mono text-eyebrow uppercase text-paper">
               {plan.nota}
             </span>
-            <p class="mt-2 flex items-baseline gap-2">
-              <span class="font-mono text-eyebrow text-smoke">USD</span>
-              <span class="font-display text-display text-white">{plan.setup}</span>
-              <span class="font-mono text-eyebrow text-smoke">instalación</span>
-            </p>
-            <p class="font-mono text-small text-white">
-              + ${plan.mensual}/mes
-              <span class="text-smoke">· hosting y soporte</span>
-            </p>
+            {plan.setup > 0 ? (
+              <>
+                <p class="mt-2 flex items-baseline gap-2">
+                  <span class="font-mono text-eyebrow text-smoke">USD</span>
+                  <span class="font-display text-display text-white">{plan.setup}</span>
+                  <span class="font-mono text-eyebrow text-smoke">instalación</span>
+                </p>
+                <p class="font-mono text-small text-white">
+                  + ${plan.mensual}/mes
+                  <span class="text-smoke">· hosting y soporte</span>
+                </p>
+              </>
+            ) : (
+              <>
+                <p class="mt-2 flex items-baseline gap-2">
+                  <span class="font-mono text-eyebrow text-smoke">desde USD</span>
+                  <span class="font-display text-display text-white">{plan.mensual}</span>
+                  <span class="font-mono text-eyebrow text-smoke">al mes</span>
+                </p>
+                <p class="font-mono text-small text-white">
+                  Sin instalación
+                  <span class="text-smoke">· {plan.prueba} días gratis</span>
+                </p>
+                {plan.niveles && (
+                  <dl class="mt-4 flex flex-col gap-2">
+                    {plan.niveles.map((n) => (
+                      <div class="flex items-baseline justify-between gap-4 text-small">
+                        <dt class="text-white">Plan {n.nombre}</dt>
+                        <dd class="shrink-0 font-mono text-smoke">${n.mensual}/mes · ${n.anual}/año</dd>
+                      </div>
+                    ))}
+                  </dl>
+                )}
+              </>
+            )}
           </div>
 
           <div class="flex flex-col gap-3 border-t border-slate pt-6">
@@ -91,7 +117,7 @@ import { waLink } from "@/data/site.ts";
             <p class="text-small text-smoke">
               {plan.slug === "microtours"
                 ? "Sin complementos cobras por transferencia y en efectivo."
-                : "Instalación en dos partes: mitad al empezar y mitad cuando el sistema está listo. Precio de lanzamiento para los primeros 3 clientes; después, $350."}
+                : "Sin permanencia: pagas mes a mes, o el año con 2 meses gratis."}
             </p>
           </div>
 
@@ -101,7 +127,7 @@ import { waLink } from "@/data/site.ts";
             rel="noopener noreferrer"
             class="mt-auto flex items-center justify-between gap-4 rounded-button bg-senal px-6 py-3 font-medium text-ink transition-colors duration-150 ease-out hover:bg-senal-deep"
           >
-            Pedir una demo
+            {plan.niveles ? "Empezar mi prueba gratis" : "Pedir una demo"}
             <Chevron size={10} color="ink" class="rotate-90" />
           </a>
         </div>

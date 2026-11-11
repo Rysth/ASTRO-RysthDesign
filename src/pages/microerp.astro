@@ -7,12 +7,13 @@ import Chevron from "@/components/ui/Chevron.astro";
 import SectionHeader from "@/components/ui/SectionHeader.astro";
 import CtaFinal from "@/components/sections/CtaFinal.astro";
 import { waLink } from "@/data/site.ts";
-import { planes } from "@/data/planes.ts";
+import { planes, aMedida } from "@/data/planes.ts";
 import capturaExistencias from "@/assets/images/trabajos/microerp-existencias.png";
 import capturaPedido from "@/assets/images/trabajos/microerp-pedido.png";
 
 const plan = planes.find((p) => p.slug === "microerp")!;
-const demo = waLink(plan.mensaje);
+const prueba = waLink(plan.mensaje);
+const niveles = plan.niveles ?? [];
 
 // Demo del hero: un modelo real del catálogo de prueba, talla × color.
 const tallas = [37, 38, 39, 40, 41];
@@ -42,7 +43,7 @@ const dia = [
   },
   {
     titulo: "Facturas",
-    detalle: "Con el complemento SRI, si el cliente pide factura la emites con un botón. Si no la pide, no se envía nada.",
+    detalle: "Si el cliente pide factura, la emites al SRI con un botón. Si no la pide, no se envía nada.",
   },
 ];
 
@@ -85,17 +86,17 @@ const preguntas = [
   {
     pregunta: "¿Cómo ingreso mis productos?",
     respuesta:
-      "En la capacitación por Google Meet te enseño a crearlos con sus tallas, colores y fotos, para que tú manejes tu catálogo.",
+      "Tú mismo, con videos cortos que te muestran cómo crear productos con sus tallas, colores y fotos, o subiendo tu lista en Excel. Si prefieres no hacerlo, por $60–100 una sola vez cargamos tu catálogo y te capacitamos por Meet.",
   },
   {
     pregunta: "¿Incluye facturación electrónica?",
     respuesta:
-      "Es un complemento: $10 al mes hasta 350 facturas al mes, o $18 al mes sin límite. Vendes y cobras normal, y la factura electrónica sale solo cuando tocas «Emitir factura electrónica», para el cliente que la pide. Necesitas tu firma electrónica vigente (archivo .p12).",
+      "Sí, sin costo extra: hasta 30 facturas al mes en el plan Emprende y sin límite en el plan Negocio. Vendes y cobras normal, y la factura sale solo cuando tocas «Emitir factura electrónica», para el cliente que la pide. Necesitas tu firma electrónica vigente (archivo .p12).",
   },
   {
     pregunta: "¿Cuántos usuarios puedo tener?",
     respuesta:
-      "Hasta 5 usuarios incluidos: tú y tus vendedoras, cada una con su propio usuario. Desde el sexto, cada usuario adicional cuesta $6.99 al mes.",
+      "El plan Emprende es para 1 usuario: tú. El plan Negocio incluye hasta 5: tú y tus vendedoras, cada una con su propio usuario y viendo solo sus ventas.",
   },
   {
     pregunta: "¿Funciona sin internet?",
@@ -103,16 +104,21 @@ const preguntas = [
       "Necesita internet, igual que WhatsApp. Si la conexión se cae, MicroERP te avisa y vuelve solo apenas regresa.",
   },
   {
+    pregunta: "¿Qué pasa al terminar los 14 días gratis?",
+    respuesta:
+      "Eliges un plan y pagas por transferencia, mes a mes o el año completo con 2 meses gratis. Todo lo que cargaste durante la prueba se queda. No pedimos tarjeta para probar.",
+  },
+  {
     pregunta: "¿Qué pasa si un día ya no lo quiero?",
     respuesta:
-      "Después de los 6 meses mínimos puedes cancelar cuando quieras, avisando con un mes. Te entrego tus productos, clientes y ventas en Excel.",
+      "No hay permanencia: dejas de pagar y listo. En temporada baja puedes pausarlo por $3 al mes y conservar tus datos. Si te vas, te entregamos tus productos, clientes y ventas en Excel.",
   },
 ];
 ---
 
 <Layout
   title="MicroERP: inventario y ventas para tu tienda | RysthDesign"
-  description="Sistema de inventario, compras y ventas para tiendas de zapatos, cosméticos, tecnología y suplementos en Ecuador. Stock por talla y color, compras y cobros; facturación SRI opcional. USD 300 de instalación y $25 al mes."
+  description="Sistema de inventario, compras y ventas para tiendas de zapatos, cosméticos, tecnología y suplementos en Ecuador. Stock por talla y color, compras y cobros; facturación SRI opcional. Desde $15 al mes, sin instalación y con 14 días gratis."
 >
   <!-- Hero -->
   <section class="hero border-b border-slate">
@@ -128,8 +134,8 @@ const preguntas = [
           Excel.
         </p>
         <div class="flex flex-wrap items-center gap-6">
-          <Button href={demo} target="_blank" rel="noopener noreferrer" variant="primary">
-            Pedir una demo por Meet
+          <Button href={prueba} target="_blank" rel="noopener noreferrer" variant="primary">
+            Empezar mi prueba gratis
           </Button>
           <Button href="#precio" variant="secondary">
             Ver precio
@@ -137,7 +143,7 @@ const preguntas = [
           </Button>
         </div>
         <p class="font-mono text-small text-smoke">
-          USD {plan.setup} instalación + ${plan.mensual}/mes. Primer mes gratis. Precio de lanzamiento: primeros 3 clientes.
+          Desde ${plan.mensual}/mes, sin instalación. {plan.prueba} días gratis, sin tarjeta.
         </p>
       </div>
 
@@ -351,36 +357,40 @@ const preguntas = [
     <div class="mx-auto grid max-w-screen-xl gap-12 px-4 py-16 md:px-6 md:py-24 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
       <div data-reveal class="flex flex-col gap-6">
         <Eyebrow text="Precio" />
-        <h2 class="text-h2 text-white">Pagas la segunda mitad cuando está listo.</h2>
+        <h2 class="text-h2 text-white">Pruébalo 14 días. Después, desde $15 al mes.</h2>
         <p class="text-body max-w-[48ch] text-smoke">
-          La instalación se paga en dos partes. La segunda, solo cuando el sistema
-          está listo y ya recibiste tu capacitación. Después, una mensualidad con
-          actualizaciones y soporte por WhatsApp. La facturación SRI es un adicional.
+          Sin instalación ni permanencia. La mensualidad incluye la factura
+          electrónica del SRI, las actualizaciones, los respaldos y el soporte
+          por WhatsApp. Pagando el año te regalamos 2 meses.
         </p>
-        <Button href={demo} target="_blank" rel="noopener noreferrer" variant="primary" class="self-start">
-          Pedir una demo por Meet
+        <Button href={prueba} target="_blank" rel="noopener noreferrer" variant="primary" class="self-start">
+          Empezar mi prueba gratis
         </Button>
       </div>
 
       <div data-reveal class="flex flex-col rounded-card border border-violeta bg-void">
-        <div class="grid grid-cols-2 border-b border-slate">
-          <div class="flex flex-col gap-1 border-r border-slate p-6">
-            <p class="font-mono text-eyebrow uppercase text-smoke">Al empezar</p>
-            <p class="font-display text-h2 text-white">${plan.setup / 2}</p>
-          </div>
-          <div class="flex flex-col gap-1 p-6">
-            <p class="font-mono text-eyebrow uppercase text-smoke">Al entregar</p>
-            <p class="font-display text-h2 text-white">${plan.setup / 2}</p>
-          </div>
+        <div class="grid sm:grid-cols-2">
+          {
+            niveles.map((n, i) => (
+              <div class:list={["flex flex-col gap-3 border-b border-slate p-6", i === 0 && "sm:border-r"]}>
+                <p class="font-mono text-eyebrow uppercase text-smoke">Plan {n.nombre}</p>
+                <p class="font-display text-h2 text-white">
+                  ${n.mensual}<span class="text-small text-smoke">/mes</span>
+                </p>
+                <p class="text-small text-smoke">O ${n.anual} por un año</p>
+                <ul class="flex flex-col gap-2">
+                  {n.incluye.map((item) => (
+                    <li class="flex items-start gap-2 text-small text-white">
+                      <Chevron size={12} color="senal" class="mt-1" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
         </div>
-        <div class="flex items-baseline justify-between gap-4 border-b border-slate p-6">
-          <p class="text-small text-white">
-            Mensualidad desde el segundo mes
-            <span class="block text-smoke">Mínimo 6 meses. O $250 por un año.</span>
-            <span class="block text-smoke">Precio de lanzamiento para los primeros 3 clientes. Después, la instalación sube a $350.</span>
-          </p>
-          <p class="shrink-0 font-display text-h3 text-white">${plan.mensual}/mes</p>
-        </div>
+        <p class="px-6 pt-6 font-mono text-eyebrow uppercase text-smoke">En los dos planes</p>
         <ul class="grid gap-3 p-6 sm:grid-cols-2">
           {
             plan.incluye.map((item) => (
@@ -401,13 +411,22 @@ const preguntas = [
             ))
           }
         </dl>
+        <a
+          href={waLink(`Hola, vi MicroERP y necesito un sistema a la medida para mi empresa.`)}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-baseline justify-between gap-4 border-t border-slate p-6 text-small text-smoke transition-colors duration-150 ease-out hover:text-white"
+        >
+          ¿Necesitas algo a la medida para tu empresa?
+          <span class="shrink-0 font-mono text-white">Desde ${aMedida.desde}</span>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- Preguntas -->
   <section class="mx-auto max-w-screen-xl px-4 py-16 md:px-6 md:py-24">
-    <SectionHeader eyebrow="Preguntas frecuentes" title="Antes de pedir la demo" />
+    <SectionHeader eyebrow="Preguntas frecuentes" title="Antes de empezar tu prueba" />
     <div class="mt-12 flex max-w-[75ch] flex-col gap-4">
       {
         preguntas.map((item) => (
@@ -424,7 +443,7 @@ const preguntas = [
   </section>
 
   <CtaFinal
-    titulo="Te muestro MicroERP con productos como los tuyos."
+    titulo="Pruébalo gratis 14 días con los productos de tu tienda."
     mensaje={plan.mensaje}
   />
 </Layout>
