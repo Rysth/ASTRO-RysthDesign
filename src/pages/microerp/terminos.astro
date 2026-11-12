@@ -3,7 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import { CITY } from "@/data/site.ts";
 import { planes } from "@/data/planes.ts";
 
-const actualizado = "11 de noviembre de 2026";
+const actualizado = "12 de noviembre de 2026";
 const plan = planes.find((p) => p.slug === "microerp")!;
 const correo = "support@rysthdesign.com";
 
@@ -21,38 +21,37 @@ const secciones: Seccion[] = [
     parrafos: [
       "MicroERP es un sistema en línea para llevar el inventario, las compras, las ventas, los cobros y la facturación electrónica del SRI de un negocio. Se usa desde el navegador; RysthDesign lo aloja, lo mantiene y lo actualiza.",
       "Cada cliente tiene su propia base de datos, separada de la de los demás clientes.",
-      "Podemos mejorar o cambiar funciones del sistema. Si un cambio quita algo importante que ya pagas, te avisamos con al menos 30 días.",
+      "Podemos mejorar o cambiar funciones del sistema. Si un cambio quita algo importante que usted ya paga, le avisamos con al menos 30 días.",
     ],
   },
   {
     titulo: "2. Instalación, mensualidad y pagos",
     parrafos: [
-      `Instalación: $${plan.setup}, en dos pagos de $${plan.setup / 2}. El primero al empezar; el segundo cuando el sistema ya está funcionando y recibiste tu capacitación. Incluye la configuración con tu logo, bodega y formas de pago, hasta 5 usuarios y 1 capacitación por Google Meet. No incluye cargar tu catálogo, salvo que contrates ese servicio.`,
+      `Instalación: $${plan.setup}, en dos pagos de $${plan.setup / 2}. El primero al empezar; el segundo cuando su sistema ya está funcionando. Incluye la configuración con su logo, bodega y formas de pago, y hasta 5 usuarios. No incluye cargar su catálogo ni capacitaciones, salvo que se acuerden aparte.`,
       `Mensualidad: $${plan.mensual} al mes desde el segundo mes (el primero es gratis), o $250 por un año completo. Incluye alojamiento, actualizaciones, respaldos y soporte según la sección 3.`,
     ],
     items: plan.complementos.map((c) => `${c.nombre}: ${c.precio}.`),
     despues: [
-      "Los precios publicados son el precio final. El pago es por transferencia bancaria o el medio que te indiquemos; la mensualidad se paga por adelantado y el año completo, al inicio.",
-      "Si un pago no llega a tiempo, te avisamos y tienes 7 días de gracia. Pasado ese plazo, el servicio puede suspenderse; tus datos se conservan según la sección 6.",
-      "Los precios pueden cambiar con aviso de al menos 30 días, y el cambio se aplica desde el siguiente periodo que pagues.",
-      "Sin permanencia: avisas con un mes y dejas de pagar. No se devuelve el dinero de un periodo ya empezado ni el primer pago de la instalación una vez empezado el trabajo, salvo que la ley lo exija.",
+      "Los precios publicados son el precio final. El pago es por transferencia bancaria o el medio que le indiquemos; la mensualidad se paga por adelantado y el año completo, al inicio.",
+      "Si un pago no llega a tiempo, le avisamos y tiene 7 días de gracia. Pasado ese plazo, el servicio puede suspenderse; sus datos se conservan según la sección 6.",
+      "Los precios pueden cambiar con aviso de al menos 30 días, y el cambio se aplica desde el siguiente periodo que pague.",
+      "Sin permanencia: avisa con un mes y deja de pagar. No se devuelve el dinero de un periodo ya empezado ni el primer pago de la instalación una vez empezado el trabajo, salvo que la ley lo exija.",
     ],
   },
   {
-    titulo: "3. Soporte y capacitación",
+    titulo: "3. Soporte",
     parrafos: [
-      "Incluye 1 capacitación por Google Meet al entregarte el sistema. Capacitaciones extra: $15 la hora.",
       "Atendemos por WhatsApp los errores del sistema (algo que no funciona como debe), de lunes a viernes en horario de oficina.",
-      "La carga del catálogo y cualquier cambio a la medida son servicios aparte, con precio acordado antes de empezar.",
+      "Los planes no incluyen capacitaciones en vivo. La carga del catálogo y cualquier cambio a la medida son servicios aparte, con precio acordado antes de empezar.",
     ],
   },
   {
-    titulo: "4. Tus responsabilidades",
+    titulo: "4. Sus responsabilidades",
     items: [
-      "Cuidar tus usuarios y contraseñas, y avisarnos si crees que alguien más entró a tu cuenta.",
-      "La información que registras: productos, precios, clientes, ventas y lo que facturas.",
-      "Facturación electrónica: tú eres el emisor ante el SRI. Respondes por el contenido de tus facturas y notas de crédito, por tu firma electrónica (.p12) y por mantenerla vigente, y por estar al día con tus obligaciones tributarias. MicroERP solo envía al SRI lo que tú decides emitir.",
-      "Tener derecho a usar los datos personales que registras de tus propios clientes (ver sección 7).",
+      "Cuidar sus usuarios y contraseñas, y avisarnos si cree que alguien más entró a su cuenta.",
+      "La información que registra: productos, precios, clientes, ventas y lo que factura.",
+      "Facturación electrónica: usted es el emisor ante el SRI. Responde por el contenido de sus facturas y notas de crédito, por su firma electrónica (.p12) y por mantenerla vigente, y por estar al día con sus obligaciones tributarias. MicroERP solo envía al SRI lo que usted decide emitir.",
+      "Tener derecho a usar los datos personales que registra de sus propios clientes (ver sección 7).",
       "No usar MicroERP para actividades ilegales ni para intentar entrar a datos de otros clientes o dañar el sistema.",
     ],
   },
@@ -64,50 +63,50 @@ const secciones: Seccion[] = [
     ],
   },
   {
-    titulo: "6. Tus datos son tuyos",
+    titulo: "6. Sus datos son suyos",
     parrafos: [
-      "Todo lo que registras en MicroERP es tuyo. No lo vendemos, no lo compartimos y no lo usamos para nada que no sea prestarte el servicio.",
-      "Al terminar el servicio, puedes pedir dentro de 30 días una copia de tus productos, clientes y ventas en Excel, y de tus facturas electrónicas (XML y PDF). Pasados 60 días desde el fin del servicio, tus datos se eliminan de forma definitiva, incluidos los respaldos en su siguiente ciclo, salvo lo que la ley obligue a conservar.",
+      "Todo lo que registra en MicroERP es suyo. No lo vendemos, no lo compartimos y no lo usamos para nada que no sea prestarle el servicio.",
+      "Al terminar el servicio, puede pedir dentro de 30 días una copia de sus productos, clientes y ventas en Excel, y de sus facturas electrónicas (XML y PDF). Pasados 60 días desde el fin del servicio, sus datos se eliminan de forma definitiva, incluidos los respaldos en su siguiente ciclo, salvo lo que la ley obligue a conservar.",
     ],
   },
   {
     titulo: "7. Tratamiento de datos personales",
     parrafos: [
       "Esta sección sigue la Ley Orgánica de Protección de Datos Personales del Ecuador (LOPDP) y su reglamento.",
-      "Roles: tú eres el responsable del tratamiento de los datos personales que registras en MicroERP (por ejemplo, nombre, cédula o RUC, teléfono, correo y dirección de tus clientes, proveedores y vendedoras). RysthDesign es el encargado del tratamiento: los trata solo por tu cuenta y para prestar el servicio.",
-      "Para qué se tratan: solo para que MicroERP funcione. Esto incluye guardar los datos y mostrarlos a tus usuarios, emitir tus comprobantes electrónicos ante el SRI, enviar los mensajes que tú ordenes, hacer respaldos y dar soporte. Solo seguimos tus instrucciones; si alguna nos parece contraria a la ley, te lo decimos.",
-      "Confidencialidad: quienes en RysthDesign puedan acceder a los datos están obligados a guardar reserva, incluso después de terminar su relación con nosotros, y solo acceden cuando hace falta (por ejemplo, para resolver un error que reportaste).",
+      "Roles: usted es el responsable del tratamiento de los datos personales que registra en MicroERP (por ejemplo, nombre, cédula o RUC, teléfono, correo y dirección de sus clientes, proveedores y vendedoras). RysthDesign es el encargado del tratamiento: los trata solo por cuenta de usted y para prestar el servicio.",
+      "Para qué se tratan: solo para que MicroERP funcione. Esto incluye guardar los datos y mostrarlos a sus usuarios, emitir sus comprobantes electrónicos ante el SRI, enviar los mensajes que usted ordene, hacer respaldos y dar soporte. Solo seguimos sus instrucciones; si alguna nos parece contraria a la ley, se lo decimos.",
+      "Confidencialidad: quienes en RysthDesign puedan acceder a los datos están obligados a guardar reserva, incluso después de terminar su relación con nosotros, y solo acceden cuando hace falta (por ejemplo, para resolver un error que usted reportó).",
       "Seguridad: conexión cifrada (HTTPS), una base de datos separada por cliente, contraseñas guardadas cifradas, accesos por rol, respaldos diarios fuera del servidor principal, acceso de administración limitado y actualizaciones de seguridad.",
-      "Proveedores: usamos proveedores de servidores y de almacenamiento de respaldos en la nube, a quienes exigimos un nivel de protección equivalente. Si alguno guarda datos fuera del Ecuador, nos aseguramos de que ofrezca garantías adecuadas, conforme a la LOPDP. Te avisamos antes de cambiar de proveedor.",
-      "Derechos de las personas: si alguien te pide acceder, corregir, actualizar o eliminar sus datos, u oponerse a su uso, puedes hacerlo desde MicroERP; si no puedes, te ayudamos. Si la solicitud nos llega a nosotros, te la reenviamos.",
-      "Incidentes: si detectamos una vulneración que afecte datos personales tuyos, te avisamos sin demora y en un máximo de 48 horas, con la información disponible, para que puedas notificar a la Autoridad de Protección de Datos y a los afectados cuando corresponda.",
-      "Al terminar el servicio se aplica la sección 6: copia a tu pedido y luego eliminación.",
+      "Proveedores: usamos proveedores de servidores y de almacenamiento de respaldos en la nube, a quienes exigimos un nivel de protección equivalente. Si alguno guarda datos fuera del Ecuador, nos aseguramos de que ofrezca garantías adecuadas, conforme a la LOPDP. Le avisamos antes de cambiar de proveedor.",
+      "Derechos de las personas: si alguien le pide acceder, corregir, actualizar o eliminar sus datos, u oponerse a su uso, puede hacerlo desde MicroERP; si no puede, le ayudamos. Si la solicitud nos llega a nosotros, se la reenviamos.",
+      "Incidentes: si detectamos una vulneración que afecte datos personales que usted registró, le avisamos sin demora y en un máximo de 48 horas, con la información disponible, para que pueda notificar a la Autoridad de Protección de Datos y a los afectados cuando corresponda.",
+      "Al terminar el servicio se aplica la sección 6: copia a su pedido y luego eliminación.",
     ],
   },
   {
     titulo: "8. Propiedad del software",
     parrafos: [
-      "MicroERP, su diseño y sus módulos propios son de RysthDesign. Recibes el derecho a usarlo mientras estés al día con la mensualidad; no lo compras ni puedes revenderlo. Partes del sistema usan software de código abierto, que se rige por sus propias licencias.",
+      "MicroERP, su diseño y sus módulos propios son de RysthDesign. Usted recibe el derecho a usarlo mientras esté al día con la mensualidad; no lo compra ni puede revenderlo. Partes del sistema usan software de código abierto, que se rige por sus propias licencias.",
     ],
   },
   {
     titulo: "9. Responsabilidad",
     parrafos: [
-      "Respondemos por prestar el servicio con diligencia. No respondemos por pérdidas por cortes o fallas de terceros (servidor, internet, SRI), por errores en la información que registras, por multas o sanciones tributarias por el contenido de tus facturas o por una firma electrónica vencida, ni por el uso indebido de tus cuentas.",
-      "En cualquier caso, nuestra responsabilidad se limita a lo que pagaste en los últimos 3 meses de servicio, salvo dolo o lo que la ley no permita limitar.",
+      "Respondemos por prestar el servicio con diligencia. No respondemos por pérdidas por cortes o fallas de terceros (servidor, internet, SRI), por errores en la información que usted registra, por multas o sanciones tributarias por el contenido de sus facturas o por una firma electrónica vencida, ni por el uso indebido de sus cuentas.",
+      "En cualquier caso, nuestra responsabilidad se limita a lo que usted pagó en los últimos 3 meses de servicio, salvo dolo o lo que la ley no permita limitar.",
     ],
   },
   {
     titulo: "10. Suspensión y terminación",
     parrafos: [
       "Podemos suspender una cuenta por falta de pago (sección 2), o de inmediato si se usa para actividades ilegales o pone en riesgo el sistema o a otros clientes.",
-      "Puedes terminar el servicio cuando quieras, avisando por WhatsApp o correo.",
+      "Puede terminar el servicio cuando quiera, avisando por WhatsApp o correo.",
     ],
   },
   {
     titulo: "11. Cambios a estos términos",
     parrafos: [
-      "Si actualizamos estos términos, te avisamos con al menos 30 días. Si no estás de acuerdo, puedes terminar el servicio antes de que el cambio entre en vigor.",
+      "Si actualizamos estos términos, le avisamos con al menos 30 días. Si no está de acuerdo, puede terminar el servicio antes de que el cambio entre en vigor.",
     ],
   },
   {
@@ -133,7 +132,7 @@ const secciones: Seccion[] = [
     <div class="mt-10 flex flex-col gap-8 text-body text-smoke">
       <p>
         Estas condiciones aplican al uso de MicroERP, el sistema de inventario,
-        compras y ventas de RysthDesign. Al pagar la instalación, las aceptas. Para los servicios de diseño y desarrollo web aplican
+        compras y ventas de RysthDesign. Al pagar la instalación, usted las acepta. Para los servicios de diseño y desarrollo web aplican
         los <a href="/terminos" class="text-violeta underline underline-offset-4">términos generales</a>.
       </p>
 
@@ -155,7 +154,7 @@ const secciones: Seccion[] = [
       <section>
         <h2 class="text-h3 text-white">13. Contacto</h2>
         <p class="mt-3">
-          Escríbenos a
+          Escríbanos a
           <a href={`mailto:${correo}`} class="text-violeta underline underline-offset-4">{correo}</a>
           o por WhatsApp.
         </p>

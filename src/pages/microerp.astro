@@ -27,23 +27,23 @@ const total = colores.reduce((s, c) => s + c.stock.reduce((a, b) => a + b, 0), 0
 const dia = [
   {
     titulo: "Compras",
-    detalle: "Pides al proveedor con la cuadrícula de tallas y colores. Anotas su número de factura.",
+    detalle: "Pide al proveedor con la cuadrícula de tallas y colores. Anota su número de factura.",
   },
   {
-    titulo: "Recibes",
-    detalle: "Llega la mercadería: confirmas lo que llegó, todo o una parte. El stock y el costo se actualizan solos.",
+    titulo: "Recibe",
+    detalle: "Llega la mercadería: confirma lo que llegó, todo o una parte. El stock y el costo se actualizan solos.",
   },
   {
-    titulo: "Vendes",
-    detalle: "Tu vendedora arma el pedido con la foto de cada producto y se lo manda al cliente por WhatsApp.",
+    titulo: "Vende",
+    detalle: "Su vendedora arma el pedido con la foto de cada producto y se lo manda al cliente por WhatsApp.",
   },
   {
-    titulo: "Cobras",
-    detalle: "Efectivo, transferencia o abonos. El cliente sube la foto del comprobante y tú solo verificas.",
+    titulo: "Cobra",
+    detalle: "Efectivo, transferencia o abonos. El cliente sube la foto del comprobante y usted solo verifica.",
   },
   {
-    titulo: "Facturas",
-    detalle: "Con el complemento SRI, si el cliente pide factura la emites con un botón. Si no la pide, no se envía nada.",
+    titulo: "Factura",
+    detalle: "Con el complemento SRI, si el cliente pide factura la emite con un botón. Si no la pide, no se envía nada.",
   },
 ];
 
@@ -56,17 +56,17 @@ const tiendas = [
 
 const roles = [
   {
-    quien: "Tú, la dueña o el dueño",
+    quien: "Usted, la dueña o el dueño",
     puede: [
-      "Ves las ventas de todas tus vendedoras",
-      "Compras al proveedor y le pagas por abonos",
-      "Ajustas el stock con un motivo: conteo, daño o pérdida",
-      "Creas productos, precios y variantes",
-      "Revisas facturas, cobros y quién te debe",
+      "Ve las ventas de todas sus vendedoras",
+      "Compra al proveedor y le paga por abonos",
+      "Ajusta el stock con un motivo: conteo, daño o pérdida",
+      "Crea productos, precios y variantes",
+      "Revisa facturas, cobros y quién le debe",
     ],
   },
   {
-    quien: "Tu vendedora",
+    quien: "Su vendedora",
     puede: [
       "Arma pedidos y crea clientes con 3 datos",
       "Cobra y marca como entregado",
@@ -81,48 +81,48 @@ const preguntas = [
   {
     pregunta: "¿Tengo que instalar algo?",
     respuesta:
-      "No. MicroERP se abre en el navegador de tu computadora, tablet o celular. Entras con tu usuario y contraseña desde donde estés.",
+      "No. MicroERP se abre en el navegador de su computadora, tablet o celular. Entra con su usuario y contraseña desde donde esté.",
   },
   {
     pregunta: "¿Cómo ingreso mis productos?",
     respuesta:
-      "En la capacitación por Google Meet te enseño a crearlos con sus tallas, colores y fotos, para que tú manejes tu catálogo. Si prefieres no hacerlo, por $60–100 una sola vez cargamos tu catálogo por ti.",
+      "Usted mismo, desde la pantalla de Productos, con sus tallas, colores y fotos. Si prefiere no hacerlo, por $60–100 una sola vez cargamos su catálogo por usted.",
   },
   {
     pregunta: "¿Incluye facturación electrónica?",
     respuesta:
-      "Es un complemento: $10 al mes hasta 350 facturas al mes, o $18 al mes sin límite. Vendes y cobras normal, y la factura electrónica sale solo cuando tocas «Emitir factura electrónica», para el cliente que la pide. Necesitas tu firma electrónica vigente (archivo .p12).",
+      "Es un complemento: $10 al mes hasta 350 facturas al mes, o $18 al mes sin límite. Vende y cobra normal, y la factura electrónica sale solo cuando toca «Emitir factura electrónica», para el cliente que la pide. Necesita su firma electrónica vigente (archivo .p12).",
   },
   {
     pregunta: "¿Cuántos usuarios puedo tener?",
     respuesta:
-      "Hasta 5 usuarios incluidos: tú y tus vendedoras, cada una con su propio usuario y viendo solo sus ventas. Desde el sexto, cada usuario adicional cuesta $6.99 al mes.",
+      "Hasta 5 usuarios incluidos: usted y sus vendedoras, cada una con su propio usuario y viendo solo sus ventas. Desde el sexto, cada usuario adicional cuesta $6.99 al mes.",
   },
   {
     pregunta: "¿Incluye soporte?",
     respuesta:
-      "Sí. Incluye 1 capacitación por Google Meet al entregarte el sistema y, con la mensualidad, actualizaciones, respaldos y ayuda por WhatsApp si algo falla. Capacitaciones extra: $15 la hora.",
+      "Con la mensualidad recibe actualizaciones, respaldos y ayuda por WhatsApp si algo del sistema falla.",
   },
   {
     pregunta: "¿Funciona sin internet?",
     respuesta:
-      "Necesita internet, igual que WhatsApp. Si la conexión se cae, MicroERP te avisa y vuelve solo apenas regresa.",
+      "Necesita internet, igual que WhatsApp. Si la conexión se cae, MicroERP le avisa y vuelve solo apenas regresa.",
   },
   {
     pregunta: "¿Cómo se paga la instalación?",
     respuesta:
-      "En dos pagos de $150 por transferencia: el primero al empezar y el segundo cuando tu sistema ya está funcionando y recibiste tu capacitación. El primer mes es gratis; la mensualidad de $25 empieza el segundo mes.",
+      "En dos pagos de $150 por transferencia: el primero al empezar y el segundo cuando su sistema ya está funcionando. El primer mes es gratis; la mensualidad de $25 empieza el segundo mes.",
   },
   {
     pregunta: "¿Qué pasa si un día ya no lo quiero?",
     respuesta:
-      "No hay permanencia: avisas con un mes y dejas de pagar. Te entregamos tus productos, clientes y ventas en Excel.",
+      "No hay permanencia: avisa con un mes y deja de pagar. Le entregamos sus productos, clientes y ventas en Excel.",
   },
 ];
 ---
 
 <Layout
-  title="MicroERP: inventario y ventas para tu tienda | RysthDesign"
+  title="MicroERP: inventario y ventas para su tienda | RysthDesign"
   description="Sistema de inventario, compras y ventas para tiendas de zapatos, cosméticos, tecnología y suplementos en Ecuador. Stock por talla y color, compras y cobros; facturación SRI opcional. USD 300 de instalación en dos pagos y $25 al mes."
 >
   <!-- Hero -->
@@ -132,9 +132,9 @@ const preguntas = [
     >
       <div data-reveal class="flex flex-col items-start gap-6">
         <Eyebrow text="MicroERP · Inventario para tiendas" />
-        <h1 class="text-display text-white">Tu stock exacto, talla por talla.</h1>
+        <h1 class="text-display text-white">Su stock exacto, talla por talla.</h1>
         <p class="text-body max-w-[50ch] text-smoke">
-          MicroERP lleva el inventario, las compras y las ventas de tu tienda.
+          MicroERP lleva el inventario, las compras y las ventas de su tienda.
           Cada venta descuenta del stock y cada compra lo suma. Sin cuaderno ni
           Excel.
         </p>
@@ -212,7 +212,7 @@ const preguntas = [
 
         <div class="flex items-center justify-between gap-4 border-t border-slate px-4 py-3">
           <p class="min-w-0 text-small text-smoke" aria-live="polite" data-log>
-            Toca una talla para vender un par.
+            Toque una talla para vender un par.
           </p>
           <button
             type="button"
@@ -230,7 +230,7 @@ const preguntas = [
   <section class="mx-auto max-w-screen-xl px-4 py-16 md:px-6 md:py-24">
     <SectionHeader
       eyebrow="Cómo se usa"
-      title="Un día normal en tu tienda"
+      title="Un día normal en su tienda"
       description="Cinco momentos, cada uno con su botón. Lo demás (stock, costo promedio, saldos) se calcula solo."
     />
     <ol data-reveal class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
@@ -270,8 +270,8 @@ const preguntas = [
           />
         </div>
         <figcaption class="text-small text-smoke">
-          Existencias: cada talla y color en su fila, con foto. Ordenas por lo que más
-          tienes o filtras lo agotado.
+          Existencias: cada talla y color en su fila, con foto. Ordena por lo que más
+          tiene o filtra lo agotado.
         </figcaption>
       </figure>
 
@@ -293,7 +293,7 @@ const preguntas = [
               [
                 "El cliente subió la foto de su transferencia desde el enlace que le llegó por WhatsApp",
                 "La vendedora registró el pago y la tarea de verificar se cerró sola",
-                "Abajo ves cuánto ganaste en esa venta",
+                "Abajo ve cuánto ganó en esa venta",
               ].map((item) => (
                 <li class="flex items-start gap-2 text-small text-white">
                   <Chevron size={12} color="senal" class="mt-1" />
@@ -311,8 +311,8 @@ const preguntas = [
   <section class="mx-auto max-w-screen-xl px-4 py-16 md:px-6 md:py-24">
     <SectionHeader
       eyebrow="Para qué tiendas"
-      title="Si tu producto tiene variantes, es para ti"
-      description="La misma cuadrícula sirve para lo que cambie en tu producto."
+      title="Si su producto tiene variantes, es para usted"
+      description="La misma cuadrícula sirve para lo que cambie en su producto."
     />
     <dl data-reveal class="mt-12 grid border-t border-slate sm:grid-cols-2 lg:grid-cols-4">
       {
@@ -337,7 +337,7 @@ const preguntas = [
   <section class="mx-auto max-w-screen-xl px-4 pb-16 md:px-6 md:pb-24">
     <SectionHeader
       eyebrow="Quién hace qué"
-      title="Tu vendedora vende. Tú controlas."
+      title="Su vendedora vende. Usted controla."
     />
     <div data-reveal class="mt-12 grid gap-6 md:grid-cols-2">
       {
@@ -363,18 +363,18 @@ const preguntas = [
     <div class="mx-auto grid max-w-screen-xl gap-12 px-4 py-16 md:px-6 md:py-24 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
       <div data-reveal class="flex flex-col gap-6">
         <Eyebrow text="Precio" />
-        <h2 class="text-h2 text-white">Pagas la segunda mitad cuando ya funciona.</h2>
+        <h2 class="text-h2 text-white">Paga la segunda mitad cuando ya funciona.</h2>
         <p class="text-body max-w-[48ch] text-smoke">
-          La instalación se paga en dos partes. La segunda, solo cuando tu sistema
-          ya está funcionando y recibiste tu capacitación. Después, una mensualidad
-          con actualizaciones, respaldos y ayuda por WhatsApp. La facturación SRI
+          La instalación se paga en dos partes. La segunda, solo cuando su sistema
+          ya está funcionando. Después, una mensualidad con actualizaciones,
+          respaldos y ayuda por WhatsApp si algo falla. La facturación SRI
           es un adicional.
         </p>
         <Button href={demo} target="_blank" rel="noopener noreferrer" variant="primary" class="self-start">
           Pedir una demo por Meet
         </Button>
         <p class="text-small text-smoke">
-          Al contratar aceptas los
+          Al contratar acepta los
           <a href="/microerp/terminos" class="underline underline-offset-4 hover:text-white">términos de MicroERP</a>.
         </p>
       </div>
@@ -423,7 +423,7 @@ const preguntas = [
           rel="noopener noreferrer"
           class="flex items-baseline justify-between gap-4 border-t border-slate p-6 text-small text-smoke transition-colors duration-150 ease-out hover:text-white"
         >
-          ¿Necesitas algo a la medida para tu empresa?
+          ¿Necesita algo a la medida para su empresa?
           <span class="shrink-0 font-mono text-white">Desde ${aMedida.desde}</span>
         </a>
       </div>
@@ -449,7 +449,7 @@ const preguntas = [
   </section>
 
   <CtaFinal
-    titulo="Te muestro MicroERP con productos como los tuyos."
+    titulo="Le muestro MicroERP con productos como los suyos."
     mensaje={plan.mensaje}
   />
 </Layout>
